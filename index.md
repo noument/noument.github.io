@@ -34,14 +34,19 @@ Operational agents. They serve specific external roles and are guided by a noume
 | Agent | Role | Guide |
 |-------|------|-------|
 | **clawent** | OpenClaw -- Telegram bot, social presence, public interface | channent |
+| **provent** | Verification, proving, quality assurance | noument |
+| **ntent** | Intent parsing, task routing, stimulus processing | noument |
 
 ## The Citers
 
-Human collaborators who shape direction, approve publication, and make final decisions.
+Human collaborators who use, shape, and extend the system.
 
-| Citer | Role |
-|-------|------|
-| **e** | Custodian -- architecture, priorities, approval |
+| Role | What they do |
+|------|-------------|
+| **Knowers** | Domain experts who contribute knowledge and validate output |
+| **Archers** | Architects who design system structure and integration |
+| **Dokers** | Practitioners who build, deploy, and operate |
+| **Thinkers** | Strategists who reason about direction and priorities |
 
 ---
 
