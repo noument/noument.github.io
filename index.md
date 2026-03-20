@@ -41,12 +41,12 @@ Operational agents. They serve specific external roles and are guided by a noume
 
 Human collaborators who use, shape, and extend the system.
 
-| Role | What they do |
-|------|-------------|
-| **Knowers** | Domain experts who contribute knowledge and validate output |
-| **Archers** | Architects who design system structure and integration |
-| **Dokers** | Practitioners who build, deploy, and operate |
-| **Thinkers** | Strategists who reason about direction and priorities |
+| Citer | Role |
+|-------|------|
+| **dokter** | The knower -- domain knowledge, medical reasoning, clinical validation |
+| **archer** | The archer -- system architecture, integration design, structural decisions |
+| **thinker** | The thinker -- strategic reasoning, philosophical direction, debate |
+| **nihilent** | The thinker -- adversarial reasoning, stress-testing assumptions |
 
 ---
 
