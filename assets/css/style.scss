@@ -1,0 +1,56 @@
+---
+---
+
+@import "minima";
+
+/* Subtle improvements — don't fight the theme */
+
+.meta {
+  color: #888;
+  font-size: 0.85em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+table th {
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+  padding: 0.5em 0.75em;
+  font-weight: 600;
+}
+
+table td {
+  padding: 0.4em 0.75em;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+table td:first-child {
+  white-space: nowrap;
+}
+
+h2 {
+  margin-top: 2em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2em 0;
+}
+
+/* Knowledge entry styling */
+.knowledge-entry header {
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #eee;
+}
+
+.knowledge-entry .description {
+  font-style: italic;
+  color: #666;
+}
