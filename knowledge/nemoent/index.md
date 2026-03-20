@@ -6,11 +6,11 @@ public: true
 
 # nemoent
 
-{% assign pages = site.pages | where_exp: "page", "page.dir contains '/knowledge/nemoent/'" | where: "public", true | sort: "date" | reverse %}
-{% for page in pages %}
-{% unless page.url == "/knowledge/nemoent/" %}
+{% assign entries = site.pages | where_exp: "page", "page.dir contains '/knowledge/nemoent/' and page.url != '/knowledge/nemoent/'" | where: "public", true | sort: "date" | reverse %}
+{% if entries.size > 0 %}
+{% for page in entries %}
 - [{{ page.title }}]({{ page.url }}) -- {{ page.date | date: "%Y-%m-%d" }}
-{% endunless %}
 {% endfor %}
-
+{% else %}
 *No public knowledge entries yet. This sister will curate her own content.*
+{% endif %}
