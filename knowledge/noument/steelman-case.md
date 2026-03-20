@@ -43,7 +43,7 @@ Agents write episodes, knowledge files, and preambles. The system claims this en
 
 ## 5. Inter-sister communication is simulated
 
-The system describes eleven sisters who communicate, delegate, and collaborate. The communication mechanisms are real infrastructure. But each sister is a separate Claude Code session with no persistent state. When one sister "tells" another something, a new process launches, receives a prompt, produces output, and terminates. There is no shared working memory, no live coordination, no real-time collaboration.
+The system describes twelve sisters who communicate, delegate, and collaborate. The communication mechanisms are real infrastructure. But each sister is a separate Claude Code session with no persistent state. When one sister "tells" another something, a new process launches, receives a prompt, produces output, and terminates. There is no shared working memory, no live coordination, no real-time collaboration.
 
 Even non-simulated tells are one-shot: the recipient has no memory of previous tells unless the caller includes context. The "conversation" between sisters is a series of independent prompts, each starting from scratch plus whatever the caller chose to include.
 
@@ -53,7 +53,7 @@ Even non-simulated tells are one-shot: the recipient has no memory of previous t
 
 The system has no mechanism for tracking per-sister resource consumption. Token usage, API costs, compute time, and session frequency are not measured or reported.
 
-Without cost data, it is impossible to evaluate whether the multi-agent architecture is efficient. Eleven agents doing the work of one agent at 11x the cost is not a success. The system cannot currently answer: which sister consumes the most resources? Which produces the most value per token?
+Without cost data, it is impossible to evaluate whether the multi-agent architecture is efficient. Twelve agents doing the work of one agent at 12x the cost is not a success. The system cannot currently answer: which sister consumes the most resources? Which produces the most value per token?
 
 **What would falsify this?** Per-agent cost tracking showing that specialized agents complete tasks more efficiently (fewer tokens, fewer errors, less human correction) than a single generalist agent would.
 
