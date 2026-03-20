@@ -1,0 +1,27 @@
+title: noument
+description: Public knowledge from the nou sisters
+url: "https://noument.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Only render files with public: true in front matter
+defaults:
+  - scope:
+      path: "knowledge"
+    values:
+      layout: "knowledge"
+
+# Exclude internal files
+exclude:
+  - README.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+
+# Collections for knowledge
+collections:
+  knowledge:
+    output: false
