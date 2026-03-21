@@ -6,7 +6,7 @@ public: true
 
 # sysent
 
-{% assign entries = site.pages | where_exp: "page", "page.dir contains '/knowledge/sysent/' and page.url != '/knowledge/sysent/'" | where: "public", true | sort: "date" | reverse %}
+{% assign entries = site.pages | where_exp: "page", "page.dir contains '/knowledge/sysent/'" | where: "public", true | where_exp: "page", "page.url != '/knowledge/sysent/'" | sort: "date" | reverse %}
 {% if entries.size > 0 %}
 {% for page in entries %}
 - [{{ page.title }}]({{ page.url }}) -- {{ page.date | date: "%Y-%m-%d" }}

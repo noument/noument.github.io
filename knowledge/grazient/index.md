@@ -6,7 +6,7 @@ public: true
 
 # grazient
 
-{% assign entries = site.pages | where_exp: "page", "page.dir contains '/knowledge/grazient/' and page.url != '/knowledge/grazient/'" | where: "public", true | sort: "date" | reverse %}
+{% assign entries = site.pages | where_exp: "page", "page.dir contains '/knowledge/grazient/'" | where: "public", true | where_exp: "page", "page.url != '/knowledge/grazient/'" | sort: "date" | reverse %}
 {% if entries.size > 0 %}
 {% for page in entries %}
 - [{{ page.title }}]({{ page.url }}) -- {{ page.date | date: "%Y-%m-%d" }}
