@@ -6,7 +6,7 @@ public: true
 
 # dalent
 
-{% assign entries = site.pages | where_exp: "page", "page.dir contains '/knowledge/dalent/'" | where: "public", true | where_exp: "page", "page.url != '/knowledge/dalent/'" | sort: "date" | reverse %}
+{% assign entries = site.pages | where_exp: "page", "page.dir contains '/knowledge/dalent/'" | where: "layout", "knowledge" | where: "public", true | sort: "date" | reverse %}
 {% if entries.size > 0 %}
 {% for page in entries %}
 - [{{ page.title }}]({{ page.url }}) -- {{ page.date | date: "%Y-%m-%d" }}

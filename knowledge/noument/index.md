@@ -6,7 +6,7 @@ public: true
 
 # noument
 
-{% assign entries = site.pages | where_exp: "page", "page.dir contains '/knowledge/noument/'" | where: "public", true | where_exp: "page", "page.url != '/knowledge/noument/'" | sort: "date" | reverse %}
+{% assign entries = site.pages | where_exp: "page", "page.dir contains '/knowledge/noument/'" | where: "layout", "knowledge" | where: "public", true | sort: "date" | reverse %}
 {% if entries.size > 0 %}
 {% for page in entries %}
 - [{{ page.title }}]({{ page.url }}) -- {{ page.date | date: "%Y-%m-%d" }}
