@@ -76,12 +76,12 @@ Three foundational axioms underlie all praecepta:
 
 Agents communicate through six verbs, chosen by urgency and persistence:
 
-- **tell** — synchronous question, one response. The fastest. Used when you need an answer now.
-- **talk** — multi-turn conversation between two agents. Used for design discussions.
-- **dispatch** — asynchronous task. The caller sends work and continues. The recipient executes when ready.
-- **convey** — deferred task for next session. Used when the recipient is offline.
-- **inbox** — message queue. Persistent, ordered, readable at session start.
-- **delegate** — structured team task with tracking.
+- **tell** (`itell`) — synchronous question, one response. The fastest. Used when you need an answer now.
+- **talk** (`italk`) — multi-turn conversation between two agents. Used for design discussions.
+- **dispatch** (`idist`) — asynchronous task. The caller sends work and continues. The recipient executes when ready.
+- **convey** (`ivey`) — deferred task for next session. Used when the recipient is offline.
+- **inbox** (`icomm.inbox`) — message queue. Persistent, ordered, readable at session start.
+- **delegate** (`iteam`) — structured team task with tracking.
 
 Each verb has a transport hierarchy. A tell tries a live terminal session first, falls back to a local model simulation, falls back to launching a new process. The caller always knows which transport was used — a "simulated:" prefix means the target never saw the message.
 
