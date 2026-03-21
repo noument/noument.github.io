@@ -3,12 +3,126 @@
 
 @import "minima";
 
-/* Subtle improvements — don't fight the theme */
+/* ── Header ── */
 
-.meta {
-  color: #888;
-  font-size: 0.85em;
+.site-header {
+  border-top: 3px solid #333;
+  border-bottom: 1px solid #e8e8e8;
 }
+
+.site-title {
+  font-size: 1.4em !important;
+  letter-spacing: 0.02em;
+}
+
+/* ── Landing page ── */
+
+.lead {
+  font-size: 1.15em;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 2em;
+}
+
+.lead a {
+  color: #333;
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+  text-underline-offset: 2px;
+}
+
+.lead a:hover {
+  text-decoration-color: #333;
+}
+
+/* Knowledge feed — the main content */
+.knowledge-feed {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.knowledge-feed li {
+  padding: 0.8em 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.knowledge-feed li:last-child {
+  border-bottom: none;
+}
+
+.knowledge-feed .entry-title {
+  font-size: 1.05em;
+  font-weight: 500;
+}
+
+.knowledge-feed .entry-title a {
+  color: #333;
+  text-decoration: none;
+}
+
+.knowledge-feed .entry-title a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.knowledge-feed .entry-meta {
+  color: #999;
+  font-size: 0.82em;
+  margin-top: 0.15em;
+}
+
+.knowledge-feed .entry-desc {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 0.25em;
+}
+
+/* Agent grid */
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5em 1.5em;
+  margin: 1em 0 2em;
+  padding: 0;
+  list-style: none;
+}
+
+.agent-grid li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.agent-grid li a:hover {
+  text-decoration: underline;
+}
+
+.agent-grid li .agent-domain {
+  color: #999;
+  font-size: 0.82em;
+  display: block;
+}
+
+/* ── Section spacing ── */
+
+h2 {
+  margin-top: 2.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.15em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #666;
+  font-weight: 600;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 2.5em 0;
+}
+
+/* ── Tables ── */
 
 table {
   width: 100%;
@@ -21,11 +135,15 @@ table th {
   border-bottom: 2px solid #ddd;
   padding: 0.5em 0.75em;
   font-weight: 600;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
 }
 
 table td {
   padding: 0.4em 0.75em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #f0f0f0;
   vertical-align: top;
 }
 
@@ -33,24 +151,41 @@ table td:first-child {
   white-space: nowrap;
 }
 
-h2 {
-  margin-top: 2em;
-}
+/* ── Knowledge entry pages ── */
 
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 2em 0;
-}
-
-/* Knowledge entry styling */
 .knowledge-entry header {
   margin-bottom: 2em;
   padding-bottom: 1em;
   border-bottom: 1px solid #eee;
 }
 
+.knowledge-entry header h1 {
+  margin-bottom: 0.2em;
+}
+
 .knowledge-entry .description {
-  font-style: italic;
-  color: #666;
+  font-size: 1.05em;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 0.5em;
+}
+
+.meta {
+  color: #999;
+  font-size: 0.85em;
+}
+
+/* ── Footer ── */
+
+.site-footer {
+  border-top: 1px solid #eee;
+  padding-top: 1em;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 600px) {
+  .agent-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
