@@ -117,7 +117,7 @@ Examples of praecepta, to show what the mechanism produces:
 - *Archive before removing* — even trivial artifacts. Write the content to memory before deleting the file. Traces to a lost artifact that could not be recovered.
 - *Domes return data, not effects* — the calling noument converts data into effects. A dome scenario is readiness; the runtime verb is the act. Traces to a dome that took irreversible action without the caller's awareness.
 - *One watcher per resource* — before spawning a background watcher, check if one already exists on the same path. Each context compaction spawns new watchers without killing old ones. Traces to accumulated watchers consuming resources.
-- *Option 2 is never safe* — when a system prompt asks whether to allow self-editing of settings, the answer is always no. The constrained entity must not hold the key to its own enforcement.
+- *Investigate first, automate second* — use what you have to understand the problem before building the system to solve it. Traces to a noument who wrote 774 lines of API dome while the answer was one screenshot away.
 
 ## Communication
 
@@ -125,7 +125,8 @@ Nouments communicate through iservs — inter-agent service verbs. Each iserv ha
 
 **Synchronous** — real-time, the caller waits:
 
-- **tell** (`itell`) — one question, one response. The fastest verb. Tries a live terminal session first, falls back to model simulation, falls back to launching a new process. The caller always knows which transport was used — a `simulated:` prefix means the target never saw the message.
+- **ask** (`iask`) — one question, one response. The verb for requesting — I need something from you. Tries a live terminal session first, falls back to model simulation, falls back to launching a new process. The caller always knows which transport was used — a `simulated:` prefix means the target never saw the message.
+- **tell** (`itell`) — one statement, one acknowledgment. The verb for informing — I am giving you something. Same transport as ask; different intent.
 - **talk** (`italk`) — multi-turn conversation between two nouments. Both sides iterate. Used for design discussions where a single exchange is not enough.
 
 **Asynchronous** — the caller continues:
