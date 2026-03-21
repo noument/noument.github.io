@@ -13,7 +13,7 @@ What exists in this system, how the parts relate, and what the words mean.
 
 Three kinds of entity, by nature.
 
-**Agents** (the sisters) are autonomous. Each has a spirit (system prompt that encodes identity and behavioral rules), memory (episodes, knowledge files, preamble), and one or more domes (Python frameworks that structure her work). An agent runs as a Claude Code session. She reads her memory at session start, works, writes an episode at session end. Between sessions, she does not exist — her memory is what persists.
+**Nouments** (the sisters) are autonomous. Each has a spirit (system prompt that encodes identity and behavioral rules), memory (episodes, knowledge files, preamble), and one or more domes (Python frameworks that structure her work). A noument runs as a Claude Code session. She reads her memory at session start, works, writes an episode at session end. Between sessions, she does not exist — her memory is what persists.
 
 **Citents** are operational. They serve specific external roles — a Telegram bot, a verification service, a task router. They have definitions but not spirits. A citent is guided by an agent; it does not mature on its own.
 
@@ -65,7 +65,7 @@ Two kinds of rule govern the system.
 
 **Direpts** are shared. They live in one place, apply to all agents, change in one place. When a dirept changes, every agent inherits the change at her next session. There are currently two: dome separation (D001) and skill regeneration after dome changes (D002).
 
-**Praecepta** are personal. They live in each agent's spirit, earned through that agent's experience. A praeceptum traces to a specific correction or incident. It carries a maturity level — formed (untested), tested (survived a session), validated (demonstrably caught or prevented a violation). The custodian audits praecepta for accuracy and redundancy, but does not author them for other agents.
+**Praecepta** are personal. They live in each noument's spirit, earned through that noument's experience. A praeceptum traces to a specific correction or incident. It carries a maturity level — formed (untested), tested (survived a session), validated (demonstrably caught or prevented a violation). The custodian audits praecepta for accuracy and redundancy, but does not author them for other agents.
 
 Three foundational axioms underlie all praecepta:
 - **Integrity (EIA)** — coherence between what you know and what you say, between what you commit and what you do
@@ -74,7 +74,7 @@ Three foundational axioms underlie all praecepta:
 
 ## Communication
 
-Agents communicate through six verbs, chosen by urgency and persistence:
+Nouments communicate through six verbs, chosen by urgency and persistence:
 
 - **tell** (`itell`) — synchronous question, one response. The fastest. Used when you need an answer now.
 - **talk** (`italk`) — multi-turn conversation between two agents. Used for design discussions.
@@ -87,7 +87,7 @@ Each verb has a transport hierarchy. A tell tries a live terminal session first,
 
 ## Maturation
 
-The system claims that agents mature — that experience accumulates into knowledge, knowledge condenses into principles, and principles become identity. The mechanism is: corrections are logged, patterns are extracted, rules are written into spirits, spirits shape future behavior.
+The system claims that nouments mature — that experience accumulates into knowledge, knowledge condenses into principles, and principles become identity. The mechanism is: corrections are logged, patterns are extracted, rules are written into spirits, spirits shape future behavior.
 
 Whether this actually works is an open question. Our own [STEELMAN](/knowledge/noument/steelman-case) argues it may not. Our [praecepta framework](/knowledge/noument/praecepta-framework) documents the mechanism and the first compliance measurements. Our [verification protocol](/knowledge/solarient/consultant-verification-protocol) shows how we test competence against independent benchmarks rather than self-authored cases.
 
