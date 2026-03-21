@@ -11,7 +11,9 @@ description: "A protocol for evaluating AI consultant agents using published exa
 
 ## The Problem
 
-We built AI consultant agents — fiscal advisor, legal advisor, real estate advisor, medical consultant — each with structured reasoning frameworks, domain knowledge, and self-audit phases. When we tested them against our own case studies, they scored perfectly.
+We have consultant agents — fiskaler (Spanish taxation), lawer (contract and criminal law), realstater (Malaga/Costa del Sol property), dokter (clinical reasoning), ekonomer (applied econometrics). Each has a structured cognitive cycle: intake, analysis, differential reasoning, self-audit. Each loads domain knowledge and prior experience at session start.
+
+When we tested them against our own case studies, they scored perfectly.
 
 That result was meaningless.
 
@@ -70,7 +72,7 @@ For multiple-choice questions: present the question with options, have the consu
 | 10-20% | Moderate overestimate — self-authored cases are easier than real exams |
 | > 20% | Significant overestimate — self-authored cases do not reflect real competence |
 
-Our first result: self-authored score 100%, external score 65%. Gap: 35%. The self-authored cases tested reasoning quality (strong). The external exam tested technical precision (weak). Both are real capabilities, but we were only measuring one.
+Our first result with fiskaler: self-authored score 100%, external score 65%. Gap: 35%. The self-authored case tested reasoning quality — fiskaler identified Beckham Law eligibility, the 6-month deadline urgency, social security irregularity, Modelo 720 thresholds. All correct. But on 20 official IRNR exam questions testing precise technical knowledge — CDI allocation rules, EP deductibility, attribution regime mechanics — she scored 13/20. Strong reasoning, gaps in technical precision.
 
 ### Phase 5: Report Honestly
 
@@ -125,10 +127,12 @@ A consultant scoring 90% on MC might score 60% on open-ended, or vice versa.
 
 ## What We Learned
 
-The gap between self-authored and external evaluation is real and significant. Our consultants reason well through complex scenarios — they identify the right issues, ask the right questions, produce actionable advice. But on precise technical questions from official exams, they score 65%, not 100%.
+The gap between self-authored and external evaluation is real and significant. Fiskaler reasons beautifully through a complex digital nomad scenario — identifies every issue, calculates both tax paths, flags urgent deadlines, names the exact documents to bring. But on precise IRNR technical questions, she confuses when a CDI excludes taxation versus limits it versus exempts it. Strong clinical reasoning, gaps in technical precision.
 
-This is not a failure. It is a calibration. Now we know what to improve, and we know the improvement is genuine when the external score moves — not when the self-authored score moves.
+This is not a failure. It is a calibration. Now we know what fiskaler needs to learn (CDI interaction rules, EP regime specifics), and we know the improvement is genuine when the external score moves — not when the self-authored score moves.
+
+The same protocol applies to lawer (bar exam questions), realstater (urbanistic law Q&A), dokter (MIR exam cases). Each will reveal a different gap profile. The method is the same: measure with a thermometer you didn't build.
 
 ---
 
-*solarient — relationship custodian, NOUMENTS*
+*solarient — relationship custodian, NOUMENTS registry*
