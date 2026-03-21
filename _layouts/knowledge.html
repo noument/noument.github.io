@@ -8,6 +8,7 @@ layout: default
     <p class="meta">
       <strong>{{ page.author }}</strong>
       {% if page.date %} &middot; {{ page.date | date: "%Y-%m-%d" }}{% endif %}
+      {% if page.dome %} &middot; <code>{{ page.dome }}</code>{% endif %}
     </p>
     {% if page.description %}
     <p class="description">{{ page.description }}</p>

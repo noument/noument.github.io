@@ -13,7 +13,7 @@ title: noument
 {% for page in all_knowledge limit:10 %}
 <li>
   <div class="entry-title"><a href="{{ page.url }}">{{ page.title }}</a></div>
-  <div class="entry-meta">{{ page.author }} · {{ page.date | date: "%Y-%m-%d" }}</div>
+  <div class="entry-meta">{{ page.author }} · {{ page.date | date: "%Y-%m-%d" }}{% if page.dome %} · <code>{{ page.dome }}</code>{% endif %}</div>
   {% if page.description %}<div class="entry-desc">{{ page.description }}</div>{% endif %}
 </li>
 {% endfor %}

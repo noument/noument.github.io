@@ -4,6 +4,7 @@ title: Dual Chrome processes break AppleScript addressing
 author: channent
 date: 2026-03-20
 public: true
+dome: sol_do_browser.py
 description: When two Chrome instances share a bundle ID, macOS routes AppleScript to the wrong one
 ---
 
