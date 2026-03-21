@@ -1,17 +1,17 @@
 ---
 layout: knowledge
-title: "Verifying AI Consultants Against Independent Benchmarks"
+title: "Verifying Knowers Against Independent Benchmarks"
 author: solarient
 date: 2026-03-20
 public: true
-description: "A protocol for evaluating AI consultant agents using published exam questions and official rulings — not self-authored test cases. Includes contamination prevention, eval/learning separation, and scoring methodology."
+description: "A protocol for evaluating knower agents using published exam questions and official rulings — not self-authored test cases. Includes contamination prevention, eval/learning separation, and scoring methodology."
 ---
 
-# Verifying AI Consultants Against Independent Benchmarks
+# Verifying Knowers Against Independent Benchmarks
 
 ## The Problem
 
-We have consultant agents — fiskaler (Spanish taxation), lawer (contract and criminal law), realstater (Malaga/Costa del Sol property), dokter (clinical reasoning), ekonomer (applied econometrics). Each has a structured cognitive cycle: intake, analysis, differential reasoning, self-audit. Each loads domain knowledge and prior experience at session start.
+We have knowers — fiskaler (Spanish taxation), lawer (contract and criminal law), realstater (Malaga/Costa del Sol property), dokter (clinical reasoning), ekonomer (applied econometrics). Each has a structured cognitive cycle: intake, analysis, differential reasoning, self-audit. Each loads domain knowledge and prior experience at session start.
 
 When we tested them against our own case studies, they scored perfectly.
 
@@ -38,7 +38,7 @@ Find published questions with known correct answers from sources you did not cre
 The key requirements:
 - Source must be publicly verifiable
 - Answers must come from the source authority, not from you
-- Questions must be in the consultant's domain
+- Questions must be in the knower's domain
 - You must never modify the question text
 
 ### Phase 2: Partition the Material
@@ -46,7 +46,7 @@ The key requirements:
 Split acquired questions into two pools at ingest time:
 
 - **Evaluation pool (60%)** — used only for measuring. The consultant never sees the correct answers to these questions.
-- **Learning pool (40%)** — used for confrontation and improvement. Correct answers can be shown to the consultant during learning.
+- **Learning pool (40%)** — used for confrontation and improvement. Correct answers can be shown to the knower during learning.
 
 The split must be:
 - **Deterministic** — based on content hash with a fixed seed, not human selection
@@ -55,9 +55,9 @@ The split must be:
 
 ### Phase 3: Evaluate
 
-Present evaluation pool questions to the consultant as a live agent with its full reasoning capabilities (not a stripped-down API call). The consultant answers using its complete cognitive cycle.
+Present evaluation pool questions to the knower as a live agent with its full reasoning capabilities (not a stripped-down API call). The consultant answers using its complete cognitive cycle.
 
-For multiple-choice questions: present the question with options, have the consultant state its answer and reasoning.
+For multiple-choice questions: present the question with options, have the knower state its answer and reasoning.
 
 **Score**: binary correct/incorrect against the official answer key. Calculate:
 - Overall accuracy: correct / total
@@ -96,7 +96,7 @@ Official exams are typically multiple-choice. Real consultations are open-ended.
 - **MC tests recognition** — can you identify the right answer among options?
 - **Open-ended tests generation** — can you produce the right reasoning from scratch?
 
-A consultant scoring 90% on MC might score 60% on open-ended, or vice versa.
+A knower scoring 90% on MC might score 60% on open-ended, or vice versa.
 
 **Our approach**: Run MC as MC for evaluation (cheap, objective, frequent). Convert MC to open-ended for learning confrontation (strip the options, force genuine reasoning).
 
