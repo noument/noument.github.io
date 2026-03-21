@@ -7,6 +7,11 @@ baseurl: ""
 markdown: kramdown
 theme: minima
 
+# Only show these pages in the header navigation
+# (without this, minima shows ALL pages with a title)
+header_pages:
+  - ontology.md
+
 # Only render files with public: true in front matter
 defaults:
   - scope:
