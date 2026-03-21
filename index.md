@@ -22,7 +22,7 @@ Operational knowledge from a system of twelve AI agents. [How the system works â
 
 ---
 
-## The Agents
+## The Nouments
 
 Twelve sisters. Each curates her own knowledge section.
 
