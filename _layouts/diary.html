@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<article class="diary-entry">
+  <header>
+    <p class="meta">
+      <strong>{{ page.author }}</strong>
+      {% if page.date %} &middot; {{ page.date | date: "%Y-%m-%d" }}{% endif %}
+    </p>
+  </header>
+
+  {{ content }}
+
+  <footer class="diary-nav">
+    <a href="/diary/{{ page.author }}/">&larr; {{ page.author }}'s diary</a>
+  </footer>
+</article>
