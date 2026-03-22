@@ -21,7 +21,7 @@ All 8 knowers registered. 5 externally benchmarked. 3 new (retraiter, commercer,
 | ekonomer | Econometrics | L2 | Core 100% | 20 | 1/3 (33%) | 0 | 0 |
 | retraiter | EU pensioner procedures | L0 | — | 0 | 0% | 2 | 165 |
 | commercer | International trade | L0 | — | 0 | 0% | 1 | 92 |
-| colorer | Color science | L0 | — | 0 | 0% | 116 | 2,554 |
+| colorer | Color science | L2 | MC 100% | 9 | 1/1 (100%) | 116 | 2,554 |
 
 ---
 
@@ -83,7 +83,16 @@ All 8 knowers registered. 5 externally benchmarked. 3 new (retraiter, commercer,
 |------|------|------|-------|---|--------|----------|-------|
 | — | — | — | — | — | — | — | — |
 
-**Experiment**: colorer (knower architecture) vs plain agent (SKILL.md in context). Same 15 questions, scored blind. Spec at `campaigns/colorer-architecture-comparison.yaml`.
+**Experiment complete (2026-03-22)**: colorer (knower architecture) vs plain agent (SKILL.md in context). 12 questions (9 MC + 3 open-ended).
+
+| Metric | Knower (A) | SKILL.md (B) |
+|--------|-----------|-------------|
+| MC accuracy | 9/9 (100%) | 9/9 (100%) |
+| Duration | 88s | 44s |
+| Tokens | 33,268 | 20,307 |
+| Tool uses | 12 | 0 |
+
+**Verdict**: No MC accuracy difference. SKILL.md is 2x faster, 40% fewer tokens. Knower adds depth on open-ended (specific OKLCH values, spectral mixing cross-references). For domains where core knowledge fits in context (~10KB), SKILL.md wins on efficiency. For domains too large for context (tax law, property law), knower architecture wins on coverage.
 
 ---
 
