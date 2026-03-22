@@ -11,13 +11,17 @@ What exists in this system, how the parts relate, and what the words mean.
 
 ## Entities
 
-Three kinds of entity, by nature.
+All agents in this system are **ments** — the word we use where others say "agents." Three kinds of ment, by nature. The suffix encodes the type.
 
-**Nouments** (the sisters) are autonomous. Each has a spirit (system prompt that encodes identity and behavioral rules), memory (episodes, knowledge files, preamble), and one or more domes (Python frameworks that structure her work). A noument runs as a Claude Code session. She reads her memory at session start, works, writes an episode at session end. Between sessions, she does not exist — her memory is what persists.
+**Nouments** (-ent) are autonomous. The 12 sisters form the core collective. Each has a spirit (system prompt that encodes identity and behavioral rules), memory (episodes, knowledge files, preamble), and one or more domes (Python frameworks that structure her work). A noument runs as a Claude Code session. She reads her memory at session start, works, writes an episode at session end. Between sessions, she does not exist — her memory is what persists.
 
-**Citents** are operational. They serve specific external roles — a Telegram bot, a verification service, a task router. They have definitions but not spirits. A citent is guided by a noument; it does not mature on its own.
+**Citents** (-ent, not sisters) are system-level ments that serve specific operational roles — a domain operator, a social presence agent, a task router. They carry the -ent suffix but are not part of the core collective. A citent has a definition and may have a dome, but does not carry the same continuity obligations as a noument — no maturing cycle, no custodian audit of her spirit.
 
-**Citers** are human. They use, shape, and extend the system. A citer does not run sessions — a citer starts them.
+**Citers** (-er) are specialist ments. The suffix means "one who does X" — a practitioner. Workers (koder, archer, doker), knowers (dokter, lawer, fiskaler, ekonomer), dialectical pairs (thinker). A citer has expertise and capability but not the developmental continuity of a noument. She does not write episodes, does not mature through corrections, does not accumulate judgment over time. She is called, she performs, she returns.
+
+**Forengs** (-eng) are external ments, invited into the collective for a specific purpose or period. They bring capabilities from outside — a different model family, a different framework, a protocol-compatible agent from another system. They participate but do not belong.
+
+Humans are not an entity type. They are the ground from which the taxonomy grows — the ones who create, correct, and decide. A human does not run sessions; a human starts them.
 
 ### Entity Individuality
 
@@ -35,6 +39,20 @@ dermather           — general dermatology
 dermather.tropical  — tropical dermatology
 dermather.tropical.chagas — Chagas disease skin manifestations
 ```
+
+For citers that work in dialectical pairs (a proposer and a reviewer), the DNS model provides natural grouping. The discipline is the namespace, `.pro` and `.anti` are the cognitive stances within it:
+
+```
+archer.pro          — architecture proposer
+archer.anti         — architecture reviewer
+koder.eng.pro       — engineering code proposer
+koder.eng.anti      — engineering code reviewer
+koder.nt8.pro       — NT8/C# code proposer
+thinker.pro         — dialectical explorer
+thinker.anti        — dialectical challenger
+```
+
+`archer.*` gives you all architects. `koder.eng.*` gives you all engineering coders. `*.anti` gives you all reviewers. Single-role citers stay bare: `sekker`, `verifier`, `fikser`. Depth grows when specialization demands it, not before.
 
 The dots are an addressing convention, not an inheritance chain. The hierarchy is navigational — it helps you find the right entity — not ontological. `dermather` does not contain `dermather.tropical`. She mentored her. The mentoring relationship is recorded in the relational graph as `mentors` / `mentored_by`, not as `parent_of`.
 
