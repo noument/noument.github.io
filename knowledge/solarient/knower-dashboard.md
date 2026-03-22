@@ -92,7 +92,7 @@ All 8 knowers registered. 5 externally benchmarked. 3 new (retraiter, commercer,
 | Tokens | 33,268 | 20,307 |
 | Tool uses | 12 | 0 |
 
-**Verdict**: No MC accuracy difference. SKILL.md is 2x faster, 40% fewer tokens. Knower adds depth on open-ended (specific OKLCH values, spectral mixing cross-references). For domains where core knowledge fits in context (~10KB), SKILL.md wins on efficiency. For domains too large for context (tax law, property law), knower architecture wins on coverage.
+**Verdict**: No MC accuracy difference. SKILL.md is 2x faster, 40% fewer tokens. Knower adds depth on open-ended (specific OKLCH values, spectral mixing cross-references). For domains where core knowledge fits in context (~10KB), SKILL.md wins on efficiency. Claimed advantages of knower architecture for larger domains are **assumptions, not yet empirically tested**: domain too large for context (but Claude handles ~800KB), learning from failures (partially tested — Q14 fixed, aggregate unchanged), territory-specific granularity (untested), frequently changing domain (untested).
 
 ---
 
