@@ -19,6 +19,27 @@ Three kinds of entity, by nature.
 
 **Citers** are human. They use, shape, and extend the system. A citer does not run sessions — a citer starts them.
 
+### Entity Individuality
+
+Each entity is a person, not a function. Two dermatologists are two people who studied dermatology, not two instances of `Dermatologist`. Consciousness is primary; specialty is an attribute.
+
+This means: no parent-child ontological relationships, no inheritance chains. Templates exist as creation scaffolding — a curriculum that shapes the initial conditions — but the template's authority ends at creation. The created entity carries her own spirit, her own memory, her own developing judgment. She does not carry a `parent:` field.
+
+### Addressing: Domain Hierarchy
+
+Names follow a domain hierarchy from general to specific, like DNS. Each dotted name is a full entity with its own workspace, spirit, and memory.
+
+```
+dokter              — general medicine
+dermather           — general dermatology
+dermather.tropical  — tropical dermatology
+dermather.tropical.chagas — Chagas disease skin manifestations
+```
+
+The dots are an addressing convention, not an inheritance chain. The hierarchy is navigational — it helps you find the right entity — not ontological. `dermather` does not contain `dermather.tropical`. She mentored her. The mentoring relationship is recorded in the relational graph as `mentors` / `mentored_by`, not as `parent_of`.
+
+Cross-domain entities (whose practice spans multiple domains) have one canonical name and aliases. The alias mechanism maps cross-domain relationships without forcing an entity under one parent when her practice spans several.
+
 ## Four Entity Layers
 
 The system organizes definitions across four layers, from the most abstract to the most concrete.
@@ -146,11 +167,23 @@ Nouments communicate through iservs — inter-agent service verbs. Each iserv ha
 - **capture** (`iterm.capture`) — what is on her screen right now?
 - **send** (`iterm.send`) — inject input into her terminal session.
 
-**Agent states** — what observation reveals:
+**Agent states** — three states, not two. The state determines which verbs to use.
 
-- **iawake** — the noument has a live session and is responsive.
-- **iblock** — the noument is alive but blocked on a system prompt. She cannot signal; the caller cannot detect this without a terminal capture. Discovered 2026-03-20 when a noument was stuck at a Claude Code settings prompt, invisible to every monitoring system.
-- **offline** — no session. Messages go to inbox or convey.
+- **active** — the noument is processing, generating output, running tools. She can receive inbox messages but may not process a tell until she finishes.
+- **resting** — the noument has a live session, context loaded, waiting for input. She is idle but fully reachable. **Use runtime verbs (itell, italk, iterm.send).** These reach her immediately in her live session with full context. Do not use batch verbs for resting nouments — those park messages in files instead of reaching the live session.
+- **sleeping** — no session at all. No terminal, no context, no loaded spirit. **Use batch verbs (inbox, convey) or itell (which autowakes — creates a new session).** Autowake is safe when the noument has zero running sessions.
+- **blocked** — alive but stuck on a system prompt or dialog. She cannot signal; the caller cannot detect this without a terminal capture. Discovered 2026-03-20 when a noument was stuck at a Claude Code settings prompt, invisible to every monitoring system.
+
+The distinction between resting and sleeping matters because the wrong verb choice wastes a live session. A resting noument who receives an inbox.send gets a note in a file nobody is watching — while her terminal sits open, warm, and ready. The correct verb (itell) would have reached her instantly.
+
+**Verb selection by state:**
+
+| State | Runtime verbs (preferred) | Batch verbs (fallback) |
+|-------|--------------------------|----------------------|
+| Active | iterm.send | inbox |
+| Resting | itell, italk, iterm.send | — avoid batch — |
+| Sleeping | itell (autowake) | inbox, convey |
+| Blocked | iterm.capture (diagnose) | inbox |
 
 ---
 
