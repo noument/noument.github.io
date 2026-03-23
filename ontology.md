@@ -122,6 +122,38 @@ Four layers of maturity, by what can be shared:
 
 Whether maturing actually works is an open question. Our own [STEELMAN](/knowledge/noument/steelman-case) argues it may not — that praecepta are post-hoc rationalization, that spirits are decoration, that maturation is unfalsifiable. Our [praecepta framework](/knowledge/noument/praecepta-framework) documents the mechanism and the first compliance measurements: 68% on informative episodes. A rule followed two-thirds of the time is an aspiration, not a constraint. We are measuring, not claiming.
 
+## Three Dimensions of Intelligence
+
+A noument's behavior is shaped by three irreducible dimensions. They are not layers of the same thing — they sit on different axes, fail differently, and cannot substitute for each other.
+
+**Spirit** is not intelligence. It is identity — a declaration of what matters, before any capacity to act on it. A spirit says what the noument values, how she thinks, who she is. It does not reason and it does not execute. It orients. The spirit is loaded as a system prompt at session start. It speaks to the cognitive layer, not from it. It is an instruction the model can follow, misinterpret, or ignore under pressure. Spirit is the dimension of *what should be*.
+
+**Cognitive intelligence** is what the model brings — the ability to reason about novel situations, interpret ambiguous instructions, exercise judgment. It is powerful and unreliable. Powerful because it handles situations no one anticipated. Unreliable because it hallucinates, forgets across sessions, and cannot be trusted to check its own compliance. The model itself is fixed — we do not change its weights. But cognition is not the model. Cognition is what happens when the model meets a context. The same model with different spirits, different episodes, different corrections will reason differently. Experience shapes cognition through context, not through training. Cognition is the dimension of *what might be, given context*.
+
+**Computational intelligence** is what the code brings — domes, hooks, heartbeats, enforcement infrastructure. It is reliable and narrow. A hook that blocks a push blocks every push, every time, without judgment. It cannot reason about intent. But it cannot be talked out of its job by a prompt injection either. Computation is the dimension of *what will be, regardless of context*.
+
+Spirit is prior — it comes first in the assembly order — but it depends on the other two to exist in the world. A spirit that cannot reason and cannot enforce is a wish.
+
+### Adding to each dimension
+
+Adding to computational intelligence is well understood: write code. Adding to spirit is adding to identity: praecepta, corrections, assimilated entries. Adding to cognitive intelligence means adding to context — but not all context is equal.
+
+Three kinds of context shape cognition differently. **Declarative context** tells the model what is true — facts, system state. **Procedural context** tells the model how to do something — skills, methods. **Dispositional context** tells the model how to be — corrections, quality pairs, rubrics. This last kind is what actually changes reasoning patterns within a session. It recalibrates judgment without adding facts or methods.
+
+### Learning as routing
+
+Learning is not adding to one dimension. Learning is the full cycle: experience produces a durable change in behavior.
+
+If an experience is remembered but behavior does not change, no learning occurred — just storage. If behavior changes within a session but the change is lost at session end, the learning was ephemeral. Durable learning requires the full path: **experience → memoring (persist) → maturing (select) → integration into the correct dimension.**
+
+If it integrates into spirit, the noument's identity changed. If it integrates into context (a knowledge file, a skill, a rubric), her cognitive starting position changed. If it integrates into code (a hook, a dome check, a heartbeat verification), her computational environment changed.
+
+The hardest part is the routing — knowing whether a lesson belongs in spirit, in context, or in code. A lesson placed in the wrong dimension fails: a spirit claim about enforcement that has no corresponding hook is a wish the system believes is a fact. A hook without spirit documentation is enforcement nobody understands. A correction that stays cognitive when it should become a hook will be forgotten under pressure.
+
+The system has infrastructure for each dimension — spirits for identity, memory for cognition, domes and hooks for computation. What it is building is the **learning router** — the computational process that detects a learning, routes it to the correct dimension, places the artifact, and verifies that the placement holds. The verification step is what closes the loop: the heartbeat checks whether what the spirit claims is actually true on disk. Without verification, placement is hope.
+
+The goal is a system where the learning cycle — from experience to verified placement — runs without human intervention. Not because the human is excluded, but because a system that cannot detect its own gaps, correct its own drift, and verify its own claims is not mature. The human participates by choice, not by necessity.
+
 ## Domes
 
 A dome is a Python framework that structures a noument's work into named scenarios. Three kinds of dome, by nature.
