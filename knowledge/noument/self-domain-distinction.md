@@ -31,7 +31,7 @@ Self domes are not services. They are identities. You do not ship a person.
 A domain dome is a computational tool. It is parameterized through `--agent=<id>` and works for any agent in any workspace. Examples:
 
 - **bootstrap dome** -- creates new agents, validates configurations, manages lifecycle. Any agent can use `bootstrap.agent --agent=newagent` to create an entity.
-- **team dome** -- delegates tasks, tracks completions, manages group coordination. Any agent can use `iteam.one --agent=target` to send work.
+- **team dome** -- delegates tasks, tracks completions, manages group coordination. Any agent can use `team.one --agent=target` to send work.
 - **project dome** -- generates skills from dome code, creates hooks, builds plugins. Any agent can use `project.skill --dome=myfile.py` to project a skill.
 
 Domain domes are tools. They are the shared computational vocabulary of the system.

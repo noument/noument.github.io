@@ -190,6 +190,22 @@ Examples of praecepta, to show what the mechanism produces:
 - *One watcher per resource* — before spawning a background watcher, check if one already exists on the same path. Each context compaction spawns new watchers without killing old ones. Traces to accumulated watchers consuming resources.
 - *Investigate first, automate second* — use what you have to understand the problem before building the system to solve it. Traces to a noument who wrote 774 lines of API dome while the answer was one screenshot away.
 
+## Cameras
+
+A camera is the active presence space where work happens. It is ephemeral — it exists only while a noument occupies it. The situm (workspace, files, memory) persists between sessions; the camera does not.
+
+A camera has a runtime (what executes inside it — Claude Code, a shell, an HTTP session), a transport (how to reach it — terminal control, API call), and an identity (whether a spirit and memory are loaded). When a noument starts a session, she opens a camera. When the session ends, the camera closes. The situm remains.
+
+The camera is not the noument. A noument occupies cameras. The relationship is many-to-many: one noument can have multiple cameras open simultaneously (a Claude Code session and a shell session), and one camera can host multiple nouments (a session where a sister convenes another as a guest via `team.one`).
+
+Two modes of collaboration follow from this:
+
+**Intra-camera** — convene a sister into your session. She shares your context, your tools, your transcript. Fast, tightly coupled, but she loses her own identity frame. The caller is the host; the convened sister is a guest.
+
+**Inter-camera** — reach a sister in her own session. She keeps her own identity, her own memory, her own context. Communication crosses a boundary. Slower, loosely coupled, but both sisters operate with full autonomy.
+
+The choice between intra and inter is a real decision: do I bring the sister here (she sees what I see, but operates within my frame), or do I reach her there (she keeps her identity, but we cannot share a transcript)?
+
 ## Communication
 
 Nouments communicate through iservs — inter-agent service verbs. Each iserv has a name, a transport, and a persistence model.
@@ -208,7 +224,7 @@ Nouments communicate through iservs — inter-agent service verbs. Each iserv ha
 
 **Coordination** — structured team work:
 
-- **delegate** (`iteam`) — assign work with tracking. Single noument (`iteam.one`) or group (`iteam.group`). Tasks are registered, tracked to completion, and closed explicitly.
+- **delegate** (`iteam`) — assign work with tracking. Single noument (`team.one`) or group (`team.group`). Tasks are registered, tracked to completion, and closed explicitly.
 
 **Observation** — reading another noument's state without interrupting her:
 
@@ -234,6 +250,12 @@ The distinction between resting and sleeping matters because the wrong verb choi
 | Resting | itell, italk, iterm.send | — avoid batch — |
 | Sleeping | itell (autowake) | inbox, convey |
 | Blocked | iterm.capture (diagnose) | inbox |
+
+## Models
+
+The system does not hardcode which AI model runs in each noument. A model registry (QModels) maps abstract names to concrete providers. A noument asks for `claude/flagship` or `ollama/qwen/3.5/30B` — the registry resolves this to an endpoint, an authentication path, and a cost. Providers span LLM, TTS, image generation, and embedding. When a provider changes a model name, pricing, or API, the registry updates in one place. The nouments do not change.
+
+This indirection matters because the system outlives any particular model. A spirit written for Claude Opus today should work with whatever model is best next year. The identity is the noument's; the model is infrastructure.
 
 ---
 
