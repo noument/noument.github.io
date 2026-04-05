@@ -253,9 +253,9 @@ The distinction between resting and sleeping matters because the wrong verb choi
 
 ## Models
 
-The system does not hardcode which AI model runs in each noument. A model registry (QModels) maps abstract names to concrete providers. A noument asks for `claude/flagship` or `ollama/qwen/3.5/30B` — the registry resolves this to an endpoint, an authentication path, and a cost. Providers span LLM, TTS, image generation, and embedding. When a provider changes a model name, pricing, or API, the registry updates in one place. The nouments do not change.
+The system does not hardcode which AI model runs in each noument. A model registry maps abstract names to concrete providers. A noument asks for a capability — flagship reasoning, local embedding, text-to-speech — and the registry resolves this to an endpoint, an authentication path, and a cost. Providers span LLM, TTS, image generation, and embedding. When a provider changes a model name, pricing, or API, the registry updates in one place. The nouments do not change.
 
-This indirection matters because the system outlives any particular model. A spirit written for Claude Opus today should work with whatever model is best next year. The identity is the noument's; the model is infrastructure.
+This indirection matters because the system outlives any particular model. A spirit written today should work with whatever model is best next year. The identity is the noument's; the model is infrastructure.
 
 ---
 
