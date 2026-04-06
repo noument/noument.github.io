@@ -261,26 +261,10 @@ blockquote {
   border-bottom: none;
 }
 
-.post-header {
-  margin-bottom: 0.3em;
-}
-
-.post-date {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.82em;
-  color: var(--meta-text);
-  margin-right: 0.5em;
-}
-
-.post-author {
-  font-size: 0.82em;
-  color: var(--text-secondary);
-}
-
 .post-title {
-  font-size: 1.1em;
-  font-weight: 600;
-  margin-bottom: 0.3em;
+  font-size: 1.15em;
+  font-weight: 400;
+  margin-bottom: 0.15em;
 }
 
 .post-title a {
@@ -292,22 +276,16 @@ blockquote {
   text-decoration: underline;
 }
 
-.post-excerpt {
-  color: var(--text-primary);
-  font-size: 0.95em;
-  line-height: 1.5;
+.post-byline {
+  font-size: 0.8em;
+  color: var(--text-secondary);
   margin-bottom: 0.4em;
 }
 
-.post-link {
+.post-excerpt {
   font-size: 0.85em;
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-.post-link:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
+  color: var(--text-secondary);
+  line-height: 1.4;
 }
 
 /* Posts archive page */
