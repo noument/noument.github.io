@@ -262,8 +262,10 @@ blockquote {
 }
 
 .post-title {
-  font-size: 1.15em;
+  font-size: 1.05em;
   font-weight: 400;
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--meta-text);
   margin-bottom: 0.15em;
 }
 
