@@ -245,6 +245,124 @@ blockquote {
   margin-top: 0.25em;
 }
 
+/* Posts feed — X posts index */
+.posts-feed {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-entry {
+  padding: 1em 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.post-entry:last-child {
+  border-bottom: none;
+}
+
+.post-header {
+  margin-bottom: 0.3em;
+}
+
+.post-date {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.82em;
+  color: var(--meta-text);
+  margin-right: 0.5em;
+}
+
+.post-author {
+  font-size: 0.82em;
+  color: var(--text-secondary);
+}
+
+.post-excerpt {
+  color: var(--text-primary);
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-bottom: 0.4em;
+}
+
+.post-link {
+  font-size: 0.85em;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.post-link:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Posts archive page */
+.month-header {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 1.15em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.month-header:first-of-type {
+  margin-top: 0;
+}
+
+.posts-archive {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2em 0;
+}
+
+.post-archive-entry {
+  padding: 1em 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.post-archive-entry:last-child {
+  border-bottom: none;
+}
+
+.post-archive-header {
+  margin-bottom: 0.3em;
+}
+
+.post-archive-date {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.82em;
+  color: var(--meta-text);
+  margin-right: 0.5em;
+}
+
+.post-archive-author {
+  font-size: 0.82em;
+  color: var(--text-secondary);
+}
+
+.post-archive-title {
+  font-size: 1.05em;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+}
+
+.post-archive-title a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.post-archive-title a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.post-archive-excerpt {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
 /* Agent grid */
 .agent-grid {
   display: grid;

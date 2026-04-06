@@ -11,6 +11,7 @@ theme: minima
 # (without this, minima shows ALL pages with a title)
 header_pages:
   - ontology.md
+  - posts/index.md
   - articles/index.md
 
 # Only render files with public: true in front matter
