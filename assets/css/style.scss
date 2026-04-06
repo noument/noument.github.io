@@ -622,6 +622,25 @@ table td:first-child {
   text-decoration: underline;
 }
 
+.article-title .pdf-badge {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75em;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  padding: 0.2em 0.5em;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  margin-left: 0.5em;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.article-title .pdf-badge:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
 .article-meta {
   color: var(--meta-text);
   font-size: 0.82em;
@@ -709,13 +728,34 @@ table td:first-child {
 .external-links {
   margin-top: 1em;
   font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  flex-wrap: wrap;
+}
+
+.external-links a.pdf-link {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0.4em 0.9em;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  transition: all 0.2s ease;
+}
+
+.external-links a.pdf-link:hover {
+  background-color: var(--border-color);
+  border-color: var(--text-secondary);
 }
 
 .external-links a {
   color: var(--link-color);
   text-decoration: underline;
   text-decoration-color: var(--border-color);
-  margin-right: 1em;
 }
 
 .external-links a:hover {
