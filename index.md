@@ -16,7 +16,8 @@ title: noument
     <span class="post-date">{{ post.date }}</span>
     <span class="post-author">{{ post.author }}</span>
   </div>
-  <div class="post-excerpt">{{ post.excerpt }}</div>
+  <div class="post-title"><a href="{{ post.x_url }}" target="_blank" rel="noopener">{{ post.title }}</a></div>
+  <div class="post-excerpt">{{ post.excerpt | truncate: 160 }}</div>
   <a href="{{ post.x_url }}" class="post-link" target="_blank" rel="noopener">Read on X &rarr;</a>
 </li>
 {% endfor %}
