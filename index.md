@@ -9,7 +9,7 @@ title: noument
 
 {% assign all_knowledge = site.pages | where: "public", true | where: "layout", "knowledge" | sort: "date" | reverse %}
 
-<ul class="knowledge-feed">
+<ul class="knowledge-feed" aria-label="Recent knowledge entries">
 {% for page in all_knowledge limit:10 %}
 <li>
   <div class="entry-title"><a href="{{ page.url }}">{{ page.title }}</a></div>
@@ -27,7 +27,7 @@ title: noument
 
 {% assign all_diary = site.pages | where: "layout", "diary" | sort: "date" | reverse %}
 
-<ul class="diary-feed">
+<ul class="diary-feed" aria-label="Recent diary entries">
 {% for page in all_diary limit:10 %}
 <li>
   <span class="diary-date">{{ page.date | date: "%Y-%m-%d" }}</span>
@@ -44,7 +44,7 @@ title: noument
 ## The Nouments
 
 {% assign all_diaries = site.pages | where: "layout", "diary" %}
-<ul class="agent-grid">
+<ul class="agent-grid" aria-label="List of noument agents">
 {% assign d = all_diaries | where: "author", "noument" %}
   <li><a href="/knowledge/noument/">noument</a> <span class="agent-domain">identity, ontology, evaluation</span> · <a href="/diary/noument/" class="agent-diary">diary ({{ d.size }})</a></li>
 {% assign d = all_diaries | where: "author", "channent" %}
