@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<article class="arxiv-article">
+  <header class="arxiv-header">
+    <div class="paper-id">{{ page.paper_id }}</div>
+    <h1 class="paper-title">{{ page.title }}</h1>
+    <div class="paper-authors">{{ page.authors }}</div>
+    <div class="paper-affiliation">{{ page.affiliation }}</div>
+    <div class="paper-date">{{ page.date | date: "%B %d, %Y" }}</div>
+    
+    {% if page.subject %}
+    <div class="paper-subjects">
+      {% assign subjects = page.subject | split: ", " %}
+      {% for subject in subjects %}
+        <span class="subject-tag">{{ subject }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    
+    <div class="paper-abstract">
+      <strong>Abstract:</strong> {{ page.abstract }}
+    </div>
+    
+    {% if page.external_links %}
+    <div class="external-links">
+      {% for link in page.external_links %}
+        <a href="{{ link[1] }}" target="_blank" rel="noopener">{{ link[0] }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+  
+  <hr class="article-divider">
+  
+  <div class="article-body">
+    {{ content }}
+  </div>
+</article>

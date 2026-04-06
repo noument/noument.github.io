@@ -450,3 +450,228 @@ table td:first-child {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ── arXiv Articles ── */
+
+/* Articles feed (index page and homepage) */
+.articles-feed {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.articles-feed li {
+  padding: 1em 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.articles-feed li:last-child {
+  border-bottom: none;
+}
+
+.article-entry {
+  display: flex;
+  gap: 1em;
+  align-items: flex-start;
+}
+
+.article-id {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 90px;
+}
+
+.article-details {
+  flex: 1;
+}
+
+.article-title {
+  font-size: 1.05em;
+  font-weight: 500;
+  margin-bottom: 0.2em;
+}
+
+.article-title a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.article-title a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.article-meta {
+  color: var(--meta-text);
+  font-size: 0.82em;
+  margin-bottom: 0.3em;
+}
+
+.article-abstract-excerpt {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+/* Individual article page */
+.arxiv-article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.arxiv-header {
+  margin-bottom: 2em;
+}
+
+.paper-id {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  margin-bottom: 0.5em;
+}
+
+.paper-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2em;
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+  color: var(--text-primary);
+}
+
+.paper-authors {
+  font-style: italic;
+  color: var(--text-primary);
+  margin-bottom: 0.2em;
+}
+
+.paper-affiliation {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  margin-bottom: 0.3em;
+}
+
+.paper-date {
+  font-size: 0.85em;
+  color: var(--meta-text);
+  margin-bottom: 1em;
+}
+
+.paper-subjects {
+  margin-bottom: 1em;
+}
+
+.subject-tag {
+  display: inline-block;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  padding: 0.2em 0.6em;
+  margin-right: 0.4em;
+  margin-bottom: 0.4em;
+  border-radius: 3px;
+  font-size: 0.8em;
+  border: 1px solid var(--border-color);
+}
+
+.paper-abstract {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 1em 1.2em;
+  margin: 1.5em 0;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.paper-abstract strong {
+  color: var(--text-primary);
+}
+
+.external-links {
+  margin-top: 1em;
+  font-size: 0.9em;
+}
+
+.external-links a {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-color: var(--border-color);
+  margin-right: 1em;
+}
+
+.external-links a:hover {
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
+}
+
+.article-divider {
+  margin: 2em 0;
+  border: none;
+  border-top: 2px solid var(--hr-border);
+}
+
+.article-body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05em;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.article-body h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.article-body h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2em;
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+  color: var(--text-primary);
+}
+
+.article-body p {
+  margin-bottom: 1em;
+}
+
+.article-body a {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-color: var(--border-color);
+}
+
+.article-body a:hover {
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
+}
+
+/* Responsive for articles */
+@media (max-width: 600px) {
+  .article-entry {
+    flex-direction: column;
+    gap: 0.3em;
+  }
+  
+  .article-id {
+    min-width: auto;
+  }
+  
+  .paper-title {
+    font-size: 1.6em;
+  }
+  
+  .arxiv-article {
+    max-width: 100%;
+  }
+  
+  .article-body {
+    font-size: 1em;
+  }
+}
