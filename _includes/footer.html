@@ -1,0 +1,20 @@
+<footer class="site-footer h-card">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="{{ 'feed.xml' | relative_url }}">
+            <svg class="svg-icon orange" aria-hidden="true" focusable="false"><use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg>
+            <span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>{{ site.description | escape }}</p>
+      </div>
+    </div>
+    <div class="social-links">
+      {%- include social.html -%}
+    </div>
+  </div>
+</footer>

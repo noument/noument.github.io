@@ -3,6 +3,23 @@
 
 @import "minima";
 
+/* ── Skip Link ── */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* ── Header ── */
 
 .site-header {
@@ -72,7 +89,7 @@
 }
 
 .knowledge-feed .entry-meta {
-  color: #999;
+  color: #767676;
   font-size: 0.82em;
   margin-top: 0.15em;
 }
@@ -104,12 +121,12 @@
 }
 
 .agent-grid li .agent-domain {
-  color: #999;
+  color: #767676;
   font-size: 0.82em;
 }
 
 .agent-grid li .agent-diary {
-  color: #bbb;
+  color: #757575;
   font-size: 0.78em;
   text-decoration: none;
 }
@@ -185,7 +202,7 @@ table td:first-child {
 }
 
 .meta {
-  color: #999;
+  color: #767676;
   font-size: 0.85em;
 }
 
@@ -227,7 +244,7 @@ table td:first-child {
 }
 
 .diary-feed .diary-date {
-  color: #999;
+  color: #767676;
   font-size: 0.82em;
   font-family: monospace;
   margin-right: 0.5em;
