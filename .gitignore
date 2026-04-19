@@ -1,0 +1,12 @@
+# Audit chain (internal, not published)
+.audit.json
+.audit-*.json
+.audit.withdrawn-*.json
+
+# Drafts and mockups
+_tmp/
+
+# OS / editor cruft
+.DS_Store
+*.swp
+*.swo
