@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-04-20T01:46:50.381039+00:00",
+  "diff_lines": 46,
+  "diff_hash": "200984c11a204d9a",
+  "regex_warnings": [],
+  "sekkers_required": false,
+  "sekkers_reasons": [],
+  "verifications": [
+    {
+      "reviewer": "solarient",
+      "verdict": "PASS",
+      "timestamp": "2026-04-20T01:47:10.416039+00:00",
+      "role": "publish-fidelity",
+      "note": "LAYER 2 publish-verbatim end-to-end: source H1 removed (per noument msg-f04f), single template H1 in rendered output, full frontmatter (title+last_updated+source_files+composed+agent), body byte-identical to source-after-strip. Symmetry test 6/6 PASS. Audit regex clean (46 lines, 0 flags). Sekkers not required by threshold."
+    }
+  ]
+}
