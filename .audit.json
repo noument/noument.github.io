@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-20T01:46:50.381039+00:00",
-  "diff_lines": 46,
-  "diff_hash": "200984c11a204d9a",
+  "timestamp": "2026-04-20T08:07:50.581903+00:00",
+  "diff_lines": 12,
+  "diff_hash": "e35a27305398ce60",
   "regex_warnings": [],
   "sekkers_required": false,
   "sekkers_reasons": [],
@@ -9,9 +9,9 @@
     {
       "reviewer": "solarient",
       "verdict": "PASS",
-      "timestamp": "2026-04-20T01:47:10.416039+00:00",
+      "timestamp": "2026-04-20T08:07:58.425809+00:00",
       "role": "publish-fidelity",
-      "note": "LAYER 2 publish-verbatim end-to-end: source H1 removed (per noument msg-f04f), single template H1 in rendered output, full frontmatter (title+last_updated+source_files+composed+agent), body byte-identical to source-after-strip. Symmetry test 6/6 PASS. Audit regex clean (46 lines, 0 flags). Sekkers not required by threshold."
+      "note": "Pickup of noument's source extension (Gate 5 sub-rule 'log-currency before citation' at body line 1262-1263, +1047 bytes). source_sha=c4c3ba894fb7. Single H1 confirmed in re-preview. Audit regex clean (12 lines, 0 flags). Drift detected by heartbeat smoke check at 04:06 \u2014 design coupling working as intended."
     }
   ]
 }
