@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-20T08:07:50.581903+00:00",
-  "diff_lines": 12,
-  "diff_hash": "e35a27305398ce60",
+  "timestamp": "2026-04-20T12:51:32.201134+00:00",
+  "diff_lines": 13,
+  "diff_hash": "ebaf39607247c627",
   "regex_warnings": [],
   "sekkers_required": false,
   "sekkers_reasons": [],
@@ -9,9 +9,8 @@
     {
       "reviewer": "solarient",
       "verdict": "PASS",
-      "timestamp": "2026-04-20T08:07:58.425809+00:00",
-      "role": "publish-fidelity",
-      "note": "Pickup of noument's source extension (Gate 5 sub-rule 'log-currency before citation' at body line 1262-1263, +1047 bytes). source_sha=c4c3ba894fb7. Single H1 confirmed in re-preview. Audit regex clean (12 lines, 0 flags). Drift detected by heartbeat smoke check at 04:06 \u2014 design coupling working as intended."
+      "timestamp": "2026-04-20T12:51:43.383126+00:00",
+      "note": "ontology source extension at line 2937 \u2014 knowent embedding domain mapping update from legacy sol_do_knowent.py to decomposed surface (sol_do_embed.py + type-scoped readers). +138 bytes single-line, ratified by knowent in msg-20260420-080545-knowent-f22f. publish-fidelity verified: source_body_sha matches published_body_sha (e951364948ae) at 382328 bytes. preview clean (15 routes, 1048ms). regex audit 0/13. no structural files touched, sekkers not required."
     }
   ]
 }
