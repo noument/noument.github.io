@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-20T12:51:32.201134+00:00",
-  "diff_lines": 13,
-  "diff_hash": "ebaf39607247c627",
+  "timestamp": "2026-04-21T19:16:46.076566+00:00",
+  "diff_lines": 56,
+  "diff_hash": "23421c4c1a97477a",
   "regex_warnings": [],
   "sekkers_required": false,
   "sekkers_reasons": [],
@@ -9,8 +9,9 @@
     {
       "reviewer": "solarient",
       "verdict": "PASS",
-      "timestamp": "2026-04-20T12:51:43.383126+00:00",
-      "note": "ontology source extension at line 2937 \u2014 knowent embedding domain mapping update from legacy sol_do_knowent.py to decomposed surface (sol_do_embed.py + type-scoped readers). +138 bytes single-line, ratified by knowent in msg-20260420-080545-knowent-f22f. publish-fidelity verified: source_body_sha matches published_body_sha (e951364948ae) at 382328 bytes. preview clean (15 routes, 1048ms). regex audit 0/13. no structural files touched, sekkers not required."
+      "timestamp": "2026-04-21T19:16:58.458950+00:00",
+      "role": "subject-matter",
+      "note": "sisters.yml refresh from noument registry via nousite.compose \u2014 12 rows, registry-true codes/colors, frozen delta 56 lines in index.html only"
     }
   ]
 }
