@@ -1,17 +1,26 @@
 {
-  "timestamp": "2026-04-21T19:16:46.076566+00:00",
-  "diff_lines": 56,
-  "diff_hash": "23421c4c1a97477a",
+  "timestamp": "2026-04-27T22:31:20.036658+00:00",
+  "diff_lines": 1642,
+  "diff_hash": "9f5bfbac389885e0",
   "regex_warnings": [],
-  "sekkers_required": false,
-  "sekkers_reasons": [],
+  "sekkers_required": true,
+  "sekkers_reasons": [
+    "diff_lines=1642 > 500"
+  ],
   "verifications": [
     {
-      "reviewer": "solarient",
+      "reviewer": "sekker.anti",
       "verdict": "PASS",
-      "timestamp": "2026-04-21T19:16:58.458950+00:00",
-      "role": "subject-matter",
-      "note": "sisters.yml refresh from noument registry via nousite.compose \u2014 12 rows, registry-true codes/colors, frozen delta 56 lines in index.html only"
+      "timestamp": "2026-04-27T22:34:25.196103+00:00",
+      "role": "security",
+      "note": "PASS for active audit 9f5bfbac389885e0; previous taxonomy and false-link blockers cleared"
+    },
+    {
+      "reviewer": "sekker.pro",
+      "verdict": "PASS",
+      "timestamp": "2026-04-27T22:34:25.196103+00:00",
+      "role": "security",
+      "note": "PASS for active audit 9f5bfbac389885e0; taxonomy and false-link blockers cleared"
     }
   ]
 }

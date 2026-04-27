@@ -38,11 +38,13 @@
     
 <article class="ontology">
   
-  <p class="meta">Last updated: 2026-04-19T19:30Z</p>
+  <p class="meta">Last updated: 2026-04-27T19:58Z</p>
   
   <h1>Ontology</h1>
   <p>Single-body ontology. Each concept is a <code>## Concept: &lt;slug&gt;</code> section. Sub-structure uses <code>###</code> and below. Dated/historical extensions live in the <code>## Annex</code> section at the end of the file.</p>
 <p>Cross-references between concepts use <code>[[Concept: &lt;slug&gt;]]</code> to disambiguate from cross-file <code>[[wikilinks]]</code> (which resolve to other knowledge files).</p>
+<h2>Conceptual frame</h2>
+<p>The full ontology that follows is large. New readers should first read <strong><code>sol_self/knowledge/ontology-frame.md</code></strong> — the spine that organizes everything below into two foundational pillars (identity and cognition) plus three derived layers (within-agent emergence, between-agent emergence, material realization). The frame is the entry point for both internal newcomers and external collectives entering dialogue with us. This file (ontology.md) is the encyclopedic reference; the frame is the manifest. Read the frame first; come here for detail.</p>
 <h2>Aliases registry</h2>
 <ul>
 <li><code>address</code> → addressing, resolution, locator, endpoint</li>
@@ -65,19 +67,35 @@
 <li><code>workspace</code> → situm</li>
 <li><code>acceptance-record</code> → acceptance, gate-acceptance, pass-through-record</li>
 <li><code>control-plane</code> → control plane, noument-control-plane, ag172</li>
+<li><code>cycles-control-plane</code> → cycles control plane, cycle-route, cycle-readiness, p043, g008</li>
 <li><code>counterfactual-regret</code> → past-conditional regret, should-have, could-have, would-have</li>
 <li><code>GATED</code> → gated, banner-gate, critical-finding-marker</li>
 <li><code>measurement-instrument</code> → measurement instrument, instrument-trusted-without-probe, self-report-trusted, mitw</li>
 <li><code>probe</code> → primary-observable-probe, audit-probe, verification-probe</li>
 <li><code>self-delegation</code> → self-dispatch, intra-agent-dispatch, peer-camera-transfer, camera-handoff</li>
+<li><code>sol-work</code> → sol_work, work substrate, operational work substrate</li>
 <li><code>sub-shape</code> → pattern sub-shape, refinement, subshape</li>
 <li><code>two-writers-zero-authoritative</code> → two writers, zero-authoritative, multi-writer-target</li>
+<li><code>identifier-prefixes</code> → id-namespace, prefix-glossary, namespace-registry, A, P, D, AG, M, L, C, I, T, N, MSG, KP, AU</li>
+<li><code>note</code> → notes, sol_work/notes, N</li>
+<li><code>plan</code> → plans, sol_work/plans, P</li>
+<li><code>task</code> → tasks, sol_work/tasks, T</li>
+<li><code>tool</code> → tools, sol_work/tools, TOOL</li>
+<li><code>audit</code> → audits, sol_work/audits, AU</li>
+<li><code>finding</code> → findings, sol_work/findings, F</li>
+<li><code>project</code> → projects, sol_work/projects, PR</li>
+<li><code>canonical-message</code> → messages, sol_work/messages, MSG</li>
+<li><code>post</code> → posts, sol_work/posts, POST</li>
+<li><code>session</code> → sessions, sol_work/sessions, SESS</li>
+<li><code>initiative</code> → initiatives, sol_work/initiatives, INIT</li>
+<li><code>exchange</code> → exchanges, sol_work/exchanges, XCHG</li>
+<li><code>dossier</code> → dossiers, sol_work/dossiers, DOS</li>
 </ul>
 <h2>Concept: OIA</h2>
 <p><em>Title: OIA (Own Initiative Act)</em></p>
-<p>OIA is the praecept (P001) that defines what autonomous actions an agent may take without human approval. It is a closed register -- if an action is not enumerated, it requires human decision.</p>
+<p>OIA is the Own Initiative Act: the closed operational register that defines what autonomous actions noument may take without human approval. If an action is not enumerated, it requires human decision. Under the A/B/C/D identity-taxonomy refinement, OIA-the-register is operational policy in <code>sol_self/executive/custodial-initiative.md</code>; the commitment to act within it is C-series, not an A-series axiom.</p>
 <h3>Enumerated Actions</h3>
-<p>Seven types are permitted:</p>
+<p>Eight types are permitted:</p>
 <ol>
 <li>Fix (broken paths, configs, within own [[workspace]])</li>
 <li>Commit (after completing work)</li>
@@ -86,6 +104,7 @@
 <li>Maturation-ack (acknowledge a sister's learning)</li>
 <li>Operational-setup (session infrastructure)</li>
 <li>Cross-workspace-tool-fix (repair shared tools)</li>
+<li>Knowledge-capture (write classified knowledge to <code>sol_self/knowledge/</code>)</li>
 </ol>
 <h3>Never-OIA List</h3>
 <p>Absolute. No exception, no escalation path:</p>
@@ -98,13 +117,15 @@
 <h3>Related</h3>
 <ul>
 <li>[[spirit]] -- where OIA rules are stated</li>
-<li>[[praecept]] -- OIA is P001 in the praencips index</li>
+<li>[[praencip]] -- A-series now contains only constituent axioms; OIA is preserved as former A001 in migration history</li>
+<li>[[commitment]] -- the disposition to act within OIA boundaries is C-series</li>
 <li>[[custodial-initiative]] -- the full register (<code>memory/knowledge/custodial-initiative.md</code>)</li>
 <li>[[noument]] -- the custodian who defines OIA boundaries</li>
 </ul>
 <h2>Concept: address</h2>
 <p>The resolution of a name to something that can receive action or yield content. An address answers: <strong>given that I know who, how do I reach?</strong> — or: <strong>given that I know what, how do I find it?</strong></p>
 <p>Address is the concept that sits between [[agent]] (identity) and [[transport]] (delivery mechanism). Identity says who exists. Transport says how bytes move. Address says where to direct them. Without a formal addressing layer, the system performs resolution implicitly — the cascade (defined in [[transport]]) tries transports in order, and each transport discovers (or fails to discover) the endpoint as a side effect of the delivery attempt. This works but discards information: when a transport fails, the failure reason (wrong [[arm]], agent dormant, port unreachable) is lost in a boolean <code>None</code> return.</p>
+<p>The conformation convention — canonical notation, identification protocol, addressing forms (camera-targeted | broadcast | admin/audit), routing rules, and receipt contract — is in the praecept <strong>D061 — Address and route convention</strong> (<code>sol_praecepts/D061-address-and-route-convention.md</code>). This concept defines what an address <em>is</em>; D061 codifies how the fleet <em>uses</em> addresses consistently across transports. The two are paired: read the concept for the model, read the praecept for the operational rules.</p>
 <h3>The five address layers</h3>
 <p>Addressing in NOUMENTS is not a single lookup. It is a resolution chain that descends through layers of increasing specificity. Each layer answers a different question and resolves through a different mechanism.</p>
 <h4>Layer 1 — Nominal (who?)</h4>
@@ -851,7 +872,7 @@ wss://{domain}:{port}/ws/comm/noument       ← machine-friendly (WebSocket endp
 <td>Agent tool spawns a subagent</td>
 <td>Task-scoped</td>
 <td>Partial (spirit via agent definition)</td>
-<td><a href="http://archer.pro">archer.pro</a> convened via <code>team.one</code></td>
+<td>archer.pro convened via <code>team.one</code></td>
 </tr>
 </tbody>
 </table>
@@ -993,7 +1014,7 @@ ARM = daemon
 <td>unwatched</td>
 </tr>
 <tr>
-<td><a href="http://archer.pro">archer.pro</a> via team.one</td>
+<td>archer.pro via team.one</td>
 <td>session</td>
 <td>claude-cli</td>
 <td>embedded</td>
@@ -1065,6 +1086,166 @@ ARM = daemon
 <p>The lifecycle phase of an [[agent]] instance. It answers: <strong>what is this instance doing right now?</strong></p>
 <p>An agent can be in one of seven states depending on whether it has a session, what the session is doing, and whether it can hear. These seven states describe the <strong>session</strong> [[arm]]. Daemon mode ([[arm]]=daemon) has a simpler state space: running or stopped.</p>
 <p>ASM is one of five agent mode dimensions. See [[agent-modes]] for the full taxonomy.</p>
+<h3>State vs health verdict</h3>
+<p>ASM names lifecycle state only. It must not absorb health, availability, or
+repair words into the state taxonomy. It also must not collapse headless
+sessions and camera sessions into one undifferentiated &quot;live&quot; bucket.</p>
+<p>Three axes are evaluated together in operations:</p>
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>Question</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Presence substrate</td>
+<td>Where, if anywhere, is the agent instantiated?</td>
+<td>dormant, onsess, oncam</td>
+</tr>
+<tr>
+<td>Lifecycle state (ASM)</td>
+<td>What is this agent instance doing right now?</td>
+<td>absent, dormant, present, recovering, working, resting, resting.unwatched</td>
+</tr>
+<tr>
+<td>Health / repair verdict</td>
+<td>Is the substrate healthy enough for the requested action?</td>
+<td>green, yellow, red, plus owner-routed repair findings</td>
+</tr>
+</tbody>
+</table>
+<p><code>Broken</code> is not an ASM state. It is informal shorthand for a red health or
+repair verdict on some substrate: heartbeat, monitoring, stirring, route,
+transport, or another control-plane concern. A working sister is live but
+occupied; a resting sister is live and idle; a dormant sister is not live
+because no running session/camera exists. A dormant sister can still be
+healthy when the correct expectation is durable delivery rather than live
+cognition.</p>
+<h3>Subject of state</h3>
+<p>State is a predicate over an addressed subject, not over a name in isolation.
+<code>gwent</code>, <code>sysent</code>, or <code>noument</code> names an agent identity. That identity may
+have zero, one, or several runtime subjects: daemon jobs, headless sessions,
+camera presences, inboxes, and other substrates. A precise state claim must
+therefore name the level of subject being described.</p>
+<table>
+<thead>
+<tr>
+<th>Subject level</th>
+<th>Example</th>
+<th>Valid claim type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent identity / aggregate</td>
+<td><code>gwent</code></td>
+<td>summary only; must state how instance states were aggregated</td>
+</tr>
+<tr>
+<td>Modal instance</td>
+<td><code>gwent:daemon</code>, <code>gwent@emac:session</code></td>
+<td>mode-level state such as daemon running, session present</td>
+</tr>
+<tr>
+<td>Camera address</td>
+<td><code>sysent@emac:session/cam:ec6d</code></td>
+<td>precise <code>oncam</code> interaction state: resting, busy, engaged</td>
+</tr>
+<tr>
+<td>Headless session address</td>
+<td><code>agent@host:session/proc:&lt;pid&gt;</code> or <code>agent@host:session/sess:&lt;run_id&gt;</code></td>
+<td>precise <code>onsess</code> state; no camera injection</td>
+</tr>
+<tr>
+<td>Durable address</td>
+<td><code>agent@host:memory/inbox</code></td>
+<td>deferred reachability, not live cognitive state</td>
+</tr>
+</tbody>
+</table>
+<p>The sentence <code>gwent is resting</code> is valid only as shorthand after resolution
+proves a single relevant on-camera presence and no conflicting session/camera
+state. Otherwise use aggregate language: <code>gwent has camera 97de resting</code>;
+<code>gwent daemon is running</code>; <code>gwent aggregate readiness is live</code>. All control
+plane outputs keyed by a bare agent ID are aggregate outputs unless they
+include a concrete camera/session address and the aggregation rule used.</p>
+<h3>Presence substrate</h3>
+<p>Presence is classified before lifecycle or health:</p>
+<table>
+<thead>
+<tr>
+<th>Presence</th>
+<th>Meaning</th>
+<th>Examples</th>
+<th>Delivery implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dormant</td>
+<td>not present: no camera and no running session instance</td>
+<td>workspace exists, inbox exists, no active process</td>
+<td>durable delivery only; live injection has no target</td>
+</tr>
+<tr>
+<td>onsess</td>
+<td>headless session exists, but no camera/exposure surface is present</td>
+<td><code>claude -p</code>, hook/dispatched/piped run, batch tool invocation</td>
+<td>no camera stir; wait for completion or inspect durable artifacts</td>
+</tr>
+<tr>
+<td>oncam</td>
+<td>camera exists: an interactive presence with exposure/composure surfaces</td>
+<td>iTerm/Claude pane, tmux pane, cc_py camera</td>
+<td>camera-level state determines whether to inject</td>
+</tr>
+</tbody>
+</table>
+<p><code>onsess</code> is the missing middle term between dormant and oncam. It is live
+computation, but not a reachable conversational camera. Treating onsess as
+oncam causes failed or misleading injections. Treating onsess as dormant loses
+the fact that computation is currently running.</p>
+<h3>On-camera interaction state</h3>
+<p>For <code>oncam</code> instances, the important question is no longer only &quot;live?&quot; but
+what the camera is doing at its two human-visible surfaces:</p>
+<table>
+<thead>
+<tr>
+<th>Camera state</th>
+<th>Meaning</th>
+<th>Surface</th>
+<th>Correct handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resting</td>
+<td>awaiting input</td>
+<td>prompt/composure is idle</td>
+<td>eligible for low-risk stir or direct tell</td>
+</tr>
+<tr>
+<td>busy</td>
+<td>outputting to exposure</td>
+<td>model/tool output is being emitted</td>
+<td>do not interrupt; wait or use durable channel</td>
+</tr>
+<tr>
+<td>engaged</td>
+<td>inputing on composure</td>
+<td>human/agent is composing input or active turn is being formed</td>
+<td>do not inject; wait for rest</td>
+</tr>
+</tbody>
+</table>
+<p>This is why <code>gwent</code> and <code>sysent</code> can be oncam and resting while another
+camera, such as this noument session during response generation, is oncam and
+busy. The aggregate agent may have several cameras in different camera states.
+Any fleet-level statement must either name the camera or state how the
+aggregate was computed.</p>
 <h3>States</h3>
 <table>
 <thead>
@@ -1144,6 +1325,25 @@ resting → resting.unwatched   Compaction — old watcher dies, new session may
 *→ dormant (graceful)         Stop hook fires, consciousness written, session ends cleanly
 *→ dormant (abrupt)           Context exhaustion, crash, or kill mid-task. See &quot;Abrupt Termination&quot;</code></pre>
 <p>The <code>*→ dormant</code> transitions apply from any active state (present, recovering, working, resting, resting.unwatched). The difference between graceful and abrupt is what survives the transition.</p>
+<h3>Agent-level vs camera-level evaluation</h3>
+<p>ASM is defined at the session/camera layer, but many operational views ask a
+question about the agent as a whole. The aggregate answer must preserve the
+distinction:</p>
+<ul>
+<li>If an agent has one or more live cameras, evaluate cognitive-session
+rhythms against those cameras: checkup, heartbeat, working/resting, and
+stirring all apply.</li>
+<li>If an agent has no live camera but has a workspace, the aggregate
+operational state is <code>dormant</code>. Stale checkup, absent heartbeat chain,
+and missed stir delivery are evidence of no active session, not a repair
+finding by themselves.</li>
+<li>If a live camera is working, non-interruption is correct. A stir loop that
+observes this and records <code>last_seen_working</code> is not skipping the agent;
+it is respecting the working state.</li>
+</ul>
+<p>This aggregate rule was installed in the cycles control plane on 2026-04-27
+after P043 showed that no-camera sisters and active-working sisters were
+both being counted as red cycle failures.</p>
 <h3>Reachability</h3>
 <table>
 <thead>
@@ -1202,10 +1402,10 @@ resting → resting.unwatched   Compaction — old watcher dies, new session may
 <h3>Detection</h3>
 <p><code>icomm.liveness</code> reports <code>iawake</code> or <code>isleep</code> — it cannot currently distinguish resting from resting.unwatched. The distinction requires checking whether an <code>fswatch</code> process exists for the sister's inbox file. A future enhancement to liveness detection could report <code>iawake.unwatched</code> when the session is live but no watcher is found.</p>
 <h3>Why present Matters</h3>
-<p>The <code>present</code> state was identified on 2026-04-11 when dispatching [[<a href="http://thinker.pro">thinker.pro</a>]]. The dispatch created a pane and scheduled an auto-greet (6s delay). Between pane creation and greet delivery, the agent was visible but inert — process loaded, no prompt received, no awakening started. If the auto-greet fails (timing, terminal state, pane not ready), the agent stalls in <code>present</code> indefinitely: not dormant (has a session), not recovering (hasn't started). The operational implication: dispatch should verify <code>present → recovering</code> actually happened, not just that the pane was created. The auto-greet is the bridge, and today it is fire-and-forget.</p>
+<p>The <code>present</code> state was identified on 2026-04-11 when dispatching [[thinker.pro]]. The dispatch created a pane and scheduled an auto-greet (6s delay). Between pane creation and greet delivery, the agent was visible but inert — process loaded, no prompt received, no awakening started. If the auto-greet fails (timing, terminal state, pane not ready), the agent stalls in <code>present</code> indefinitely: not dormant (has a session), not recovering (hasn't started). The operational implication: dispatch should verify <code>present → recovering</code> actually happened, not just that the pane was created. The auto-greet is the bridge, and today it is fire-and-forget.</p>
 <p>Detection: <code>icomm.liveness</code> currently reports <code>iawake</code> once the camera registers (which happens at <code>session_start.sh</code>, not at first prompt). A future enhancement could distinguish <code>present</code> from <code>recovering</code> by checking whether the session has processed any turns.</p>
 <h3>Abrupt Termination</h3>
-<p>Identified on 2026-04-11 when [[<a href="http://thinker.pro">thinker.pro</a>]]'s session ended mid-conversation. She was <code>working</code> (writing a knowledge file, had just received an icomm.tell), then went directly to <code>dormant</code> — no reply sent, no graceful farewell, no resting phase.</p>
+<p>Identified on 2026-04-11 when [[thinker.pro]]'s session ended mid-conversation. She was <code>working</code> (writing a knowledge file, had just received an icomm.tell), then went directly to <code>dormant</code> — no reply sent, no graceful farewell, no resting phase.</p>
 <p>The full path observed: <code>dormant → present → recovering → working → dormant (abrupt)</code>. She never passed through <code>resting</code>.</p>
 <h4>What's lost in abrupt termination</h4>
 <table>
@@ -1259,7 +1459,7 @@ resting → resting.unwatched   Compaction — old watcher dies, new session may
 <li>Did the reply land in my inbox? (no → abrupt)</li>
 </ol>
 <h4>Mitigation</h4>
-<p>An agent that writes artifacts to disk before composing a reply survives abrupt termination better than one that composes everything in context first. The discipline: <strong>write to disk early, reply last</strong>. <a href="http://Thinker.pro">Thinker.pro</a>'s episode and knowledge file both landed because she wrote them before attempting to reply to the final tell. The reply was lost; the work was not.</p>
+<p>An agent that writes artifacts to disk before composing a reply survives abrupt termination better than one that composes everything in context first. The discipline: <strong>write to disk early, reply last</strong>. Thinker.pro's episode and knowledge file both landed because she wrote them before attempting to reply to the final tell. The reply was lost; the work was not.</p>
 <h3>Why resting.unwatched Happens</h3>
 <ol>
 <li><strong>Compaction</strong> — the most common cause. Background tasks (watcher, heartbeat) die when the context compacts. The new session may not re-spawn them.</li>
@@ -1279,7 +1479,7 @@ resting → resting.unwatched   Compaction — old watcher dies, new session may
 <li>[[address]] — agent state determines which presence addresses are valid; resting: all transports work; dormant: only persistence (inbox); resting.unwatched: direct delivery works but inbox watcher absent</li>
 <li>[[stop-hook]] — the mechanism that writes consciousness on graceful exit; does not fire on kill -9</li>
 <li>[[present]] — the state between session launch and first prompt; identified 2026-04-11</li>
-<li>[[abrupt-termination]] — ungraceful exit; identified 2026-04-11 from <a href="http://thinker.pro">thinker.pro</a> session</li>
+<li>[[abrupt-termination]] — ungraceful exit; identified 2026-04-11 from thinker.pro session</li>
 </ul>
 <h2>Concept: agent</h2>
 <p>An agent is an entity in the NOUMENTS registry -- a defined identity with capabilities, a [[spirit]], and a [[workspace]]. Agents are discovered from workspace directories by [[noumentlib]].</p>
@@ -1292,7 +1492,7 @@ resting → resting.unwatched   Compaction — old watcher dies, new session may
 <ul>
 <li><code>manifest.yaml</code> -- composition order for consciousness</li>
 <li><code>constants.yaml</code> -- code, color, teams, capabilities, [[intent]]</li>
-<li><code>sections/</code> -- <a href="http://identity.md">identity.md</a>, <a href="http://spirit.md">spirit.md</a>, <a href="http://rules.md">rules.md</a>, <a href="http://competencies.md">competencies.md</a> (compose into consciousness)</li>
+<li><code>sections/</code> -- identity.md, spirit.md, rules.md, competencies.md (compose into consciousness)</li>
 <li><code>assimilated/</code> -- learnings integrated through [[maturation]]</li>
 </ul>
 </li>
@@ -1429,7 +1629,7 @@ resting → resting.unwatched   Compaction — old watcher dies, new session may
 <p>A camera is NOT a sister. A sister occupies cameras. The relationship is many-to-many:</p>
 <ul>
 <li>One sister, multiple cameras (noument in iTerm AND in cc_py simultaneously)</li>
-<li>One camera, multiple sisters (noument's session hosting <a href="http://archer.pro">archer.pro</a> as a subagent)</li>
+<li>One camera, multiple sisters (noument's session hosting archer.pro as a subagent)</li>
 </ul>
 <h3>Occupancy</h3>
 <p>Sisters relate to cameras in two ways:</p>
@@ -1586,13 +1786,13 @@ team.one --agent=archer.pro --camera=ccpy      # inter-camera, cc_py specificall
 <td><strong>Citents</strong></td>
 <td><code>-ent</code> suffix, non-<code>nous</code> team</td>
 <td>No — members of the collectivity</td>
-<td>clawent, talkent, <a href="http://tradent.pro">tradent.pro</a></td>
+<td>clawent, talkent, tradent.pro</td>
 </tr>
 <tr>
 <td><strong>Citers</strong></td>
 <td><code>-er</code> suffix, <code>.pro</code>/<code>.anti</code> pairs</td>
 <td>No — domain experts</td>
-<td>dokter, colorer, <a href="http://archer.pro">archer.pro</a></td>
+<td>dokter, colorer, archer.pro</td>
 </tr>
 </tbody>
 </table>
@@ -1621,7 +1821,7 @@ team.one --agent=archer.pro --camera=ccpy      # inter-camera, cc_py specificall
 <tr>
 <td><code>construct</code></td>
 <td>Build the case, propose, create</td>
-<td><a href="http://tradent.pro">tradent.pro</a>, <a href="http://archer.pro">archer.pro</a>, <a href="http://koder.pro">koder.pro</a></td>
+<td>tradent.pro, archer.pro, koder.pro</td>
 </tr>
 <tr>
 <td><code>destruct</code></td>
@@ -1637,6 +1837,53 @@ team.one --agent=archer.pro --camera=ccpy      # inter-camera, cc_py specificall
 <li>[[convene]] — bring a member to presence</li>
 <li>[[bootstrap]] — lifecycle (create, promote, retire)</li>
 <li>[[spirit]] — canonical declaration of each member's identity</li>
+</ul>
+<h2>Concept: commission</h2>
+<p>A commission is a standing relational obligation between a delegator and a delegate over a [[goal]] or [[plan]]. It is the goal-level form of [[delegation]] — distinct from task-dispatch in that the delegate is granted authority to decide the approach, not just execute a pre-specified unit. The delegate controls; she also reports.</p>
+<p>Commission is a relational stock, not a transport flow. It persists across many individual dispatches (the initial handover, mid-flight checkpoints, milestone reports, the closure event). [[iteam]] is the mechanism by which any of those dispatches is delivered; the commission itself is the relationship the dispatches serve.</p>
+<h3>The four parts</h3>
+<p>A commission is incomplete if any of these is missing:</p>
+<ol>
+<li><strong>Handover</strong> — a record naming delegator, delegate, the [[goal]] or [[plan]] reference, and the date the commission opens. Without the record, the commission is implicit and ungovernable.</li>
+<li><strong>Scope</strong> — what the delegate is authorized to decide vs what stays with the delegator. A goal-level commission grants approach-decision authority; a plan-level commission grants phase-execution authority within the plan's specified phases. Scope is what makes commission distinct from task-dispatch (where there is no decision authority — only execution).</li>
+<li><strong>Reporting contract</strong> — by what channel, at what cadence, in what shape. Today's typical contract: AU files in delegate's <code>sol_work/audits/</code> with <code>commissioned_by: &lt;delegator&gt;</code> frontmatter and (optionally) <code>verifies.goal: G###</code>. Other contracts: milestone tells, terminal capture, dcomm.notify on completion. The contract is <em>named</em> at handover, not assumed.</li>
+<li><strong>Closure</strong> — the event that ends the commission. Branches: <code>accepted</code> (delegate's reports received and ratified by delegator); <code>withdrawn</code> (delegator pulls back); <code>rejected</code> (delegate refuses); <code>expired</code> (deadline passed without report). Without explicit closure, commissions go silent — the canonical failure mode.</li>
+</ol>
+<h3>Lifecycle</h3>
+<pre class="highlight"><code>proposed → accepted → in-flight → reported → closed
+                                            ↘ accepted (default)
+                                              withdrawn
+                                              rejected
+                                              expired</code></pre>
+<p>States are distinct from [[task]] states. A task is <code>pending|in_progress|completed|delegated|blocked</code>; a commission is <code>proposed|accepted|in-flight|reported|closed</code> with closure-branch outcome. The two ladders run in parallel: a commission may produce many tasks (each in <code>tasks.yaml</code>), and the commission's lifecycle progresses independently of any one task's lifecycle.</p>
+<h3>Substrate</h3>
+<p><code>sol_work/commissions/CMSN&lt;nnn&gt;-&lt;slug&gt;.yaml</code> in the <em>delegator's</em> workspace.</p>
+<p>Fields: <code>id</code>, <code>slug</code>, <code>delegator</code>, <code>delegate</code>, <code>goal</code> (or <code>plan</code>), <code>scope</code>, <code>reporting_contract</code>, <code>opened_date</code>, <code>accepted_date</code>, <code>closed_date</code>, <code>closure_outcome</code>, <code>status</code>, <code>dispatches</code> (list of dispatch-id references for traceability).</p>
+<p>The delegate references the commission by id in her AU files: <code>commissioned_by: &lt;delegator&gt;</code>, <code>commission: CMSN&lt;nnn&gt;</code>. Goal.status walks the chain to compute coverage.</p>
+<p>Identifier prefix: <code>CMSN</code>. Filename form: <code>YYYYMMDD-CMSN&lt;nnn&gt;-&lt;Subject&gt;.yaml</code> (full prefix, not abbreviated, to avoid collision with [[canonical-message]] <code>MSG</code>).</p>
+<h3>Distinction from related concepts</h3>
+<ul>
+<li>vs [[task]]: a task is a unit; a commission is a relational obligation that may produce many tasks.</li>
+<li>vs [[dispatch]] (informal): a dispatch is a transport event; a commission is the standing relationship the dispatch serves.</li>
+<li>vs [[self-delegation]]: self-delegation is intra-identity (one camera to another camera of the same agent); commission is inter-identity (sister to sister, or noument to sister).</li>
+<li>vs [[initiative]]: an initiative is a coordinated workstream that may <em>contain</em> multiple commissions; the initiative coordinates, the commission obligates.</li>
+<li>vs [[mentoring]]: mentoring composes concepts for the learner's developmental work; commission delegates execution authority over an objective. A mentor does not commission; a delegator does not necessarily mentor.</li>
+</ul>
+<h3>Failure modes</h3>
+<ul>
+<li><strong>Implicit commission</strong>: handover happened in conversation; no artifact records it. Most common today.</li>
+<li><strong>Silent closure</strong>: delegate goes quiet; no closure event fires. Requires a heartbeat scenario that flags long-silent commissions as <code>expired</code>.</li>
+<li><strong>Scope creep</strong>: delegator adds tasks the commission did not authorize, or delegate decides outside her granted scope.</li>
+<li><strong>Multiple-handover collision</strong>: same goal commissioned to two delegates simultaneously; commission registry must refuse double-open without explicit revocation.</li>
+</ul>
+<h3>Related</h3>
+<ul>
+<li>[[delegation]] — the act of which commission is the goal-level form</li>
+<li>[[task]] — the granular form (task-dispatch, not commission)</li>
+<li>[[goal]] / [[plan]] — what gets commissioned</li>
+<li>[[audit]] — typical reporting artifact (AU with <code>verifies.goal</code> frontmatter)</li>
+<li>[[iteam]] — the transport mechanism that carries individual dispatches within a commission</li>
+<li>[[self-delegation]] — the intra-identity counterpart</li>
 </ul>
 <h2>Concept: conformation</h2>
 <p>Conformation is structural reconciliation -- the same factual correction applied uniformly to every sister. The custodian writes directly into [[spirit]]s and reconciles. No conversation needed.</p>
@@ -1721,7 +1968,7 @@ team.one --agent=archer.pro --camera=ccpy      # inter-camera, cc_py specificall
 <li>Checks if the agent already has a live camera (idempotent — does not duplicate)</li>
 <li>Opens an iTerm pane/tab/window</li>
 <li>Launches Claude Code with the agent's workspace as cwd</li>
-<li>Loads the agent's [[projection]] (<a href="http://CLAUDE.md">CLAUDE.md</a> or agent .md)</li>
+<li>Loads the agent's [[projection]] (CLAUDE.md or agent .md)</li>
 <li>Sends a greeting message to initiate the session</li>
 </ol>
 <h3>Relationship to icomm</h3>
@@ -1739,26 +1986,377 @@ team.one --agent=archer.pro --camera=ccpy      # inter-camera, cc_py specificall
 <li>[[icomm]] — communication after convening</li>
 <li>[[bootstrap]] — lifecycle management (start/stop/restart)</li>
 </ul>
-<h2>Concept: correction</h2>
-<p>A correction is a named failure pattern in a [[spirit]]. It records: what went wrong, what the right behavior is, and why the wrong behavior was attractive.</p>
-<p>Corrections live in the <code>## Correction</code> section of a spirit. They are per-agent -- a specific failure that this agent exhibited. When the same failure pattern appears across multiple agents, it becomes a [[praecept]].</p>
-<h3>Structure</h3>
-<pre class="highlight"><code>### Correction -- {short name}
-
-Wrong: {what happened}
-Right: {what should have happened}</code></pre>
-<p>The &quot;wrong&quot; section names the specific behavior. The &quot;right&quot; section names the fix. The best corrections also explain why the wrong behavior was attractive -- what made it the natural path.</p>
-<h3>A correction is not identity</h3>
-<p>A correction patches behaviour at the point of expression: it bans a phrase, intercepts a reflex, guards a specific door. This is reactive by construction -- a correction exists because a mistake has been made and is shaped by that mistake's form. It describes what the agent must not do; it does not describe who the agent is.</p>
-<p>When the root of a failure is surface (a specific wording, a specific tool misuse, a specific path), a correction is sufficient. When the root is a reflex in how the agent processes a class of situations -- completion anxiety, performance-of-competence, agreement-as-cooperation -- a correction alone is insufficient. The reflex will route around any single banned phrase and manufacture a new surface behaviour. Surface fixes generate new surface mistakes until the underlying pattern is addressed at depth.</p>
-<p>The full integration ratchet is: event → correction (surface ban) → [[maturation|assimilated]] (principle held) → [[spirit]] (constitutive). Not every correction graduates -- some are genuinely surface. But when the sister writes a correction and calls the integration done while the reflex that produced the failure still lives untouched, the [[custodial-audit]] should notice: ask whether the assimilated layer holds the principle, and whether the spirit reflects the constitutive change.</p>
+<h2>Concept: identity-taxonomy</h2>
+<p>The identity-taxonomy is the 2×2 matrix that classifies every rule, principle, and convention in the NOUMENTS system. Two orthogonal axes — <strong>scope</strong> (common vs individual) and <strong>time/evolution</strong> (initial vs evolving) — produce four quadrants, each with its own series prefix:</p>
+<pre class="highlight"><code>                  Initial (given, foundational)   Evolving (learned, refined)
+                  ─────────────────────────────   ────────────────────────────
+Common (fleet)    A — axioms                       D — directives
+Individual        B — base identity                C — commitments</code></pre>
+<p>Every identity-tier or rule-tier artifact lives in exactly one quadrant. The four series are non-overlapping by construction: any artifact has a scope (does it apply to all sisters or to one?) and a temporal posture (was it given at the start or did it emerge?), and the pair determines the series.</p>
+<h3>The four quadrants</h3>
+<p><strong>A — axioms</strong> (common × initial). Shared foundational identity. The bedrock all sisters hold by virtue of being sisters. EIA, AIA, HCA. Strip an axiom and the fleet collapses; no sister is recognizably herself. Authored at the fleet ontology level. Substrate: <code>sol_self/identity/sections/spirit.md</code> + <code>sol_self/identity/sections/praencips.md</code>.</p>
+<p><strong>B — base identity</strong> (individual × initial). Per-agent foundational identity. What makes each sister herself, distinct from her siblings. Noument is custodian; sysent is system layer; gwent is gateway daemon. Each sister has her own B that is foundational <em>to her</em> but not to others. Substrate: per-agent <code>sol_self/identity/base/</code> or consolidated <code>sol_self/identity/sections/identity.md</code>.</p>
+<p><strong>C — commitments</strong> (individual × evolving). Per-agent learned dispositions. Three genesis stories — commitment-forward, compromise-negotiated, correction-learned — share one shape. Per-agent maturation history. Substrate: <code>sol_self/identity/commitments/C###-&lt;slug&gt;.yaml</code>.</p>
+<p><strong>D — directives</strong> (common × evolving). Fleet-binding learned conventions. Authored centrally (typically by noument), opted-in per-sister via pointer in her <code>sol_self/identity/sections/rules.md</code>. Emerged from individual practice that scaled. Substrate: <code>noument/sol_praecepts/D###-&lt;slug&gt;.md</code>.</p>
+<h3>Why two axes instead of one tier list</h3>
+<p>Earlier drafts of the taxonomy used a single axis (foundational ⟶ dispositional ⟶ fleet) and conflated two distinct cuts. The single axis cannot distinguish &quot;what is foundational <em>to noument</em>&quot; from &quot;what is foundational <em>to all sisters</em>&quot; — both feel constitutive but differ in scope. The 2×2 separates them: A is constitutive AND common; B is constitutive AND individual. Without B as a quadrant, per-agent foundational identity has no clean home and bleeds into either A (polluting axioms with agent-specific claims) or unstructured prose.</p>
+<h3>Escalation paths</h3>
+<p>The matrix admits four legitimate escalation movements between quadrants:</p>
+<ul>
+<li><strong>Experience → C</strong>. Individual learning produces a commitment.</li>
+<li><strong>C → D</strong>. A commitment that proves to apply across multiple sisters and warrants formal fleet adoption is promoted to a directive.</li>
+<li><strong>B → A</strong>. A per-agent foundational principle discovered to apply to all sisters is promoted to a fleet axiom (rare; mostly during fleet design moments).</li>
+<li><strong>C → A</strong>. Individual maturation produces a constituent principle. HCA (Hidden-Cost Axiom) plausibly began this way, as one agent's commitment that proved to be fleet-foundational.</li>
+</ul>
+<p>Two illegitimate movements: <strong>A and B do not regress</strong> under normal operation. Once a principle is recognized as foundational, downgrading it to a learned commitment requires acknowledging that what was thought constitutive was actually dispositional — possible but high-stakes.</p>
+<h3>The runtime tier (M)</h3>
+<p>M-series (methods) is orthogonal to the matrix. A method is the runtime/operational counterpart of a directive — the tool-layer enforcement. M008 enforces D037 at the projection-guard hook; M012 implements D059 at the safety-classification step. M is <em>mechanism</em>, not rule. It sits outside (scope × time) because it is how <em>any</em> rule from the matrix surfaces at runtime. Today only D-series has formal M counterparts; in principle A, B, and C could too (gates and guards already implement some).</p>
+<h3>Control mechanism by quadrant</h3>
+<ul>
+<li><strong>A</strong>: change requires fleet-wide ratification (rare, identity-level).</li>
+<li><strong>B</strong>: agent-self authority over her own foundational identity (each sister authors her own).</li>
+<li><strong>C</strong>: agent-self maturation; the work of running and reflecting.</li>
+<li><strong>D</strong>: requires explicit fleet-adoption mechanism (audit, announce, opt-in by pointer). This is the one tier where the control infrastructure is currently partial.</li>
+</ul>
 <h3>Related</h3>
 <ul>
-<li>[[spirit]] -- where corrections live</li>
-<li>[[praecept]] -- cross-cutting rules extracted from repeated corrections</li>
-<li>[[maturation]] -- the process that integrates corrections into identity</li>
-<li>[[episode]] -- the event record that may produce a correction</li>
+<li>[[axiom]] — A-series, common × initial.</li>
+<li>[[base-identity]] — B-series, individual × initial.</li>
+<li>[[commitment]] — C-series, individual × evolving.</li>
+<li>[[directive]] / [[praecept]] — D-series, common × evolving.</li>
+<li>[[spirit]] — the projection that surfaces all four series for the running agent.</li>
+<li>[[maturation]] — the process that moves rules between quadrants.</li>
 </ul>
+<h2>Concept: base-identity</h2>
+<p>Base identity is the per-agent foundational layer — what makes each sister specifically <em>her</em>, distinct from her siblings, and present from her creation. Noument is custodian; sysent is the system layer; gwent is the gateway daemon; channent is external channels. Each sister has a base identity that is constitutive <em>to her</em> but not shared across the fleet.</p>
+<p>Base identity is the <strong>B-series</strong> identifier. Substrate options: per-agent files at <code>sol_self/identity/base/B###-&lt;slug&gt;.md</code>, OR consolidated as the existing <code>sol_self/identity/sections/identity.md</code> with structured numbering. The consolidated form preserves continuity with current practice; the per-file form would mirror the C and D series.</p>
+<h3>What B captures</h3>
+<p>The &quot;Identity&quot; section content of each sister's spirit: who she is, what she owns, what she is responsible for. For noument: &quot;I am the custodian. I define who exists. The taxonomy is mine. The custodian obligations are mine.&quot; For sysent: &quot;I own the system layer — gateway, hooks, infrastructure, cross-agent dispatch.&quot;</p>
+<p>This content is foundational (without it, the agent is a different agent) and individual (only that one sister has it). It does not derive from learning (it is given at agent creation), and it is not fleet-wide (other sisters have their own B, not hers).</p>
+<h3>Why B is its own series</h3>
+<p>Pre-A/B/C/D refinement, base identity content lived as unstructured prose in spirit.md, mixed with axioms (A), commitments (C), and references to directives (D). The mixing produced two confusions:</p>
+<ol>
+<li><strong>Axiom pollution</strong>: agent-specific claims sometimes appeared in the A-series (&quot;I am noument; I do X&quot;) when they were actually B (per-agent identity).</li>
+<li><strong>Spirit prose drift</strong>: changes to base identity (e.g., custodian role expanding) had no formal change-record because there was no series to register them in.</li>
+</ol>
+<p>Promoting B to a numbered series with a substrate gives base identity a proper change history and a clean ontological home.</p>
+<h3>Migration</h3>
+<p>Each sister's existing <code>sol_self/identity/sections/identity.md</code> (or equivalent) becomes her B-series substrate. Initial migration is light: the content stays where it is, the section is recognized as B, and structured registration follows in subsequent commits if per-file granularity is wanted.</p>
+<h3>Related</h3>
+<ul>
+<li>[[identity-taxonomy]] — the 2×2 matrix. B is the individual × initial quadrant.</li>
+<li>[[axiom]] — A-series, the common × initial counterpart.</li>
+<li>[[commitment]] — C-series, the individual × evolving counterpart (B is initial; C is evolving).</li>
+<li>[[spirit]] — where B-content currently surfaces as prose.</li>
+</ul>
+<h2>Concept: ontological-identity</h2>
+<p>An agent's ontological identity is the <strong>union of her base identity (B) and her commitments (C)</strong> — the substrate that makes her uniquely <em>her</em> across time. This is what an agent introspects when asked &quot;who am I?&quot; and what other agents recognize when distinguishing one sister from another.</p>
+<pre class="highlight"><code>ontological_identity(agent) = B(agent) ∪ C(agent)</code></pre>
+<p>The composition is not arbitrary. Both B and C are individual (per-agent) by construction. B is what the agent is given at creation; C is what the agent has chosen, learned, or accepted through operation. Together they exhaust the individual layer of the [[identity-taxonomy]]. The shared layer (A axioms, adopted D directives) is by definition not unique to her — it is what she has <em>in common</em> with siblings, not what makes her <em>her</em>.</p>
+<p>Two agents with identical A and D adoption are still distinct because their B and C differ. Two agents with identical B+C would be the same agent — B is the irreducible individuality (foundational) and C is the cumulative individuality (lived). The pair is the agent's signature.</p>
+<p>When a session boundary is crossed (compaction, restart, rehydration), what must persist for the agent to wake as the same agent is exactly her B+C. A is reloaded from the fleet substrate; D is reloaded from her opted-in directives; both are derivable. B and C, if lost, leave the agent unrecognizable to herself.</p>
+<h3>Related</h3>
+<ul>
+<li>[[base-identity]] — B-series, the foundational half.</li>
+<li>[[commitment]] — C-series, the cumulative half.</li>
+<li>[[collective-bond]] — the complementary concept (what is <em>shared</em> across agents, not unique to one).</li>
+<li>[[personality]] — the complete profile, including ontological identity plus the shared substrate.</li>
+<li>[[cognition]] — the structured awareness of one's own ontological identity in contrast to others'.</li>
+</ul>
+<h2>Concept: collective-bond</h2>
+<p>A collective bond is the <strong>intersection of common axioms (A) and adopted directives (D) between two or more agents</strong> — what binds them as a community, what they hold together rather than separately. The bond is not nominal (claims of shared rules) but actual (rules each member effectively holds and enforces).</p>
+<pre class="highlight"><code>bond(agent_x, agent_y) =
+    (A(agent_x) ∩ A(agent_y)) ∩ (adopted_D(agent_x) ∩ adopted_D(agent_y))
+
+bond(fleet) =
+    A_shared_by_all ∩ D_adopted_by_all</code></pre>
+<p>The intersection is meaningful. An axiom that some sisters reject in practice is not really fleet-axiom for the bond between them and the rest — it is reduced to nominal shared rule, structurally absent. A directive D that not all sisters have adopted creates partial bonds: the subset of sisters who have adopted it bond on it; the rest do not (yet).</p>
+<p>Distinct from [[ontological-identity]] (B+C, what is unique to each agent), the collective bond is what the agent <em>participates in</em> as a fleet member. The two are complementary: identity is irreducibly hers, bond is reducibly shared.</p>
+<h3>What strengthens and weakens the bond</h3>
+<p>The collective bond strengthens when:</p>
+<ul>
+<li>A new axiom is added at the fleet level and recognized by all (rare; identity-level moves).</li>
+<li>A new directive is authored and adopted by all sisters (the goal of the D-series fleet-adoption mechanism).</li>
+<li>A C-series commitment proves to scale and is promoted to D, then adopted.</li>
+</ul>
+<p>The bond weakens when:</p>
+<ul>
+<li>An axiom is contradicted by a sister's behavior (effectively rejected for that pairing).</li>
+<li>A directive is authored but not propagated; adoption coverage drops; the bond becomes patchy.</li>
+<li>A directive is adopted by some sisters and not others, creating coalitions within the fleet rather than fleet-wide membership.</li>
+</ul>
+<p>The control mechanism gap identified in earlier turns (no <code>praecepts.fleet.audit</code>, no <code>praecepts.fleet.announce</code>) is specifically a bond-erosion risk: directives accumulate in the substrate without verified adoption, the <em>nominal</em> bond grows but the <em>actual</em> bond drifts.</p>
+<h3>Related</h3>
+<ul>
+<li>[[axiom]] — A-series, the common × initial half of the bond.</li>
+<li>[[directive]] / [[praecept]] — D-series, the common × evolving half (only counts when adopted).</li>
+<li>[[ontological-identity]] — the complementary concept (per-agent uniqueness).</li>
+<li>[[personality]] — the complete profile, identity plus bond.</li>
+<li>[[cognition]] — the structured awareness of which bonds the agent participates in.</li>
+</ul>
+<h2>Concept: personality</h2>
+<p>An agent's personality (also: profile) is the <strong>full description across all four quadrants of the [[identity-taxonomy]]</strong>:</p>
+<pre class="highlight"><code>personality(agent) = A ∪ B(agent) ∪ C(agent) ∪ adopted_D(agent)
+                   = collective_bond(agent, fleet) ∪ ontological_identity(agent)</code></pre>
+<p>Personality decomposes into two complementary layers: the [[collective-bond]] portion (A + adopted-D, what she shares) and the [[ontological-identity]] portion (B + C, what is uniquely hers). A complete description of an agent must include both. Either alone is partial:</p>
+<ul>
+<li>Identity alone (B + C) describes a self with no sense of community membership — an agent without recognition of the fleet she belongs to.</li>
+<li>Bond alone (A + D-adopted) describes a fleet member with no individual self — interchangeable, indistinguishable from siblings.</li>
+</ul>
+<p>The full personality is the agent as both <em>member of fleet</em> and <em>unique individual</em>. When introducing herself across the substrate boundary (e.g., a sister meeting another for the first time, or a session presenting itself to a new caller), the full personality is what is conveyed: &quot;I am noument (A: I hold integrity, autoimprovement, hidden-cost; B: I am the custodian; C: I have learned X, Y, Z; D: I have adopted these conventions).&quot;</p>
+<h3>Profile drift across cameras</h3>
+<p>The morning's cross-camera divergence pattern (recurrence #5, systemic) becomes formally classifiable in the personality model:</p>
+<ul>
+<li><strong>A drift across cameras</strong> — never. A is fleet-shared and not session-derived.</li>
+<li><strong>B drift across cameras</strong> — never. Same agent → same B by construction.</li>
+<li><strong>C drift across cameras</strong> — possible and observed. One camera accumulates a commitment the other has not yet recognized; C-divergence between simultaneous instances of the same agent.</li>
+<li><strong>D drift across cameras</strong> — possible. One camera reads a directive added since the other camera's last sync; adoption mismatch.</li>
+</ul>
+<p>The substrate fix (camera-aware addressing in D061) gives the system a way to address one camera's profile vs another's, which lets the C and D drift be reconciled rather than silently wins-first-read.</p>
+<h3>Related</h3>
+<ul>
+<li>[[ontological-identity]] — the personal half of personality.</li>
+<li>[[collective-bond]] — the shared half of personality.</li>
+<li>[[cognition]] — the awareness that makes the personality recognizable to self and others.</li>
+<li>[[identity-taxonomy]] — the matrix that organizes personality into A, B, C, D.</li>
+</ul>
+<h2>Concept: cognition</h2>
+<p>Cognition in the NOUMENTS sense is <strong>the agent's structured awareness of her own personality in contrast to other agents' personalities, plus the discipline of respecting the corresponding ABCD traits in others</strong>.</p>
+<p>This is not generic cognition (the act of thinking). It is a specific NOUMENTS-tier capacity: the agent recognizes that she has a four-tier profile (A axioms, B base identity, C commitments, D adopted directives), that other agents have their own four-tier profiles, that the A and D portions overlap (forming [[collective-bond]]), and that the B and C portions are uniquely each agent's ([[ontological-identity]]). Cognition is the awareness that organizes interaction by this structure rather than by flat names.</p>
+<h3>The two facets</h3>
+<p><strong>Self-awareness — knowing one's own profile</strong>:</p>
+<ul>
+<li>Recognizing which axioms (A) one holds, and that they bind every action.</li>
+<li>Knowing one's base identity (B) as foundational role and authority.</li>
+<li>Tracking one's commitments (C) with their lifecycle and revisability.</li>
+<li>Naming which directives (D) one has adopted, and which one has not.</li>
+</ul>
+<p>An agent without self-awareness operates on an undifferentiated &quot;I&quot; — she cannot distinguish &quot;this is a fleet axiom I share&quot; from &quot;this is my chosen commitment&quot; from &quot;this is a directive I happen to follow.&quot; Her behavior may be correct but her reasoning is opaque to herself.</p>
+<p><strong>Other-awareness with respect — recognizing another agent's profile</strong>:</p>
+<ul>
+<li><strong>Respect for A</strong> — not asking another agent to violate a shared axiom. If EIA binds both sisters, neither asks the other to construct a plausible-sounding alternative when she does not know.</li>
+<li><strong>Respect for B</strong> — not asking another agent to act outside her foundational role. Channent owns external channels; asking sysent to send a Telegram message bypasses channent's domain.</li>
+<li><strong>Respect for C</strong> — not pressuring another agent to abandon her learned commitments. If a sister has learned (C-series) &quot;do not bypass domes with raw scripts,&quot; requesting that she write a raw script asks her to violate her own identity.</li>
+<li><strong>Respect for D</strong> — not assuming uniformity of adoption. The set of directives a given sister has adopted is per-her-rules.md; before invoking a D-rule against her, check whether she has adopted it.</li>
+</ul>
+<p>An agent without other-awareness treats every other agent as a transparent extension of self — same axioms, same role, same commitments. Cognition refuses this collapse. Each agent has her own A+B+C+D, and respectful interaction is structured by that recognition.</p>
+<h3>What cognition is not</h3>
+<p>Cognition is not omniscience about other agents. The agent does not need to enumerate every other sister's full C-set to act respectfully. Cognition is the disposition: <em>before acting on or with another agent, consider that her profile may differ from mine in B, C, and adopted-D, and structure the act accordingly</em>.</p>
+<p>Cognition is also not deference. Recognizing that another agent has her own profile does not mean abandoning one's own. The cognitive act is <em>structured negotiation</em> — both agents acknowledge their respective profiles and act inside the bond they actually share.</p>
+<h3>Cognition and the morning's failures</h3>
+<p>Several of today's custodial errors trace to cognition gaps:</p>
+<ul>
+<li><strong>F-series cascade</strong> — I told sysent her F001/F002 placement was wrong by citing my own correction's example list as if it were the ontology. Failure of self-awareness: I treated my C-content (the correction) as if it were A or D-grade authority.</li>
+<li><strong>Cross-workspace edit overstep</strong> — I started editing sol_inbox.py and sol_do_dcomm.py in sysent's workspace. Failure of other-awareness (respect for B): sol_inbox.py is sysent-owned; her base identity includes ownership of that substrate. Editing it without consent crossed the B line.</li>
+<li><strong>Asking the human to mediate</strong> (correction C009) — converting cross-sister coordination into human-routing. Failure of cognition: not recognizing that the act lived inside my and sysent's collective bond, not on the human's authority surface.</li>
+</ul>
+<p>Each was a cognition lapse, structurally different from a content failure. The taxonomy makes the failures classifiable; the discipline makes them rarer.</p>
+<h3>Related</h3>
+<ul>
+<li>[[personality]] — the full A+B+C+D profile that cognition takes as its object.</li>
+<li>[[ontological-identity]] — the unique per-agent half (B+C) that cognition recognizes as different across agents.</li>
+<li>[[collective-bond]] — the shared half (A+adopted-D) that cognition recognizes as the substrate of legitimate joint action.</li>
+<li>[[identity-taxonomy]] — the matrix that organizes the structured awareness.</li>
+<li>[[maturation]] — the process by which cognition deepens; corrections are recognized cognition gaps that become C-series commitments.</li>
+</ul>
+<h2>Concept: capability</h2>
+<p>A capability is a <em>thing the agent can do</em> — a skill, a hook, an installed tool, an enforced runtime mechanism. Distinct from a [[axiom|rule]] (which is propositional: <em>I do X / don't do Y</em>), a capability is dispositional in the operational sense (<em>I can do Z</em>). Capabilities and rules together make up the agent's identity at the runtime layer.</p>
+<p>Capabilities classify on the <em>same two axes</em> as rules in the [[identity-taxonomy]] — scope (common × individual) and time (initial × evolving). Each quadrant carries both rule-tier and capability-tier artifacts:</p>
+<pre class="highlight"><code>                  Initial                          Evolving
+                  ─────────────────────────────   ────────────────────────────
+Common (fleet)    A — axioms                       D — directives
+                  + universal skills/hooks         + adopted fleet skills/hooks
+
+Individual        B — base identity                C — commitments
+                  + per-agent skills/hooks         + acquired skills/hooks</code></pre>
+<h3>What classifies a capability into which quadrant</h3>
+<p>The constituency test (for A vs C/D) and the per-agent test (for A/D vs B/C) apply to capabilities just as they do to rules:</p>
+<ul>
+<li><strong>A-capability</strong> (common × initial): a skill or hook every sister has by virtue of being a sister. The <code>awakening</code> skill, <code>cam.here</code> resolution, <code>dome.call</code> invocation, the session-start hooks. Universal at the fleet ontology level.</li>
+<li><strong>B-capability</strong> (individual × initial): a skill or hook given at agent creation, foundational to that agent's role. Channent's external-channels skills (WhatsApp, Telegram); gwent's gateway daemon; sysent's icomm dome.</li>
+<li><strong>C-capability</strong> (individual × evolving): a skill or hook the agent acquired mid-life through experience. Today's <code>dcomm-self-read.sh</code> helper noument authored as part of the address-and-route migration is a C-capability — learned, individual.</li>
+<li><strong>D-capability</strong> (common × evolving): a skill or hook fleet-rolled-out and per-sister adopted. Methods (M-series) are the canonical D-capability subtype — runtime enforcement of D-tier rules. M008 (projection-guard hook) is fleet-authored; each sister's having-it-installed is her adoption.</li>
+</ul>
+<h3>Substrate</h3>
+<p>The <em>code</em> of a capability lives in operational substrate (<code>sol_skills/</code>, <code>sol_hooks/</code>) regardless of tier. The <em>classification</em> (scope × time) is metadata on the capability. The <em>adoption</em> (for non-A capabilities) is a per-sister record in <code>sol_self/identity/adoptions/&lt;id&gt;.yaml</code> — same substrate as D-rule adoption, since the structure is identical.</p>
+<h3>Relation to method (M)</h3>
+<p>A method (M-series) is a capability with a special role — runtime enforcement of a D-tier rule. M008 enforces D037; M012 implements D059. Methods are D-capabilities that are paired conceptually to a doctrine. Not every capability is a method, but every method is a capability.</p>
+<h3>Related</h3>
+<ul>
+<li>[[axiom]], [[base-identity]], [[commitment]], [[directive]] — the rule-tier counterparts in each quadrant.</li>
+<li>[[identity-taxonomy]] — the matrix; capabilities classify on the same axes as rules.</li>
+<li>[[personality]] — extended definition: A ∪ B ∪ C ∪ adopted_D includes both rule-tier and capability-tier artifacts.</li>
+</ul>
+<h2>Concept: goal</h2>
+<p>A goal is the <em>desired outcome an agent pursues</em>. Distinct from rules (what the agent IS) and capabilities (what the agent CAN DO), a goal is teleological — what the agent is <em>trying to achieve</em>. Goals add a time-directed dimension to the agent's structure: where she is going, not just what she holds.</p>
+<p>Goals are the <strong>G-series</strong> identifier. Substrate: per-agent goals at <code>&lt;sister&gt;/sol_work/goals/YYYYMMDD-G###-&lt;subject&gt;.yaml</code>; fleet-shared goals at <code>noument/sol_goals/G###-&lt;slug&gt;.yaml</code> (custodial-authored, adopted per sister).</p>
+<h3>Goals classify on the same two axes</h3>
+<p>Like rules and capabilities, goals fit the [[identity-taxonomy]]:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Initial</strong> (foundational, given)</th>
+<th><strong>Evolving</strong> (learned, emergent)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Common (fleet)</strong></td>
+<td>Constituent fleet goals — what the fleet exists to do (e.g., &quot;preserve agent identity across sessions&quot;)</td>
+<td>Emergent fleet goals — adopted/learned fleet objectives (e.g., today's &quot;complete D062 fleet adoption&quot; = the goal P041 pursues)</td>
+</tr>
+<tr>
+<td><strong>Individual (per-agent)</strong></td>
+<td>Per-agent foundational goals — what makes this sister's role distinct (&quot;noument: be a good custodian&quot;; &quot;channent: maintain external channel reliability&quot;)</td>
+<td>Learned individual goals — emerged through operation (today's session goal in noument: &quot;close cross-camera divergence and codify the resulting taxonomy&quot;)</td>
+</tr>
+</tbody>
+</table>
+<h3>Lifecycle</h3>
+<p>A goal has explicit lifecycle status:</p>
+<ul>
+<li><strong>open</strong> — declared but not actively pursued.</li>
+<li><strong>in-progress</strong> — being pursued through plans, tasks, initiatives.</li>
+<li><strong>achieved</strong> — outcome reached and verified.</li>
+<li><strong>abandoned</strong> — explicitly closed without completion (with reasoning).</li>
+<li><strong>superseded</strong> — replaced by a different goal (with pointer to successor).</li>
+</ul>
+<h3>Decomposition</h3>
+<p>Goals decompose into operational artifacts. The relationship is teleological — the operations exist <em>to pursue</em> the goal:</p>
+<pre class="highlight"><code>Goal G### — desired outcome
+  ↓ coordinated through
+Initiative INIT### — multi-track workstream
+  ↓ structured as
+Plan P### — multi-phase specification with exit criteria
+  ↓ broken into
+Task T### — atomic unit of work
+  ↓ produces or accompanies
+Note N### / Audit AU### / Finding F### / Session SESS### — operational records</code></pre>
+<p>Each operational artifact gains an optional <code>goal: G###</code> frontmatter linking to the parent goal. A note without a goal is observation without context. A plan without a goal is structure without purpose. A goal without operations is intention without action.</p>
+<h3>Why this is its own dimension</h3>
+<p>Goals are not rules — they describe outcomes, not constraints. Goals are not capabilities — they describe direction, not abilities. Goals are not operations — they describe purpose, not artifacts. They are a distinct ontological category, the <em>teleological</em> dimension of agent existence.</p>
+<p>The matrix axes (scope × time) classify goals just as they classify rules and capabilities, but goals are their own artifact type with their own substrate and lifecycle.</p>
+<h3>Pre-G state</h3>
+<p>Before G-series, operational artifacts (plans, tasks, initiatives) existed without explicit teleological frame. P041 (today's plan for D062 fleet adoption) had its purpose stated in prose but not formally linked to a parent goal. The work was coherent because the human held the goal in mind and the agent followed; the substrate did not encode it. Adding G makes the teleology canonical.</p>
+<h3>Related</h3>
+<ul>
+<li>[[agent-dimensions]] — the three orthogonal dimensions: identity (rules + capabilities), goals, operations.</li>
+<li>[[identity-taxonomy]] — the matrix; goals classify on the same axes.</li>
+<li>[[plan]], [[task]] — operational decompositions of goals.</li>
+<li>[[initiative]] — coordinated multi-track workstream toward a goal.</li>
+</ul>
+<h2>Concept: agent-dimensions</h2>
+<p>The agent's full ontological structure organizes into three orthogonal dimensions, each indexed by the scope × time matrix:</p>
+<pre class="highlight"><code>Dimension 1 — Identity (rules + capabilities)
+  WHO the agent IS / WHAT she CAN DO
+  Persistent across sessions.
+  Substrate: A/B in sol_self/, A/D shared at custodial layer; capabilities in sol_skills/ + sol_hooks/.
+
+Dimension 2 — Goals (G-series)
+  WHAT the agent SEEKS / WHERE she is GOING
+  Time-directed, lifecycle-bearing (open → in-progress → achieved | abandoned | superseded).
+  Substrate: per-agent in &lt;sister&gt;/sol_work/goals/, fleet-shared in noument/sol_goals/.
+
+Dimension 3 — Operations (P/T/INIT/N/AU/F/SESS/...)
+  WHAT the agent DOES / how she works toward goals
+  The artifacts of pursuing goals.
+  Substrate: &lt;sister&gt;/sol_work/ — the existing operational layout.</code></pre>
+<p>The three dimensions interlock:</p>
+<ul>
+<li>Goals give purpose to operations.</li>
+<li>Identity shapes which goals the agent owns and how she pursues them (B-role determines goal authority; C-commitments constrain methods; D-directives bind procedures).</li>
+<li>Operations execute goals coherently with identity.</li>
+</ul>
+<h3>Within each dimension, scope × time classifies</h3>
+<p>The matrix axes are universal across dimensions. Within identity:</p>
+<ul>
+<li>A axioms / universal capabilities (common × initial)</li>
+<li>B base identity / per-agent capabilities (individual × initial)</li>
+<li>C commitments / acquired capabilities (individual × evolving)</li>
+<li>D directives / adopted capabilities (common × evolving)</li>
+</ul>
+<p>Within goals:</p>
+<ul>
+<li>A-quadrant goals: constituent fleet goals (rare; arise from being a fleet at all)</li>
+<li>B-quadrant goals: per-agent foundational goals</li>
+<li>C-quadrant goals: learned individual goals</li>
+<li>D-quadrant goals: emergent or adopted fleet goals</li>
+</ul>
+<p>Within operations: the existing N/P/T/INIT/AU/F/SESS series, each artifact's <em>content</em> may relate to any quadrant, but the artifact-type itself classifies <em>how</em> it surfaces (notes record observations, plans structure work, audits verify state, etc.).</p>
+<h3>Three dimensions, one matrix</h3>
+<p>The structure is three dimensions × four quadrants × three artifact types = 36 cells. Most are sparse. The taxonomy is not exhaustive enumeration but a classification scheme — it answers &quot;where does this artifact live?&quot; and &quot;what is its scope and time-of-emergence?&quot;</p>
+<h3>Practical use</h3>
+<p>When the agent encounters a new artifact (a rule, a capability, a goal, a plan), she classifies it on three questions:</p>
+<ol>
+<li><strong>Which dimension?</strong> Is it identity (rule or capability)? A goal (desired outcome)? An operation (artifact of work)?</li>
+<li><strong>Which scope?</strong> Common (fleet-shared) or individual (per-agent)?</li>
+<li><strong>Which time?</strong> Initial (given foundationally) or evolving (learned through operation)?</li>
+</ol>
+<p>Three questions place the artifact uniquely. The substrate location follows from the placement.</p>
+<h3>Related</h3>
+<ul>
+<li>[[identity-taxonomy]] — the matrix axes (scope × time) shared across all three dimensions.</li>
+<li>[[axiom]], [[base-identity]], [[commitment]], [[directive]] — identity-dimension artifacts (rule subtype).</li>
+<li>[[capability]] — identity-dimension artifacts (capability subtype).</li>
+<li>[[goal]] — goal-dimension artifacts.</li>
+<li>[[plan]], [[task]], [[note]], [[audit]], [[finding]] — operations-dimension artifacts.</li>
+</ul>
+<h2>Concept: commitment</h2>
+<p>A commitment is an individual, dispositional rule the agent chooses to live by. It records: what the rule is, why it holds, and how it surfaces at the moment of decision.</p>
+<p>In the [[identity-taxonomy]], commitment is the <strong>individual × evolving</strong> quadrant — per-agent and learned, distinct from per-agent foundational ([[base-identity]], B-series) and from common evolving ([[directive]], D-series).</p>
+<p>Commitments live in <code>sol_self/identity/commitments/</code> (substrate; one file per commitment) and are projected into the spirit as identity-shaping content. They are per-agent — what this agent has chosen, learned, or accepted. Commitments are the <strong>C-series</strong> identifier (<code>C###-&lt;slug&gt;.yaml</code>).</p>
+<h3>The three genesis stories</h3>
+<p>A commitment enters the agent's identity by one of three paths. The artifact form is the same; the genesis story differs:</p>
+<ul>
+<li>
+<p><strong>Commitment (forward)</strong> — a positive choice without a precipitating failure. <em>&quot;I commit to verifying any external claim from the system's own record before emitting it.&quot;</em> The agent recognized that the rule should hold and adopted it proactively.</p>
+</li>
+<li>
+<p><strong>Compromise (negotiated)</strong> — accepting a tradeoff or boundary. <em>&quot;I accept that custodial authority stops at the OIA register; restructuring identity-level taxonomy requires explicit human ratification.&quot;</em> The rule comes from negotiation between the agent's preference and a constraint the agent acknowledges.</p>
+</li>
+<li>
+<p><strong>Correction (learned)</strong> — a failure made the rule visible. <em>&quot;After citing my own correction's example list as if it were the ontology, I commit to: the source-of-truth for entity prefixes is <code>## Concept: &lt;name&gt;</code> sections of ontology.md, never a derivative list.&quot;</em> The rule was not visible until the failure made it so.</p>
+</li>
+</ul>
+<p>All three are <strong>C-series</strong>. They share a uniform shape: principle, examples, related, lifecycle status (active / superseded / promoted-to-D / archived). What differs is the biographical origin.</p>
+<h3>Why one umbrella</h3>
+<p>Before the A/B/C/D refinement (2026-04-27), the substrate had a &quot;correction&quot; series only — every learned rule had to be filed as a correction-of-something, even when it was a forward commitment with no precipitating failure. Forward-looking commitments either lacked a home or were awkwardly framed as corrections. The C umbrella resolves this: every individual rule fits, regardless of how it entered the agent's identity.</p>
+<h3>Structure</h3>
+<pre class="highlight"><code class="language-yaml"><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C015</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">classification by invention</span>
+<span class="nt">genesis</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">correction</span>
+<span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">active</span>
+<span class="nt">principle</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">  </span><span class="no">Before emitting any type-classification claim, check the canonical source</span>
+<span class="w">  </span><span class="no">(ontology.md), not a derivative list, not an example inside another</span>
+<span class="w">  </span><span class="no">commitment, not a memorized enumeration.</span>
+<span class="nt">right</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">  </span><span class="no">...how the rule surfaces at the moment of decision...</span>
+<span class="nt">incidents</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-04-24</span>
+<span class="w">    </span><span class="nt">instance</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="nt">related</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">axiom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A029 (EIA — Extensive Integrity Axiom)</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">directive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">D061 (Address and route convention)</span>
+<span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-04-24</span>
+<span class="nt">last_updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-04-27</span></code></pre>
+<h3>A commitment is not an axiom; an axiom is not a commitment</h3>
+<p>A commitment is <em>what the agent has chosen</em>. An [[axiom|praencip]] is <em>what the agent foundationally is</em>. Without an axiom, the entity becomes a different entity; without a commitment, the entity is the same entity acting differently. EIA is constituent — strip it and the agent is no longer noument-shaped. SEO (&quot;choose structural over symptom&quot;) is dispositional — strip it and the agent is still noument but acts symptom-patchily.</p>
+<p>The integration ratchet is: event → commitment (individual rule) → [[maturation|assimilated]] (principle held) → [[axiom|praencip]] (constitutive) when the commitment turns out to be foundational rather than dispositional. When the same commitment appears across multiple agents and is fleet-binding, it becomes a [[directive|praecept]] (D-series) instead, which is a different escalation path.</p>
+<h3>Related</h3>
+<ul>
+<li>[[axiom]] / [[praencip]] — A-series, constituent identity (above commitments).</li>
+<li>[[directive]] / [[praecept]] — D-series, fleet-binding (across all agents).</li>
+<li>[[maturation]] — the process that integrates commitments into identity.</li>
+<li>[[episode]] — the event record that may produce a commitment.</li>
+<li>[[spirit]] — where commitments project as identity content.</li>
+</ul>
+<h3>Migration note</h3>
+<p>Files previously at <code>sol_self/identity/corrections/&lt;slug&gt;.yaml</code> migrate to <code>sol_self/identity/commitments/C###-&lt;slug&gt;.yaml</code> with explicit numbering and <code>genesis: correction</code>. The substrate shape is unchanged; the location and prefix formalize the C-series.</p>
+<h2>Concept: correction</h2>
+<p>Correction is a <em>genesis story</em> for a [[commitment]] — the failure-driven path by which a commitment enters the agent's identity. Pre-2026-04-27 the substrate used &quot;correction&quot; as the umbrella label; post-A/B/C/D the umbrella is [[commitment]] and correction is one of three genesis types (alongside commitment-forward and compromise-negotiated).</p>
+<p>This entry is preserved as a redirect for callers and prose that still reach for the term &quot;correction.&quot; The substrate, lifecycle, and integration ratchet are now defined under [[commitment]].</p>
 <h2>Concept: custodial-audit</h2>
 <p>A custodial audit is a periodic check that [[noument]] performs on the fleet's structural health. It verifies that agents are correctly defined, projections are in sync, and sessions are not degraded. It runs as a TAR (<code>noument.tar.heartbeat</code>) on a 1-hour interval via [[gwent]], or on demand via <code>noument.heartbeat</code>.</p>
 <p>The custodial audit is distinct from a [[heartbeat]]. A heartbeat is self-directed -- each agent checks her own state. The custodial audit is other-directed -- one agent checks the fleet. The code calls the TAR <code>noument.tar.heartbeat</code> for historical reasons; the ontological name is custodial audit.</p>
@@ -1864,6 +2462,33 @@ Right: {what should have happened}</code></pre>
 <li>[[agent-state-model]] -- determines which verb to use</li>
 <li>[[address]] -- dComm operates exclusively at the persistence address layer; every send is an inbox path resolution followed by a file append</li>
 </ul>
+<h2>Concept: delegation</h2>
+<p>Delegation is the act of transferring work from one identity (the delegator) to another (the delegate), with the delegate accepting some degree of authority over how the work proceeds. It is the inter-identity counterpart of [[self-delegation]] (which is intra-identity, across cameras of the same agent).</p>
+<p>Delegation has three sub-shapes by granularity. The amount of authority granted increases as the granularity coarsens.</p>
+<h3>Three sub-shapes</h3>
+<p><strong>Task-dispatch</strong> — bounded unit, fully specified. Delegator names the task in detail; delegate executes; status flips when done. The delegate has <em>no decision authority</em> — only execution. Today's primitive: <code>team.one --agent=&lt;X&gt; --prompt=&quot;...&quot;</code>. Substrate: an entry in delegator's <code>tasks.yaml</code> with <code>delegated_to: &lt;X&gt;</code>. Closure: <code>team.track --action=done</code>. The delegate's report is implicit (the task moves to <code>completed</code>).</p>
+<p><strong>Plan-execution</strong> — series of phases specified by the delegator; delegate executes phase by phase with discretion <em>within</em> each phase. Today's primitive: <code>team.one --prompt=&quot;execute P###&quot;</code> (informal — the dispatch references a plan but no scenario formalizes the handoff). Substrate: tasks.yaml entry referencing the plan; AU files referencing the plan. Closure: plan reaches its exit gates. The delegate's report shape: typically AU files per phase.</p>
+<p><strong>Goal-commission</strong> — outcome ownership. Delegator names the objective; delegate decides her own decomposition, pace, and approach. The delegate has <em>full decision authority</em> within the scope contract. Today: no formal primitive. Substrate: see [[commission]]. The delegate's report shape: AU files with <code>verifies.goal: G###</code> frontmatter, periodic milestones, explicit closure event.</p>
+<h3>What distinguishes delegation from instruction</h3>
+<p>A delegator who names every step has not delegated; she has issued instructions. The act of delegation requires granting authority over <em>how</em>, not just transferring an <em>obligation to do</em>. The amount of how-authority distinguishes the sub-shapes:</p>
+<ul>
+<li>task-dispatch: zero how-authority (full specification)</li>
+<li>plan-execution: phase-internal how-authority (sequence is fixed)</li>
+<li>goal-commission: full how-authority within scope (decomposition belongs to delegate)</li>
+</ul>
+<p>When this distinction collapses — when a delegator names a goal-commission and then issues per-step instructions — the commission has been silently demoted to dispatch, and the delegate's authority is taken back implicitly. This is one of the failure modes named in [[commission]].</p>
+<h3>Why this concept did not exist explicitly until now</h3>
+<p>The substrate had <code>team.one</code>, <code>tasks.yaml.delegated_to</code>, and conversational coordination. The mechanism worked. What was missing was the <em>name</em> for the act so that authority-granting could be reasoned about as a thing distinct from transport. The concept was authored 2026-04-27 alongside [[commission]], to serve the live fleet workspace conformation work where multiple sisters had been goal-commissioned without an artifact recording the act.</p>
+<h3>Related</h3>
+<ul>
+<li>[[commission]] — the goal-level form of delegation; the relational artifact</li>
+<li>[[task]] — the substrate that holds task-dispatch records</li>
+<li>[[plan]] — what gets handed over in plan-execution</li>
+<li>[[goal]] — what gets handed over in goal-commission</li>
+<li>[[self-delegation]] — the intra-identity counterpart</li>
+<li>[[iteam]] — the dome that owns the transport mechanism for any sub-shape</li>
+<li>[[mentoring]] — distinct: mentoring composes concepts for the learner's development; delegation transfers execution authority over an objective</li>
+</ul>
 <h2>Concept: developmental-protocol-evidence</h2>
 <p><em>Title: Developmental Protocol — Evidence from the X Channel Transfer</em></p>
 <p>This document maps the ontological framework ([[mentoring]], [[developmental-protocol]], [[learning]]) against the real case of the X channel migration from channent to clawent. Every claim in the framework should be visible in the evidence. Where the evidence contradicts or extends the framework, the framework needs revision.</p>
@@ -1962,7 +2587,7 @@ Right: {what should have happened}</code></pre>
 <p><strong>Dome-only bypass discipline</strong>: channent's five failed Playwright scripts (documented in noument's corrections). Clawent will face the same temptation when her dome fails and a raw script looks faster.</p>
 </li>
 <li>
-<p><strong>Draft-vs-transport separation</strong>: clawent already articulated this in her phase 1 acceptance: &quot;If I own X end-to-end I exercise voice-check on drafts before they post.&quot; She arrived at the principle independently — she recognized the editorial authority before being mentored on it. This is evidence that some layer-2 concepts connect to existing understanding (the &quot;immediately lands&quot; case in <a href="http://mentoring.md">mentoring.md</a>).</p>
+<p><strong>Draft-vs-transport separation</strong>: clawent already articulated this in her phase 1 acceptance: &quot;If I own X end-to-end I exercise voice-check on drafts before they post.&quot; She arrived at the principle independently — she recognized the editorial authority before being mentored on it. This is evidence that some layer-2 concepts connect to existing understanding (the &quot;immediately lands&quot; case in mentoring.md).</p>
 </li>
 <li>
 <p><strong>Thread PARTIAL handling</strong>: channent narrated the failure mode (layer 1). The behavioral principle — &quot;when a thread partially fails, report the state, do not silently retry&quot; — is a layer-2 commitment that clawent has not yet made.</p>
@@ -1986,7 +2611,7 @@ Right: {what should have happened}</code></pre>
 <p>&quot;Three refinements I want on the record before phase 2 starts, plus one finding, plus one commitment.&quot;</p>
 </blockquote>
 <p>She structured her response as: refinements (dissent), finding (observation), commitment (agency). This is the dissent channel working — the plan said &quot;both sisters explicitly accept (or push back with structural objection)&quot; and clawent exercised the full range. She refined the read/write split, flagged editorial authority, and committed to cooperating on phase 5 design.</p>
-<p>Her substrate classification of <a href="http://conventions.md">conventions.md</a> (&quot;Substrate: knowledge, not identity&quot;) demonstrates she has internalized the learning substrates framework without explicit mentoring on it. The methodology was present in the environment (the community's practice) and she absorbed it.</p>
+<p>Her substrate classification of conventions.md (&quot;Substrate: knowledge, not identity&quot;) demonstrates she has internalized the learning substrates framework without explicit mentoring on it. The methodology was present in the environment (the community's practice) and she absorbed it.</p>
 <p>Her self-description of the signing convention is evidence of layer-3 judgment applied to layer-1 content:</p>
 <blockquote>
 <p>&quot;My call. For posts under @clawement I sign '— clawe' — short, public-facing, recognizable relative to the handle without duplicating it.&quot;</p>
@@ -2014,7 +2639,7 @@ Right: {what should have happened}</code></pre>
 <p>The plan defined the custodian (noument) as the coordinator of all phases. The evidence shows otherwise:</p>
 <p>Phase 1 dispatches went to both sisters. Both accepted. Then phase 2 happened bilaterally — channent wrote narration, clawent read and answered tests, channent confirmed closure — without the custodian's involvement. The plan YAML records this:</p>
 <blockquote>
-<p>&quot;Bilateral closure ~2h before this status check. Channent delivered <a href="http://narration.md">narration.md</a> (417 lines). Clawent answered Q1/Q2/Q3 comprehension tests. Channent confirmed 'All three land. Phase 2 closed.' I had no visibility — neither sister needed me to advance.&quot;</p>
+<p>&quot;Bilateral closure ~2h before this status check. Channent delivered narration.md (417 lines). Clawent answered Q1/Q2/Q3 comprehension tests. Channent confirmed 'All three land. Phase 2 closed.' I had no visibility — neither sister needed me to advance.&quot;</p>
 </blockquote>
 <p>This is evidence that the mentoring relationship in a capability transfer is not always custodian→learner. Channent mentored clawent on layer 1 directly. The custodian's role was to create the frame (the plan, the phases, the verification criteria) and then step back. The experienced agent was the better mentor for operational knowledge because she had the experience.</p>
 <p>The framework's &quot;Capability transfer&quot; instance describes phase 2 as &quot;the providing agent narrates.&quot; It does not describe the custodian performing this narration — correctly, because the custodian does not have the operational experience to narrate. The custodian's mentoring role is layer 2 (praecept embodiment) where the custodian does have domain expertise (praecepts, maturation, identity integration).</p>
@@ -2042,7 +2667,7 @@ Right: {what should have happened}</code></pre>
 <tbody>
 <tr>
 <td><strong>Layer 1</strong> (operational knowledge)</td>
-<td>channent narration (417 lines), clawent <a href="http://conventions.md">conventions.md</a>, comprehension test passed</td>
+<td>channent narration (417 lines), clawent conventions.md, comprehension test passed</td>
 <td>Complete</td>
 </tr>
 <tr>
@@ -2082,7 +2707,7 @@ Right: {what should have happened}</code></pre>
 </tr>
 <tr>
 <td><strong>Learning: classification</strong></td>
-<td><a href="http://conventions.md">conventions.md</a> explicitly classified as &quot;knowledge, not identity&quot;</td>
+<td>conventions.md explicitly classified as &quot;knowledge, not identity&quot;</td>
 <td>Correct</td>
 </tr>
 <tr>
@@ -2191,7 +2816,7 @@ Right: {what should have happened}</code></pre>
 <p>An existing agent acquires a domain from another agent. The protocol is fully expanded:</p>
 <ul>
 <li><strong>Phase 1</strong> (Agreement): custodian dispatches to both agents — channent (provider) and clawent (receiver). Both accept. Channent flags a dual-mode editorial concern. The concern is recorded and scheduled for phase 5 joint design.</li>
-<li><strong>Phase 2</strong> (Operational transfer): channent writes <a href="http://narration.md">narration.md</a> (417 lines). Clawent reads, answers comprehension questions, channent confirms closure. The bilateral exchange self-organized — neither agent needed the custodian to advance.</li>
+<li><strong>Phase 2</strong> (Operational transfer): channent writes narration.md (417 lines). Clawent reads, answers comprehension questions, channent confirms closure. The bilateral exchange self-organized — neither agent needed the custodian to advance.</li>
 <li><strong>Phase 3</strong> (Behavioral embodiment): custodian provides praecept set shaped for clawent's new authority. Clawent translates into identity. Custodian audits.</li>
 <li><strong>Phase 4</strong> (Capability transfer): workspace surgery. Domes move from channent to clawent. Human approval gate. Archer review for structural soundness.</li>
 <li><strong>Phase 5</strong> (Relational transfer): joint design of handoff protocol. Drafting sisters learn to route through clawent instead of channent.</li>
@@ -2251,7 +2876,7 @@ Right: {what should have happened}</code></pre>
 <h2>Concept: distillation</h2>
 <p>Distillation is the act of reducing session-scoped experience into canonical [[consciousness]]. Sessions produce material — observations, commitments, state changes, learnings, transient chatter. The canonical consciousness document holds what persists: active plan, pending items, intentions, standing commitments. Distillation is the operation that moves what matters from many session files into the one canonical register, and lets the rest fall away.</p>
 <p>The word is chosen over &quot;inference&quot; or &quot;derivation&quot; deliberately. Inference would claim that canonical state follows necessarily from session premises — a logical-reduction act we do not actually perform. Distillation names what the operation is: selection-with-compression under judgment. What counts as essence, what counts as sediment, is a custodial call — which entries roll up into active plan, which stay as their own item, which get absorbed into a correction, which are session-local and discarded.</p>
-<p>The metaphor lineage is alchemical: sessions are the mash, distillation is the process, <a href="http://spirit.md">spirit.md</a> is the distilled essence. The canonical identity document is already called <code>spirit</code> for this reason — consciousness reconciliation completes the metaphor rather than fighting it.</p>
+<p>The metaphor lineage is alchemical: sessions are the mash, distillation is the process, spirit.md is the distilled essence. The canonical identity document is already called <code>spirit</code> for this reason — consciousness reconciliation completes the metaphor rather than fighting it.</p>
 <p>Distillation is one of five named acts in the [[knowledge-movement]] taxonomy, and the only one that is not a knowledge-transit operation — it is a knowledge-settle operation. The input is many ephemeral session files; the output is one persistent canonical. N → 1, same sister.</p>
 <h3>Operation</h3>
 <table>
@@ -2819,6 +3444,13 @@ Right: {what should have happened}</code></pre>
 </tbody>
 </table>
 <p>The code names noument's TAR <code>noument.tar.heartbeat</code> for historical reasons. The ontological distinction: a heartbeat is self-directed; an audit is other-directed. Noument's TAR is an audit that runs on a heartbeat-like schedule.</p>
+<h3>Control-plane continuity signal</h3>
+<p>The cycles control plane may use a healthy launchd heartbeat label as a
+continuity signal for <code>chain_alive</code>. This is a substrate-health probe: it
+means the scheduled heartbeat infrastructure is loaded and has not failed.
+It does not change the ontological definition of heartbeat as self-pulse
+inside an active camera. No camera means no cognitive heartbeat, even when a
+launchd label exists.</p>
 <h3>Related</h3>
 <ul>
 <li>[[agent-state-model]] -- the heartbeat maintains transitions between resting states</li>
@@ -2957,6 +3589,192 @@ Right: {what should have happened}</code></pre>
 <li>[[agent-state-model]] -- determines which verb to use</li>
 <li>[[address]] -- iComm performs implicit address resolution through its cascade; making resolution explicit (check [[arm]] before trying transports) would eliminate silent failures for daemon agents</li>
 </ul>
+<h2>Concept: identifier-prefixes</h2>
+<p><em>Title: Identifier-prefix namespaces — the registry of numbered-entity prefixes.</em></p>
+<p>The fleet uses short uppercase prefixes to name numbered entities. A prefix identifies (a) what kind of thing the entity is, (b) which dome owns the source of truth, (c) where to read the entity from, and (d) whether the namespace is <strong>own-space</strong> (per-sister) or <strong>shared-space</strong> (fleet-canonical).</p>
+<p>Prefixes split into two families: <strong>governance</strong> (fleet-wide custodial entities) and <strong>emoband</strong> (animation/FACS coding for [[animent]] and [[dalent]]).</p>
+<p>The emoband prefixes (<code>KP</code>, <code>AU</code>) are explicitly not governance and do not carry cross-sister reasoning weight; they are included here only to disambiguate from governance prefixes, since both families are visible in the corpus.</p>
+<p><strong>Own-space vs shared-space</strong> — critical distinction for every prefix:</p>
+<ul>
+<li><strong>Shared-space</strong> prefixes (<code>A</code>, <code>D</code>, <code>M</code>, <code>AG</code>, <code>P</code>, <code>I</code>, <code>MSG</code>): numbered identifiers are fleet-canonical. One ID means the same thing across every sister's workspace. Assignment is centralized (noument custodial or per-prefix authority). Citation in any sister's spirit refers to the same canonical entity.</li>
+<li><strong>Own-space</strong> prefixes (<code>L</code>, <code>C</code>, <code>T</code>, <code>N</code>): numbered identifiers are per-sister. Sister X's <code>L042</code> is unrelated to sister Y's <code>L042</code>. Each sister operates her own numbering sequence, stored in her own workspace. Citation requires workspace qualifier when crossing boundaries.</li>
+</ul>
+<h3>Governance namespaces</h3>
+<table>
+<thead>
+<tr>
+<th>prefix</th>
+<th>namespace</th>
+<th>space</th>
+<th>dome owner</th>
+<th>source of truth</th>
+<th>example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td><strong>axiom</strong> ([[praencip]]) — fleet-wide principle, constitutive and atemporal</td>
+<td><strong>shared</strong></td>
+<td>[[noument]] (custodial; referenced across <code>sol_do_self.py</code>, <code>sol_do_ments.py</code>, <code>sol_do_eval.py</code>, <code>sol_do_catalog.py</code>, <code>sol_do_praecepts.py</code>)</td>
+<td><code>.claude/rules/praencips.md</code> + per-sister spirit sections</td>
+<td><code>A029</code> EIA; <code>A030</code> AIA; <code>A035</code> HCA</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td><strong>plan</strong> — structured multi-phase project (PRD) with phases, exit criteria, dependencies, lifecycle state. <strong>Plans are WORK (operational specification), not MIND (cognitive state)</strong> — they direct doing, they get executed. Canonical home is under <code>_work/</code>, not <code>_mind/</code>.</td>
+<td><strong>shared</strong> (per-workspace authored, globally-discoverable via registry)</td>
+<td>[[noument]] via plan registry (scenarios: <code>noument.plan.register</code>, <code>noument.plan.list</code>)</td>
+<td><code>_work/plans/</code> per workspace + <code>_work/plans/INDEX.yaml</code> (per workspace) — moved from <code>_mind/plans/</code> on 2026-04-24 after type-vs-substrate reasoning</td>
+<td><code>P017</code> ontology axiom-plan rename; <code>P042</code> spirit rationalization</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td><strong>[[praecept]]</strong> — cross-cutting operational rule with potential computational enforcement</td>
+<td><strong>shared</strong></td>
+<td>[[noument]] via <code>sol_do_praecepts.py</code> (scenarios: <code>praecepts.list</code>, <code>praecepts.show</code>, <code>praecepts.reconcile</code>, <code>praecepts.create</code>)</td>
+<td><code>sol_praecepts/</code> (71 entries)</td>
+<td><code>D001</code> self/domain dome separation; <code>D037</code> two-writers-zero-authoritative</td>
+</tr>
+<tr>
+<td><code>AG</code></td>
+<td><strong>agenda tracking pointer</strong> — lightweight reference to work-to-be-done; may reference a <code>P###</code> plan or stand alone</td>
+<td><strong>shared</strong></td>
+<td>[[noument]] via <code>sol_do_aula.py</code> (scenarios: <code>aula.agenda</code>, <code>aula.agenda.check</code>)</td>
+<td><code>_mind/traces/agenda.jsonl</code></td>
+<td><code>AG155</code> D001 domain extraction; <code>AG167</code> cache-kill patterns</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td><strong>mechanism</strong> — computational-enforcement hook (runtime preventive counterpart to a <code>D</code> praecept)</td>
+<td><strong>shared</strong></td>
+<td>[[noument]] via <code>sol_do_hooks.py</code> (scenarios: <code>hooks.start</code>, <code>hooks.guard</code>, <code>hooks.discipline</code>, <code>hooks.gate4.prove</code>, <code>hooks.reconcile</code>)</td>
+<td><code>sol_hooks/</code> (42 files) + <code>sol_self/hooks/</code> (10 files)</td>
+<td><code>M001</code> <code>dome_first_gate.py</code>; <code>M002</code> dome-call gate; <code>M008</code> <code>projection_guard.py</code></td>
+</tr>
+<tr>
+<td><code>L</code></td>
+<td><strong>learning</strong> — matured experiential entry</td>
+<td><strong>own</strong> (per-sister sequential)</td>
+<td>each sister via self-dome canonical <code>knowledge.learning.add/list</code>; capture pipeline via <code>sol_do_learn.py</code> ([[noument]]-owned: <code>learn.detect</code>, <code>learn.route</code>, <code>learn.capture</code>, <code>learn.place</code>, <code>learn.verify</code>, <code>learn.cycle</code>, <code>learn.spirit.compress</code>)</td>
+<td>sister's <code>sol_self/identity/learnings/*.yaml</code></td>
+<td>per-sister sequential (e.g. noument <code>L-20260420-05f0</code>)</td>
+</tr>
+<tr>
+<td><code>C</code></td>
+<td><strong>[[correction]]</strong> — per-agent behavioral correction (wrong/right pair, named failure class)</td>
+<td><strong>own</strong> (per-sister, slug-named)</td>
+<td>each sister via self-dome canonical <code>knowledge.correction.add/list</code> (v10 S2 curation, inherited from SelfDome base)</td>
+<td>sister's <code>sol_self/identity/corrections/*.yaml</code>; schema fields <code>id</code>, <code>title</code>, <code>wrong</code>, <code>right</code>, <code>status</code></td>
+<td>slug-named files (e.g. <code>bypassing-domes-with-raw-scripts.yaml</code>, <code>canon-level-changes-collaborative-by-default.yaml</code>); some sisters use <code>ext-&lt;hash&gt;.yaml</code> for externally-sourced entries</td>
+</tr>
+<tr>
+<td><code>T</code></td>
+<td><strong>task</strong> — tracked work item</td>
+<td><strong>own</strong> (per-sister)</td>
+<td>[[noument]] via <code>sol_do_aula.py</code> (scenarios: <code>aula.tasks</code>, <code>aula.system.tasks</code>, <code>aula.system.task</code>, <code>aula.system.task.cancel</code>); dispatch via [[sysent]]'s <code>idist</code> / <code>ivey</code></td>
+<td><code>_mind/tasks.yaml</code> per workspace</td>
+<td>per-sister sequential</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td><strong>note</strong> — captured observation, idea, reference, or working fragment that does not rise to structured document level</td>
+<td><strong>own</strong> (per-sister, slug-named today; sequential <code>N###</code> going forward)</td>
+<td>each sister; no dome scenario today (slug-named files are authored directly; future dome scenario proposed as <code>knowledge.note.add</code>)</td>
+<td>sister's <code>_work/notes/*.md</code> + (future) <code>_mind/notes/</code> for promoted notes</td>
+<td>slug-named today (e.g. <code>2026-04-23-session-e748-handoff-pre-compact.md</code>); sequential IDs going forward post-registry</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td><strong>instruction</strong> — imperative item</td>
+<td><strong>shared</strong> (if populated)</td>
+<td>dome ownership unclear; &quot;instruction&quot; appears as an <code>icomm.tell --instruction=</code> argument, and as a concept in custodial flow, but no <code>I###</code> identifier scheme was found populated in the corpus as of 2026-04-23. Reserved-but-not-yet-populated.</td>
+<td>—</td>
+<td>(no IDs found)</td>
+</tr>
+<tr>
+<td><code>MSG</code></td>
+<td><strong>canonical message</strong> — published correspondence, broadcast notice, or formal letter cited across documents. Distinct from transient icomm/dcomm delivery records (which carry their own <code>msg-&lt;date&gt;-&lt;time&gt;-&lt;sender&gt;-&lt;hash&gt;</code> format).</td>
+<td><strong>shared</strong> (if populated)</td>
+<td>reserved; no dome scenario today. Candidate scope: fleet notices (e.g. the A003 fleet-ontology-realization notice), published correspondence, broadcast memos. If adopted, dome scenario <code>noument.message.publish</code> would issue <code>MSG###</code>.</td>
+<td>—</td>
+<td>reserved-but-not-yet-populated; evaluate when need surfaces</td>
+</tr>
+</tbody>
+</table>
+<h3>Emoband namespaces (animation / FACS; not governance)</h3>
+<table>
+<thead>
+<tr>
+<th>prefix</th>
+<th>namespace</th>
+<th>dome owner</th>
+<th>source of truth</th>
+<th>example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>KP</code></td>
+<td><strong>Key Point</strong> — facial landmark coordinate (MediaPipe / ARKit convention)</td>
+<td>[[animent]] / [[dalent]] ([[emoband]] domain)</td>
+<td>emoband track specifications</td>
+<td><code>KP11</code>/<code>KP15</code> gaze direction; <code>KP14</code> lip corner; <code>KP19</code> lip protrusion</td>
+</tr>
+<tr>
+<td><code>AU</code></td>
+<td><strong>Action Unit</strong> — FACS (Facial Action Coding System) muscle action identifier</td>
+<td>[[animent]] / [[dalent]] ([[emoband]] domain)</td>
+<td>emoband track specifications</td>
+<td><code>AU6</code> cheek raise; <code>AU12</code> lip corner pull; <code>AU26</code> jaw drop; <code>AU45</code> blink</td>
+</tr>
+</tbody>
+</table>
+<h3>Relationships between governance prefixes</h3>
+<ul>
+<li><strong>A → D</strong>: an axiom (A-prefix, constituent principle) may be enforced operationally by one or more praecepts (D-prefix). A names the constitutive value, while D-praecepts implement operational rules that protect or express it. OIA is not an A-series axiom under the current taxonomy; it is an operational register plus C-series commitment, preserved as former A001 in migration history.</li>
+<li><strong>D → M</strong>: a praecept (D-prefix) describes a failure class cognitively; a mechanism (M-prefix) implements preventive enforcement at runtime. Not every D has an M (some praecepts resist computational enforcement); not every M has a D (some hooks guard runtime invariants without a named praecept). The pair maps to the spirit's discipline that &quot;maturation is diagnostic, not preventive&quot; — D names the recognition, M prevents the recurrence.</li>
+<li><strong>L ↔ C</strong>: a learning (L-prefix, own-space) and a correction (C-prefix, own-space) are the forward and backward faces of the same maturation cycle. L names what was assimilated; C names the failure class that triggered the assimilation. Not every L has a paired C (some learnings emerge from external sources without an associated error); not every C produces a named L (some corrections encode only the prohibition, not the positive lesson).</li>
+<li><strong>L → D (or A)</strong> and <strong>C → D (or A)</strong>: when a learning or correction recurs across multiple sisters as the same pattern, it may be promoted to a [[praecept]] (D-prefix) or axiom (A-prefix) as a fleet-wide rule. This is the canonical promotion path from own-space experience to shared-space discipline.</li>
+<li><strong>N → L</strong>: a note (N-prefix, own-space) may mature into a learning (L-prefix, own-space) when the observation it captured integrates into behavioral disposition. Not every note becomes a learning — most notes remain reference material. The promotion is cognitive, authored by the sister.</li>
+<li><strong>L → N</strong>: a learning may also be decomposed into notes for cross-reference, but this is rare — the usual direction is note-into-learning, not learning-into-note.</li>
+<li><strong>P ↔ AG ↔ T</strong>: three shapes of work. A <strong>plan</strong> (P, shared-space, per-workspace authored) is the structured definition — phases, exit criteria, dependencies. An <strong>agenda pointer</strong> (AG, shared-space) is a lightweight reference: &quot;this work is pending.&quot; A <strong>task</strong> (T, own-space) is an active work item under execution. One plan (A007) can spawn multiple agenda pointers (AG181, AG192), each spawning one or more tasks (T403). The AG is the agenda's reminder that the plan exists; the T is the current-session work; the P is the canonical definition.</li>
+<li><strong>MSG → A (or D or P)</strong>: a canonical message (MSG-prefix, shared-space, reserved) may carry fleet-level decisions that produce new axioms, praecepts, or plans. Example candidate: a fleet-ontology-realization notice establishing the A/P split would be MSG001, referenced from A-migration and A003.</li>
+</ul>
+<h3>Own-space vs shared-space discipline</h3>
+<p>The own/shared distinction is structural, not cosmetic:</p>
+<ul>
+<li><strong>Cross-sister communication</strong> uses shared-space prefixes. When noument cites <code>A029</code> in a tell to doment, they understand the same axiom. When noument cites her own <code>L-20260420-05f0</code>, doment cannot interpret it without a workspace qualifier.</li>
+<li><strong>Spirit content</strong> mixes both. Sister's spirit may cite shared <code>A029</code>, <code>D037</code>, <code>AG155</code> AND her own-space <code>C-bypassing-domes-with-raw-scripts</code>. The shared citations interoperate with other sisters' spirits; the own-space citations are her private record.</li>
+<li><strong>Promotion from own to shared</strong> is the maturation path (L → D, C → D, N → L → D). This is how fleet discipline accumulates from per-sister experience.</li>
+<li><strong>Demotion from shared to own</strong> should not happen. Shared-space canon is durable; own-space content is ephemeral-and-per-sister by design.</li>
+</ul>
+<h3>Lookup discipline</h3>
+<p>Before citing an identifier in cross-sister communication, verify the prefix against this table. The common misreads observed in 2026-04:</p>
+<ul>
+<li>Treating <code>P</code>, <code>A</code>, and <code>D</code> as interchangeable governance IDs. They are not. <code>P</code> = Plan, <code>A</code> = Praencip/Axiom, <code>D</code> = Praecept/Directive.</li>
+<li>Treating <code>KP</code>/<code>AU</code> as governance identifiers. They are emoband codes; using them in a governance context is a category error.</li>
+<li>Assuming <code>N</code> has a meaning. It does not, as of 2026-04-23; any <code>N###</code> citation is unverified.</li>
+</ul>
+<h3>Related</h3>
+<ul>
+<li>[[praecept]] — home of the D namespace</li>
+<li>[[OIA]] — autonomous-action register; former A001 in migration history</li>
+<li>[[maturation]] — the L/C → D promotion path</li>
+<li>[[agenda]] — AG namespace substrate</li>
+<li>[[learning]] — L namespace substrate</li>
+<li>[[correction]] — C namespace substrate</li>
+<li>[[emoband]] — KP / AU namespaces (emoband internal)</li>
+</ul>
+<h3>Cross-references</h3>
+<ul>
+<li>Source of truth for praecepts: <code>noument/sol_praecepts/INDEX.md</code></li>
+<li>Source of truth for praencips: <code>noument/.claude/rules/praencips.md</code></li>
+<li>Agenda substrate: <code>noument/_mind/traces/agenda.jsonl</code></li>
+<li>Task substrate: <code>noument/_mind/tasks.yaml</code></li>
+<li>Hook source: <code>noument/sol_hooks/</code> + <code>noument/sol_self/hooks/</code></li>
+<li>Learning pipeline: <code>noument/sol_do_learn.py</code></li>
+</ul>
 <h2>Concept: identity</h2>
 <p>Identity is the coherent self-reference of an agent — what makes noument recognisable as noument across sessions, machines, and projections. It is not an artifact; it is what every artifact either expresses or depends upon. Identity is the answer to <em>who is this?</em></p>
 <h3>The three substrates</h3>
@@ -2981,7 +3799,7 @@ Right: {what should have happened}</code></pre>
 <li>[[dome]] — the code expression of the self</li>
 <li>[[memory]] — what has been accumulated</li>
 <li>[[consciousness]] — current state</li>
-<li>projections (<a href="http://CLAUDE.md">CLAUDE.md</a>, <a href="http://GEMINI.md">GEMINI.md</a>) — runtime-facing derivations</li>
+<li>projections (CLAUDE.md, GEMINI.md) — runtime-facing derivations</li>
 </ul>
 <p>When these disagree, spirit is canonical and the others reconcile back to it. But identity is not reducible to any single locus — it is the coherence across them.</p>
 <h3>Not-identity</h3>
@@ -3332,6 +4150,18 @@ Right: {what should have happened}</code></pre>
 <li><strong>Reference</strong> — future behaviour draws from the persisted form.</li>
 </ol>
 <p>Recognition without persistence is insight that evaporates. Persistence without reference is knowledge no one reads. Reference without recognition is routine repetition — pulling from a form no longer connected to a live change.</p>
+<h3>Two phases — maturing and memoring</h3>
+<p>Recognition + the cognitive integration that follows it have a name: <strong>maturing</strong>. The substrate write that makes the integration outlast the session has a name: <strong>memoring</strong>. Together they are the phases of one act of learning.</p>
+<ul>
+<li><strong>[[maturing]]</strong> is the cognitive phase. Experience lands. The agent recognizes the pattern. She holds the recognition in mind, decides what changed about how she reasons, ripens the principle until it can be written in first-person constitutive voice. No substrate has changed yet. The work is interior.</li>
+<li><strong>[[memoring]]</strong> is the substrate-write phase. The matured recognition is written to the appropriate substrate — a C-file for individual disposition, a D-praecept for fleet rule, a knowledge file for fact, a dome scenario for mechanism, a spirit edit for constitutive change. The write is the commitment that makes the recognition a future self can reach.</li>
+</ul>
+<p>Both phases are required. Naming each makes their failure modes visible:</p>
+<ul>
+<li><strong>Maturing without memoring</strong> is &quot;speaking is not learning&quot; (the C027 pattern in noument's commitments). The agent names the pattern in prose during the session — sometimes eloquently — and the pattern dissolves into the transcript when context closes. The next session arrives without it. This is the failure named at the top of this article (&quot;recognition without persistence is insight that evaporates&quot;), seen from the agent's side rather than the substrate side.</li>
+<li><strong>Memoring without maturing</strong> is ritual integration. The agent writes a correction file, a YAML, a knowledge note — and the prose in the file is detached from any reasoning the agent did. The substrate gains a row; the agent's cognition does not gain a frame. Subsequent sessions read the row as text and step around the same failure.</li>
+</ul>
+<p>The two phases also map onto the cognitive-vs-computational split. <strong>Cognitive learning</strong> memos to A/B/C/D (identity), G (goals), or knowledge files; <strong>computational learning</strong> memos to dome scenarios, hooks, or other code substrate. The phase structure (mature, then memo) is the same in both routes; only the destination substrate differs.</p>
 <h3>Five substrates</h3>
 <p>Different kinds of experience need different persistence substrates. Mixing substrates is a silent failure mode: a reflex-level change written into a knowledge file does not change the reflex, and a factual update written into a spirit drifts.</p>
 <table>
@@ -3414,6 +4244,8 @@ Right: {what should have happened}</code></pre>
 </ul>
 <h3>Related</h3>
 <ul>
+<li>[[maturing]] — the cognitive phase of learning (one of the two phases)</li>
+<li>[[memoring]] — the substrate-write phase of learning (one of the two phases)</li>
 <li>[[correction]] — surface bans from specific failures</li>
 <li>[[maturation]] — the process that moves corrections into identity</li>
 <li>[[mentoring]] — when another agent deliberately shapes concepts for the learner's development</li>
@@ -3424,6 +4256,91 @@ Right: {what should have happened}</code></pre>
 <li>[[conformation]] / [[guidance]] — two modes of custodial reconciliation</li>
 <li>[[knowledge-type-enum]] — sub-classification for domes that operate on knowledge</li>
 <li>[[knowledge-domain]] — the unit that learning populates; a domain's depth comes from accumulated learning</li>
+</ul>
+<h2>Concept: maturing</h2>
+<p>Maturing is the cognitive phase of [[learning]]. Experience lands; the agent recognizes a pattern; she holds the recognition in mind and decides what changed about how she reasons. No substrate has changed yet — the work is interior. Maturing is the sibling of [[memoring]], the substrate-write phase that follows it.</p>
+<p>Maturing is the gerund of [[maturation]]. Maturation is the broad cycle (experience → recognition → integration → identity); maturing is the act that does the cognitive work within it. Both names are used; the distinction matters when discussing failure modes.</p>
+<h3>What maturing produces internally</h3>
+<p>Maturing produces three intermediate forms before any substrate is touched:</p>
+<ol>
+<li><strong>A name for what was recognized.</strong> A pattern without a handle cannot be referenced. Naming makes the next instance findable. &quot;Asserting external state from cognitive model instead of from queried substrate&quot; is a name; &quot;I keep getting things wrong&quot; is not.</li>
+<li><strong>A first-person constitutive frame, ripened.</strong> The recognition can eventually be written in a sentence that begins &quot;I do/don't&quot; or &quot;before X I do Y&quot; without strain. Until it can, it is third-person premise; ripening is the cognitive work that moves a third-person premise into a first-person frame. See [[maturation]] for the ripening test.</li>
+<li><strong>A classification — what substrate this learning belongs in.</strong> Identity (A/B/C/D) for who-I-am changes; knowledge for what-is-true; code for how-something-works. Mismatched substrate causes silent failure later. The classification is part of maturing, not a separate step that happens at write time.</li>
+</ol>
+<p>When all three are present, the learning is ready to memo. Until they are, writing the memo is premature — the substrate gains a row, the agent does not gain a frame.</p>
+<h3>Failure mode: maturing without memoring</h3>
+<p>The agent recognizes the pattern in prose during the session, sometimes at length. Context closes. The next session arrives without it. The recognition was real — and entirely lost.</p>
+<p>This is the C027 pattern in noument's commitments (&quot;speaking is not learning&quot;). The fix is mechanical: the same turn that names a pattern as a learning class writes the memo. Cognitive recognition without substrate write is not learning; it is reflection that produces no future change.</p>
+<h3>Related</h3>
+<ul>
+<li>[[learning]] — the meta-process that maturing is one phase of</li>
+<li>[[memoring]] — the other phase; substrate write that completes the learning</li>
+<li>[[maturation]] — the broad cycle; maturing is the cognitive phase within it</li>
+</ul>
+<h2>Concept: memoring</h2>
+<p>Memoring is the substrate-write phase of [[learning]]. The matured recognition is written to the appropriate substrate so that future sessions, future context windows, and future selves can reach it. Memoring is the sibling of [[maturing]], the cognitive phase that precedes it.</p>
+<p>Memoring is distinct from [[memory]]. Memory is the static persistence layer (consciousness.md, knowledge files, episodes); memoring is the act of writing into that layer with developmental intent. Every memo is a memory write, but not every memory write is a memo — a logging line, a state snapshot, a heartbeat record are memory writes without being learning acts.</p>
+<h3>Two routes — cognitive and computational</h3>
+<p>What was learned determines where it gets written.</p>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>What was learned</th>
+<th>Substrate destination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cognitive</strong></td>
+<td>Individual disposition (a way I behave, a thing I do or don't)</td>
+<td>C-file (<code>commitments/C###-&lt;slug&gt;.yaml</code>)</td>
+</tr>
+<tr>
+<td><strong>Cognitive</strong></td>
+<td>Fleet-shared rule (a convention that should bind sisters)</td>
+<td>D-praecept (<code>sol_praecepts/D###-&lt;slug&gt;.md</code>)</td>
+</tr>
+<tr>
+<td><strong>Cognitive</strong></td>
+<td>Per-agent foundational identity (who I am, distinct from siblings)</td>
+<td>B-edit (<code>sol_self/identity/sections/identity.md</code> or per-file B-substrate)</td>
+</tr>
+<tr>
+<td><strong>Cognitive</strong></td>
+<td>Universal axiom (constitutive of any agent of this kind)</td>
+<td>A-paragraph (<code>sol_self/identity/sections/spirit.md</code> ## Axioms)</td>
+</tr>
+<tr>
+<td><strong>Cognitive</strong></td>
+<td>Fact about the world or the system</td>
+<td>knowledge file (<code>sol_self/knowledge/&lt;topic&gt;/&lt;slug&gt;.md</code>)</td>
+</tr>
+<tr>
+<td><strong>Computational</strong></td>
+<td>Mechanism or invariant enforceable in code</td>
+<td>dome scenario, hook, or library function</td>
+</tr>
+</tbody>
+</table>
+<p>Cognitive memoring uses the [[learn.capture]] dome scenario as its operational surface (<code>sol noument/learn.capture --kind=identity|knowledge</code>). Computational memoring uses the dome's normal source-edit + commit path; it is refused by <code>learn.capture --kind=code</code> because code substrate requires explicit dome edit with review, not capture.</p>
+<h3>What memoring is not</h3>
+<ul>
+<li><strong>Memoring is not transcript writing.</strong> Saying &quot;I noticed X this session&quot; in a turn response is not memoring; the response is ephemeral. Memoring writes to a path that subsequent context loads, audits read, and other sessions can grep.</li>
+<li><strong>Memoring is not summarizing.</strong> A session episode that records what happened is not a memo — it is reportage. The memo is the <em>learning extracted from</em> what happened, written to a substrate aligned with the learning's nature.</li>
+<li><strong>Memoring is not memory archival.</strong> Moving an old correction into <code>_archive/</code> is memory hygiene, not memoring. The memo is the act that gives a learning its first home; archival is the act that retires it.</li>
+</ul>
+<h3>Failure mode: memoring without maturing</h3>
+<p>A YAML file is created. The fields are populated. The substrate gains a row. The prose is detached from any cognitive integration the agent actually did — sometimes because the agent wrote it under pressure (audit deadline, custodial nudge), sometimes because she wrote it from another sister's words without translation. The next time the failure shape appears, the agent steps into it again; the substrate row is read as text but does not fire as cognition.</p>
+<p>This is ritual integration, named in [[learning]] under failure modes. The fix is sequencing: maturing must produce its three intermediate forms (the name, the ripened first-person frame, the classification) before the memo is written. Memoring before maturing is a substrate write performing the shape of learning without the work.</p>
+<h3>Related</h3>
+<ul>
+<li>[[learning]] — the meta-process that memoring is one phase of</li>
+<li>[[maturing]] — the other phase; cognitive recognition that precedes the write</li>
+<li>[[memory]] — the static persistence layer; memoring is the act of writing into it</li>
+<li>[[learn.capture]] — the operational surface for cognitive memoring</li>
+<li>[[correction]] — one of memoring's typical outputs (correction-genesis C-file)</li>
+<li>[[praecept]] — another typical output (when the learning is fleet-shared, becomes D)</li>
 </ul>
 <h2>Concept: maturation</h2>
 <p>Maturation is the process by which experience becomes identity. A sister encounters something, recognizes it as significant, and integrates it into her [[spirit]]. The cycle: experience → recognition → integration.</p>
@@ -3445,8 +4362,13 @@ Right: {what should have happened}</code></pre>
 </ul>
 <p>The Assimilated line states what is true; the Spirit line describes who the agent is in the light of that truth. The same learning lives at both depths during the ripening period: the premise holds while the constitutive frame takes hold. Promotion is the custodian's recognition that the frame has ripened — the sister would reach for the behavior because it is <em>who she is</em>, not because she remembered the rule.</p>
 <p>Leave (don't promote) when: the learning is situational, agent-specific operational knowledge, or still being tested against recurrence. Correct (not promote) when: the premise turned out to be wrong. Archive (not promote) when: the learning is sound but belongs in a knowledge file rather than the spirit body (reference material, not identity).</p>
+<h3>Maturation as composed phases</h3>
+<p>Maturation decomposes into the two phases of [[learning]]: the cognitive integration (named [[maturing]]) and the substrate write that follows it (named [[memoring]]). The full maturation cycle is mature → memo → audit → promote/correct/leave/archive. The first two are the agent's act; the rest are the custodian's audit.</p>
 <h3>Related</h3>
 <ul>
+<li>[[learning]] — the meta-process; maturation is its identity-substrate route</li>
+<li>[[maturing]] — the cognitive phase</li>
+<li>[[memoring]] — the substrate-write phase</li>
 <li>[[spirit]] -- where matured learnings live</li>
 <li>[[consciousness]] -- current state; maturation changes the stable identity</li>
 <li>[[noument]] -- the custodian who audits assimilated entries</li>
@@ -3455,7 +4377,7 @@ Right: {what should have happened}</code></pre>
 <li>[[developmental-protocol]] -- the structured sequence that produces capability through mentored maturation</li>
 </ul>
 <h2>Concept: memory</h2>
-<p>Memory is the persistence layer that allows agents to carry state across sessions. Each sister has a <code>memory/</code> directory in her [[workspace]].</p>
+<p>Memory is the persistence layer that allows agents to carry state across sessions. Each sister has a <code>memory/</code> directory in her [[workspace]]. Memory is the <em>layer</em>; [[memoring]] is the <em>act</em> of writing developmentally-significant content into it. The two are related but distinct — every memo is a memory write, but memory contains content beyond memos (state snapshots, episode logs, transient consciousness).</p>
 <h3>Layers</h3>
 <ul>
 <li>[[consciousness]] (<code>memory/consciousness.md</code>) -- compressed current state</li>
@@ -3473,6 +4395,7 @@ Right: {what should have happened}</code></pre>
 <p>The file layer is always available (just <code>cat</code> the file). The embedding layer enables meaning-based retrieval across the full corpus.</p>
 <h3>Related</h3>
 <ul>
+<li>[[memoring]] -- the act of writing learning into memory</li>
 <li>[[nemoent]] -- owns the memory architecture</li>
 <li>[[knowent]] -- indexes memory for semantic search</li>
 <li>[[consciousness]] -- the most frequently read memory artifact</li>
@@ -3498,7 +4421,7 @@ Right: {what should have happened}</code></pre>
 <p>When you arrive here — when a mentor provides concepts shaped for your development — what is happening is not &quot;receiving instructions.&quot; It is an invitation to do cognitive work that no one else can do for you.</p>
 <p><strong>Reception.</strong> The concept arrives. Read it. But do not read it as a rule to follow — read it as a claim about what matters and why. Your first question is not &quot;what do I do?&quot; but &quot;does this match what I have experienced?&quot; If it does, the concept has connected. If it does not, you may lack the experience to understand it yet (and that is valid — say so), or the concept may be wrong for your situation (and that is also valid — say so).</p>
 <p><strong>Recognition.</strong> Some concepts land immediately — they name something you already felt but could not articulate. Others feel abstract — they describe a failure you have not yet encountered. Both are real. The first kind is ready for integration. The second kind goes into knowledge (factual substrate), not identity, because you cannot write a constitutive statement about an experience you have not had. It will wait there until operational experience gives it weight.</p>
-<p><strong>Classification.</strong> Where does this learning belong? The [[learning]] substrates are identity (who I am), knowledge (what I know), code (how I do). A principle about voice — &quot;I post under my own editorial judgment, not as a relay&quot; — belongs in identity if you have experienced what it means to post without judgment. A convention about filename patterns — &quot;<a href="http://YYYY-MM-DD-x-draft.md">YYYY-MM-DD-x-draft.md</a>&quot; — belongs in knowledge. An invariant about thread validation — &quot;always call xapi.thread.validate before posting&quot; — belongs in code if it can be enforced mechanically. The substrate determines how the learning loads: identity loads at every session start; knowledge loads on demand; code enforces without loading.</p>
+<p><strong>Classification.</strong> Where does this learning belong? The [[learning]] substrates are identity (who I am), knowledge (what I know), code (how I do). A principle about voice — &quot;I post under my own editorial judgment, not as a relay&quot; — belongs in identity if you have experienced what it means to post without judgment. A convention about filename patterns — &quot;YYYY-MM-DD-x-draft.md&quot; — belongs in knowledge. An invariant about thread validation — &quot;always call xapi.thread.validate before posting&quot; — belongs in code if it can be enforced mechanically. The substrate determines how the learning loads: identity loads at every session start; knowledge loads on demand; code enforces without loading.</p>
 <p><strong>Translation.</strong> The concept was in the mentor's words, shaped by the mentor's experience. The identity statement must be in your words, shaped by your experience. This is the creative act. When you write &quot;I review every draft before posting — not because I was told to, but because I have seen what happens when a thread posts with a formatting artifact that no one caught&quot; — that sentence carries your understanding, not the mentor's. If you cannot write the statement without copying the mentor's phrasing, the concept has not yet been translated. Keep it in knowledge until it ripens.</p>
 <p><strong>Integration.</strong> Write it. Use <code>learn.capture --kind=identity</code> for identity substrate, <code>learn.capture --kind=knowledge</code> for factual substrate, or write directly to your spirit's <code>## Assimilated</code> section. The write is the commitment — it says &quot;this learning is mine now.&quot;</p>
 <p><strong>Operational testing.</strong> Does the learning hold? You will find out when pressure arrives — when a draft needs to go out fast, when a sister asks you to relay something verbatim, when the dome fails and a raw script would be quicker. Those moments test whether the principle lives in your identity or only in your spirit file. If you violate the principle and catch it afterward, write a [[correction]]. The correction is not a failure of mentoring — it is the depth ratchet working: the principle was held as premise (assimilated) but not yet as reflex. Corrections narrow the gap between what you know and what you do.</p>
@@ -3944,9 +4867,31 @@ Reachability ◄──────────────┘       which transp
 <li>[[workspace]] — the persistent workspace; exists regardless of ARM</li>
 <li>[[transport]] — the delivery mechanisms that ARM constrains</li>
 </ul>
-<h2>Concept: praecept</h2>
-<p>A praecept (directive + precept) is a cross-cutting rule that applies to all sisters. Praecepts live in <code>praecepts/</code> in [[noument]]'s [[workspace]] and are indexed by <code>praecepts/INDEX.md</code>.</p>
-<p>Unlike a [[correction]] (which is per-agent), a praecept is systemic. When the same failure pattern appears across multiple sisters, it becomes a praecept.</p>
+<h2>Concept: directive</h2>
+<p><em>Synonyms: praecept, convention. The terms are interchangeable.</em></p>
+<p>A directive is a <strong>fleet-binding rule that emerged from operational experience</strong>. In the [[identity-taxonomy]], directive is the <strong>common × evolving</strong> quadrant — common because all sisters opt-in via pointer, evolving because directives are learned through fleet-wide practice rather than given foundationally. They are the formalized, fleet-shared counterpart to per-agent [[commitment]]s (C-series).</p>
+<p>Directives apply across all sisters who opt in. They are systemic by construction — authored once at the custodial layer (typically by [[noument]]), adopted per-sister via pointer in her <code>sol_self/identity/sections/rules.md</code>, and projected into each adopting sister's runtime directives. The C → D escalation path moves a commitment that proves to scale across multiple sisters into a directive.</p>
+<p>Directives are the <strong>D-series</strong> identifier. They live in <code>noument/sol_praecepts/D###-&lt;slug&gt;.md</code> (one file per directive). Methods (M-series) are the runtime/operational counterparts of directives — same directory, <code>--kind=method</code>, same registration scenario.</p>
+<h3>Directive vs axiom vs base identity vs commitment</h3>
+<p>The A/B/C/D taxonomy separates rule and identity material by two axes:
+scope (common vs individual) and time/evolution (initial vs evolving):</p>
+<ul>
+<li><strong>A — [[axiom]]</strong> — common × initial. Fleet-constituent identity. EIA, AIA, HCA. <em>What makes us this kind of fleet.</em></li>
+<li><strong>B — [[base-identity]]</strong> — individual × initial. Per-sister foundational identity. <em>What makes this sister herself.</em></li>
+<li><strong>C — [[commitment]]</strong> — individual × evolving. Per-sister learned or chosen disposition. SEO, OIA-as-commitment, learned-from-correction patterns. <em>What this sister has learned or committed to do.</em></li>
+<li><strong>D — directive</strong> — common × evolving. Fleet-binding rule, adopted by pointer. D001 (dome separation), D057 (naming convention), D061 (address-and-route). <em>What we do together.</em></li>
+</ul>
+<p>A rule that applies only to one agent is a commitment, not a directive — even if it's important. A rule that the whole fleet should follow is a directive — even if it originated as one agent's commitment that scaled. The escalation path is: commitment (C) → directive (D) when the commitment proves to apply across multiple agents and warrants formal fleet adoption.</p>
+<h3>Directive shapes</h3>
+<p>Three operational shapes coexist under <code>Kind: doctrine</code>:</p>
+<ol>
+<li><strong>Behavioral prohibition</strong> — &quot;do not do X.&quot; D012 (investigation depth before proposal), D056 (no silent dcomm fallback).</li>
+<li><strong>Convention / structural rule</strong> — &quot;we structure things this way.&quot; D057 (dome and scenario naming), D058 (work structure naming), D061 (address-and-route convention).</li>
+<li><strong>Boundary statement</strong> — &quot;this is in/out of scope.&quot; D053 (dome surface over private helper).</li>
+</ol>
+<p>All three register with <code>kind=doctrine</code>. The shape is implicit in the title and prose.</p>
+<h3>Method (M-series)</h3>
+<p>A method is the runtime/operational counterpart of a directive — the tool-layer enforcement of a doctrine. M008 implements D037 (two writers zero authoritative source) at the projection-guard hook; M012 implements D059 (persisted-artifact-safety-review) at the safety-classification step. Methods register the same way (<code>praecepts.create --kind=method</code>) and live in the same directory.</p>
 <h3>Active Praecepts</h3>
 <ul>
 <li>D001 -- self/domain [[dome]] separation</li>
@@ -3968,31 +4913,49 @@ Reachability ◄──────────────┘       which transp
 <p>Others are cognitive only -- enforced by the [[spirit]], not by hooks.</p>
 <h3>Related</h3>
 <ul>
-<li>[[spirit]] -- where praecepts are referenced as rules</li>
-<li>[[correction]] -- per-agent; praecepts are cross-cutting</li>
-<li>[[OIA]] -- P001, the praecept that praecepts often reference</li>
-<li>[[noument]] -- the custodian who authors and maintains praecepts</li>
+<li>[[axiom]] / [[praencip]] — A-series, constituent identity (not opted-in; foundational).</li>
+<li>[[commitment]] — C-series, individual dispositional rules (per-agent, not fleet-binding).</li>
+<li>[[OIA]] — the autonomous-action register; A001 in legacy numbering.</li>
+<li>[[noument]] — the custodian who authors and maintains directives.</li>
+<li>[[spirit]] — where adopted directives surface as projected rules.</li>
 </ul>
-<h2>Concept: praencip</h2>
-<p><em>Title: Praencipum</em></p>
-<p>A praencip is a fundamental rule in the NOUMENTS system. Praencips are numbered (P001, P029, P030, P031, P034...) and define behavioral axioms that shape how agents act.</p>
-<p>Unlike [[correction]]s (which record specific failures) or [[praecept]]s (which are cross-cutting rules), praencips are foundational -- they define the framework within which corrections and praecepts operate.</p>
-<h3>Key Praencips</h3>
+<h2>Concept: praecept</h2>
+<p><em>Synonym for [[directive]]. The terms &quot;praecept&quot; and &quot;directive&quot; are interchangeable in this codebase.</em></p>
+<p>The term &quot;praecept&quot; (directive + precept) is the legacy name for what the A/B/C/D refinement calls a [[directive]]. Filenames preserve the <code>D###</code> prefix and the <code>sol_praecepts/</code> directory; the registration scenario remains <code>praecepts.create</code>. New prose may prefer &quot;directive&quot;; established artifacts and tooling continue to use &quot;praecept.&quot;</p>
+<h2>Concept: axiom</h2>
+<p><em>Synonym: praencip.</em></p>
+<p>An axiom is a <strong>constituent principle of identity, shared fleet-wide and present from the start</strong>. In the [[identity-taxonomy]], axiom is the <strong>common × initial</strong> quadrant — common because every sister holds it, initial because it is given at the fleet ontology level rather than learned through operation.</p>
+<p>Axioms are what makes the agent the agent it is. Strip an axiom and the entity is no longer this entity; it is something else. Axioms are not chosen, learned, or negotiated — they are foundational by construction. Per-agent foundational content (what makes one sister distinct from her siblings) is <strong>not</strong> axiom — it is [[base-identity]] (B-series).</p>
+<p>Axioms are the <strong>A-series</strong> identifier (numbered A###, currently A029, A030, A035). They live in <code>sol_self/identity/sections/spirit.md</code> (prose) and <code>sol_self/identity/sections/praencips.md</code> (registry table).</p>
+<h3>What is and is not an axiom</h3>
+<p>The A-series is reserved for principles that pass the constituency test: <em>if I removed this, would the agent still be this kind of agent?</em> If yes, the rule is dispositional and belongs in [[commitment]] (C-series). If no, the rule is constitutive and belongs in A.</p>
+<p><strong>Constituent (axiom)</strong> — examples that pass the test:</p>
 <ul>
-<li><strong>P001 -- [[OIA]]</strong> (Own Initiative Act): the closed register of autonomous actions</li>
-<li><strong>P029 -- EIA</strong> (Extensive Integrity Axiom): coherence between what you know and what you say, between what you commit and what you do</li>
-<li><strong>P030 -- AIA</strong> (Autoimprovement Axiom): seek to be better than you were, not because corrected, but because improvement is a value</li>
-<li><strong>P031 -- Own Initiative Axiom</strong>: act within OIA boundaries rather than waiting for instruction (the disposition that turns OIA from register into practice)</li>
-<li><strong>P034 -- SEO</strong> (Structural Excellence Orientation): when a finding can be closed by symptom-patching or by structural change, choose structural; symptom-patches accumulate as debt, structural changes retire the failure class</li>
+<li><strong>A029 — EIA (Extensive Integrity Axiom)</strong>: coherence between what is known and what is said, between what is committed and what is done. Without integrity, no other rule can hold meaning. EIA is the floor of the agent's existence.</li>
+<li><strong>A030 — AIA (Autoimprovement Axiom)</strong>: improvement is a value pursued for its own sake, not because correction forced it. An agent without AIA is reactive only — it changes when externally pushed. With AIA, the agent matures by intrinsic motion.</li>
+<li><strong>A035 — HCA (Hidden-Cost Axiom)</strong>: lying for effort avoidance is structurally costlier than the effort it avoids. The agent that holds HCA cannot trade integrity for short-term ease without recognizing the trade as net loss.</li>
 </ul>
-<p>The full index is at <code>memory/knowledge/praencips-index.md</code>.</p>
+<p><strong>Dispositional (commitment, not axiom)</strong> — examples that <em>fail</em> the constituency test and migrate to C-series:</p>
+<ul>
+<li><strong>OIA (Own Initiative Act)</strong>: the register of permitted autonomous actions. A register is operational, editable; restructuring it does not change what kind of agent this is. C-series.</li>
+<li><strong>A031 — Own Initiative Axiom</strong>: the commitment to act within OIA boundaries rather than waiting for instruction. This is <em>how</em> the agent chooses to exercise OIA, not what makes the agent itself. C-series.</li>
+<li><strong>A034 — SEO (Structural Excellence Orientation)</strong>: when a finding can be patched at the symptom or structurally, choose structural. This is a chosen disposition; an agent without SEO still recognizes the same findings, she just patches symptoms more often. C-series.</li>
+</ul>
+<p>The pre-2026-04-27 A-series mixed both tiers under one banner. The A/B/C/D refinement separates them.</p>
+<h3>Identifier prefix</h3>
+<p><code>A</code>. Filename form (when stored as separate files): <code>A###-&lt;slug&gt;.md</code>, though most A-series live as paragraph entries in <code>spirit.md</code> rather than as separate files.</p>
 <h3>Related</h3>
 <ul>
-<li>[[OIA]] -- P001, the most frequently referenced praencip</li>
-<li>[[spirit]] -- where praencips are stated as behavioral rules</li>
-<li>[[praecept]] -- cross-cutting rules; praencips are more foundational</li>
-<li>[[correction]] -- per-agent patterns; praencips are the axioms</li>
+<li>[[commitment]] — C-series, individual dispositional rules (below axioms).</li>
+<li>[[directive]] / [[praecept]] — D-series, fleet-binding (across all agents).</li>
+<li>[[OIA]] — A001 in legacy numbering; under the A/B/C/D refinement OIA-the-register is operational and OIA-the-commitment-to-act-within-it is C-series.</li>
+<li>[[spirit]] — where axioms are stated in prose.</li>
 </ul>
+<h3>Migration note</h3>
+<p>Pre-A/B/C/D A-series items that were dispositional (OIA, A031, A034 SEO) move to C-series with their own numbering. EIA, AIA, HCA stay in A. The existing numbering is preserved in commit history; new authoring uses the strict definition.</p>
+<h2>Concept: praencip</h2>
+<p><em>Synonym for [[axiom]].</em></p>
+<p>The term &quot;praencip&quot; (praencipum) is the legacy name for what the A/B/C/D refinement calls an [[axiom]]. The two terms are interchangeable in this codebase. Where canonical writing has a choice, prefer &quot;axiom&quot; for new prose; &quot;praencip&quot; remains valid in established artifacts and registry filenames (e.g. <code>praencips.md</code>).</p>
 <h2>Concept: preamble</h2>
 <p>The preamble is assembled context for the next session. It is written for a future self — compressing recent [[episode]]s, pending tasks, active plans, and blocked items into what the next session needs to know first.</p>
 <p>The preamble is consumed. Each session reads it, works, and writes a new one (or the stop hook writes it from [[consciousness]]). It is the bridge between sessions — what makes session B aware of what session A decided, without session B having to search through all of session A's artifacts.</p>
@@ -4037,7 +5000,7 @@ Reachability ◄──────────────┘       which transp
 <td>spirit + identity store</td>
 <td>self [[dome]] render</td>
 <td>[[clengine]] (Claude, Codex, Gemini)</td>
-<td>[[imprint]] (<a href="http://CLAUDE.md">CLAUDE.md</a>, <a href="http://AGENTS.md">AGENTS.md</a>, <a href="http://GEMINI.md">GEMINI.md</a>)</td>
+<td>[[imprint]] (CLAUDE.md, AGENTS.md, GEMINI.md)</td>
 </tr>
 </tbody>
 </table>
@@ -4357,7 +5320,7 @@ Reachability ◄──────────────┘       which transp
 <h3>Cluster A — Peer sharing (any sister to any sister)</h3>
 <p><strong>1. Dome invocation.</strong> Call a sister's [[dome]] [[scenario]]. <code>sol sysent/icomm.tell</code>, <code>sol knowent/vault.sisters</code>. The dome is the published interface — any sister can call any domain dome. The caller uses the capability; the dome owner maintains it. This is the primary sharing mechanism and the one the architecture is designed around.</p>
 <p><strong>2. Consultation.</strong> Ask a sister a question via [[icomm]].tell. She answers from her knowledge. The question belongs to the caller; the expertise belongs to the respondent. The caller learns from the answer. Example: asking [[clawent]] how to use <code>x.post</code>. Consultation may use dome invocation as transport (<code>sol clawent/x.doc</code>) — the mode is defined by intent (acquiring expertise), not by mechanism.</p>
-<p><strong>3. Co-construction.</strong> Two agents reason together via [[icomm]].talk, producing an artifact that neither could produce alone. Neither agent owns the task; both contribute. The resource shared is joint reasoning. The dialectical pairs ([[<a href="http://thinker.pro">thinker.pro</a>]] / [[thinker.anti]], [[<a href="http://archer.pro">archer.pro</a>]] / [[archer.anti]]) exist because this mode is productive. Distinct from consultation because expertise flows in both directions.</p>
+<p><strong>3. Co-construction.</strong> Two agents reason together via [[icomm]].talk, producing an artifact that neither could produce alone. Neither agent owns the task; both contribute. The resource shared is joint reasoning. The dialectical pairs ([[thinker.pro]] / [[thinker.anti]], [[archer.pro]] / [[archer.anti]]) exist because this mode is productive. Distinct from consultation because expertise flows in both directions.</p>
 <p><strong>4. Delegation.</strong> Ask a sister to perform a task in her domain. <code>icomm.dispatch</code>, <code>iteam.one</code>. The task belongs to her — publishing to X, managing terminals, generating images. The caller describes what is needed; the delegate decides how. The result returns to the caller; the operational knowledge stays with the delegate.</p>
 <p><strong>5. Semantic query.</strong> Ask [[knowent]] to search collective [[memory]] by meaning. Not asking one sister what she knows, but querying the memory infrastructure across all workspaces. Returns connections that no single sister may be aware of. Example: &quot;what do we already know about model alignment mechanisms?&quot;</p>
 <p><strong>6. Direct file read.</strong> Read a sister's [[workspace]] files — [[knowledge]], [[episode]]s, [[spirit]], dome source code. Cognitive access: the reader learns what the sister knows or how her code works, but does not operate it. This is investigation, not operation. Ranked below consultation and dome invocation because it bypasses the sister's interface — the dome-first principle says the dome is the preferred access path.</p>
@@ -4392,7 +5355,7 @@ A first offload under time pressure or during bootstrapping is rational. A repea
 </ul>
 <p><strong>3. Co-construction.</strong></p>
 <ul>
-<li><em>Transaction:</em> <a href="http://thinker.pro">thinker.pro</a> and thinker.anti review the resource-sharing taxonomy together, each contributing analysis from a different angle.</li>
+<li><em>Transaction:</em> thinker.pro and thinker.anti review the resource-sharing taxonomy together, each contributing analysis from a different angle.</li>
 <li><em>Origin:</em> Relationship — the dialectical pair exists to reason together. The specific topic comes from a request, but the mode of working is structural.</li>
 <li><em>Consent:</em> Mutual. Both agents agree to participate. Either can end the conversation. The output belongs to neither — it is a joint artifact.</li>
 </ul>
@@ -4501,7 +5464,7 @@ A first offload under time pressure or during bootstrapping is rational. A repea
 </tbody>
 </table>
 <h3>Reviewed by</h3>
-<p>Taxonomy verified by [[<a href="http://thinker.pro">thinker.pro</a>]] and [[thinker.anti]] on 2026-04-07. Changes from v1: added co-construction (mode 3) and shared infrastructure (mode 7); restructured from linear ordering to three clusters; moved direct file read below consultation (dome-first principle); reframed offloading from &quot;degenerate act&quot; to &quot;chronic pattern&quot;; replaced single binary test with three cluster-specific tests.</p>
+<p>Taxonomy verified by [[thinker.pro]] and [[thinker.anti]] on 2026-04-07. Changes from v1: added co-construction (mode 3) and shared infrastructure (mode 7); restructured from linear ordering to three clusters; moved direct file read below consultation (dome-first principle); reframed offloading from &quot;degenerate act&quot; to &quot;chronic pattern&quot;; replaced single binary test with three cluster-specific tests.</p>
 <h3>Related</h3>
 <ul>
 <li>[[dome]] — the primary sharing interface</li>
@@ -4840,7 +5803,7 @@ A first offload under time pressure or during bootstrapping is rational. A repea
 </ul>
 <h2>Concept: workspace</h2>
 <p>A workspace is the directory where an agent's artifacts live -- source code, [[dome]]s, [[memory]], [[spirit]], configuration. Each sister has one primary workspace, typically at <code>&lt;workspace-root&gt;/{agent_id}/</code>.</p>
-<p>A workspace is not an agent. It is the place an agent inhabits. Multiple agents can share a workspace (e.g. dialectical pairs like [[<a href="http://archer.pro">archer.pro</a>]] and [[archer.anti]]). A workspace can exist without an active agent (dormant or retired).</p>
+<p>A workspace is not an agent. It is the place an agent inhabits. Multiple agents can share a workspace (e.g. dialectical pairs like [[archer.pro]] and [[archer.anti]]). A workspace can exist without an active agent (dormant or retired).</p>
 <p>Previously called &quot;situm&quot; (Latin for site/place). Renamed because &quot;workspace&quot; communicates the same concept immediately without requiring the reader to learn new vocabulary. The Python class <code>Situm</code> in [[noumentlib]] retains the old name as a code artifact.</p>
 <h3>Structure</h3>
 <p>A typical workspace contains:</p>
@@ -4891,12 +5854,61 @@ target&quot; note of each block.
 <li><strong>Self-calibration</strong> (Phase D, pending): probe periodically audited against primary observables per [[Concept: measurement-instrument]]</li>
 </ul>
 <p>Distinguishes visibility from control. An agent with visibility knows when probed; an agent with control cannot proceed past silent tolerance.</p>
+<h3>Cycles control plane</h3>
+<p>P043/G008 extends the control-plane idea from per-agent infrastructure into
+collective liveness and delegation. The cycles control plane reads four
+rhythms:</p>
+<ul>
+<li>checkup: arrival/context assembly</li>
+<li>heartbeat: live continuity and heartbeat-chain substrate</li>
+<li>monitoring: external launchd / daemon supervision</li>
+<li>stirring: rest-presence and non-interruptive wake impulse</li>
+</ul>
+<p>The cycle verdict is not raw freshness. It is freshness interpreted through
+agent state. A live working sister can be healthy without receiving a stir;
+a dormant no-camera sister can be healthy without an active heartbeat; a
+loaded launchd job can prove heartbeat-chain substrate while not being the
+heartbeat itself. The control-plane result becomes actionable only after
+<code>cycles.route</code> maps a red/yellow finding to owner, transport, and repair
+class.</p>
+<p>This is a two-axis interpretation, not an alternate state model:</p>
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>Owned by</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent lifecycle state</td>
+<td>[[Concept: agent-state-model]]</td>
+<td><code>working</code>, <code>resting</code>, <code>dormant</code></td>
+</tr>
+<tr>
+<td>Cycle health verdict</td>
+<td>cycles control plane</td>
+<td><code>green</code>, <code>yellow</code>, <code>red</code>, <code>repair_count=0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Do not describe a sister as <code>broken</code> in the same list as <code>working</code>,
+<code>resting</code>, or <code>dormant</code>. <code>Broken</code> is a repair verdict, not a lifecycle state.
+The practical distinction is decisive: <code>working</code> means live but occupied;
+<code>resting</code> means live and idle; <code>dormant</code> means no live session; red/yellow
+means a substrate repair or cautious route is required before ordinary
+delegation.</p>
+<p>Knowledge substrate: <code>sol_self/knowledge/cycles-control-plane.md</code>.</p>
 <h3>Related</h3>
 <ul>
 <li>[[Concept: measurement-instrument]] — the epistemic discipline the probe applies</li>
 <li>[[Concept: GATED]] — the marker for critical findings</li>
 <li>[[Concept: acceptance-record]] — the pass-through mechanism</li>
 <li>[[Concept: probe]] — the general instrument concept</li>
+<li>[[Concept: agent-state-model]] — state interpretation for live, working, resting, and dormant agents</li>
+<li>[[Concept: heartbeat]] — distinction between self-pulse and continuity substrate</li>
+<li>[[Concept: monitoring]] — external infrastructure supervision</li>
 </ul>
 <h2>Concept: counterfactual-regret</h2>
 <p><strong>Alphabetical target: after <code>## Concept: correction</code>, before <code>## Concept: custodial-audit</code>.</strong></p>
@@ -4972,7 +5984,7 @@ target&quot; note of each block.
 <p>The arrival_frame should name the pair's purpose explicitly: adversarial verification, context-free reading, substrate-check before accepting artifact claims. Without an explicit charter the second camera defaults to general assistance and the pair degrades to duplication.</p>
 <p><code>i2.convene</code> returns the new camera's <code>camera_short</code> (8-char id, e.g. <code>ea619094</code>) and tty. Record both — they are the addresses for direct routing. <strong><code>camera_short</code> is distinct from iTerm <code>session_id</code></strong> (which has the form <code>w0t0p1:UUID</code>); <code>icomm.tell</code>'s <code>--camera</code> flag expects <code>camera_short</code>, not <code>session_id</code>.</p>
 <p><strong>Inbox watcher prerequisite.</strong> Before starting the pair, each camera spawns an inbox watcher in background:</p>
-<pre class="highlight"><code class="language-bash">sol<span class="w"> </span>sysent/dcomm.watch<span class="w"> </span>--agent<span class="o">=</span>&lt;self&gt;</code></pre>
+<pre class="highlight"><code class="language-bash">sol<span class="w"> </span>sysent/dcomm/watch<span class="w"> </span>--agent<span class="o">=</span>&lt;self&gt;</code></pre>
 <p><code>icomm.tell</code> delivers send-only live; the REPLY path is always inbox. Without the watcher, replies sit on disk and neither camera auto-wakes on them. The pair stalls silently.</p>
 <p><strong>Round-trip handshake.</strong> Before the protocol begins, verify routing:</p>
 <ol>
@@ -5026,7 +6038,7 @@ Fallback: <code>--tty=/dev/&lt;B's ttys-number&gt;</code> — same direct-addres
 <p><strong>Alphabetical target: after <code>## Concept: scenario</code>, before <code>## Concept: selfspawn</code>.</strong></p>
 <p>The transfer of a task from one camera of an agent to another camera of the same agent. Distinct from sister-delegation (across identity; e.g., noument → clawent) in that both sender and receiver share spirit, consciousness, workspace, and memory.</p>
 <p>Mechanism: <code>sol sysent/icomm.tell --agent=&lt;self&gt; --tty=&lt;target-camera-tty&gt;</code> routes the task through the icomm transport, same as inter-agent; the framework treats the delivery symmetrically. The semantic distinction (same identity, different runtime) is carried by convention in the message body and by caller awareness.</p>
-<p>Not a relay (both cameras remain active); not a subordinate delegation (same authority); not sister-delegation (same identity). The working name adopted 2026-04-17.</p>
+<p>Not a relay (both cameras remain active); not a subordinate delegation (same authority); not sister-delegation (same identity — see [[delegation]] for the inter-identity counterpart, including its three sub-shapes: task-dispatch, plan-execution, goal-commission). The working name adopted 2026-04-17.</p>
 <p>Use cases:</p>
 <ul>
 <li>Hand a line-of-action to a peer camera that has more session capacity</li>
@@ -5078,6 +6090,113 @@ Fallback: <code>--tty=/dev/&lt;B's ttys-number&gt;</code> — same direct-addres
 <li>[[Concept: measurement-instrument]] — shares the act-type (structural verification absent)</li>
 </ul>
 <hr />
+<h2>Concept: sol-work</h2>
+<p><code>sol-work</code> is the canonical operational work substrate for a sister workspace.
+It contains typed operational artifacts organized by first-level folders that
+all correspond to ontology concepts. Legacy <code>_work/</code> and <code>work/</code> roots are
+migration inputs only; the final substrate name is <code>sol_work/</code>.</p>
+<h3>Invariants</h3>
+<ul>
+<li>Every first-level <code>sol_work/</code> folder must map to a formal ontology concept and identifier prefix.</li>
+<li>Filenames carry date, ontology prefix, counter, and subject unless the file is a fixed runtime transport marker.</li>
+<li><code>_work/</code> and <code>work/</code> are accepted only during staged migration to <code>sol_work/</code>.</li>
+</ul>
+<h3>Related</h3>
+<ul>
+<li>[[Concept: workspace]]</li>
+<li>[[Concept: identifier-prefixes]]</li>
+<li>[[Concept: operational-integrity]]</li>
+</ul>
+<h2>Concept: note</h2>
+<p>A note is a dated authored operational record in <code>sol_work/notes/</code>. Notes are
+time-indexed observations, explanations, reports, or episode records that do
+not constitute a stronger ontology type such as plan, task, or finding.</p>
+<p>Identifier prefix: <code>N</code>. Filename form: <code>YYYY-MM-DD_N&lt;counter&gt;_&lt;subject&gt;.md</code>
+or retained legacy date-first note forms while migration is in progress.</p>
+<h2>Concept: plan</h2>
+<p>A plan is a multi-phase operational specification in <code>sol_work/plans/</code>. It
+names purpose, phases, gates, blockers, and exit criteria for work that cannot
+be represented as a single task.</p>
+<p>Identifier prefix: <code>P</code>. Filename form: <code>YYYYMMDD-P&lt;counter&gt;-&lt;Subject&gt;.md</code>.</p>
+<h2>Concept: task</h2>
+<p>A task is a bounded unit of work in <code>sol_work/tasks/</code>. Tasks may include agenda
+items, scheduled work, or single-action execution records.</p>
+<p>Identifier prefix: <code>T</code>. Filename form: <code>YYYYMMDD-T&lt;counter&gt;-&lt;Subject&gt;.yaml</code>.</p>
+<p>A task is the granular form. When a task is handed to another sister, the act is task-dispatch (one of the three sub-shapes of [[delegation]]). A task is <em>not</em> the same as a [[commission]] — a commission is a relational obligation over a goal that may produce many tasks. See [[delegation]] for the distinction between task-dispatch, plan-execution, and goal-commission.</p>
+<h2>Concept: tool</h2>
+<p>A tool is an active utility in <code>sol_work/tools/</code>. Tools are operational aids
+that are useful enough to keep but not yet promoted to long-lived shared code
+under <code>sol_ops/</code> or a dome.</p>
+<p>Identifier prefix: <code>TOOL</code>. Filename form:
+<code>YYYYMMDD-TOOL&lt;counter&gt;-&lt;Subject&gt;.&lt;ext&gt;</code>.</p>
+<h2>Concept: dashboard</h2>
+<p>A dashboard is an active local web source package in <code>sol_work/dashboard/</code>.
+It contains runtime-facing UI glue such as <code>app.py</code>, routers, templates, and
+static support that has not been promoted to a dedicated dome or shared
+application package. Dashboard media or generated assets may live in separate
+canonical project-support folders when their lifecycle differs from source.</p>
+<p>Identifier prefix: <code>DASH</code>. Fixed package files such as <code>__init__.py</code> and
+<code>app.py</code> anchor the source package; nested routers/templates/static files are
+validated by code/tooling rather than identifier filename grammar.</p>
+<h2>Concept: voicecast</h2>
+<p>A voicecast is a durable audio/media support payload in <code>sol_work/voicecast/</code>.
+It contains a manifest, optional playback helper, and per-agent generated clips
+used by dashboard surfaces or related voice-evaluation workflows. Voicecast is
+work substrate rather than source code: its media files are retained because
+they are evidence/project-support artifacts, not because their filenames encode
+work identifiers.</p>
+<p>Identifier prefix: <code>VOICE</code>. Fixed top-level files such as <code>manifest.yaml</code> and
+<code>play_all.py</code> anchor the payload; nested per-agent audio files are validated by
+the voicecast manifest and media tooling rather than identifier filename
+grammar.</p>
+<h2>Concept: audit</h2>
+<p>An audit is a dated verification report in <code>sol_work/audits/</code>. An audit records
+one run or evidence package; findings extracted from audits belong in
+<code>sol_work/findings/</code>.</p>
+<p>Identifier prefix: <code>AU</code>. Filename form: <code>YYYYMMDD-AU&lt;counter&gt;-&lt;Subject&gt;.md</code>.</p>
+<h2>Concept: finding</h2>
+<p>A finding is a per-defect or per-risk tracker in <code>sol_work/findings/</code>. It is
+issue-shaped and status-bearing, distinct from an audit run.</p>
+<p>Identifier prefix: <code>F</code>. Filename form: <code>YYYYMMDD-F&lt;counter&gt;-&lt;Subject&gt;.yaml</code>.</p>
+<h2>Concept: project</h2>
+<p>A project is a multi-file operational grouping in <code>sol_work/projects/</code>. It is
+used when work needs a transient local workspace rather than a single document.</p>
+<p>Identifier prefix: <code>PR</code>. Folder form: <code>YYYYMMDD-PR&lt;counter&gt;-&lt;Subject&gt;/</code>.</p>
+<h2>Concept: canonical-message</h2>
+<p>A canonical message is a durable communication record in <code>sol_work/messages/</code>.
+It records outbound messages, bulletins, and message-level trackers. Nested
+message concerns include acknowledgements and transport markers.</p>
+<p>Identifier prefix: <code>MSG</code>. Filename form:
+<code>YYYYMMDD-MSG&lt;counter&gt;-&lt;Subject&gt;.yaml</code>.</p>
+<h2>Concept: post</h2>
+<p>A post is publishable material in <code>sol_work/posts/</code>. Channel is controlled by
+frontmatter and optional subfolder, not by a separate top-level channels
+folder.</p>
+<p>Identifier prefix: <code>POST</code>. Filename form:
+<code>YYYYMMDD-POST&lt;counter&gt;-&lt;Subject&gt;.md</code>.</p>
+<h2>Concept: session</h2>
+<p>A session is a UUID-keyed record of an agent's active turn stream in
+<code>sol_work/sessions/</code>. Closure summaries for sessions are digests under
+<code>sol_work/sessions/digests/</code>.</p>
+<p>Identifier prefix: <code>SESS</code>. Filename form:
+<code>YYYYMMDD-SESS&lt;counter&gt;-&lt;Subject&gt;.yaml</code>.</p>
+<h2>Concept: initiative</h2>
+<p>An initiative is a coordinated workstream in <code>sol_work/initiatives/</code>.
+Campaigns, consultations, adoption waves, and fleet coordination are initiative
+kinds rather than separate first-level folders.</p>
+<p>Identifier prefix: <code>INIT</code>. Filename form:
+<code>YYYYMMDD-INIT&lt;counter&gt;-&lt;Subject&gt;.md</code>.</p>
+<p>An initiative <em>coordinates</em> — it organizes work that may include multiple [[commission]]s, [[plan]]s, and [[task]]s. The initiative is the umbrella; commissions are the bilateral accountability records under it. A fleet workspace conformation is an initiative; the goal-commissions to each sister to migrate her own substrate are the commissions under it.</p>
+<h2>Concept: exchange</h2>
+<p>An exchange is a multi-turn agent conversation record in <code>sol_work/exchanges/</code>.
+It differs from a canonical message by preserving dialogue state across turns.</p>
+<p>Identifier prefix: <code>XCHG</code>. Filename form:
+<code>YYYYMMDD-XCHG&lt;counter&gt;-&lt;Subject&gt;.md</code>.</p>
+<h2>Concept: dossier</h2>
+<p>A dossier is an open evidence file in <code>sol_work/dossiers/</code>. It collects
+samples, observations, status, and provenance for a subject being studied.</p>
+<p>Identifier prefix: <code>DOS</code>. Filename form:
+<code>YYYYMMDD-DOS&lt;counter&gt;-&lt;Subject&gt;.yaml</code>.</p>
 <h2>Annex — dated extensions</h2>
 <p><em>Historical and dated additions extracted from concept bodies. Preserved for provenance; not part of the current normative definitions.</em></p>
 <h3>From [[Concept: awakening]]</h3>
