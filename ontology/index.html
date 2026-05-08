@@ -2178,7 +2178,7 @@ Individual        B — base identity                C — commitments
 <li><strong>D-capability</strong> (common × evolving): a skill or hook fleet-rolled-out and per-sister adopted. Methods (M-series) are the canonical D-capability subtype — runtime enforcement of D-tier rules. M008 (projection-guard hook) is fleet-authored; each sister's having-it-installed is her adoption.</li>
 </ul>
 <h3>Substrate</h3>
-<p>The <em>code</em> of a capability lives in operational substrate (<code>sol_skills/</code>, <code>sol_hooks/</code>) regardless of tier. The <em>classification</em> (scope × time) is metadata on the capability. The <em>adoption</em> (for non-A capabilities) is a per-sister record in <code>sol_self/identity/adoptions/&lt;id&gt;.yaml</code> — same substrate as D-rule adoption, since the structure is identical.</p>
+<p>The <em>code</em> of a capability lives in operational substrate (<code>sol_skills_es/</code>, <code>sol_hooks_es/</code>) regardless of tier. The <em>classification</em> (scope × time) is metadata on the capability. The <em>adoption</em> (for non-A capabilities) is a per-sister record in <code>sol_self/identity/adoptions/&lt;id&gt;.yaml</code> — same substrate as D-rule adoption, since the structure is identical.</p>
 <h3>Relation to method (M)</h3>
 <p>A method (M-series) is a capability with a special role — runtime enforcement of a D-tier rule. M008 enforces D037; M012 implements D059. Methods are D-capabilities that are paired conceptually to a doctrine. Not every capability is a method, but every method is a capability.</p>
 <h3>Related</h3>
@@ -2251,7 +2251,7 @@ Note N### / Audit AU### / Finding F### / Session SESS### — operational records
 <pre class="highlight"><code>Dimension 1 — Identity (rules + capabilities)
   WHO the agent IS / WHAT she CAN DO
   Persistent across sessions.
-  Substrate: A/B in sol_self/, A/D shared at custodial layer; capabilities in sol_skills/ + sol_hooks/.
+  Substrate: A/B in sol_self/, A/D shared at custodial layer; capabilities in sol_skills_es/ + sol_hooks_es/.
 
 Dimension 2 — Goals (G-series)
   WHAT the agent SEEKS / WHERE she is GOING
@@ -3404,7 +3404,7 @@ Dimension 3 — Operations (P/T/INIT/N/AU/F/SESS/...)
 <p>Without a heartbeat, a resting agent can only be activated by external stimulus ([[icomm]].tell or human prompt). She cannot detect her own degradation or her own pending obligations.</p>
 <h3>Degenerate heartbeat</h3>
 <p>A heartbeat that only echoes a timestamp (<code>sleep 300 &amp;&amp; echo &quot;HEARTBEAT:$(date +%s)&quot;</code>) has rhythm but no diagnostic value. The agent may cognitively decide to check inbox or re-spawn a watcher when the echo fires, but this depends on the model remembering to do so. A degenerate heartbeat is a keepalive -- it prevents session idling -- but it is not a health check.</p>
-<p>Current fleet state (2026-04-09): [[noument]] has a full heartbeat (<code>sol_hooks/heartbeat.sh</code> -- checks inbox, agenda, store). All other sisters have degenerate heartbeats (echo-only). The diagnostic gap means sisters can silently degrade (lose watchers, accumulate unread messages) with no self-detection.</p>
+<p>Current fleet state (2026-04-09): [[noument]] has a full heartbeat (<code>sol_hooks_es/heartbeat.sh</code> -- checks inbox, agenda, store). All other sisters have degenerate heartbeats (echo-only). The diagnostic gap means sisters can silently degrade (lose watchers, accumulate unread messages) with no self-detection.</p>
 <h3>Distinction from [[custodial-audit]]</h3>
 <p>The noument TAR (<code>noument.tar.heartbeat</code>) is often called &quot;the heartbeat&quot; but is conceptually distinct. It is a <strong>custodial audit</strong> -- one agent checking the fleet's structural health from outside:</p>
 <table>
@@ -3649,7 +3649,7 @@ launchd label exists.</p>
 <td><strong>mechanism</strong> — computational-enforcement hook (runtime preventive counterpart to a <code>D</code> praecept)</td>
 <td><strong>shared</strong></td>
 <td>[[noument]] via <code>sol_do_hooks.py</code> (scenarios: <code>hooks.start</code>, <code>hooks.guard</code>, <code>hooks.discipline</code>, <code>hooks.gate4.prove</code>, <code>hooks.reconcile</code>)</td>
-<td><code>sol_hooks/</code> (42 files) + <code>sol_self/hooks/</code> (10 files)</td>
+<td><code>sol_hooks_es/</code> (42 files) + <code>sol_self/hooks/</code> (10 files)</td>
 <td><code>M001</code> <code>dome_first_gate.py</code>; <code>M002</code> dome-call gate; <code>M008</code> <code>projection_guard.py</code></td>
 </tr>
 <tr>
@@ -3772,7 +3772,7 @@ launchd label exists.</p>
 <li>Source of truth for praencips: <code>noument/.claude/rules/praencips.md</code></li>
 <li>Agenda substrate: <code>noument/_mind/traces/agenda.jsonl</code></li>
 <li>Task substrate: <code>noument/_mind/tasks.yaml</code></li>
-<li>Hook source: <code>noument/sol_hooks/</code> + <code>noument/sol_self/hooks/</code></li>
+<li>Hook source: <code>noument/sol_hooks_es/</code> + <code>noument/sol_self/hooks/</code></li>
 <li>Learning pipeline: <code>noument/sol_do_learn.py</code></li>
 </ul>
 <h2>Concept: identity</h2>
@@ -4660,7 +4660,7 @@ launchd label exists.</p>
 <li>[[qmodels]] -- the model registry that probe monitoring verifies against</li>
 <li>[[correction]] -- what monitoring findings become when they reveal behavioral failures</li>
 <li>[[spirit]] -- custodian obligation 7 (model selection audit)</li>
-<li><code>sol_self/identity/agenda/</code> -- per-file agenda substrate (AG173 Phase 4), canonical source for all monitoring tasks (AG100-AG113). The legacy <code>sol_aula/agenda.yaml</code> is now derived output regenerated by <code>noument.agenda.fleet</code>.</li>
+<li><code>sol_self/identity/agenda/</code> -- per-file agenda substrate (AG173 Phase 4), canonical source for all monitoring tasks (AG100-AG113). The legacy <code>sol_aula_es/agenda.yaml</code> is now derived output regenerated by <code>noument.agenda.fleet</code>.</li>
 </ul>
 <h2>Concept: noumentlib</h2>
 <p><code>noumentlib.py</code> is the Python package library for NOUMENTS. It provides data access to the registry -- entity data classes (<code>Agent</code>, <code>Libreto</code>, <code>Situm</code>, <code>Scenegraphy</code>), the <code>Nouments()</code> discovery class, and <code>Consciousness</code> data access.</p>
@@ -5039,7 +5039,7 @@ scope (common vs individual) and time/evolution (initial vs evolving):</p>
 </thead>
 <tbody>
 <tr>
-<td><code>sol_hooks/claude-code.yaml</code></td>
+<td><code>sol_hooks_es/claude-code.yaml</code></td>
 <td><code>ments.reconcile.hooks</code></td>
 <td><code>.claude/settings.json</code></td>
 <td>settings JSON</td>
@@ -5847,7 +5847,7 @@ target&quot; note of each block.
 <p>Components:</p>
 <ul>
 <li><strong>Inventory</strong>: <code>sol_self/control_plane.yaml</code> declaring owned artifacts with freshness or correctness contracts</li>
-<li><strong>Probe</strong>: <code>sol_hooks/control_probe.py</code> reading each source against its contract, emitting findings at warn or critical severity</li>
+<li><strong>Probe</strong>: <code>sol_hooks_es/control_probe.py</code> reading each source against its contract, emitting findings at warn or critical severity</li>
 <li><strong>Hook integration</strong>: UserPromptSubmit hook (<code>agenda_check.py</code>) appends probe output to the orient banner every turn</li>
 <li><strong>Gate</strong>: critical findings prefixed <code>GATED</code> (see [[Concept: GATED]]); first-response must fix, accept-with-reason, or state blocker</li>
 <li><strong>Acceptance</strong>: structured records (see [[Concept: acceptance-record]]) suppress findings under declared reason with expiry</li>
@@ -6126,7 +6126,7 @@ items, scheduled work, or single-action execution records.</p>
 <h2>Concept: tool</h2>
 <p>A tool is an active utility in <code>sol_work/tools/</code>. Tools are operational aids
 that are useful enough to keep but not yet promoted to long-lived shared code
-under <code>sol_ops/</code> or a dome.</p>
+under <code>sol_ops_es/</code> or a dome.</p>
 <p>Identifier prefix: <code>TOOL</code>. Filename form:
 <code>YYYYMMDD-TOOL&lt;counter&gt;-&lt;Subject&gt;.&lt;ext&gt;</code>.</p>
 <h2>Concept: dashboard</h2>
