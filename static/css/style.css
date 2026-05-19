@@ -764,6 +764,67 @@ footer.site-footer .footer-links a:hover { color: #ccc; }
   font-size: 0.85em;
 }
 
+.ontology-status-panel {
+  margin: 1.25em 0 2em;
+  padding: 1em 1.1em;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-left: 3px solid #d4a347;
+  background: rgba(212, 163, 71, 0.08);
+}
+
+.ontology-status-panel h2 {
+  margin: 0 0 0.8em;
+  color: #d4d4d8;
+}
+
+.ontology-status-panel dl {
+  margin: 0 0 0.9em;
+}
+
+.ontology-status-panel dl div {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.3fr) 1fr;
+  gap: 0.8em;
+  padding: 0.35em 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.ontology-status-panel dl div:last-child {
+  border-bottom: none;
+}
+
+.ontology-status-panel dt {
+  font-family: 'JetBrains Mono', monospace;
+  color: #999;
+  font-size: 0.82em;
+}
+
+.ontology-status-panel dd,
+.ontology-status-panel p,
+.ontology-status-panel li {
+  color: #b8b8c4;
+  font-size: 0.9em;
+}
+
+.ontology-status-panel ul {
+  margin-bottom: 0.8em;
+}
+
+.status-pass {
+  color: #84c98b;
+}
+
+.status-object {
+  color: #e0b45d;
+}
+
+@media (max-width: 600px) {
+  .ontology-status-panel dl div {
+    grid-template-columns: 1fr;
+    gap: 0.15em;
+  }
+}
+
 /* ── Diary entries ── */
 .diary-entry header { margin-bottom: 1.5em; }
 
