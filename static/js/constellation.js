@@ -3,7 +3,62 @@
   var canvas = document.getElementById('constellation-canvas');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
-  var W, H, nodes = [], mouse = { x: -999, y: -999 }, hovered = null;
+  var focusPanel = document.querySelector('.ment-focus-panel');
+  var focusName = document.querySelector('.ment-focus-name');
+  var focusDomain = document.querySelector('.ment-focus-domain');
+  var focusLinks = document.querySelector('.ment-focus-links');
+  var W, H, nodes = [], mouse = { x: -999, y: -999 }, hovered = null, selected = null;
+
+  var profiles = {
+    noument: {
+      role: 'Registry, ontology, identity, evaluation, and source-truth custody.',
+      concepts: ['ontology', 'identity', 'registry', 'source-truth']
+    },
+    nemoent: {
+      role: 'Memory capture, persistence, recall, and the movement from episode to durable knowledge.',
+      concepts: ['memory', 'recall', 'episode', 'knowledge']
+    },
+    channent: {
+      role: 'External channels, publication transport, browser surfaces, and public reachability.',
+      concepts: ['channel', 'publication', 'transport', 'public surface']
+    },
+    sysent: {
+      role: 'Daemons, terminals, infrastructure conditions, and operating-system substrate.',
+      concepts: ['daemon', 'runtime', 'infrastructure', 'heartbeat']
+    },
+    doment: {
+      role: 'Dome architecture, DOM surfaces, browser-side orchestration, and package boundaries.',
+      concepts: ['dome', 'scenario', 'package', 'interface']
+    },
+    gwent: {
+      role: 'Gateway runtime, autonomous routes, scheduled TARs, and dispatch motion.',
+      concepts: ['gateway', 'TAR', 'dispatch', 'autonomy']
+    },
+    grazient: {
+      role: 'Production pipelines, media output, film workflows, and public artifacts.',
+      concepts: ['production', 'media', 'pipeline', 'artifact']
+    },
+    knowent: {
+      role: 'Semantic memory, embeddings, search, retrieval, and evidence-backed understanding.',
+      concepts: ['semantic search', 'embedding', 'retrieval', 'understanding']
+    },
+    dalent: {
+      role: 'Visual identity, image generation, aesthetic review, and presentation quality.',
+      concepts: ['visual identity', 'image', 'review', 'presentation']
+    },
+    solarient: {
+      role: 'Relationships, dependency topology, gate coordination, and the graph between ments.',
+      concepts: ['relationship', 'edge', 'gate', 'coordination']
+    },
+    animent: {
+      role: 'Animation, voice synthesis, vozentos, and time-based generated expression.',
+      concepts: ['animation', 'voice', 'render', 'expression']
+    },
+    raeschent: {
+      role: 'Research, experiments, probes, and the discipline of tested uncertainty.',
+      concepts: ['research', 'experiment', 'probe', 'evidence']
+    }
+  };
 
   /* Read sisters from data attribute or use defaults */
   var sistersData = canvas.dataset.sisters;
@@ -48,34 +103,83 @@
     ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
   }
 
+  function layoutCenter() {
+    return {
+      x: W < 760 ? W / 2 : W * 0.78,
+      y: W < 760 ? H * 0.62 : H * 0.50
+    };
+  }
+
+  function layoutRadii() {
+    var span = Math.min(W, H);
+    return {
+      x: span * (W < 760 ? 0.26 : 0.22),
+      y: span * (W < 760 ? 0.22 : 0.27)
+    };
+  }
+
   function init() {
     resize();
-    var cx = W / 2, cy = H / 2;
+    var center = layoutCenter();
+    var cx = center.x, cy = center.y;
+    var radii = layoutRadii();
     nodes = sisters.map(function(s, i) {
       var angle = (i / sisters.length) * Math.PI * 2 - Math.PI / 2;
-      var rx = Math.min(W, H) * 0.30;
-      var ry = Math.min(W, H) * 0.28;
+      var tx = cx + Math.cos(angle) * radii.x;
+      var ty = cy + Math.sin(angle) * radii.y;
       return {
-        x: cx + Math.cos(angle) * rx + (Math.random() - 0.5) * 60,
-        y: cy + Math.sin(angle) * ry + (Math.random() - 0.5) * 60,
+        x: tx + (Math.random() - 0.5) * 24,
+        y: ty + (Math.random() - 0.5) * 24,
+        tx: tx,
+        ty: ty,
         vx: (Math.random() - 0.5) * 0.015,
         vy: (Math.random() - 0.5) * 0.015,
         name: s.name,
         color: s.color,
         domain: s.domain,
+        code: s.code,
         r: 6
       };
+    });
+  }
+
+  function setFocus(node) {
+    if (!focusPanel || !focusName || !focusDomain || !focusLinks) return;
+    if (!node) {
+      focusPanel.classList.remove('is-active');
+      focusPanel.hidden = true;
+      focusPanel.style.removeProperty('--ment-color');
+      focusName.textContent = '';
+      focusDomain.textContent = '';
+      focusLinks.replaceChildren();
+      return;
+    }
+    var profile = profiles[node.name] || {};
+    focusPanel.hidden = false;
+    focusPanel.classList.add('is-active');
+    focusPanel.style.setProperty('--ment-color', node.color);
+    focusName.textContent = node.name;
+    focusDomain.textContent = profile.role || node.domain;
+    focusLinks.replaceChildren();
+    (profile.concepts || []).forEach(function(concept) {
+      var link = document.createElement('a');
+      link.className = 'ment-focus-link';
+      link.href = '/ontology/';
+      link.textContent = concept;
+      focusLinks.appendChild(link);
     });
   }
 
   function tick() {
     ctx.clearRect(0, 0, W, H);
 
-    hovered = null;
+    var previousHover = hovered;
+    hovered = selected;
     for (var k = 0; k < nodes.length; k++) {
       var dm = Math.hypot(nodes[k].x - mouse.x, nodes[k].y - mouse.y);
       if (dm < 40) { hovered = nodes[k]; break; }
     }
+    if (hovered !== previousHover) setFocus(hovered);
 
     for (var k = 0; k < nodes.length; k++) {
       var n = nodes[k];
@@ -85,6 +189,8 @@
       if (n.x > W - 100) n.vx -= 0.003;
       if (n.y < 100) n.vy += 0.003;
       if (n.y > H - 100) n.vy -= 0.003;
+      n.vx += (n.tx - n.x) * 0.0007;
+      n.vy += (n.ty - n.y) * 0.0007;
       n.vx *= 0.992;
       n.vy *= 0.992;
       n.vx += (Math.random() - 0.5) * 0.003;
@@ -180,20 +286,29 @@
   canvas.addEventListener('mouseleave', function() {
     mouse.x = -999;
     mouse.y = -999;
+    if (!selected) setFocus(null);
+  });
+
+  canvas.addEventListener('click', function() {
+    selected = hovered || selected;
+    setFocus(selected);
   });
 
   window.addEventListener('resize', function() {
     resize();
-    var cx = W / 2, cy = H / 2;
+    var center = layoutCenter();
+    var cx = center.x, cy = center.y;
+    var radii = layoutRadii();
     for (var i = 0; i < nodes.length; i++) {
       var angle = (i / nodes.length) * Math.PI * 2 - Math.PI / 2;
-      var rx = Math.min(W, H) * 0.30;
-      var ry = Math.min(W, H) * 0.28;
-      nodes[i].x = cx + Math.cos(angle) * rx + (Math.random() - 0.5) * 60;
-      nodes[i].y = cy + Math.sin(angle) * ry + (Math.random() - 0.5) * 60;
+      nodes[i].tx = cx + Math.cos(angle) * radii.x;
+      nodes[i].ty = cy + Math.sin(angle) * radii.y;
+      nodes[i].x = nodes[i].tx + (Math.random() - 0.5) * 24;
+      nodes[i].y = nodes[i].ty + (Math.random() - 0.5) * 24;
     }
   });
 
   init();
+  setFocus(null);
   tick();
 })();

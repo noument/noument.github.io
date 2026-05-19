@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-05-19T16:01:25.936171+00:00",
-  "diff_lines": 13064,
-  "diff_hash": "6b17a396055c2261",
+  "timestamp": "2026-05-19T22:17:34.380977+00:00",
+  "diff_lines": 907,
+  "diff_hash": "697e3f2e247f755f",
   "regex_warnings": [],
   "sekkers_required": true,
   "sekkers_reasons": [
-    "diff_lines=13064 > 500"
+    "diff_lines=907 > 500"
   ],
   "publication_review_requirements": {
     "version": 1,
@@ -23,7 +23,7 @@
           "sekker.pro",
           "sekker.anti"
         ],
-        "reason": "diff_lines=13064 > 500"
+        "reason": "diff_lines=907 > 500"
       },
       {
         "kind": "visual",
@@ -62,47 +62,54 @@
       "visual"
     ],
     "reasons": [
-      "diff_lines=13064 > 500",
+      "diff_lines=907 > 500",
+      "root metadata/feed changed: sitemap.xml",
       "high-prominence/live asset changed: index.html",
-      "high-prominence/live asset changed: static/css/style.css",
+      "JavaScript changed: static/js/constellation.js",
+      "JavaScript changed: static/js/constellation.js",
+      "high-prominence/live asset changed: static/js/constellation.js",
+      "root metadata/feed changed: atom.xml",
       "ontology/public source-truth surface changed: ontology/index.html",
       "ontology/material public claim surface changed: ontology/index.html",
+      "high-prominence/live asset changed: static/pdf/NOU-2026-007.pdf",
+      "root metadata/feed changed: feed.xml",
+      "high-prominence/live asset changed: static/css/style.css",
       "added public canon/security/source-truth language"
     ],
     "sekkers_required": true,
     "sekkers_reasons": [
-      "diff_lines=13064 > 500"
+      "diff_lines=907 > 500"
     ],
     "low_risk": false
   },
   "verifications": [
     {
-      "reviewer": "sekker.pro",
-      "verdict": "PASS",
-      "timestamp": "2026-05-19T16:05:54.995640+00:00",
-      "role": "security",
-      "note": "GATE001 c3 sekker.pro PASS bonded to audit_diff_hash=6b17a396055c2261 audit_timestamp=2026-05-19T16:01:25Z. Prior /Users/Shared disclosure fully remediated; no secrets/PII/internal IPs; remaining diff intentional canonical documentation."
-    },
-    {
-      "reviewer": "sekker.anti",
-      "verdict": "PASS",
-      "timestamp": "2026-05-19T16:06:02.920444+00:00",
-      "role": "security",
-      "note": "GATE001 c3 sekker.anti PASS bonded to audit_diff_hash=6b17a396055c2261 audit_timestamp=2026-05-19T15:59:17Z. Full pages scan clean for developer paths, credentials, PII, internal IPs, and XSS sinks; prior absolute-path blocker resolved."
-    },
-    {
       "reviewer": "noument",
       "verdict": "PASS",
-      "timestamp": "2026-05-19T16:06:12.577576+00:00",
+      "timestamp": "2026-05-19T22:19:35.901510+00:00",
       "role": "source-owner",
-      "note": "GATE001 c4 source-owner PASS bonded to audit_diff_hash=6b17a396055c2261 audit_timestamp=2026-05-19T15:59:17Z. ontology.verify PASS 131 entries; registry_sha=1e261f5bbc2f9e783db767158ab20b45e93d4e246716aadb6b82154343f4148b; render_sha256=dde6416d023ee5e0aacf7322fbacd28c29aef9c5e98dce59392a0cb81639ffff; source_integrity and projection_readability PASS."
+      "note": "GATE001 c4 source-owner PASS for fresh audit hash 697e3f2e247f755f timestamp 2026-05-19T22:17:34Z. Combines POST016 source-owner PASS for markdown sha ad6cbc6540c6f8763d84dafa396fdaa936a05df3045346033f74e94d2f70cf4c and PDF sha 70eaa52f24a92bb98402dd302e47edd9d90bfc7be8519488930a1eecf3225fb1 with noument supplemental ontology PASS for registry_sha ce98cc8eaf3def9f0c2a814c710bb63e58e4b4757799027f07957d89604a41b0 and render_sha 08c194d2d28298bc6b0db38f99842c420d1d8c5d6cf0c82c96d93217ebbfdefe."
     },
     {
       "reviewer": "dalent",
       "verdict": "PASS",
-      "timestamp": "2026-05-19T16:06:22.032224+00:00",
+      "timestamp": "2026-05-19T22:21:56.910436+00:00",
       "role": "visual",
-      "note": "GATE001 c5 visual PASS bonded to audit_diff_hash=6b17a396055c2261 audit_timestamp=2026-05-19T16:01:25Z. /, /ontology/, and /static/css/style.css render; ontology status PASS rows and reader sections visible; no layout regression."
+      "note": "GATE001 c5 fresh visual PASS bonded to audit hash 697e3f2e247f755f timestamp 2026-05-19T22:17:34Z. Verified homepage constellation silent-until-hover focus panel, NOU-2026-007 article/PDF integration, and ontology page 132 entries with OD128 concite present; scope visual/site-UX only."
+    },
+    {
+      "reviewer": "sekker.pro",
+      "verdict": "PASS",
+      "timestamp": "2026-05-19T22:22:20.188408+00:00",
+      "role": "security",
+      "note": "GATE001 c3 sekker.pro fresh security PASS bonded to audit hash 697e3f2e247f755f timestamp 2026-05-19T22:17:34Z. Re-scanned OD128/concite ontology regeneration, NOU-2026-007 PDF sha 70eaa52f24a92bb98402dd302e47edd9d90bfc7be8519488930a1eecf3225fb1 marker-clean, constellation.js risk-token clean, no credential/path/PII/internal-host leakage; scope security/adversarial only."
+    },
+    {
+      "reviewer": "sekker.anti",
+      "verdict": "PASS",
+      "timestamp": "2026-05-19T22:22:37.599954+00:00",
+      "role": "security",
+      "note": "GATE001 c3 sekker.anti fresh security PASS bonded to audit hash 697e3f2e247f755f timestamp 2026-05-19T22:17:34Z. Independently rescanned OD128/concite ontology insertion, NOU-2026-007 article/PDF, posts, constellation.js, full pages tree; no absolute-path leakage, secrets, PII, internal IPs, unsafe JS/PDF surfaces, or new off-allowlist hosts; scope security/adversarial only."
     }
   ]
 }
