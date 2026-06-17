@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QWERTY Piano</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app" aria-label="QWERTY Piano">
+    <header class="topbar">
+      <div>
+        <h1>QWERTY Piano</h1>
+        <p id="statusLine">Public web prototype</p>
+      </div>
+      <div class="actions" aria-label="Controls">
+        <button id="playBtn" type="button">Play</button>
+        <button id="nextBtn" type="button">Next</button>
+        <button id="libraryBtn" type="button">All</button>
+        <button id="modeBtn" type="button">Wait</button>
+        <button id="labelsBtn" type="button">ES</button>
+        <button id="waveBtn" type="button">Wave</button>
+      </div>
+    </header>
+
+    <section class="readout" aria-live="polite">
+      <div id="currentNote" class="current">Ready</div>
+      <div id="pressedLine" class="pressed-line">pressed: -</div>
+      <div id="fingerLine" class="finger-line"></div>
+      <div id="itemLine" class="item"></div>
+      <div id="lessonLine" class="lesson"></div>
+      <div id="detailLine" class="detail"></div>
+      <div id="nextLine" class="next"></div>
+    </section>
+
+    <section class="keyboard-wrap" aria-label="Piano keyboard">
+      <div id="keyboard" class="keyboard"></div>
+    </section>
+
+    <canvas id="waveCanvas" class="wave" width="920" height="120" aria-label="Harmonic wave"></canvas>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
