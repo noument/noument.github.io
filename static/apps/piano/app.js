@@ -447,8 +447,22 @@ function pressPianoKey(key) {
   return true;
 }
 
+// Build a key's note/QWERTY label via textContent (never innerHTML) so these
+// labels can never become an HTML-injection sink, even if a future edit routes
+// dynamic/user input into them. Inputs are frozen constants today; this keeps
+// the sink permanently inert. (sekker.anti hardening, 2026-06-17.)
+function setKeyLabel(el, noteText, labelText) {
+  const note = document.createElement("span");
+  note.className = "note";
+  note.textContent = noteText;
+  const label = document.createElement("span");
+  label.className = "label";
+  label.textContent = labelText;
+  el.replaceChildren(note, label);
+}
+
 function renderKeyboard() {
-  keyboard.innerHTML = "";
+  keyboard.replaceChildren();
   const whiteW = keyboard.clientWidth / WHITE_SPEC.length;
   const blackW = whiteW * 0.62;
   const compact = keyboard.clientHeight < 250;
@@ -468,7 +482,7 @@ function renderKeyboard() {
     if (key === wrongKey) el.classList.add("wrong");
     el.style.left = `${idx * whiteW}px`;
     el.style.width = `${whiteW - 2}px`;
-    el.innerHTML = `<span class="note">${midiToName(BASE_MIDI + offset + octaveOffset)}</span><span class="label">${label}</span>`;
+    setKeyLabel(el, midiToName(BASE_MIDI + offset + octaveOffset), label);
     keyboard.appendChild(el);
   });
   BLACK_SPEC.forEach(([key, offset, afterIdx, label]) => {
@@ -479,7 +493,7 @@ function renderKeyboard() {
     if (key === wrongKey) el.classList.add("wrong");
     el.style.left = `${(afterIdx + 1) * whiteW - blackW / 2}px`;
     el.style.width = `${blackW}px`;
-    el.innerHTML = `<span class="note">${midiToName(BASE_MIDI + offset + octaveOffset)}</span><span class="label">${label}</span>`;
+    setKeyLabel(el, midiToName(BASE_MIDI + offset + octaveOffset), label);
     keyboard.appendChild(el);
   });
   THUMB_SPEC.forEach(([key, offset, label], idx) => {
@@ -491,7 +505,7 @@ function renderKeyboard() {
     el.style.top = `${thumbTop}px`;
     el.style.width = `${thumbW}px`;
     el.style.height = `${thumbH}px`;
-    el.innerHTML = `<span class="note">${midiToName(BASE_MIDI + offset + octaveOffset)}</span><span class="label">${label}</span>`;
+    setKeyLabel(el, midiToName(BASE_MIDI + offset + octaveOffset), label);
     keyboard.appendChild(el);
   });
 }
