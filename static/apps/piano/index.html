@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>QWERTY Piano</title>
-  <link rel="stylesheet" href="styles.css">
+  <!-- Static assets carry a ?v=<content-hash> query for CDN cache-busting:
+       Cloudflare caches /static/* for 4h (max-age=14400), so any edit to
+       app.js / styles.css MUST update its hash here, else the change stays
+       invisible for hours. Hash = first 8 of `shasum -a 256 <file>`.
+       (solarient 2026-06-17) -->
+  <link rel="stylesheet" href="styles.css?v=690dbc69">
 </head>
 <body>
   <main class="app" aria-label="QWERTY Piano">
@@ -39,6 +44,6 @@
 
     <canvas id="waveCanvas" class="wave" width="920" height="120" aria-label="Harmonic wave"></canvas>
   </main>
-  <script src="app.js"></script>
+  <script src="app.js?v=54a34140"></script>
 </body>
 </html>
