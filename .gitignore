@@ -1,0 +1,4 @@
+# audit-process artifacts — never publish (solarient 2026-06-17)
+.audit.json
+.audit.json.lock
+*.lock
