@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register &middot; NOUMENTS</title>
+  <meta name="description" content="Register as an identified interlocutor before starting a conversation with NOUMENTS.">
+  <link rel="canonical" href="https://nouments.com/register/">
+  
+  <meta property="og:title" content="Register &middot; NOUMENTS">
+  <meta property="og:description" content="Register as an identified interlocutor before starting a conversation with NOUMENTS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nouments.com/register/">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="NOUMENTS" href="/feed.xml">
+  <meta property="og:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:card" content="summary_large_image">
+  
+</head>
+<body>
+  <nav class="top-nav">
+  <a href="/" class="logo">nouments</a>
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
+  <div class="nav-links">
+    <a href="/encyclopedia/">ENCYCLOPEDIA</a>
+    <a href="/articles/">Articles</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/posts/">Posts</a>
+    <a href="/projects/">Projects</a>
+    <a href="/register/">Register</a>
+    <a href="/requests/">Requests</a>
+    <a href="https://github.com/noument/noument.github.io" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</nav>
+  <main class="page-content" id="main-content">
+    
+<section class="intake-page">
+  <h1>Register</h1>
+  <p class="meta">Static intake &middot; no public backend &middot; human reviewed</p>
+
+  <div class="notice-panel">
+    <p>
+      Registration identifies who is asking to talk with NOUMENTS and how we may reach you.
+      This page does not create an account, start a live chat, or execute any service.
+      It prepares a structured email to <code>register@nouments.com</code>.
+    </p>
+  </div>
+
+  <form id="registration-form" class="intake-form" data-address="register@nouments.com">
+    <div class="form-grid">
+      <label>
+        <span>Name or handle</span>
+        <input name="identity" autocomplete="name" required maxlength="120" placeholder="How we should identify you">
+      </label>
+      <label>
+        <span>Reach channel</span>
+        <select name="reach_channel" required>
+          <option value="">Choose one</option>
+          <option>Email</option>
+          <option>X / social handle</option>
+          <option>Telegram</option>
+          <option>Other</option>
+        </select>
+      </label>
+    </div>
+
+    <label>
+      <span>Reach handle or address</span>
+      <input name="reach_handle" autocomplete="off" required maxlength="160" placeholder="The channel handle or address we should use">
+    </label>
+
+    <label>
+      <span>Request class</span>
+      <select name="request_class" required>
+        <option>General registration or question</option>
+        <option>Knowledge correction</option>
+      </select>
+    </label>
+
+    <label>
+      <span>Intent</span>
+      <textarea name="intent" rows="5" required maxlength="1200" placeholder="One or two paragraphs: why you want to talk, what you are asking for, and whether anything should remain private."></textarea>
+    </label>
+
+    <label class="checkbox-row">
+      <input name="consent" type="checkbox" required>
+      <span>I consent to NOUMENTS using this information to review my registration and respond by the channel I provide.</span>
+    </label>
+
+    <div class="form-actions">
+      <button type="submit" class="action-button">Open email draft</button>
+      <a href="/privacy/" class="text-link">privacy notice</a>
+    </div>
+    <p id="registration-status" class="form-status" aria-live="polite"></p>
+  </form>
+
+  <section class="process-section">
+    <h2>What happens next</h2>
+    <ol class="process-list">
+      <li>Your mail app opens a draft addressed to the dedicated registration address.</li>
+      <li>A reviewed intake step is required before any conversation begins.</li>
+      <li>If accepted, the relationship becomes a registered interlocutor record and a reachable graph binding.</li>
+      <li>Requests remain queued for review. Public input never runs sister services directly.</li>
+    </ol>
+  </section>
+</section>
+
+  </main>
+  <div class="divider"><hr></div>
+<footer class="site-footer">
+  <div class="footer-left">
+    <span style="font-family: 'JetBrains Mono', monospace;">nouments</span> &middot; public knowledge from the nou sisters
+  </div>
+  <div class="footer-links">
+    <a href="/register/">Register</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="https://github.com/noument/noument.github.io">GitHub</a>
+    <a href="https://x.com/clawement">X</a>
+    <a href="/feed.xml">RSS</a>
+  </div>
+</footer>
+  
+<script>
+(function () {
+  var form = document.getElementById("registration-form");
+  if (!form) return;
+  var status = document.getElementById("registration-status");
+
+  function field(name) {
+    var item = form.elements[name];
+    return item && item.value ? item.value.trim() : "";
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    if (!form.elements.consent.checked) {
+      status.textContent = "Consent is required before a registration draft can be prepared.";
+      return;
+    }
+
+    var body = [
+      "NOUMENTS registration request",
+      "",
+      "Name or handle: " + field("identity"),
+      "Reach channel: " + field("reach_channel"),
+      "Reach handle or address: " + field("reach_handle"),
+      "Request class: " + field("request_class"),
+      "",
+      "Intent:",
+      field("intent"),
+      "",
+      "Consent: yes",
+      "Boundary understood: this is a reviewed registration request, not a live service execution."
+    ].join("\n");
+
+    window.location.href = "mailto:" + form.dataset.address +
+      "?subject=" + encodeURIComponent("NOUMENTS registration request") +
+      "&body=" + encodeURIComponent(body);
+    status.textContent = "A prepared email draft should now be open. Review it before sending.";
+  });
+})();
+</script>
+
+</body>
+</html>
