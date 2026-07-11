@@ -122,7 +122,7 @@ nav.top-nav .logo {
   font-weight: 500;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #777;
+  color: #9a96a8;
 }
 
 nav.top-nav .logo:hover { color: #ccc; }
@@ -136,7 +136,7 @@ nav.top-nav .nav-links a {
   font-size: 13px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #555;
+  color: #8b8796;
 }
 
 nav.top-nav .nav-links a:hover { color: #ccc; }
@@ -196,7 +196,7 @@ nav.top-nav .nav-toggle {
 
 /* ── Hero: graph fills viewport ── */
 .hero {
-  height: clamp(520px, 68vh, 760px);
+  height: clamp(460px, 54vh, 620px);
   position: relative;
   overflow: hidden;
 }
@@ -207,9 +207,87 @@ nav.top-nav .nav-toggle {
   height: 100%;
 }
 
+.hero-thesis {
+  position: absolute;
+  left: clamp(24px, 7vw, 92px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(470px, calc(100% - 48px));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a39fad;
+  margin-bottom: 16px;
+}
+
+.hero-thesis h1 {
+  max-width: 11em;
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: 1.05;
+  font-weight: 650;
+  color: #f0eff7;
+  margin-bottom: 18px;
+}
+
+.hero-thesis p {
+  max-width: 31em;
+  color: #aaa6b5;
+  font-size: 16px;
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.hero-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 6px;
+  color: #d8d6e2;
+  background: rgba(255,255,255,0.035);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-action:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.065);
+}
+
+.hero-action-primary {
+  border-color: rgba(78, 205, 196, 0.45);
+  background: rgba(78, 205, 196, 0.11);
+  color: #d7fffb;
+}
+
+.hero-caption {
+  margin-top: 18px;
+  color: #716d7c;
+  font-size: 13px;
+}
+
 .ment-focus-panel {
   position: absolute;
-  left: clamp(28px, 9vw, 150px);
+  right: clamp(24px, 7vw, 92px);
+  left: auto;
   bottom: clamp(76px, 11vh, 124px);
   width: min(380px, calc(100vw - 56px));
   padding: 18px 20px;
@@ -279,7 +357,23 @@ nav.top-nav .nav-toggle {
 
 @media (max-width: 760px) {
   .hero {
-    height: clamp(620px, 78vh, 760px);
+    height: clamp(620px, 82vh, 760px);
+  }
+
+  .hero-thesis {
+    top: 92px;
+    transform: none;
+  }
+
+  .hero-thesis h1 {
+    max-width: 10em;
+    font-size: 34px;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 320px;
   }
 
   .ment-focus-panel {
@@ -324,8 +418,17 @@ section.home-section {
   font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #555;
+  color: #8b8796;
   margin-bottom: 32px;
+}
+
+.section-intro {
+  max-width: 660px;
+  color: #8f8c9a;
+  font-size: 15px;
+  line-height: 1.65;
+  margin-top: -18px;
+  margin-bottom: 0;
 }
 
 .section-heading {
@@ -343,7 +446,7 @@ section.home-section {
 .section-updated {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: #666;
+  color: #8a8695;
   white-space: nowrap;
 }
 
@@ -489,11 +592,21 @@ section.home-section {
   border: 1px solid rgba(255,255,255,0.04);
   border-radius: 8px;
   transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
 }
 
 .sister-cell:hover {
   background: rgba(255,255,255,0.03);
-  border-color: rgba(255,255,255,0.08);
+  border-color: var(--sister-color, #8b8796);
+}
+
+.sister-accent {
+  width: 28px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--sister-color, #d4d4d8);
+  margin-bottom: 14px;
 }
 
 .sister-cell .sister-name {
@@ -507,13 +620,13 @@ section.home-section {
 .sister-cell .sister-code {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: #444;
+  color: #8a8695;
   margin-bottom: 6px;
 }
 
 .sister-cell .sister-domain {
   font-size: 13px;
-  color: #666;
+  color: #918d9c;
   line-height: 1.4;
 }
 
@@ -786,17 +899,18 @@ footer.site-footer {
 
 footer.site-footer .footer-left {
   font-size: 13px;
-  color: #444;
+  color: #777382;
 }
 
 footer.site-footer .footer-links {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 footer.site-footer .footer-links a {
   font-size: 13px;
-  color: #555;
+  color: #8b8796;
 }
 
 footer.site-footer .footer-links a:hover { color: #ccc; }

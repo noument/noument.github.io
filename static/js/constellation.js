@@ -106,7 +106,7 @@
   function layoutCenter() {
     return {
       x: W < 760 ? W / 2 : W * 0.78,
-      y: W < 760 ? H * 0.62 : H * 0.50
+      y: W < 760 ? H * 0.78 : H * 0.50
     };
   }
 
@@ -114,7 +114,7 @@
     var span = Math.min(W, H);
     return {
       x: span * (W < 760 ? 0.26 : 0.22),
-      y: span * (W < 760 ? 0.22 : 0.27)
+      y: span * (W < 760 ? 0.16 : 0.27)
     };
   }
 
