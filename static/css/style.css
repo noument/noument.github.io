@@ -141,6 +141,16 @@ nav.top-nav .nav-links a {
 
 nav.top-nav .nav-links a:hover { color: #ccc; }
 
+/*
+ * J054 transition compatibility. Existing static pages retain their old
+ * header bytes during the scoped migration; this shared dependency removes
+ * the dissolved Articles collection from their visible navigation. New
+ * renders already omit the link in the source template.
+ */
+nav.top-nav .nav-links a[href$="/articles/"] {
+  display: none !important;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -570,6 +580,20 @@ section.home-section {
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 48px;
+}
+
+/*
+ * Same bounded J054 bridge for the already-published home bytes. The first
+ * legacy split child is the Articles shelf; the second (Posts) becomes the
+ * full row. New renders contain no split section here, so these selectors
+ * become inert after a future full-site publication.
+ */
+#knowledge-surfaces .split-section > div:first-child {
+  display: none;
+}
+
+#knowledge-surfaces .split-section {
+  grid-template-columns: 1fr;
 }
 
 @media (max-width: 768px) {
