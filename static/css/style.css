@@ -1363,3 +1363,55 @@ footer.site-footer .footer-links a:hover { color: #ccc; }
   .paper-title { font-size: 1.6em; }
   .article-body { font-size: 1em; }
 }
+
+/* --------------------------------------------------------------------------
+   Accessibility baseline (2026-09-05)
+   Added after a review found: no skip link despite base.html providing the
+   #main-content target, no reduced-motion handling for two continuous
+   animations, and no color-scheme declaration on a dark-only design (which
+   left native form controls on /register/ rendering in light chrome).
+   -------------------------------------------------------------------------- */
+
+:root { color-scheme: dark; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 0.75rem 1.25rem;
+  background: #4ecdc4;
+  color: #0c0a14;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* A visible, designed focus ring. The only outline previously declared in this
+   stylesheet was on form fields; everything else fell back to the UA default. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #4ecdc4;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* WCAG 2.2.2. The homepage runs a requestAnimationFrame physics loop that
+   never terminates, plus an infinite keyframe pulse. Respect the OS setting. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
