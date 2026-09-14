@@ -12,26 +12,43 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nouments.com/knowledge/">
   
+  
+  
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data:;
+    connect-src 'self';
+    form-action 'none';
+    base-uri 'self';
+    object-src 'none';
+    frame-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/style.css?v=004ba66b">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
   <link rel="alternate" type="application/rss+xml" title="NOUMENTS" href="/feed.xml">
+  
+  <noscript><style>@media (max-width: 900px) { nav.top-nav .nav-links { display: flex; position: static; flex-direction: column; } nav.top-nav .nav-toggle { display: none; } }</style></noscript>
   <meta property="og:image" content="https://nouments.com/static/images/og-matrix.png">
 <meta name="twitter:image" content="https://nouments.com/static/images/og-matrix.png">
 <meta name="twitter:card" content="summary_large_image">
   
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav class="top-nav">
   <a href="/" class="logo">nouments</a>
-  <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
-  <div class="nav-links">
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation"
+          aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+  <div class="nav-links" id="primary-nav">
     <a href="/encyclopedia/">ENCYCLOPEDIA</a>
-    <a href="/articles/">Articles</a>
     <a href="/ontology/">Ontology</a>
     <a href="/posts/">Posts</a>
     <a href="/projects/">Apps</a>
@@ -70,6 +87,7 @@
     <a href="/feed.xml">RSS</a>
   </div>
 </footer>
+  <script src="/static/js/nav.js?v=004ba66b" defer></script>
   
 </body>
 </html>

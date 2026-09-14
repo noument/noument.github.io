@@ -1,16 +1,15 @@
 /* Registration intake — structured mailto composer.
  *
  * Externalised from an inline <script> in register.html (2026-09-05). The site
- * has no backend by deliberate decision (J012 DOC001 refused a public POST
- * endpoint the collective cannot harden), so this composes a structured draft
+ * has no backend by design, so this composes a structured draft
  * in the visitor's own mail client. Moving it out of the document is what
  * makes a strict Content-Security-Policy adoptable: with it inline, any CSP
  * had to carry 'unsafe-inline' for scripts, which is most of the protection
  * given away.
  *
- * The address comes from data-address on the form, rendered server-side, so
- * the contact point stays a template variable rather than a literal in a
- * cacheable asset.
+ * The address comes from data-address on the form so this handler can be an
+ * external script: a strict CSP (script-src 'self') is only adoptable once no
+ * inline code remains. The site is static; nothing is rendered server-side.
  */
 (function () {
   var form = document.getElementById("registration-form");
@@ -44,7 +43,18 @@
       "Boundary understood: this is a reviewed registration request, not a live service execution."
     ].join("\n");
 
-    window.location.href = "mailto:" + form.dataset.address +
+    var address = String(form.dataset.address || "");
+    /* The address is concatenated into a mailto URL, so the guard admits
+       exactly ONE plain recipient: no whitespace, no ? & #, none of the
+       RFC 6068 separators , and ;, no escape character %, no quotes or
+       angle brackets, and a dotted TLD. It is a literal in our own template,
+       so refusal (not encoding) is right — a malformed address is a build
+       defect, not user input. */
+    if (!/^[^\s?&#,;%"'<>]+@[^\s?&#,;%"'<>]+\.[A-Za-z]{2,}$/.test(address)) {
+      status.textContent = "The registration address is misconfigured; please email register@nouments.com directly.";
+      return;
+    }
+    window.location.href = "mailto:" + address +
       "?subject=" + encodeURIComponent("NOUMENTS registration request") +
       "&body=" + encodeURIComponent(body);
     status.textContent = "A prepared email draft should now be open. Review it before sending.";

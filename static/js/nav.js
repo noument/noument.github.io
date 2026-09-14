@@ -4,14 +4,13 @@
  * reasons, both load-bearing:
  *   1. the inline handler kept aria-expanded from ever being updated, so a
  *      screen-reader user was never told whether the menu was open;
- *   2. it was the last inline handler in the TEMPLATES, and a strict CSP
- *      cannot be adopted while one exists. Scope honesty (channent review
- *      2026-09-07): already-RENDERED legacy pages (notably /register/ from
- *      the July slice) still carry inline handlers until their route is
- *      re-rendered from the cleaned templates — CSP must reach a page only
- *      via a render that also ships its extracted scripts.
+ *   2. it was the last inline handler in the templates, and a strict CSP
+ *      cannot be adopted while one exists.
  * Progressive enhancement: with JS off the nav-links block remains in the
- * document and reachable; this only manages the collapsed presentation.
+ * document and, at 900px and below where the stylesheet collapses it behind
+ * the toggle, a <noscript> rule in base.html shows the links inline — so the
+ * nav is reachable without this script; this only manages the collapsed
+ * presentation when the script runs.
  */
 (function () {
   "use strict";

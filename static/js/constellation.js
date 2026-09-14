@@ -1,8 +1,25 @@
 /* Constellation — interactive sister graph for nouments.com homepage */
+/* WCAG 2.2.2 (2026-09-05): this file runs an unbounded requestAnimationFrame
+   physics loop. Under prefers-reduced-motion the loop never runs: the
+   constellation is DRAWN from its current positions — one paint at load and
+   one coalesced paint per resize, pointer move, leave or click, so labels and
+   hover still work — and the physics never integrates. Motion is the
+   accommodation, not content.
+   (History: the first edition painted once and went blank on resize; the
+   second repainted by calling the physics step from mousemove, which
+   animated the graph for exactly the users it protected. Drawing and
+   integration are now separate functions; only draw() is ever called under
+   reduced motion. The media query is read live and a change mid-visit
+   starts or stops the loop.) */
 (function() {
   var canvas = document.getElementById('constellation-canvas');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
+  var reducedQuery = window.matchMedia
+    ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  function reducedMotion() {
+    return !!(reducedQuery && reducedQuery.matches);
+  }
   var focusPanel = document.querySelector('.ment-focus-panel');
   var focusName = document.querySelector('.ment-focus-name');
   var focusDomain = document.querySelector('.ment-focus-domain');
@@ -170,9 +187,7 @@
     });
   }
 
-  function tick() {
-    ctx.clearRect(0, 0, W, H);
-
+  function updateHover() {
     var previousHover = hovered;
     hovered = selected;
     for (var k = 0; k < nodes.length; k++) {
@@ -180,7 +195,10 @@
       if (dm < 40) { hovered = nodes[k]; break; }
     }
     if (hovered !== previousHover) setFocus(hovered);
+  }
 
+  /* Physics step. NEVER called under reduced motion. */
+  function integrate() {
     for (var k = 0; k < nodes.length; k++) {
       var n = nodes[k];
       n.x += n.vx;
@@ -226,6 +244,13 @@
         b.vy -= dy * force;
       }
     }
+
+  }
+
+  /* Paint the current positions. Pure: moves nothing. */
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    updateHover();
 
     /* Draw edges */
     for (var e = 0; e < edges.length; e++) {
@@ -273,13 +298,44 @@
       }
     }
 
+  }
+
+  var loopRunning = false;
+  function tick() {
+    integrate();
+    draw();
+    if (!reducedMotion()) {
+      loopRunning = true;
+      requestAnimationFrame(tick);
+    } else {
+      loopRunning = false;
+    }
+  }
+  function startLoop() {
+    if (loopRunning) return;
+    loopRunning = true;
     requestAnimationFrame(tick);
+  }
+
+  /* Under reduced motion the loop never runs, so state changes the loop
+     would have painted paint themselves — with draw() only, never integrate(),
+     coalesced to at most one paint per animation frame however many pointer
+     events arrive. */
+  var paintPending = false;
+  function paintOnce() {
+    if (!reducedMotion() || paintPending) return;
+    paintPending = true;
+    requestAnimationFrame(function() {
+      paintPending = false;
+      draw();
+    });
   }
 
   canvas.addEventListener('mousemove', function(e) {
     var rect = canvas.getBoundingClientRect();
     mouse.x = e.clientX - rect.left;
     mouse.y = e.clientY - rect.top;
+    paintOnce();
     canvas.style.cursor = hovered ? 'pointer' : 'default';
   });
 
@@ -287,11 +343,13 @@
     mouse.x = -999;
     mouse.y = -999;
     if (!selected) setFocus(null);
+    paintOnce();
   });
 
   canvas.addEventListener('click', function() {
     selected = hovered || selected;
     setFocus(selected);
+    paintOnce();
   });
 
   window.addEventListener('resize', function() {
@@ -306,9 +364,16 @@
       nodes[i].x = nodes[i].tx + (Math.random() - 0.5) * 24;
       nodes[i].y = nodes[i].ty + (Math.random() - 0.5) * 24;
     }
+    paintOnce();
   });
+
+  if (reducedQuery && reducedQuery.addEventListener) {
+    reducedQuery.addEventListener('change', function() {
+      if (reducedMotion()) { paintOnce(); } else { startLoop(); }
+    });
+  }
 
   init();
   setFocus(null);
-  tick();
+  if (reducedMotion()) { draw(); } else { startLoop(); }
 })();

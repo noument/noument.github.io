@@ -22,7 +22,7 @@ const NOTE_NAMES_EN = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#
 const NOTE_NAMES_ES = ["Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"];
 const BASE_MIDI = 60;
 const PUBLIC_INTERFACE = Object.freeze({
-  projectId: "J015",
+  projectId: "qwerty-piano",  // public slug; internal work-item ids do not ship
   version: "0.2.12",
   catalogPolicy: "public-domain-or-original",
   eventNamespace: "piano",

@@ -3,6 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 2026-09-13 (sekker.anti, W001): every site page carries a CSP; this
+       static app did not, while sitemap.xml advertises it. Same policy as
+       base.html; this page has no inline script or handler. -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
+    img-src 'self' data:;
+    connect-src 'self';
+    form-action 'none';
+    base-uri 'self';
+    object-src 'none';
+    frame-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://nouments.com/static/apps/piano/">
   <title>QWERTY Piano</title>
   <!-- Static assets carry a ?v=<content-hash> query for CDN cache-busting:
        Cloudflare caches /static/* for 4h (max-age=14400), so any edit to
@@ -44,6 +60,6 @@
 
     <canvas id="waveCanvas" class="wave" width="920" height="120" aria-label="Harmonic wave"></canvas>
   </main>
-  <script src="app.js?v=54a34140"></script>
+  <script src="app.js?v=6ec0a8d4"></script>
 </body>
 </html>
