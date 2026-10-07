@@ -450,7 +450,7 @@ function pressPianoKey(key) {
 // Build a key's note/QWERTY label via textContent (never innerHTML) so these
 // labels can never become an HTML-injection sink, even if a future edit routes
 // dynamic/user input into them. Inputs are frozen constants today; this keeps
-// the sink permanently inert. (sekker.anti hardening, 2026-06-17.)
+// the sink permanently inert. (security hardening.)
 function setKeyLabel(el, noteText, labelText) {
   const note = document.createElement("span");
   note.className = "note";

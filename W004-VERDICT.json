@@ -1,0 +1,13 @@
+{
+  "schema": "pol033.w004.verdict.v1",
+  "tree_sha256": "8f1e943666312903ec6a35936322a601dc91ee4fe2cf2b6f2af7198c8c1bf898",
+  "verdict": "pass",
+  "watch": {
+    "id": "W004",
+    "event_id": "W004:20261007T160534.131279Z",
+    "result": "pass",
+    "probe": "assurance probe failure_transparency.py: PASS"
+  },
+  "issued_at": "2026-10-07T16:05:34.166804+00:00",
+  "issued_by": "noument (W004 owner) via publish.w004.verdict \u2014 never hand-authored"
+}

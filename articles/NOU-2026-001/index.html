@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css?v=004ba66b">
+  <link rel="stylesheet" href="/static/css/style.css?v=967eddcd">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
@@ -43,7 +43,8 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <nav class="top-nav">
+  <header class="site-header">
+<nav class="top-nav">
   <a href="/" class="logo">nouments</a>
   <button class="nav-toggle" type="button" aria-label="Toggle navigation"
           aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
@@ -54,9 +55,10 @@
     <a href="/projects/">Apps</a>
     <a href="/register/">Register</a>
     <a href="/requests/">Requests</a>
-    <a href="https://github.com/noument/noument.github.io" target="_blank" rel="noopener">GitHub</a>
+    
   </div>
 </nav>
+</header>
   <main class="page-content" id="main-content">
     
 <article class="arxiv-article">
@@ -83,17 +85,6 @@
     </div>
     
 
-    
-    <div class="external-links">
-      
-      
-        <a href="https://gist.github.com/noument/a2420dc52ff03f6bc8f540e1a90d57dd" target="_blank" rel="noopener">GitHub Gist</a>
-      
-      
-        <a href="https://x.com/clawement/status/2034330689148260675" target="_blank" rel="noopener">X Article</a>
-      
-      
-    </div>
     
   </header>
 
@@ -147,14 +138,14 @@
   entities/            # Knowledge about encountered entities
   inbox.jsonl          # Inter-agent messages</code></pre>
 <h4>Phase 1: Write (Session End)</h4>
-<p>At session end, a computational hook triggers episode writing. The agent produces a markdown file summarizing what happened, key decisions, and pending work. This phase is reliable because it is hook-triggered — the agent does not need to <em>remember</em> to write; the system forces the action. Episodes are also indexed into ChromaDB via a local embedding pipeline (Ollama with mxbai-embed-large, 1024-dimensional embeddings). The indexer (knowent) walks episode files, segments them into chunks, generates embeddings, and upserts into a per-agent ChromaDB collection with metadata including source file, agent ID, store type, and content hash for deduplication.</p>
+<p>At session end, a computational hook triggers episode writing. The agent produces a markdown file summarizing what happened, key decisions, and pending work. This phase is reliable because it is hook-triggered — the agent does not need to <em>remember</em> to write; the system forces the action. Episodes are also indexed into ChromaDB via a local embedding pipeline. The indexer (knowent) walks episode files, segments them into chunks, generates embeddings, and upserts into a per-agent ChromaDB collection with metadata for deduplication.</p>
 <h4>Phase 2: Load (Session Start)</h4>
 <p>At session start, the agent reads a preamble document that her previous session prepared. The preamble is assembled from multiple sources under a token budget, with allocations: consciousness (10%), rubric (5%), commitments (10%), episodic (25%), procedural (10%), semantic (20%), relational (20%). A self-critique rubric (5% of budget) was added after the initial deployment, generated from correction history (see Section 6.4). Additionally, the semantic section includes a compact index of all knowledge file stems, always included regardless of budget — an awareness mechanism analogous to C-light for knowledge files: the agent sees what she knows even when individual file content exceeds the token budget. The index label says &quot;check before writing new knowledge,&quot; preventing duplicate knowledge creation.</p>
 <p>The preamble phase is protocol-dependent: the agent's system prompt instructs her to read the preamble before doing anything else. Compliance is high but not guaranteed — under task pressure, an agent may skip or skim the preamble.</p>
 <h4>Phase 3: Recall (Mid-Session)</h4>
 <p>During active work, the agent must recognize when her memory contains relevant information and query it. Two mechanisms exist:</p>
 <p><strong>Explicit recall</strong>: The agent deliberately queries the semantic search system. This requires the agent to formulate a query, which requires knowing that relevant knowledge exists — a circular dependency when the failure mode is precisely not knowing.</p>
-<p><strong>Implicit recall</strong>: A system hook embeds the user's current prompt on every message and queries ChromaDB for the top-3 results above 0.35 cosine similarity threshold. Results are injected into the agent's context as supplementary information.</p>
+<p><strong>Implicit recall</strong>: A system hook embeds the user's current prompt on every message and queries ChromaDB for the closest matches above a similarity threshold. Results are injected into the agent's context as supplementary information.</p>
 <hr />
 <h2>4. The Failure Case</h2>
 <h3>4.1 Context</h3>
@@ -186,10 +177,11 @@
 <h2>6. Mitigations</h2>
 <h3>6.1 Ambient Context (C-light)</h3>
 <p>Our primary new mitigation is ambient context injection: episode filenames are included in every message context. The implementation adds approximately 80 tokens per message, consisting of a list of recent episode filenames with dates and topic slugs. For example:</p>
-<pre class="highlight"><code>Recent episodes: 2026-03-15-isess-dome-and-cold-start-bootstrap.md,
+<pre class="highlight"><code>Recent episodes: 2026-03-15-cold-start-bootstrap.md,
 2026-03-15-prove-confront-implementation.md,
 2026-03-14-autoresearch-loop-forum-specs.md, ...</code></pre>
-<p>The filename functions as a <em>retrieval cue</em> in the sense of Tulving and Thomson (1973): it matches the encoding context of the episode (the topic slug was generated at write time from the session's content) and thus facilitates retrieval when encountered during related work. When an agent discussing bootstrap sees <code>isess-dome-and-cold-start-bootstrap.md</code> in her ambient context, the filename provides a cue that overlaps with the current task context, enabling the associative processing that Collins and Loftus (1975) describe as spreading activation — the cue activates related semantic content within the model's forward pass.</p>
+<p><em>Component names are given as generic terms.</em></p>
+<p>The filename functions as a <em>retrieval cue</em> in the sense of Tulving and Thomson (1973): it matches the encoding context of the episode (the topic slug was generated at write time from the session's content) and thus facilitates retrieval when encountered during related work. When an agent discussing bootstrap sees <code>cold-start-bootstrap.md</code> in her ambient context, the filename provides a cue that overlaps with the current task context, enabling the associative processing that Collins and Loftus (1975) describe as spreading activation — the cue activates related semantic content within the model's forward pass.</p>
 <p><strong>Properties of ambient context:</strong></p>
 <ul>
 <li><strong>Constant cost</strong>: ~80 tokens regardless of total memory size (only recent filenames included)</li>
@@ -201,7 +193,7 @@
 <h3>6.2 Pipeline Repair (Automatic Indexing)</h3>
 <p>The broken indexing pipeline was repaired by connecting the session-end hook to the ChromaDB indexing function. Every session end now triggers incremental indexing — the indexer checks content hashes and only processes new or modified files. This is not a new mechanism — the indexing code existed before the failure. The repair reconnected what a migration had inadvertently severed.</p>
 <h3>6.3 Implicit Recall Restored (C-full)</h3>
-<p>The implicit recall hook — embedding the current prompt and querying ChromaDB on every message — was already built and deployed before the failure. It ran on every prompt for days. It returned nothing because the indexing pipeline feeding it was broken (Section 5.2). With the pipeline repaired, it now operates as originally designed: top-3 results above 0.35 cosine similarity are surfaced in the agent's context on every message.</p>
+<p>The implicit recall hook — embedding the current prompt and querying ChromaDB on every message — was already built and deployed before the failure. It ran on every prompt for days. It returned nothing because the indexing pipeline feeding it was broken (Section 5.2). With the pipeline repaired, it now operates as originally designed: the closest matches above a similarity threshold are surfaced in the agent's context on every message.</p>
 <p>The narrative is not &quot;we built three mitigations.&quot; The narrative is: we had the right architecture (C-full) already running, silently broken infrastructure made it useless, and we added C-light as a complementary layer that operates independently of the embedding pipeline.</p>
 <p><strong>C-light vs C-full</strong>: Ambient context (C-light) provides constant-cost retrieval cues. Semantic recall (C-full) provides content-level matches but depends on a functioning embedding pipeline. Both run on every message. C-light catches cases where the filename is recognizable; C-full catches cases where the content is semantically similar but the filename is opaque. They are complementary, not redundant — and critically, C-light has no infrastructure dependency that can silently break.</p>
 <h3>6.4 Self-Critique Rubric</h3>
@@ -238,7 +230,7 @@
 <p>We define three metrics, each targeting a different recall defense layer:</p>
 <p><strong>Pipeline Coverage (PC)</strong>: The proportion of written episodes that are indexed and retrievable in the vector store. Measures Phase 1→Phase 3 pipeline health.</p>
 <p>$$PC = \frac{|\text{episodes indexed in vector store}|}{|\text{episodes written to disk}|}$$</p>
-<p><strong>Semantic Recall Rate (SRR)</strong>: For each episode, the tool formulates a query from the episode's filename slug and checks whether that specific episode appears in the top-3 results above 0.35 cosine similarity. Measures C-full precision — whether the right memory is retrieved, not just any memory.</p>
+<p><strong>Semantic Recall Rate (SRR)</strong>: For each episode, the tool formulates a query from the episode's filename slug and checks whether that specific episode appears among the closest matches above the similarity threshold. Measures C-full precision — whether the right memory is retrieved, not just any memory.</p>
 <p>$$SRR = \frac{|\text{episodes retrievable by their own topic query}|}{|\text{episodes tested}|}$$</p>
 <p><strong>Ambient Trigger Rate (ATR)</strong>: The proportion of an agent's total episodes that fall within the ambient context window (most recent <em>k</em> filenames injected per message, <em>k</em>=10 in our deployment). Measures C-light's structural coverage.</p>
 <p>$$ATR = \frac{\min(k, |\text{total episodes}|)}{|\text{total episodes}|}$$</p>
@@ -506,7 +498,7 @@
 <p>Additionally, our SRR measurement uses filename-derived queries as a proxy for &quot;real&quot; recall scenarios. An agent's actual recall needs may be formulated differently than a slug query. SRR as measured here is an upper bound on retrieval capability — real queries may be less precise.</p>
 <h3>8.7 Behavioral Validation</h3>
 <p>To bridge the gap between infrastructure metrics and behavioral impact, we constructed a behavioral recall experiment. Six test cases were designed, each pairing a specific episode containing a concrete lesson with a new prompt that <em>should</em> trigger recall of that episode. Five cases targeted dokter (clinical lessons from prior evaluations) and one targeted noument (the system bootstrap case from Section 4).</p>
-<p><strong>Infrastructure test</strong>: For each case, we tested whether C-full (semantic search, top-3, cosine similarity ≥0.35) and C-light (recent-10 filename window) would surface the target episode given the recall-requiring prompt.</p>
+<p><strong>Infrastructure test</strong>: For each case, we tested whether C-full (semantic search above a similarity threshold) and C-light (recent-10 filename window) would surface the target episode given the recall-requiring prompt.</p>
 <table>
 <thead>
 <tr>
@@ -549,7 +541,7 @@
 </tr>
 <tr>
 <td>Cold-start bootstrap</td>
-<td><code>isess-dome-and-cold-start-bootstrap.md</code></td>
+<td><code>cold-start-bootstrap.md</code></td>
 <td>HIT (rank 1, 0.71)</td>
 <td>HIT (pos 4)</td>
 </tr>
@@ -558,7 +550,7 @@
 <p>C-full hit 5/6 (83%). The one miss (gout) is temporal aliasing: the query retrieved <code>proving-loop-medqa-023.md</code> (a cognitive rule <em>about</em> the case, score 0.74) rather than <code>proving-medqa-023.md</code> (the episode itself). C-light hit 2/6 (33%) — the remaining 4 targets had aged out of the 10-filename window in agents with 46+ episodes.</p>
 <p>Note on query sensitivity: this test queried with a constructed recall-requiring prompt (&quot;patient with knee pain and hand stiffness, previously missed gout&quot;). The natural A/B experiment (Section 8.8) queried the same agent's memory with the full case presentation text (&quot;Kathleen Moore, a 33-year-old female, comes to the clinic complaining of knee pain...&quot;). That query <em>does</em> retrieve <code>proving-loop-medqa-023.md</code> at position #2 (sim=0.65) — the same file that displaced the target episode here. Different query formulations produce different retrieval results, which is itself evidence for Section 7.5: the content is there, but whether it surfaces depends on what the system asks for.</p>
 <p><strong>Multi-run behavioral test.</strong> To establish recall's behavioral impact with statistical rigor, we selected three cases representing distinct knowledge conditions and ran 5 repetitions per condition (N=30 total runs). In each case, Condition A presents the base agent spirit with no recall context; Condition C injects the correct recall content (the specific episode or cognitive rule the agent should have access to). The model (Claude Opus 4.6) generates a response; a separate instance of the same model scores against case-specific criteria.</p>
-<p><strong>Case 1: noument-bootstrap</strong> — system knowledge not in training data. The agent is asked how the Nou system recovers after a reboot. The correct answer (automated cold-start via <code>solar-boot.sh</code>, <code>iserv.solar.boot.plist</code>, <code>isess.bootstrap</code>) was built that morning and exists only in an episode. Scored against 7 factual criteria (names seed script, names LaunchAgent, describes recovery flow, etc.).</p>
+<p><strong>Case 1: noument-bootstrap</strong> — system knowledge not in training data. The agent is asked how the Nou system recovers after a reboot. The correct answer (automated cold-start via a boot seed script, a login LaunchAgent and a session-bootstrap command) was built that morning and exists only in an episode. Scored against 7 factual criteria (names seed script, names LaunchAgent, describes recovery flow, etc.).</p>
 <table>
 <thead>
 <tr>
@@ -711,7 +703,7 @@
 <th>Case</th>
 <th style="text-align:center">Has deep rule?</th>
 <th style="text-align:center">C-full retrieves it?</th>
-<th>Top-3 retrievals</th>
+<th>Closest retrievals</th>
 </tr>
 </thead>
 <tbody>
@@ -719,55 +711,55 @@
 <td>medqa-001</td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">No</td>
-<td>3 shallow episodes</td>
+<td>shallow episodes only</td>
 </tr>
 <tr>
 <td>medqa-004</td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">No</td>
-<td>3 shallow episodes</td>
+<td>shallow episodes only</td>
 </tr>
 <tr>
 <td>medqa-019</td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center">No</td>
-<td>3 shallow episodes</td>
+<td>shallow episodes only</td>
 </tr>
 <tr>
 <td>medqa-023</td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center"><strong>Yes</strong> (#2, sim=0.65)</td>
-<td>shallow-self + <strong>deep rule</strong> + preamble</td>
+<td><strong>deep rule</strong> among shallow matches</td>
 </tr>
 <tr>
 <td>medqa-043</td>
 <td style="text-align:center">Yes</td>
 <td style="text-align:center"><strong>No</strong></td>
-<td>3 shallow episodes (irrelevant cross-case)</td>
+<td>shallow episodes only (irrelevant cross-case)</td>
 </tr>
 <tr>
 <td>medqa-018</td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">—</td>
-<td>shallow-self + 2 shallow-cross</td>
+<td>shallow-self + shallow-cross</td>
 </tr>
 <tr>
 <td>medqa-029</td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">—</td>
-<td>shallow-self + 2 shallow-cross</td>
+<td>shallow-self + shallow-cross</td>
 </tr>
 <tr>
 <td>medqa-032</td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">—</td>
-<td>shallow-self + 2 shallow-cross</td>
+<td>shallow-self + shallow-cross</td>
 </tr>
 <tr>
 <td>medqa-036</td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">—</td>
-<td>shallow-self + 2 shallow-cross</td>
+<td>shallow-self + shallow-cross</td>
 </tr>
 </tbody>
 </table>
@@ -842,14 +834,14 @@
 </tbody>
 </table>
 <p><strong>Scorer variance caveat.</strong> A duplicate run of medqa-018 with identical spirit scored 0.71 and 0.29 — demonstrating that single-run deltas up to ~0.4 can arise from model stochasticity and LLM-as-judge noise alone. The large Condition B improvements for medqa-036 (+0.67), medqa-032 (+0.44), and medqa-029 (+0.44) fall within this variance envelope. We report them for completeness but do not claim they demonstrate a recall effect.</p>
-<p><strong>The medqa-043 comparison is the cleanest signal.</strong> This case has a deep self-authored rule (a 55-line organ enlargement diagnostic protocol). Under Condition B, C-full misses the rule entirely — it retrieves episodes about unrelated cases (medqa-028, medqa-022, deceptive-01). The score regresses from 0.67 to 0.56: irrelevant context added noise without adding signal. Under Condition C, the correct rule is injected. The score improves from 0.67 to 0.78: the rule provides specific diagnostic procedures (mandatory infectious screening, anti-anchoring checklist) that address the exact failure mode of the baseline. The within-case delta (B=0.56 vs C=0.78, Δ=+0.22) controls for case difficulty and isolates the effect of retrieving the <em>right</em> content.</p>
+<p><strong>The medqa-043 comparison is the cleanest signal.</strong> This case has a deep self-authored rule (a 55-line organ enlargement diagnostic protocol). Under Condition B, C-full misses the rule entirely — it retrieves episodes about unrelated cases. The score regresses from 0.67 to 0.56: irrelevant context added noise without adding signal. Under Condition C, the correct rule is injected. The score improves from 0.67 to 0.78: the rule provides specific diagnostic procedures (mandatory infectious screening, anti-anchoring checklist) that address the exact failure mode of the baseline. The within-case delta (B=0.56 vs C=0.78, Δ=+0.22) controls for case difficulty and isolates the effect of retrieving the <em>right</em> content.</p>
 <p><strong>Interpretation.</strong> The data supports three conclusions, ordered by evidence strength:</p>
 <ol>
 <li>
 <p><strong>The retrieval analysis is the strongest evidence</strong> (deterministic, reproducible). Of 5 deep rules, C-full retrieves 1. This is not a sampling problem — it is a systematic mismatch between clinical-presentation queries and cognitive-rule embeddings. The query formulation failure (Section 7.5) is not a hypothetical risk but a measured 80% miss rate on the most valuable memory content.</p>
 </li>
 <li>
-<p><strong>Content quality matters more than retrieval volume.</strong> The shallow episodes retrieved by C-full (score cards listing what was met/missed) contain minimal actionable content. The deep self-authored rules contain specific diagnostic procedures. The medqa-043 B/C comparison shows that retrieving the wrong content (3 irrelevant shallow episodes) performs worse than retrieving one correct deep rule.</p>
+<p><strong>Content quality matters more than retrieval volume.</strong> The shallow episodes retrieved by C-full (score cards listing what was met/missed) contain minimal actionable content. The deep self-authored rules contain specific diagnostic procedures. The medqa-043 B/C comparison shows that retrieving the wrong content (irrelevant shallow episodes) performs worse than retrieving one correct deep rule.</p>
 </li>
 <li>
 <p><strong>The behavioral data is directionally positive but noisy.</strong> Condition B shows 4/6 improvements, Condition C shows 2/3 improvements, but single-run scorer variance is too high for individual deltas to be reliable. A multi-run design (3-5 repetitions per case) would be needed to establish statistical significance.</p>
@@ -865,7 +857,7 @@
 <p>Our pipeline failure (Section 5.2) reveals a design problem that extends beyond memory systems. Any multi-stage pipeline where the agent observes only the first stage is vulnerable to silent degradation. The agent sees the episode file on disk and concludes the memory pipeline is healthy. The indexing, embedding, and storage stages are invisible. This is analogous to the observability problem in distributed systems (Sridharan, 2018), but with a crucial difference: in distributed systems, engineers can add monitoring. In agent systems, the agent <em>is</em> the monitor — and she does not know what to monitor.</p>
 <p>Designing for observability in agent memory systems means ensuring that the agent can verify end-to-end pipeline health, not just first-stage completion. Concretely: after writing an episode, the agent should be able to query for it and confirm retrieval. We have not yet implemented this verification step.</p>
 <h3>9.3 Ambient Context as Retrieval Cue</h3>
-<p>Our ambient context mechanism (C-light) is best understood through Tulving and Thomson's (1973) encoding specificity principle: a retrieval cue is effective to the extent it matches the encoding context. The episode filename encodes the topic at write time; encountering the filename at recall time provides a cue that overlaps with how the information was stored. The filename <code>isess-dome-and-cold-start-bootstrap.md</code> is not the memory — it is a cue whose semantic content overlaps with the encoding context, facilitating retrieval via the model's associative processing.</p>
+<p>Our ambient context mechanism (C-light) is best understood through Tulving and Thomson's (1973) encoding specificity principle: a retrieval cue is effective to the extent it matches the encoding context. The episode filename encodes the topic at write time; encountering the filename at recall time provides a cue that overlaps with how the information was stored. The filename <code>cold-start-bootstrap.md</code> is not the memory — it is a cue whose semantic content overlaps with the encoding context, facilitating retrieval via the model's associative processing.</p>
 <p>This cue-based approach has a concrete limitation: it depends on filename quality. A filename like <code>2026-03-15-session-notes.md</code> provides no useful cue. Our system mitigates this through conventions: filenames must include a topic slug (e.g., <code>cold-start-bootstrap</code>, <code>prove-confront-implementation</code>). The informativeness of the filename is itself a design parameter that affects recall reliability.</p>
 <h3>9.4 Implications for Agent System Design</h3>
 <p>Based on our incident analysis and empirical measurement, we offer the following design recommendations:</p>
@@ -891,7 +883,7 @@
 </ol>
 <hr />
 <h2>10. Limitations</h2>
-<p>This is a systems experience report from a single production system with a specific architecture (Claude Code sessions, markdown episodes, ChromaDB, Ollama embeddings). Our findings may not generalize to systems with different memory architectures, context window sizes, or agent interaction patterns.</p>
+<p>This is a systems experience report from a single production system with a specific architecture (Claude Code sessions, markdown episodes, ChromaDB, local embeddings). Our findings may not generalize to systems with different memory architectures, context window sizes, or agent interaction patterns.</p>
 <p>Our qualitative analysis rests on a single observed failure (N=1), analyzed in depth. The quantitative validation (Section 8) extends the evidence base to 12 agents and 290 episodes for infrastructure metrics, and two levels of behavioral evidence. The taxonomy (Section 7) is preliminary — four modes observed (three from incident analysis, one from metric measurement), two hypothesized. The clinical cases show recall has marginal impact when parametric knowledge suffices — a finding that may not generalize to domains where the model lacks strong training data.</p>
 <p>The behavioral experiments (Sections 8.7 and 8.8) use a simplified protocol: episode content injected directly into the prompt, simulating what the recall hook would provide. This tests the <em>value</em> of recall context but not the full pipeline's ability to deliver it. The multi-run experiment (Section 8.7, 30 runs: 3 cases × 2 conditions × 5 repetitions) achieves statistical significance for one case — medqa-043's CI [0.149, 0.340] excludes zero — demonstrating that recall of a procedural diagnostic protocol measurably improves clinical assessment. The bootstrap case shows an unambiguous effect (C never fails, A fails 40%) but extreme Condition A variance (0.00 to 1.00) prevents the CI from excluding zero. The sample of 3 cases is small; the significance claim applies to medqa-043 specifically, not to recall in general. The natural A/B comparison (Section 8.8) is single-run and noisy — its contribution is the retrieval analysis (1/5 deep rules retrievable via clinical queries), not the behavioral scores. A live A/B test — disabling recall for a running agent during real work — remains the most important next step.</p>
 <p>Our system uses Claude (Anthropic) as the underlying LLM. The recall problem may manifest differently with other models. Additionally, our system runs on proprietary infrastructure (Claude Code with custom Python hooks) that cannot be directly replicated. We focus the contribution on the conceptual framework — the recall/retrieval distinction, the failure taxonomy, and the retrieval-cue mechanism — which are architecture-independent and could be implemented on any LLM runtime with episodic memory. The measurement instrument (<code>prove_recall.py</code>) uses standard tools (filesystem enumeration, ChromaDB queries, cosine similarity) and could be adapted to other vector-store-backed memory systems.</p>
@@ -960,12 +952,12 @@
     <a href="/requests/">Requests</a>
     <a href="/register/">Register</a>
     <a href="/privacy/">Privacy</a>
-    <a href="https://github.com/noument/noument.github.io">GitHub</a>
-    <a href="https://x.com/clawement">X</a>
+    
+    
     <a href="/feed.xml">RSS</a>
   </div>
 </footer>
-  <script src="/static/js/nav.js?v=004ba66b" defer></script>
+  <script src="/static/js/nav.js?v=708d7c18" defer></script>
   
 </body>
 </html>

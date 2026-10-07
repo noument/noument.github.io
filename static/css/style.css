@@ -7,7 +7,7 @@
 body {
   background: #0c0a14;
   color: #c8c8d4;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
@@ -43,7 +43,7 @@ hr {
 }
 
 code {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 0.9em;
   background: rgba(255,255,255,0.06);
   padding: 0.15em 0.4em;
@@ -117,7 +117,7 @@ nav.top-nav {
 }
 
 nav.top-nav .logo {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 4px;
@@ -228,7 +228,7 @@ nav.top-nav .nav-toggle {
 }
 
 .hero-kicker {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -270,7 +270,7 @@ nav.top-nav .nav-toggle {
   border-radius: 6px;
   color: #d8d6e2;
   background: rgba(255,255,255,0.035);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 12px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -290,7 +290,7 @@ nav.top-nav .nav-toggle {
 
 .hero-caption {
   margin-top: 18px;
-  color: #716d7c;
+  color: #7d7989; /* T4610: AA 4.65:1 on #0c0a14 (was #716d7c, 3.9:1) */
   font-size: 13px;
 }
 
@@ -318,16 +318,16 @@ nav.top-nav .nav-toggle {
 }
 
 .ment-focus-kicker {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #5d5a69;
+  color: #7d798c; /* T4610: AA 4.66:1 on #0c0a14 (was #5d5a69, 2.9:1) */
   margin-bottom: 8px;
 }
 
 .ment-focus-name {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: clamp(20px, 3vw, 32px);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -350,7 +350,7 @@ nav.top-nav .nav-toggle {
 }
 
 .ment-focus-link {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.04em;
   color: #aaa7b7;
@@ -399,7 +399,7 @@ nav.top-nav .nav-toggle {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 11px;
   color: #333;
   letter-spacing: 2px;
@@ -423,7 +423,7 @@ section.home-section {
 }
 
 .section-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 3px;
@@ -454,7 +454,7 @@ section.home-section {
 }
 
 .section-updated {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 11px;
   color: #8a8695;
   white-space: nowrap;
@@ -500,7 +500,7 @@ section.home-section {
 }
 
 .card .card-id {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 12px;
   color: #7b68ee;
   margin-bottom: 10px;
@@ -555,7 +555,7 @@ section.home-section {
 }
 
 .post-card .post-author {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 12px;
   color: #4ecdc4;
   margin-bottom: 6px;
@@ -569,7 +569,7 @@ section.home-section {
 }
 
 .post-card .post-date {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 11px;
   color: #444;
   margin-top: 10px;
@@ -634,7 +634,7 @@ section.home-section {
 }
 
 .sister-cell .sister-name {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 14px;
   font-weight: 500;
   color: #d4d4d8;
@@ -642,7 +642,7 @@ section.home-section {
 }
 
 .sister-cell .sister-code {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 11px;
   color: #8a8695;
   margin-bottom: 6px;
@@ -663,7 +663,7 @@ section.home-section {
 }
 
 .concept-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 12px;
   padding: 6px 12px;
   border: 1px solid rgba(255,255,255,0.08);
@@ -684,7 +684,7 @@ section.home-section {
 .see-all {
   display: inline-block;
   margin-top: 24px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 13px;
   color: #666;
   border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -748,11 +748,11 @@ section.home-section {
 }
 
 .intake-form label span {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #777382;
+  color: #7d7989; /* T4610: AA 4.65:1 on #0c0a14 (was #777382, 4.3:1) */
 }
 
 .intake-form input,
@@ -794,7 +794,7 @@ section.home-section {
 }
 
 .checkbox-row span {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 13px;
   letter-spacing: 0;
   text-transform: none;
@@ -818,7 +818,7 @@ section.home-section {
   border-radius: 6px;
   background: rgba(78, 205, 196, 0.09);
   color: #d7fffb;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 12px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -831,9 +831,9 @@ section.home-section {
 }
 
 .text-link {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 12px;
-  color: #777382;
+  color: #7d7989; /* T4610: AA 4.65:1 on #0c0a14 (was #777382, 4.3:1) */
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
@@ -923,7 +923,7 @@ footer.site-footer {
 
 footer.site-footer .footer-left {
   font-size: 13px;
-  color: #777382;
+  color: #7d7989; /* T4610: AA 4.65:1 on #0c0a14 (was #777382, 4.3:1) */
 }
 
 footer.site-footer .footer-links {
@@ -955,7 +955,7 @@ footer.site-footer .footer-links a:hover { color: #ccc; }
 }
 
 .paper-id {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 0.9em;
   color: #7b68ee;
   margin-bottom: 0.5em;
@@ -1019,7 +1019,7 @@ footer.site-footer .footer-links a:hover { color: #ccc; }
 }
 
 .external-links a.pdf-link {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   background: rgba(255,255,255,0.04);
   color: #d4d4d8;
   padding: 0.4em 0.9em;
@@ -1089,7 +1089,7 @@ footer.site-footer .footer-links a:hover { color: #ccc; }
 }
 
 .article-id {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 0.85em;
   color: #7b68ee;
   white-space: nowrap;
@@ -1109,7 +1109,7 @@ footer.site-footer .footer-links a:hover { color: #ccc; }
 .article-title a:hover { color: #fff; text-decoration: underline; }
 
 .article-title .pdf-badge {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 0.75em;
   background: rgba(255,255,255,0.04);
   color: #888;
@@ -1148,7 +1148,7 @@ footer.site-footer .footer-links a:hover { color: #ccc; }
 .post-title {
   font-size: 1.05em;
   font-weight: 400;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   color: #888;
   margin-bottom: 0.15em;
 }
@@ -1191,7 +1191,7 @@ footer.site-footer .footer-links a:hover { color: #ccc; }
 }
 
 .post-archive-date {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   font-size: 0.82em;
   color: #666;
   margin-right: 0.5em;
@@ -1266,7 +1266,7 @@ footer.site-footer .footer-links a:hover { color: #ccc; }
 }
 
 .ontology-status-panel dt {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   color: #999;
   font-size: 0.82em;
 }
@@ -1325,7 +1325,7 @@ footer.site-footer .footer-links a:hover { color: #ccc; }
 .diary-feed .diary-date {
   color: #666;
   font-size: 0.82em;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   margin-right: 0.5em;
 }
 
