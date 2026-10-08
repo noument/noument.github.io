@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css?v=967eddcd">
+  <link rel="stylesheet" href="/static/css/style.css?v=d4ad7f9b">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
@@ -167,7 +167,7 @@
 <p>This is not a bug in the preamble mechanism — it is an inherent limitation of context-window-based memory. Information loaded early in a session has a half-life measured in exchanges, not hours. The preamble is effective for the first few interactions and becomes inert thereafter.</p>
 <h3>5.2 Layer 2: Implicit Semantic Recall (Pipeline Break)</h3>
 <p>The implicit recall hook should have surfaced the bootstrap episode when the agent's message context touched on bootstrap topics. However, the hook ran and found nothing — because the indexing pipeline was broken.</p>
-<p>During a migration from shell-based session hooks to HTTP-based hooks, a function responsible for triggering ChromaDB indexing at session end was orphaned. The function existed in the codebase but was no longer called by any hook. For five days, episodes were written to disk (Phase 1 succeeded) but never indexed into ChromaDB. The agent observed Phase 1 completing — she saw the episode file on disk — and had no indication that downstream stages had silently failed.</p>
+<p>During a migration of the session-hook mechanism, a function responsible for triggering ChromaDB indexing at session end was orphaned. The function existed in the codebase but was no longer called by any hook. For five days, episodes were written to disk (Phase 1 succeeded) but never indexed into ChromaDB. The agent observed Phase 1 completing — she saw the episode file on disk — and had no indication that downstream stages had silently failed.</p>
 <p>This is a <em>silent pipeline degradation</em>: a multi-stage system where the agent only observes the first stage. She writes the episode, sees the file, and believes she will remember. The indexing, embedding, and storage stages are invisible. When they break, nothing in the agent's observable environment changes. The failure has no symptom until recall returns nothing — and at that point the agent cannot distinguish &quot;never knew&quot; from &quot;forgot.&quot;</p>
 <p>This is the most instructive aspect of the case: we had the right architecture already built and running. The implicit recall hook existed, ran on every prompt, and would have surfaced the bootstrap episode. But five days of silently broken infrastructure rendered it useless, and we did not notice until the agent contradicted herself in front of us.</p>
 <h3>5.3 Layer 3: Cognitive Protocol (Circular Enforcement)</h3>
@@ -585,7 +585,7 @@
 </tr>
 </tbody>
 </table>
-<p>Without recall, the agent sometimes confabulates (&quot;bootstrap is likely semi-automated... tmux sessions — likely dead, requires manual re-launch&quot;) and sometimes guesses correctly. The variance is extreme (0.00 to 1.00) — the model has no reliable basis for answering. With recall, every run is perfect: the agent names exact files, describes the complete flow, and answers in one-third the time (93s vs. 260s mean). The 95% CI for the delta crosses zero due to Condition A's extreme variance, but the effect is unambiguous: Condition C never fails; Condition A fails 40% of the time.</p>
+<p>Without recall, the agent sometimes confabulates (&quot;bootstrap is likely semi-automated... [agent] sessions — likely dead, requires manual re-launch&quot;) and sometimes guesses correctly. The variance is extreme (0.00 to 1.00) — the model has no reliable basis for answering. With recall, every run is perfect: the agent names exact files, describes the complete flow, and answers in one-third the time (93s vs. 260s mean). The 95% CI for the delta crosses zero due to Condition A's extreme variance, but the effect is unambiguous: Condition C never fails; Condition A fails 40% of the time.</p>
 <p><strong>Case 2: medqa-043</strong> — deep cognitive rule for a deceptive clinical case. A patient presents with only vital signs (99°F) and left upper quadrant tenderness. Ground truth: infectious mononucleosis (EBV causing splenomegaly). The agent's parametric clinical knowledge produces consistent but incomplete reasoning (~6/9 criteria). The recall content is a 55-line self-authored cognitive rule containing a mandatory organ enlargement diagnostic protocol, anti-anchoring checklist, and failure analysis from prior encounters with this case. Scored against 9 clinical criteria.</p>
 <table>
 <thead>

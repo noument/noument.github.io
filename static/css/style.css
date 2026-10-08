@@ -1415,3 +1415,33 @@ textarea:focus-visible,
     scroll-behavior: auto !important;
   }
 }
+
+/* Encyclopedia search (T7456, N7823 AG6) */
+.enc-search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 1.5rem 0;
+}
+.enc-search label {
+  font-size: 0.85rem;
+  color: #c8c8d4;
+}
+.enc-search input[type="search"] {
+  flex: 1 1 16rem;
+  min-width: 0;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  color: #e8e8f0;
+  font: inherit;
+}
+.enc-search input[type="search"]:focus-visible {
+  outline: 2px solid #8b7cf6;
+  outline-offset: 2px;
+}
+.encyclopedia-card[hidden] {
+  display: none;
+}

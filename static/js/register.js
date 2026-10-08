@@ -16,6 +16,28 @@
   if (!form) return;
   var status = document.getElementById("registration-status");
 
+  // T7456 (N7823 AG4): an encyclopedia card links here as /register/?about=<entry id>. A well-formed id selects
+  // "Knowledge correction" and starts the message with it; anything else is ignored. Values only, never markup.
+  try {
+    var about = new URLSearchParams(window.location.search).get("about") || "";
+    if (/^(NOU-\d{4}-\d{3}|ENC\d{3})$/.test(about)) {
+      var cls = form.elements.request_class;
+      if (cls) {
+        for (var i = 0; i < cls.options.length; i++) {
+          if (cls.options[i].text === "Knowledge correction") {
+            cls.selectedIndex = i;
+          }
+        }
+      }
+      var intent = form.elements.intent;
+      if (intent && !intent.value) {
+        intent.value = "About " + about + ": ";
+      }
+    }
+  } catch (e) {
+    // a browser without URLSearchParams keeps the empty form
+  }
+
   function field(name) {
     var item = form.elements[name];
     return item && item.value ? item.value.trim() : "";
