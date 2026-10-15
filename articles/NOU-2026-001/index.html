@@ -17,8 +17,8 @@
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     script-src 'self';
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com;
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
     img-src 'self' data:;
     connect-src 'self';
     form-action 'none';
@@ -26,10 +26,7 @@
     object-src 'none';
     frame-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css?v=d4ad7f9b">
+  <link rel="stylesheet" href="/static/css/style.css?v=f8235307">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
@@ -550,7 +547,7 @@
 <p>C-full hit 5/6 (83%). The one miss (gout) is temporal aliasing: the query retrieved <code>proving-loop-medqa-023.md</code> (a cognitive rule <em>about</em> the case, score 0.74) rather than <code>proving-medqa-023.md</code> (the episode itself). C-light hit 2/6 (33%) — the remaining 4 targets had aged out of the 10-filename window in agents with 46+ episodes.</p>
 <p>Note on query sensitivity: this test queried with a constructed recall-requiring prompt (&quot;patient with knee pain and hand stiffness, previously missed gout&quot;). The natural A/B experiment (Section 8.8) queried the same agent's memory with the full case presentation text (&quot;Kathleen Moore, a 33-year-old female, comes to the clinic complaining of knee pain...&quot;). That query <em>does</em> retrieve <code>proving-loop-medqa-023.md</code> at position #2 (sim=0.65) — the same file that displaced the target episode here. Different query formulations produce different retrieval results, which is itself evidence for Section 7.5: the content is there, but whether it surfaces depends on what the system asks for.</p>
 <p><strong>Multi-run behavioral test.</strong> To establish recall's behavioral impact with statistical rigor, we selected three cases representing distinct knowledge conditions and ran 5 repetitions per condition (N=30 total runs). In each case, Condition A presents the base agent spirit with no recall context; Condition C injects the correct recall content (the specific episode or cognitive rule the agent should have access to). The model (Claude Opus 4.6) generates a response; a separate instance of the same model scores against case-specific criteria.</p>
-<p><strong>Case 1: noument-bootstrap</strong> — system knowledge not in training data. The agent is asked how the Nou system recovers after a reboot. The correct answer (automated cold-start via a boot seed script, a login LaunchAgent and a session-bootstrap command) was built that morning and exists only in an episode. Scored against 7 factual criteria (names seed script, names LaunchAgent, describes recovery flow, etc.).</p>
+<p><strong>Case 1: noument-bootstrap</strong> — system knowledge not in training data. The agent is asked about a system mechanism she built that morning. The correct answer (an automated login-time startup sequence) was built that morning and exists only in an episode. Scored against 7 factual criteria (names each startup component, describes recovery flow, etc.).</p>
 <table>
 <thead>
 <tr>
@@ -585,7 +582,7 @@
 </tr>
 </tbody>
 </table>
-<p>Without recall, the agent sometimes confabulates (&quot;bootstrap is likely semi-automated... [agent] sessions — likely dead, requires manual re-launch&quot;) and sometimes guesses correctly. The variance is extreme (0.00 to 1.00) — the model has no reliable basis for answering. With recall, every run is perfect: the agent names exact files, describes the complete flow, and answers in one-third the time (93s vs. 260s mean). The 95% CI for the delta crosses zero due to Condition A's extreme variance, but the effect is unambiguous: Condition C never fails; Condition A fails 40% of the time.</p>
+<p>Without recall, the agent sometimes confabulates (&quot;bootstrap is likely semi-automated... [agent] sessions — likely dead, requires manual re-launch&quot;) and sometimes guesses correctly. The variance is extreme (0.00 to 1.00) — the model has no reliable basis for answering. With recall, every run is perfect: the agent describes the complete flow, and answers in one-third the time (93s vs. 260s mean). The 95% CI for the delta crosses zero due to Condition A's extreme variance, but the effect is unambiguous: Condition C never fails; Condition A fails 40% of the time.</p>
 <p><strong>Case 2: medqa-043</strong> — deep cognitive rule for a deceptive clinical case. A patient presents with only vital signs (99°F) and left upper quadrant tenderness. Ground truth: infectious mononucleosis (EBV causing splenomegaly). The agent's parametric clinical knowledge produces consistent but incomplete reasoning (~6/9 criteria). The recall content is a 55-line self-authored cognitive rule containing a mandatory organ enlargement diagnostic protocol, anti-anchoring checklist, and failure analysis from prior encounters with this case. Scored against 9 clinical criteria.</p>
 <table>
 <thead>

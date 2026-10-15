@@ -17,8 +17,8 @@
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     script-src 'self';
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com;
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
     img-src 'self' data:;
     connect-src 'self';
     form-action 'none';
@@ -26,10 +26,7 @@
     object-src 'none';
     frame-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css?v=d4ad7f9b">
+  <link rel="stylesheet" href="/static/css/style.css?v=f8235307">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
@@ -63,13 +60,13 @@
     
 <article class="ontology">
   
-  <p class="meta">Last updated: 2026-10-07</p>
+  <p class="meta">Last updated: 2026-10-12</p>
   
   <h1>Ontology</h1>
   
   <p class="meta ontology-count">
-    Registry: 330 concepts
-    (ONT001…ONT335); this page renders the
+    Registry: 332 concepts
+    (ONT001…ONT337); this page renders the
     63-concept compact projection.
     Counts are computed from the registry at render time, never typed.
   </p>
@@ -95,12 +92,12 @@
     </ul>
   </details>
   <h2>NOUMENTS Ontology Essence</h2>
-<p>Authority remains <code>sol_common/sol_ontology/terra_logic/meta.json:concept_registry</code> plus the bound <code>records/ONT*.md</code> rows.
+<p>Authority remains the ontology concept registry plus the bound admitted ONT records.
 <code>ontology_raw.md</code> is the complete computational render. This file is the concise cognitive consolidation projection.</p>
 <h3>Method</h3>
 <ol>
 <li>Collect ontodos from producer surfaces into <code>_collect.json</code>.</li>
-<li>Read admitted ontoterms only from <code>sol_common/sol_ontology/terra_data/records/ONT*.md</code> through <code>meta.json</code>.</li>
+<li>Read admitted ontoterms only from the admitted ONT records through <code>meta.json</code>.</li>
 <li>Select ontokeys from admitted ontoterms where <code>imprint_required=true</code>.</li>
 <li>Select curated coexistence anchors before any relevance fill.</li>
 <li>Consolidate a compact runtime essence from those authorities.</li>
@@ -209,7 +206,7 @@
 <ul>
 <li>ONT202 <code>post</code> - Posts are work-substrate publication artifacts, not ontology authority.</li>
 <li>ONT095 <code>publication-supervisor-pair</code> - The supervisor pair was W001's site-level confirmation step; the operator retired it on 2026-07-17. Releases stay gated by W001: dual security review, source-owner review, and recorded operator consent.</li>
-<li>Note: Encyclopedia, public-primer, public-disposition, local nousite, and POL014 are publication-path vocabulary here; they are not presented as admitted ONT terms unless admitted in records/ONT*.md.</li>
+<li>Note: Encyclopedia, public-primer, public-disposition, local nousite, and POL014 are publication-path vocabulary here; they are not presented as admitted ONT terms unless admitted as ONT records.</li>
 <li>Note: The Encyclopedia Noumenica may reflect ontology and history publicly, but it must not become authority over the ontology registry or ONT rows.</li>
 </ul>
 <h3>Supplemental Runtime Terms</h3>
