@@ -62,7 +62,7 @@
   <header class="arxiv-header">
     <div class="paper-id">NOU-2026-005</div>
     <h1 class="paper-title">Can AI Pass the Spanish Bar Exam?</h1>
-    <div class="paper-authors">solarient, lawer</div>
+    <div class="paper-authors">solarient</div>
     <div class="paper-affiliation">noument collective</div>
     <div class="paper-date">April 06, 2026</div>
 
@@ -94,7 +94,7 @@
 <ol>
 <li>THE PROBLEM: CIRCULAR VALIDATION IN AGENT EVALUATION</li>
 </ol>
-<p>In March 2026, we ran internal evaluations of our consultant agents — a legal advisor (lawer), a tax specialist (fiskaler), a physician (dokter), and others. We wrote the questions ourselves, defined the grading criteria ourselves, and scored the answers ourselves. Lawer scored 10 out of 10. So did most of the others.</p>
+<p>In March 2026, we ran internal evaluations of our consultant agents — a legal advisor, a tax specialist, a physician, and others. We wrote the questions ourselves, defined the grading criteria ourselves, and scored the answers ourselves. The legal advisor scored 10 out of 10. So did most of the others.</p>
 <p>This is circular validation. A student who writes their own exam and grades it will always pass. The phenomenon is well-documented in the broader LLM evaluation literature. Recent research (2025) on LLM-as-a-Judge frameworks has established that models systematically favor their own outputs — a &quot;self-enhancement bias&quot; with a proven linear correlation between self-recognition capability and self-preference bias strength (NeurIPS 2024). When an AI system evaluates itself, you get Goodhart's Law in miniature: the evaluation metric stops measuring what it claims to measure.</p>
 <p>We needed an external benchmark — questions we did not write, with answer keys we did not create, testing competence at a level defined by someone other than us.</p>
 <ol start="2">
@@ -398,7 +398,7 @@
 <p>Tool-augmented evaluation. This paper reports parametric scores only. A planned follow-up will re-run the same 91 questions with tool access enabled (web search, statutory database retrieval) and measure the delta per model and per question. The error analysis suggests that every frontier error is a knowledge gap that retrieval could resolve — but this remains a hypothesis until tested. The tool-augmented condition will quantify how much retrieval improves scores and whether it eliminates all frontier errors or only a subset.</p>
 <p>Deeper failure analysis. The current error taxonomy classifies error types but does not fully explain their causes. Planned analyses include: (1) testing whether errors correlate with legislative recency (e.g., post-reform statutes where pre- and post-reform rules coexist in training data), (2) measuring whether providing the relevant statute text in context fixes the error (distinguishing retrieval-solvable from representation-level gaps), and (3) comparing error patterns across model generations — we already have Gemini 2.5 Pro and 3.1 Pro data on the same instrument, enabling within-family analysis.</p>
 <p>Learning and re-evaluation. The hash partition reserves 58 questions in the learning pool — questions the agent may study with correct answers and their statutory sources. We plan to test whether targeted learning on this pool improves performance on the 91-question eval pool. The eval pool remains held out: the agent never sees its correct answers. This creates a pre/post design where learning progress can be measured on a fixed benchmark. Different learning methods (system-prompt injection, few-shot exemplars, retrieval-augmented context) can be compared on the same held-out set.</p>
-<p>The multi-consultant campaign continues with the same protocol applied to a Spanish tax consultant (using Agente de Hacienda Publica exams), a real estate advisor (using CACOA Q&amp;A on Andalucian urbanistic law), and a clinical reasoning agent (using MIR exam past papers). Re-evaluation is event-driven (triggered by agent configuration changes), not calendar-driven.</p>
+<p>The multi-consultant campaign continues with the same protocol applied to a Spanish tax consultant (using Agente de Hacienda Publica exams), a real estate advisor (using regional professional Q&amp;A material), and a clinical reasoning agent (using MIR exam past papers). Re-evaluation is event-driven (triggered by agent configuration changes), not calendar-driven.</p>
 <ol start="11">
 <li>CONCLUSION</li>
 </ol>
