@@ -22,3 +22,35 @@
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
   });
 })();
+
+/* Release identity (T9128), after adament's TCH Release.gd: the page says which build it is and where it runs.
+ *
+ * The identity is the site stamp, served as /version.json (lib/stamp.py: site, version, updated_at, checksum).
+ * It is read at runtime and never baked into the HTML, so a publication changes version.json alone, not every
+ * page. 'local preview' on 127.0.0.1 or localhost keeps the preview from being mistaken for nouments.com. A stamp
+ * that does not hold is never guessed: the footer says 'version unavailable'.
+ */
+(function () {
+  "use strict";
+  function releaseLabel(stamp, host) {
+    var h = String(host || "");
+    var where = (h === "localhost" || /^127\./.test(h)) ? "local preview" : h;
+    var ok = stamp && typeof stamp.version === "number" && stamp.version >= 1 && stamp.version % 1 === 0 &&
+      /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(String(stamp.updated_at || "")) &&
+      String(stamp.checksum || "").indexOf("sha256:") === 0;
+    if (!ok) { return "version unavailable · " + where; }
+    return "v" + stamp.version + " · " + String(stamp.updated_at).slice(0, 10) + " · " + where;
+  }
+  if (typeof module !== "undefined" && module.exports) { module.exports.releaseLabel = releaseLabel; return; }
+  var footer = document.querySelector(".site-footer .footer-left");
+  if (!footer || !window.fetch) { return; }
+  var me = document.currentScript && document.currentScript.src ? document.currentScript.src : "";
+  var base = me ? me.replace(/\/static\/js\/nav\.js(\?.*)?$/, "") : "";
+  var span = document.createElement("span");
+  span.className = "site-release";
+  footer.appendChild(span);
+  window.fetch(base + "/version.json", {cache: "no-store"})
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .catch(function () { return null; })
+    .then(function (stamp) { span.textContent = " · " + releaseLabel(stamp, window.location.hostname); });
+})();
