@@ -30,16 +30,27 @@
  * page. 'local preview' on 127.0.0.1 or localhost keeps the preview from being mistaken for nouments.com. A stamp
  * that does not hold is never guessed: the footer says 'version unavailable'.
  */
+/* T9182 (the operator, 2026-10-21): three marks, because a new function or structure is not a content update.
+ * 'v<MAJOR.MINOR>' moves only by the site owner's release decision; 'build <n>' moves with every publication; the
+ * time is the last update, to the minute, in UTC. A v1 stamp (an integer that counted publications, before T9182)
+ * reads as the build it counted, with no version invented for it.
+ */
 (function () {
   "use strict";
+  function isCount(n) { return typeof n === "number" && n >= 1 && n % 1 === 0; }
   function releaseLabel(stamp, host) {
     var h = String(host || "");
     var where = (h === "localhost" || /^127\./.test(h)) ? "local preview" : h;
-    var ok = stamp && typeof stamp.version === "number" && stamp.version >= 1 && stamp.version % 1 === 0 &&
-      /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(String(stamp.updated_at || "")) &&
+    var at = String((stamp && stamp.updated_at) || "");
+    var ok = stamp && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(at) &&
       String(stamp.checksum || "").indexOf("sha256:") === 0;
-    if (!ok) { return "version unavailable · " + where; }
-    return "v" + stamp.version + " · " + String(stamp.updated_at).slice(0, 10) + " · " + where;
+    var v2 = ok && "build" in stamp && isCount(stamp.build) && typeof stamp.version === "string" &&
+      /^(0|[1-9]\d*)\.(0|[1-9]\d*)$/.test(stamp.version);
+    var v1 = ok && !("build" in stamp) && isCount(stamp.version);
+    if (!v2 && !v1) { return "version unavailable · " + where; }
+    var when = at.slice(0, 10) + " " + at.slice(11, 16) + " UTC";
+    if (v1) { return "build " + stamp.version + " · " + when + " · " + where; }
+    return "v" + stamp.version + " · build " + stamp.build + " · " + when + " · " + where;
   }
   if (typeof module !== "undefined" && module.exports) { module.exports.releaseLabel = releaseLabel; return; }
   var footer = document.querySelector(".site-footer .footer-left");
