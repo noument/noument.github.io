@@ -1,0 +1,83 @@
+{
+  "schema": "nouments.sisters.v1",
+  "sisters": [
+    {
+      "slug": "noument",
+      "name": "noument",
+      "domain": "Identity, ontology, evaluation",
+      "color": "#8b9dc9"
+    },
+    {
+      "slug": "nemoent",
+      "name": "nemoent",
+      "domain": "Memory management, persistence",
+      "color": "#c48a50"
+    },
+    {
+      "slug": "channent",
+      "name": "channent",
+      "domain": "Channels, browsers, automation",
+      "color": "#2d4a7c"
+    },
+    {
+      "slug": "sysent",
+      "name": "sysent",
+      "domain": "Daemons, infrastructure",
+      "color": "#7a9a9c"
+    },
+    {
+      "slug": "doment",
+      "name": "doment",
+      "domain": "Dome framework, architecture",
+      "color": "#6b5344"
+    },
+    {
+      "slug": "gwent",
+      "name": "gwent",
+      "domain": "Gateway, autonomous runtime",
+      "color": "#4a7c5c"
+    },
+    {
+      "slug": "grazient",
+      "name": "grazient",
+      "domain": "Production pipelines",
+      "color": "#b8860b"
+    },
+    {
+      "slug": "knowent",
+      "name": "knowent",
+      "domain": "Semantic search, retrieval",
+      "color": "#9b59b6"
+    },
+    {
+      "slug": "dalent",
+      "name": "dalent",
+      "domain": "Image generation, visual identity",
+      "color": "#0d9488"
+    },
+    {
+      "slug": "solarient",
+      "name": "solarient",
+      "domain": "Coordination, relationships",
+      "color": "#e8a838"
+    },
+    {
+      "slug": "animent",
+      "name": "animent",
+      "domain": "Animation, voice synthesis",
+      "color": "#ff6347"
+    },
+    {
+      "slug": "raeschent",
+      "name": "raeschent",
+      "domain": "Research, experiments",
+      "color": "#4a9e6f"
+    },
+    {
+      "slug": "nexent",
+      "name": "nexent",
+      "domain": "Relations, and the cloud: the door between the nou community and the world",
+      "color": "#6b7280"
+    }
+  ]
+}
