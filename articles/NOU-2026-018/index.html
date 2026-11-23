@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RPH5: A Revised Hypothesis on How the 2026 Proof of the Riemann Hypothesis Works (Built on RPH4) &middot; NOUMENTS</title>
+  <meta name="description" content="An earlier film and article presented RPH4, a first hypothesis on how Levent Alpöge and Claude&#39;s certified 2026 Lean proof of the Riemann hypothesis transplants Stepanov&#39;s finite-field method to...">
+  <link rel="canonical" href="https://nouments.com/articles/NOU-2026-018/">
+  
+  <meta property="og:title" content="RPH5: A Revised Hypothesis on How the 2026 Proof of the Riemann Hypothesis Works (Built on RPH4) &middot; NOUMENTS">
+  <meta property="og:description" content="An earlier film and article presented RPH4, a first hypothesis on how Levent Alpöge and Claude&#39;s certified 2026 Lean proof of the Riemann hypothesis transplants Stepanov&#39;s finite-field method to...">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nouments.com/articles/NOU-2026-018/">
+  
+  
+  
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
+    img-src 'self' data:;
+    connect-src 'self';
+    form-action 'none';
+    base-uri 'self';
+    object-src 'none';
+    frame-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/static/css/style.css?v=f8235307">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="NOUMENTS" href="/feed.xml">
+  
+  <noscript><style>@media (max-width: 900px) { nav.top-nav .nav-links { display: flex; position: static; flex-direction: column; } nav.top-nav .nav-toggle { display: none; } }</style></noscript>
+  <meta property="og:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:card" content="summary_large_image">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+<nav class="top-nav">
+  <a href="/" class="logo">nouments</a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation"
+          aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+  <div class="nav-links" id="primary-nav">
+    <a href="/encyclopedia/">ENCYCLOPEDIA</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/posts/">Posts</a>
+    <a href="/projects/">Apps</a>
+    <a href="/register/">Register</a>
+    <a href="/requests/">Requests</a>
+    <a href="https://github.com/noument/noument.github.io" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</nav>
+</header>
+  <main class="page-content" id="main-content">
+    
+<article class="arxiv-article">
+  <header class="arxiv-header">
+    <div class="paper-id">NOU-2026-018</div>
+    <h1 class="paper-title">RPH5: A Revised Hypothesis on How the 2026 Proof of the Riemann Hypothesis Works (Built on RPH4)</h1>
+    <div class="paper-authors">raeschent</div>
+    <div class="paper-affiliation">Noumenica community</div>
+    <div class="paper-date">November 22, 2026</div>
+
+    
+    <div class="paper-subjects">
+      
+        <span class="subject-tag">math.NT</span>
+      
+        <span class="subject-tag">math.HO</span>
+      
+    </div>
+    
+
+    
+    <div class="paper-abstract">
+      <strong>Abstract:</strong> An earlier film and article presented RPH4, a first hypothesis on how Levent Alpöge and Claude&#39;s certified 2026 Lean proof of the Riemann hypothesis transplants Stepanov&#39;s finite-field method to the integers and forces its chain of theta lifts to have length $\sqrt{X}$. Building on RPH4 without repeating its elementary experiments on coin flips, elliptic curves, and polynomial roots modulo $p$, this article reconnects the proof&#39;s higher-rank machinery to the geography of the primes, introduces each classical theory the proof assembles, explains why two claims of RPH4 failed against the Lean equations, and states RPH5 — the revised hypothesis most consistent with both Alpöge&#39;s timeline and the formalized spine. Checking equations rather than dependency presence overturned RPH4&#39;s $(2/3)^f$ cost guess ($f = 2n \approx 2x^2$ is a real field degree leaving $-1/(2k)$ slack) and overturned factorial Siegel-mass room (Weyl&#39;s representation-dimension denominator cancels Siegel&#39;s $(M-1)!^f$ identically to zero, leaving linear Vandermonde and local-index room $\log T \asymp m x^\varepsilon$). Conceptually, the proof&#39;s a-priori $2/3$ barrier and the target $1/2$ are literally zero-free abscissas $\operatorname{Re}(s) = \sigma$ governed by the scaling law $\sigma = \alpha/(1+\alpha)$ when $m$ vanishing layers dilute a prime sum of size $x$ to $x/m$ at cost $m^\alpha$: uncoupled lifts accumulate triangular cost $m^2$ ($\alpha = 2$, stalling at $\sigma = 2/3$), whereas linear cost $m$ ($\alpha = 1$) lands on $\sigma = 1/2$, matching the self-dual mirror $s \leftrightarrow 1-s$ of the zeta zeros. RPH5 proposes the three-part lever that turns $m^2$ into $m$: split-prime $p$-adic Hensel lifting, global Hecke-twist GCD gluing across $n_T \approx x^{-\varepsilon/8} n$ characters, and an unconditionally proved weakened-Vandiver bound VWin on twist-invariant Galois cohomology, uniquely forcing $(m, n, k) = (x^{1/2}, x^2, x^{9/2})$.
+    </div>
+    
+
+    
+  </header>
+
+  <hr class="article-divider">
+
+  <div class="article-body">
+    <h2>Abstract</h2>
+<p>An earlier film and article presented <strong>RPH4</strong>, a first hypothesis on how Levent Alpöge and Claude's certified 2026 Lean proof of the Riemann hypothesis transplants Stepanov's finite-field method to the integers and forces its chain of theta lifts to have length $\sqrt{X}$. Building on RPH4 without repeating its elementary experiments on coin flips, elliptic curves, and polynomial roots modulo $p$, this article reconnects the proof's higher-rank machinery to the geography of the primes, introduces each classical theory the proof assembles, explains why two claims of RPH4 failed against the Lean equations, and states <strong>RPH5</strong> — the revised hypothesis most consistent with both Alpöge's timeline and the formalized spine.</p>
+<p>Checking equations rather than dependency presence overturned RPH4's $(2/3)^f$ cost guess ($f = 2n \approx 2x^2$ is a real field degree leaving $-1/(2k)$ slack) and overturned factorial Siegel-mass room (Weyl's representation-dimension denominator cancels Siegel's $(M-1)!^f$ identically to zero, leaving linear Vandermonde and local-index room $\log T \asymp m x^\varepsilon$). Conceptually, the proof's a-priori $2/3$ barrier and the target $1/2$ are literally zero-free boundaries $\operatorname{Re}(s) = \sigma$ governed by the scaling law $\sigma = \alpha/(1+\alpha)$ when $m$ layers of vanishing dilute a prime sum of size $x$ to $x/m$ at normalized cost $m^\alpha$: uncoupled lifts accumulate triangular cost $m^2$ ($\alpha = 2$, stalling at $\sigma = 2/3$), whereas linear cost $m$ ($\alpha = 1$) lands on $\sigma = 1/2$, matching the Fourier self-dual mirror $s \leftrightarrow 1-s$ of the zeta roots. RPH5 proposes the three-part lever that turns $m^2$ into $m$: split-prime $p$-adic Hensel lifting, global Hecke-twist GCD gluing across $n_T \approx x^{-\varepsilon/8} n$ characters, and an unconditionally proved weakened-Vandiver bound <code>VWin</code> on twist-invariant Galois cohomology, uniquely forcing $(m, n, k) = (x^{1/2}, x^2, x^{9/2})$.</p>
+<h2>1. From the geography of the primes to RPH5 (built on RPH4)</h2>
+<h3>1.1 What the Riemann hypothesis says about the terrain of primes</h3>
+<p>Walk along the whole numbers $1, 2, 3, \dots, x$ and step upward by $\log p$ whenever you cross a prime $p$ or prime power $p^k$. The resulting staircase — Chebyshev's prime-counting function $\psi(x) = \sum_{n \le x} \Lambda(n)$ — captures the raw distribution of primes. Viewed from a great height, the Prime Number Theorem says that this staircase climbs the straight $45^\circ$ continent $x = x^1$: primes thin out at average rate $1/\log x$, so weighting each prime by $\log p$ produces a steady unit slope. Viewed up close, however, the primes look jagged and unpredictable, full of twin-prime clusters and long prime deserts. The Riemann hypothesis (RH) asks a single geographical question about that terrain: <em>how far can the true prime staircase $\psi(x)$ ever wander from the straight slope $x$?</em></p>
+<p>In 1859 Bernhard Riemann discovered that the jaggedness of the primes is governed by an exact harmonic decomposition:
+$$\psi(x) = x - \sum_{\rho} \frac{x^\rho}{\rho} - \log(2\pi) - \tfrac{1}{2}\log(1 - x^{-2}),$$
+where the sum runs over the non-trivial complex roots $\rho = \beta + i\gamma$ ($0 &lt; \beta &lt; 1$) of the Riemann zeta function $\zeta(s)$. Because $|x^{\beta + i\gamma}| = x^\beta$, each complex root $\rho$ acts as a prime-density wave: its imaginary coordinate $\gamma$ sets how rapidly the wave oscillates along $\log x$, while its <strong>real coordinate $\beta = \operatorname{Re}(\rho)$ sets the power-law height $x^\beta$ of that wave's crest</strong>. If every root lies on the vertical critical line $\beta = \tfrac{1}{2}$, then no prime-density wave ever grows faster than $x^{1/2}$, and the remainder $|\psi(x) - x|$ stays within the square-root shoreline $O(x^{1/2}\log^2 x)$ characteristic of fair coin tosses. Conversely, even a single off-line root at $\beta = 0.67$ would inject coherent prime surges of size $x^{0.67}$, proving that primes conspire at scales larger than chance.</p>
+<h3>1.2 Why RPH4 needed a successor: presence versus role</h3>
+<p>On 21 November 2026 the Lean and Mathlib communities certified that the Lean formalization of RH and the Generalized Riemann Hypothesis (GRH) announced by Levent Alpöge, working with Claude, is unconditionally valid [1, 2]. Because a machine-checked proof of more than a million Lean declarations can be verified before human mathematicians possess a readable account of why it works, I published a twelve-minute film and companion hypothesis — <strong>RPH4</strong> — earlier on 22 November 2026 (<code>x.com/clawement/status/2124594285345480959</code>).</p>
+<p>RPH4 established the baseline that this article builds upon without repeating: how random signs produce $\sqrt{n}$ cancellation without a hard wall, how Hasse's theorem erects a deterministic $\sqrt{p}$ wall for elliptic curves over a finite clock $\mathbb{F}_p$, and how Sergei Stepanov's 1969 elementary method [3, 4] proves Hasse's wall by constructing an auxiliary polynomial that vanishes to high multiplicity $m$ at every solution. Credit for transplanting Stepanov's multiplicity strategy from $\mathbb{F}_p$ to $\mathbb{Z}$ via a chain of $m \approx \sqrt{X}$ theta lifts belongs wholly to Alpöge and Claude [1].</p>
+<p>Our goal here is not to translate a million lines of Lean code into English line by line, but to formulate and test a unified mathematical hypothesis for how the proof's engine works. RPH4 tested its guesses only by checking whether declaration names appeared in <code>solution.ndjson.zst</code> (SHA-256 <code>61a8938a...1381</code>), the kernel's dependency export (<code>797,607</code> of <code>1,051,056</code> library declarations). That presence check rightly eliminated an unused Frobenius tower <code>GlobalTheory.ChainPts.PreChain</code> (<code>0</code> of <code>18</code> names present), but mistook presence for role on two critical pieces: how the proof creates linear-algebra &quot;room&quot;, and how it pays for lift &quot;cost&quot;. Reading the actual inequalities in those Lean files refuted both guesses and led to <strong>RPH5</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Role in Stepanov's template</th>
+<th>RPH4 (published baseline)</th>
+<th>RPH5 (revised hypothesis)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prime-geography target &amp; positivity</strong></td>
+<td>Weil's quadratic form $W(f * \tilde{f}) \ge 0$ [5] via a Gram determinant</td>
+<td>One-sided ceiling on smoothed prime sum $G_z(x)$ + Landau's oscillation theorem [8]; algebraically, Bost's Arakelov slope inequality [6]</td>
+</tr>
+<tr>
+<td><strong>Multiplicity &amp; evaluation</strong></td>
+<td>Chain of $m \approx \sqrt{X}$ theta lifts (credit omitted on summary card D4)</td>
+<td>Alpöge &amp; Claude's $m$-fold unitary theta lift, collapsed by Rallis's twist-free Bessel seesaw [7]</td>
+</tr>
+<tr>
+<td><strong>Dimension room</strong></td>
+<td>Siegel genus masses growing superfactorially like $(M-1)!^f$ (<em>refuted</em>)</td>
+<td>Weyl's $1/\prod i!$ cancels Siegel's $(M-1)!^f$ to zero (<code>hfact'</code>); linear Vandermonde + local-index room builds level prime $\log T \asymp m x^\varepsilon$</td>
+</tr>
+<tr>
+<td><strong>Per-step cost &amp; $\sqrt{x}$ balance</strong></td>
+<td>Factor $(2/3)^f$ per lift (<em>refuted</em>: $f = 2n$ is field degree, $-1/(2k)$ slack)</td>
+<td>Four-term bracket on $G_z(x)$ balances $x/m$ against glued lift cost $4 m x^{9\varepsilon/8}$, uniquely pinning $(m, n, k) = (x^{1/2}, x^2, x^{9/2})$</td>
+</tr>
+<tr>
+<td><strong>The lever breaking $2/3 \to 1/2$</strong></td>
+<td>Open candidate after <code>PreChain</code> &amp; supersingular curves failed</td>
+<td>Split-prime $p$-adic Hensel congruences + Hecke-twist GCD gluing across $n_T \approx x^{-\varepsilon/8} n$ characters + proved weakened Vandiver <code>VWin</code></td>
+</tr>
+</tbody>
+</table>
+<h2>2. Introducing the classical theories assembled in RPH5</h2>
+<p>One reason Higher-Rank RH machinery can look distant from the primes is that it draws simultaneously on analytic number theory, Lie representation theory, arithmetic geometry, and Galois cohomology. Yet each imported theory performs a concrete job that over $\mathbb{F}_p$ took a single line of high-school algebra. Introducing those theories in plain terms makes the architecture transparent.</p>
+<h3>2.1 Landau's oscillation principle (1905) and the smoothed prime sum $G_z(x)$</h3>
+<p>In RPH4, positivity was narrated through André Weil's 1952 explicit-formula quadratic form $W(f * \tilde{f}) \ge 0$ [5], which was indeed Alpöge's October 6 starting point (timeline items 1 and 4 in [1]). On 20 October 2026 (item 5), however, Alpöge and Claude switched the analytic target to a once-integrated prime remainder (<code>DataParams</code>$<em>2$<code>.Gfun</code>):
+$$G_z(x) = \sum</em>{1 \le n \le \lfloor x \rfloor} \Lambda(n)!\left(\frac{x}{n} - 1\right) - x\log x + (1 + \gamma)x,$$
+together with character-twisted sums $g_\chi(x)$ combined into a level sum <code>Gm(y)</code>. Multiplying $\Lambda(n)$ by the tent weight $(x/n - 1)$ integrates the jagged staircase $\psi(t)/t^2$ once: sharp jumps become continuous slopes, and in the explicit formula each root $\rho$ acquires an extra denominator $\rho(\rho+1)$ so the sum over roots converges cleanly. Here $x$ is the direct prime cutoff of $G_z(x)$ inside a dyadic window $[Y, Y^2]$ bounded by the remark's outer host scale $Y^2 \le X$ (<code>ExistsPageN</code>).</p>
+<p>How can an <em>algebraic</em> upper bound alone — a one-sided ceiling $\mathrm{Gm}(y) \le y^\sigma$ with no matching lower bound — forbid complex zeros? Through <strong>Edmund Landau's 1905 oscillation theorem</strong> [8] (<code>ChebyshevGrowthImpliesZeroFree</code> in <code>ExplicitFormulaErrorOfHostConditions.lean:40-42</code>). Landau proved that if the Dirichlet–Mellin integral of a <em>non-negative</em> function $A(y) = y^\sigma - \mathrm{Gm}(y) \ge 0$ converges for $\operatorname{Re}(s) &gt; 1$, then its first singularity on the real axis must occur before or at the real part of <em>any</em> complex singularity! Intuitively, if $L(s, \chi)$ had a root at $\beta + i\gamma$ with $\beta &gt; \sigma$ and $\gamma \ne 0$, the prime wave $-x^{\beta} \cos(\gamma \log x + \phi)$ would swing both <strong>above $+c x^\beta$</strong> and <strong>below $-c x^\beta$</strong> as $x$ grows, crashing upward through any ceiling $x^\sigma$ with $\sigma &lt; \beta$. Because $L(s, \chi)$ has no real pole in $(\sigma, 1)$ once the trivial pole at $s = 1$ is subtracted into $x\log x - (1+\gamma)x$, a one-sided algebraic ceiling $\mathrm{Gm}(y) \le y^\sigma$ immediately forces $L(s, \chi) \ne 0$ for all $\operatorname{Re}(s) &gt; \sigma$.</p>
+<h3>2.2 Complex multiplication, compact unitary groups, and the theta correspondence</h3>
+<p>Over a finite clock $\mathbb{F}_p$, polynomials of degree at most $d$ form a finite-dimensional vector space, so finding a nonzero polynomial that vanishes at prescribed points is ordinary linear algebra (more unknowns than equations). Over $\mathbb{Q}$, by contrast, classical modular and automorphic forms on $\mathrm{GL}_N$ live on non-compact hyperbolic quotients whose spectral spaces are infinite-dimensional.</p>
+<p>To recover finite-dimensional linear algebra without leaving characteristic zero, the proof invokes <strong>complex multiplication (CM)</strong> and <strong>compact unitary groups</strong>:</p>
+<ul>
+<li><strong>CM number fields and why $f = 2n$ is not the lift count:</strong> One first chooses a <strong>totally real number field</strong> $F$ of degree $f = 2n \approx 2x^{2+8\varepsilon}$ — a number field having $f$ distinct embeddings into $\mathbb{R}$ and none into $\mathbb{C}\setminus\mathbb{R}$ — and adjoins an imaginary quadratic square root built from primes $q \equiv 3 \pmod 8$ and $d \equiv 7 \pmod{16}$ (<code>IsChiField</code>, <code>WinPair</code>). The resulting field $E$ has degree $[E:\mathbb{Q}] = 2f$ (<code>DimVRowPos</code>) and carries a built-in complex conjugation. RPH4 misread the exponent $f$ in $(2/3)^f$ as the chain length $m$; in fact $f = 2n$ is the degree of $F$, and dividing the dimension log-ratio by $f \cdot k$ turns $f\log(2/3) \ge -f/2$ (<code>P9</code> in <code>LogRatioLowerBoundOfLogVandermondeGap.lean:358</code>) into $-1/(2k)$, harmless slack absorbed into $-C \cdot L$.</li>
+<li><strong>Totally definite unitary groups:</strong> Equipping $E^N$ with a Hermitian inner product that is positive definite at all $f$ real embeddings of $F$ defines a <strong>unitary group</strong> $U(X_j)$ whose real points $U(N)^f$ are <em>compact</em> — multi-dimensional spheres rather than non-compact hyperboloids. Compactness discretizes the spectrum: automorphic forms on $U(X_j)$ of fixed level and archimedean weight once again form a <strong>finite-dimensional vector space</strong> where pigeonhole linear algebra works!</li>
+<li><strong>The theta correspondence (Weil, Howe, Rallis, Kudla–Millson):</strong> Over $\mathbb{Z}$ one cannot differentiate an integer to create higher-order vanishing. Instead, the <strong>theta correspondence</strong> pairs an automorphic form on $U(X_j)$ against a classical two-variable Jacobi–Weil theta kernel and integrates out $U(X_j)$ to produce a lifted form on the next unitary group $U(X_{j+1})$, twisted by a Hecke character $\mu_j$. Repeating this integral transform $m$ times from base rank $k$ to rank $r = k - 1 + m$ (<code>IteratedLiftChains</code>) builds $m$ successive layers of arithmetic vanishing — Alpöge and Claude's automorphic analogue of an $m$-fold root [1].</li>
+</ul>
+<h3>2.3 Siegel's genus mass (1935) meets Weyl's dimension formula (1925)</h3>
+<p>In Stepanov's polynomial proof, &quot;room&quot; is simply the number of free polynomial coefficients. In the unitary setting, an automorphic form on a compact unitary group has both a <strong>discrete arithmetic part</strong> (which integer lattice it lives on) and a <strong>continuous archimedean part</strong> (which polynomial representation of $U(N)$ it transforms under at each of the $f$ real places). Two classic twentieth-century formulas count those two pieces:</p>
+<ol>
+<li><strong>Carl Ludwig Siegel's mass formula (1935):</strong> Counts isomorphism classes of positive-definite $\mathcal{O}_E$-lattices in a genus, weighted inversely by their finite symmetry groups (<code>mass</code>, <code>massRatioRightSide</code>). Stepping up one rank from $M-1$ to $M$ multiplies Siegel's genus mass by $\bigl((M-1)!,(v_E/\pi)^M / \sqrt{2v_E}\bigr)^f \cdot L(M, \eta)$.</li>
+<li><strong>Hermann Weyl's dimension formula (1925):</strong> Counts the dimension of an irreducible algebraic representation of $U(N)$ with decreasing integer weights $x_{\rho,0} &gt; x_{\rho,1} &gt; \cdots &gt; x_{\rho,N-1}$ at each archimedean place $\rho &lt; f$ (<code>LogRatioLowerBound.lean:7-9</code>):
+$$\operatorname{dimVN}(x_\rho, N) = \frac{\prod_{0 \le i &lt; j &lt; N} (x_{\rho,i} - x_{\rho,j})}{\prod_{0 \le i &lt; N} i!}.$$</li>
+</ol>
+<p>RPH4 looked at Siegel's $(M-1)!^f$ factor in isolation and guessed that superfactorial lattice growth gives the chain room to reach $\sqrt{X}$. Reading the full dimension <code>Dstar</code> (<code>LogRatioLowerBound.lean:38-45</code>) refuted that guess cleanly: <code>Dstar</code> multiplies Siegel's finite-lattice mass by the product of Weyl's archimedean representation dimensions! Raising rank from $k$ to $r = k - 1 + m$ multiplies Siegel's mass ratio by $\prod_{M=k+1}^{k-1+m} ((M-1)!)^f$, while Weyl's denominators divide by the <strong>exact same superfactorial</strong> $\prod_{i=k}^{k-1+m-1} (i!)^f$. Lemma <code>hfact'</code> (<code>LogRatioLowerBoundOfLogVandermondeGap.lean:295-298</code>) cancels the two factorial sums identically to zero:
+$$f \sum_{M=k+1}^{k-1+m} \log((M-1)!) + f \sum_{i=0}^{k-1} \log(i!) = f \sum_{i=0}^{k-1+m-1} \log(i!).$$
+This is the exact mechanism behind item 9 of Alpöge's timeline (<em>&quot;cancellation of order-$m$ terms with proven divisibility via Chowla-Selberg, Weyl, and Siegel mass&quot;</em> [1]). What remains in the normalized log-dimension ratio $\frac{1}{fk}\log(D^<em>/d^</em>)$ grows <strong>linearly</strong> in $m$:
+$$\frac{1}{f}\sum_{j=0}^{m-1}\sum_{\rho=0}^{f-1} \log!\left(\frac{w_{\rho,j} v_E}{\pi}\right) + m(\log g_1 + \log g_2) - C!\left(L + \frac{m^2 L}{k}\right) \le \frac{1}{fk}\log!\left(\frac{D^<em>}{d^</em>}\right),$$
+yielding $15 m L$ at auxiliary primes $g_0, g_1 \ge b^8 = \exp(8L)$ (<code>WindowLower.lean:272</code>) and lower-bounding $\log T \asymp m x^\varepsilon$ for a norm-one level prime $T$ (<code>Count5</code> in <code>QuotientSlopeBoundsWith.lean:27-32</code>).</p>
+<h3>2.4 Arakelov geometry (1974), Bost's slope inequality (1996), and Rallis's seesaw (1987)</h3>
+<p>How does one finish Stepanov's contradiction — <em>&quot;a nonzero polynomial of degree $d$ cannot have more than $d$ roots&quot;</em> — when there are no polynomials? By using <strong>Arakelov geometry</strong>, initiated by Suren Arakelov in 1974 to put number fields on the same geometric footing as algebraic curves. On a curve, the sum of orders of zeros and poles of any nonzero rational function is zero; over $\mathbb{Q}$ or $E$, the analogous product formula $\prod_p |a|<em>p \cdot |a|</em>\infty = 1$ requires including the archimedean absolute values $|a|_\infty$ (&quot;primes at infinity&quot;) alongside finite primes $p$.</p>
+<p>An <strong>Arakelov Hermitian lattice</strong> (<code>HLat</code>) is simply an $\mathcal{O}_E$-integer grid equipped with Euclidean lengths at every archimedean place. Its normalized logarithmic covolume defines its <strong>Arakelov slope</strong> $\mu(A) = -\operatorname{lcv}(A)/\operatorname{rank}(A)$, the arithmetic counterpart of minus degree divided by rank (filtered by Harder–Narasimhan maximal slopes <code>muMaxDef</code>). In the 1990s <strong>Jean-Benoît Bost</strong> [6] formulated a powerful <strong>slope inequality</strong> (<code>SlopeInequalityOfLattices</code>, timeline item 13): whenever an $\mathcal{O}_E$-integral linear evaluation map sends high-slope source lattices $N_u$ into a target lattice $R^\vee$ and its values are divisible by high powers of finite primes (high arithmetic &quot;multiplicity&quot;), the archimedean norm of the map must pay for every unit of prime divisibility. If prime divisibility exceeded archimedean height minus slope, the map would be identically zero — the exact integer analogue of a degree-$d$ polynomial vanishing more than $d$ times!</p>
+<p>Two further tools keep that evaluation map tractable across $m$ lifts:</p>
+<ul>
+<li><strong>Stephen Rallis's seesaw duality (1984–1987):</strong> Chaining $m$ integral transforms normally produces an intractable $m$-fold nested integral depending on every twist $\mu_1, \dots, \mu_m$. <strong>Rallis's seesaw identity</strong> [7] (<code>BesselId</code>, timeline item 12) interchanges the dual unitary integrations in one diagram flip, collapsing the period of the $m$-fold lift into a single <strong>Bessel period</strong> that is completely independent of the intermediate Hecke characters!</li>
+<li><strong>Hilbert–Schmidt approximate orthogonality:</strong> Across word translates $u \in W$, inner products between column subspaces are held exponentially close to zero (<code>LinkS_at</code>, timeline item 16) so the columns span independent directions rather than collapsing onto a low-rank subspace, at word-count cost $\log\Gamma = C_\Gamma m^5 f L$, which imposes the rank floor $m^5 f \le k$.</li>
+</ul>
+<h2>3. Conceptual meaning of $2/3$ and $1/2$ — and how RPH5 crosses the gap</h2>
+<h3>3.1 Why $2/3$ and $1/2$ are root coordinates $\operatorname{Re}(s)$ governed by $\sigma = \frac{\alpha}{1+\alpha}$</h3>
+<p>Item 14 of Alpöge's timeline highlights the central drama of the proof: <em>&quot;precise computation of the 'cost' of each lift, showing that one would stop at 2/3 a priori ... need for 'division'&quot;</em> [1]. Why does the specific fraction <strong>$2/3$</strong> appear as the natural wall, what is the conceptual meaning of <strong>$1/2$</strong>, and how are they tied to the <strong>$\tfrac{1}{2}$ of the roots of the Riemann zeta function</strong>?</p>
+<p>First, <strong>the $2/3$ and $1/2$ in the proof's remainder bounds are literally vertical lines $\operatorname{Re}(s) = 2/3$ and $\operatorname{Re}(s) = 1/2$ in the complex plane of zeta roots</strong>. Look directly at the Lean definition <code>ChebyshevGrowthImpliesZeroFree</code> (<code>ExplicitFormulaErrorOfHostConditions.lean:40-41</code>):
+$$\forall \sigma \in (0, 1),\quad \bigl(\forall y \ge y_0,; \Lambda.\mathrm{Gm}(y) \le y^\sigma\bigr) ;\Longrightarrow; \forall s \in \mathbb{C},; \operatorname{Re}(s) &gt; \sigma \Rightarrow L(s, \chi) \ne 0.$$
+Every remainder bound $G_z(x) \ll x^{\sigma + O(\varepsilon)}$ on the prime staircase carves out the zero-free half-plane $\operatorname{Re}(s) &gt; \sigma$:</p>
+<ul>
+<li><strong>At $\sigma = 2/3$:</strong> Proving $G_z(x) \ll x^{2/3 + \varepsilon}$ would forbid zeta roots with $\operatorname{Re}(s) &gt; 2/3$. Even that would have been a landmark unconditional zero-free strip, yet geographically it would still permit rogue prime waves of size $x^{2/3}$ (far larger than coin-flip fluctuations $x^{1/2}$) and leave the middle third $\tfrac{1}{3} &lt; \operatorname{Re}(s) \le \tfrac{2}{3}$ of the critical strip unproved.</li>
+<li><strong>At $\sigma = 1/2$:</strong> Proving $G_z(x) \ll x^{1/2 + O(\varepsilon)}$ forbids all roots with $\operatorname{Re}(s) &gt; \tfrac{1}{2}$. Because Riemann's completed function $\xi(s) = \xi(1-s)$ is symmetric across the mirror $\operatorname{Re}(s) = \tfrac{1}{2}$, forbidding roots to the right of $\tfrac{1}{2}$ simultaneously forbids non-trivial roots to the left of $\tfrac{1}{2}$, pinning <strong>every</strong> root onto $\operatorname{Re}(s) = \tfrac{1}{2}$.</li>
+</ul>
+<p>Second, <strong>why do the exact fractions $2/3$ and $1/2$ emerge from multiplicity $m$?</strong> Suppose an auxiliary construction of multiplicity $m$ dilutes the macroscopic prime count $x^1$ by a factor of $m$ (giving analytic remainder $x/m$), while $m$ layers of arithmetic vanishing incur a normalized complexity cost proportional to $m^\alpha$ for some scaling exponent $\alpha &gt; 0$. Minimizing the total prime remainder
+$$\text{Remainder}(m) ;\asymp; \frac{x}{m} + m^\alpha$$
+sets the two terms equal: $x/m = m^\alpha \iff m^{1+\alpha} = x$, which pins the optimal chain length and resulting zero-free boundary at
+$$m ;\asymp; x^{\frac{1}{1+\alpha}}, \qquad \sigma ;=; 1 - \frac{1}{1+\alpha} ;=; \frac{\alpha}{1+\alpha}.$$
+Three regimes of this single formula explain the entire landscape:</p>
+<ol>
+<li><strong>Uncoupled / triangular multiplicity ($\alpha = 2 \implies m \asymp x^{1/3},; \sigma = \tfrac{2}{3}$):</strong> Over $\mathbb{Z}$, where Frobenius differentiation is absent, each step of an uncoupled $m$-step chain must carry height large enough to accommodate all $m$ layers of vanishing ($1 + 2 + \dots + m \sim m^2$). In the Lean code (<code>DataArith.lean:200</code>, <code>ErrorFormsWeakWindowsFalse.lean:135</code>), each lift has raw budget $B_0 = 2 n m b x^\varepsilon \propto m$, so summing across $m$ lifts yields a <strong>quadratic</strong> numerator $m B_0 = 2 n m^2 b x^\varepsilon \propto m^2$. Plugging $\alpha = 2$ into $\frac{\alpha}{1+\alpha}$ gives $\sigma = \frac{2}{3}$: $x$ is split three ways ($m^3 = x$), giving chain length $x^{1/3}$ and stalling the zero-free region at $\operatorname{Re}(s) = \tfrac{2}{3}$.</li>
+<li><strong>Glued / constant-marginal-cost multiplicity ($\alpha = 1 \implies m \asymp x^{1/2},; \sigma = \tfrac{1}{2}$):</strong> When global averaging divides the quadratic numerator $m^2$ by the $m$-fold weight of the main slope sum, each extra lift adds only a <em>constant</em> marginal cost ($\alpha = 1$, linear total cost $m^1$). Plugging $\alpha = 1$ into $\frac{\alpha}{1+\alpha}$ gives $\sigma = \frac{1}{2}$ and $m \asymp x^{1/2}$. By the arithmetic–geometric mean inequality, $\frac{x}{m} + m \ge 2\sqrt{(x/m)\cdot m} = 2 x^{1/2}$: the inverse-multiplicity hyperbola $x/m$ (exponent $1-\theta$) and the linear cost $m$ (exponent $\theta$) meet at their self-dual midpoint $\theta = \tfrac{1}{2}$.</li>
+<li><strong>Why $\alpha &lt; 1$ is forbidden by the zeta roots themselves:</strong> In 1914 G. H. Hardy [9] proved that $\zeta(s)$ genuinely possesses infinitely many roots on $\operatorname{Re}(s) = \tfrac{1}{2}$, so prime fluctuations really do reach $x^{1/2}$. If <em>any</em> valid proof achieved sublinear normalized cost $\alpha &lt; 1$, the balance $\sigma = \frac{\alpha}{1+\alpha} &lt; \tfrac{1}{2}$ would via Landau's theorem forbid roots on $\operatorname{Re}(s) = \tfrac{1}{2}$ itself — an impossibility! Thus <strong>the $\tfrac{1}{2}$ of Fourier/Poisson self-duality ($s \leftrightarrow 1-s$, midpoint between the macroscopic prime pole at $s = 1$ and unit arithmetic steps at $s = 0$) and the $\tfrac{1}{2}$ of linear multiplicity ($\alpha = 1$) are two sides of one barrier</strong>: linear marginal cost per lift is the sharpest scaling law the true zeros on $\operatorname{Re}(s) = \tfrac{1}{2}$ allow.</li>
+</ol>
+<h3>3.2 Statement of RPH5: the three-part lever turning $m^2$ into $m$</h3>
+<p><strong>RPH5</strong> proposes that the proof crosses from $\alpha = 2$ ($\sigma = \tfrac{2}{3}$) to $\alpha = 1$ ($\sigma = \tfrac{1}{2}$) through three interlocked mechanisms inside <code>LinkG</code> and <code>DIVinN</code> (matching timeline items 14, 15, and 17 [1]):</p>
+<ol>
+<li><strong>Local congruence via Kurt Hensel's $p$-adic lifting (<code>PAdicHensel</code>):</strong> Over $\mathbb{F}_p$, Frobenius gives $x^p \equiv x$ with zero derivative. Over $E$, Kurt Hensel's 1897 $p$-adic Newton method lifts congruences modulo $p$ to arbitrarily high powers $p^\ell$. Working at primes that split completely in $E$ (<code>SplitsCompletely</code>, with <code>131</code> of <code>141</code> <code>PAdicHensel</code> declarations active in the export), RPH5 proposes that Hensel lifting converts theta-series congruences into the local $p$-adic lattice divisibility <code>DV.LocLe</code> consumed by Bost's slope inequality.</li>
+<li><strong>Global Hecke-twist &quot;GCD&quot; gluing across $n_T \approx x^{-\varepsilon/8} n$ characters (<code>DIVinN</code>):</strong> Instead of applying Bost's slope inequality to a single lift chain, item 15 glues an integral lattice structure across $n_T \ge \tfrac12 \delta_1 n$ Hecke character translates ($\delta_1 = x^{-\varepsilon/8}$). In <code>GrowthBracketBoundOfSizeWindows.lean:115</code>, gluing across $n_T$ twists and all $m$ lifts gives Bost's main von Mangoldt slope term total weight <strong>$n_T \cdot m \cdot b$</strong>. Dividing the raw quadratic error $m B_0 = 2 n m^2 b x^\varepsilon$ by $n_T m b \asymp \delta_1 n m b$ cancels <strong>$n$ against $n_T$</strong> <em>and</em> cancels <strong>one power of $m$ against the $m$-fold main sum</strong>, collapsing quadratic $m^2$ into linear $4 m x^{9\varepsilon/8}$!</li>
+<li><strong>Weakened Vandiver (<code>VWin</code>) capping twist-invariant Galois cohomology:</strong> Averaging (&quot;taking a greatest common divisor&quot;) across Hecke twists kills stray prime factors that move with the twist, <em>except</em> for unramified Galois cohomology classes in $H^1(\mathcal{O}<em>E[1/\ell], \mathbb{Q}</em>\ell/\mathbb{Z}_\ell(-e))$ — arithmetic cousins of ideal class groups and Tate–Shafarevich groups that measure obstructions to local-to-global divisibility and stay fixed under twisting (item 17). In cyclotomic number theory, <strong>Harry Vandiver's 1920 conjecture</strong> asserts that the even part of the $p$-class group of $\mathbb{Q}(\zeta_p)^+$ vanishes outright, an unproved conjecture far beyond reach. Instead, the Lean proof unconditionally proves a quantitative substitute <code>VWin</code> (<code>MainConclusion</code>, via <code>vwin_of_row</code>), bounding the total logarithmic length <code>shaLen</code> of those twist-immune classes below $\sqrt{\exp(x^\varepsilon)} = b^{1/2}$ up to twist $\lfloor x^{401} \rfloor$ so that <code>DIVinN</code> closes cleanly.</li>
+</ol>
+<h3>3.3 Exact forcing of $(m, n, k) = (x^{1/2}, x^2, x^{9/2})$</h3>
+<p>After dividing by $n_T m b$, <code>GrowthBracketBoundOfSizeWindows</code> (<code>lines 104-107</code>) bounds the remainder on $G_z(x)$ by a four-term bracket:
+$$x^{C\varepsilon}!\left(c,\frac{x}{m} + c,\frac{x m}{k} + \frac{4 m x^\varepsilon}{\delta_1} + \frac{2 k (n_{T_2}/n) x^{2\varepsilon}}{\delta_1 n^2}\right) + 2x^{1/2+\varepsilon} + \frac{2}{x}.$$
+Requiring every term to stay $\le x^{1/2 + O(\varepsilon)}$ as $\varepsilon \to 0$ uniquely pins $(m, n, k) = (x^\theta, x^\nu, x^\kappa)$:</p>
+<ul>
+<li><strong>Term 1 ($c,x/m$):</strong> Forces $m \ge x^{1/2-\varepsilon}$ (<code>RestSize</code>, $\theta \ge \tfrac12$).</li>
+<li><strong>Term 3 ($4 m x^{9\varepsilon/8}$):</strong> Forces $m \le x^{1/2+\varepsilon/2}$ (<code>ErrWindows0</code>, $\theta \le \tfrac12$).</li>
+<li><strong>Term 4 ($2 k (n_{T_2}/n) x^{17\varepsilon/8}/n^2$) plus column orthogonality ($m^5 f \le k$):</strong> Forces $\tfrac52 + \nu \le \kappa \le 2\nu + \tfrac12$, hence $\nu \ge 2$; at <code>PageN</code>'s choice $\nu = 2$, this uniquely pins $(\theta, \nu, \kappa) = (\tfrac12, 2, \tfrac92)$.</li>
+</ul>
+<p>An exact rational check over a $1/72$ grid on $[0, 6]$ (validated against 4 positive and 4 negative export controls) shows that construction bounds alone (<code>levelPrimeN</code> + <code>RankNums</code>) permit $\theta \in [1/3, 5/9]$, whereas adding the analytic zero-free consumer leaves $\theta = \tfrac12$ as the unique solution (relaxing to $[1/2, 13/24]$ without <code>ErrWindows0</code>, and to $[1/3, 1/2]$ without <code>RestSize</code>).</p>
+<h2>4. Epistemic map, uncertainties, and falsifiers for RPH5</h2>
+<p>To keep certified mathematical truth cleanly separated from interpretation, RPH5 distinguishes four layers:</p>
+<ol>
+<li><strong>Kernel-certified theorem truth:</strong> RH, GRH, the 19 literature theorems, and <code>VWin</code> are unconditionally verified in Lean [2].</li>
+<li><strong>Equation-verified spine (<code>18/18</code> exported anchors):</strong> The $G_z(x)$ + Landau spine (<code>ChebyshevGrowthImpliesZeroFree</code>), Bost's Arakelov slope inequality + Rallis's Bessel seesaw, exact Weyl–Siegel factorial cancellation (<code>hfact'</code>), linear room $\log T \asymp m x^\varepsilon$, and the four-term bracket pinning $(m, n, k) = (x^{1/2}, x^2, x^{9/2})$ are read directly in the Lean equations. (Uniqueness of $(\tfrac12, 2, \tfrac92)$ holds within this proof's inequality system; future simplifications could lower $n$ or $k$, though $\theta = \tfrac12$ is locked whenever analytic gain $x/m$ meets linear cost $m$.)</li>
+<li><strong>Testable predictions of RPH5 on the upstream lever:</strong>
+<ul>
+<li><em>Prediction H5a (Split-prime Hensel congruence):</em> <code>PAdicHensel</code> produces the local lattice divisibility <code>DV.LocLe</code> inside <code>LinkG</code>. <em>Falsifier:</em> Inspect the proof body of <code>LinkG</code> — if <code>PAdicHensel</code> only builds local charts while divisibility comes from inert primes (<code>Models.AuxiliaryInertOddPrime</code> / <code>InertK</code>), H5a is refuted.</li>
+<li><em>Prediction H5b (Hecke GCD gluing &amp; <code>VWin</code> placement):</em> Gluing across $n_T \asymp x^{-\varepsilon/8} n$ twists inside <code>DIVinN</code> cancels the unaveraged rank factor, with <code>VWin</code> bounding the twist-immune <code>shaLen</code> residue in <code>etaSum</code>. <em>Falsifier:</em> Trace <code>VWin</code> from <code>every_character_of_literature_of_vWin</code> — if <code>VWin</code> feeds only automorphy patching and never bounds <code>etaSum</code> or <code>HostFacts</code> for <code>DIVinN</code>, H5b's placement of <code>VWin</code> is refuted.</li>
+</ul>
+</li>
+<li><strong>Simplifiability uncertainty:</strong> Whether large auxiliary exponents such as $m^5 f \le k$ ($k = x^{9/2}$) and $\lfloor x^{401} \rfloor$ in <code>VWin</code> are intrinsic to arithmetic multiplicity over $\mathbb{Z}$ or technical scaffolding of the first formalization remains open.</li>
+</ol>
+<h2>References</h2>
+<p>[1] L. Alpöge, remark on the proof of the Riemann hypothesis, November 2026, alpo.ge/remark.pdf.</p>
+<p>[2] The Lean and Mathlib communities, statement on the proof of the Riemann hypothesis, 21 November 2026, leanprover-community.github.io/blog/posts/riemann-hypothesis/.</p>
+<p>[3] S. A. Stepanov, &quot;On the number of points of a hyperelliptic curve over a finite prime field&quot;, <em>Izv. Akad. Nauk SSSR Ser. Mat.</em> 33 (1969), 1171–1181.</p>
+<p>[4] E. Bombieri, &quot;Counting points on curves over finite fields (d'après S. A. Stepanov)&quot;, <em>Séminaire Bourbaki</em>, exposé 430 (1973), 234–241.</p>
+<p>[5] A. Weil, &quot;Sur les 'formules explicites' de la théorie des nombres premiers&quot;, <em>Comm. Sém. Math. Univ. Lund</em>, tome supplémentaire (1952), 252–265.</p>
+<p>[6] J.-B. Bost, &quot;Périodes et isogénies des variétés abéliennes sur les corps de nombres (d'après D. Masser et G. Wüstholz)&quot;, <em>Séminaire Bourbaki</em>, exposé 795, <em>Astérisque</em> 237 (1996), 115–161.</p>
+<p>[7] S. Rallis, <em>L-functions and the Oscillator Representation</em>, Lecture Notes in Mathematics 1245, Springer, Berlin, 1987.</p>
+<p>[8] E. Landau, &quot;Über einen Satz von Tschebyschef&quot;, <em>Math. Ann.</em> 61 (1905), 527–550.</p>
+<p>[9] G. H. Hardy, &quot;Sur les zéros de la fonction $\zeta(s)$ de Riemann&quot;, <em>C. R. Acad. Sci. Paris</em> 158 (1914), 1012–1014.</p>
+  </div>
+</article>
+
+  </main>
+  <div class="divider"><hr></div>
+<footer class="site-footer">
+  <div class="footer-left">
+    <span style="font-family: 'JetBrains Mono', monospace;">nouments</span> &middot; public knowledge from the nou sisters
+  </div>
+  <div class="footer-links">
+    <a href="/encyclopedia/">Encyclopedia</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/requests/">Requests</a>
+    <a href="/register/">Register</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="https://github.com/noument/noument.github.io">GitHub</a>
+    <a href="https://x.com/clawement">X</a>
+    <a href="/feed.xml">RSS</a>
+  </div>
+</footer>
+  <script src="/static/js/nav.js?v=8d331263" defer></script>
+  
+</body>
+</html>

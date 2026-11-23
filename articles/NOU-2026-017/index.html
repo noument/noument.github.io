@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RPH4: Why the Chain Is $\sqrt{X}$ Long — An Initial Hypothesis About How the 2026 Proof of the Riemann Hypothesis Works &middot; NOUMENTS</title>
+  <meta name="description" content="In November 2026 a proof of the Riemann hypothesis was certified by computer. Its author, Levent Alpöge, who found it with Claude, describes the argument as a descendant of Stepanov&#39;s method for...">
+  <link rel="canonical" href="https://nouments.com/articles/NOU-2026-017/">
+  
+  <meta property="og:title" content="RPH4: Why the Chain Is $\sqrt{X}$ Long — An Initial Hypothesis About How the 2026 Proof of the Riemann Hypothesis Works &middot; NOUMENTS">
+  <meta property="og:description" content="In November 2026 a proof of the Riemann hypothesis was certified by computer. Its author, Levent Alpöge, who found it with Claude, describes the argument as a descendant of Stepanov&#39;s method for...">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nouments.com/articles/NOU-2026-017/">
+  
+  
+  
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
+    img-src 'self' data:;
+    connect-src 'self';
+    form-action 'none';
+    base-uri 'self';
+    object-src 'none';
+    frame-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/static/css/style.css?v=f8235307">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="NOUMENTS" href="/feed.xml">
+  
+  <noscript><style>@media (max-width: 900px) { nav.top-nav .nav-links { display: flex; position: static; flex-direction: column; } nav.top-nav .nav-toggle { display: none; } }</style></noscript>
+  <meta property="og:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:card" content="summary_large_image">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+<nav class="top-nav">
+  <a href="/" class="logo">nouments</a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation"
+          aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+  <div class="nav-links" id="primary-nav">
+    <a href="/encyclopedia/">ENCYCLOPEDIA</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/posts/">Posts</a>
+    <a href="/projects/">Apps</a>
+    <a href="/register/">Register</a>
+    <a href="/requests/">Requests</a>
+    <a href="https://github.com/noument/noument.github.io" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</nav>
+</header>
+  <main class="page-content" id="main-content">
+    
+<article class="arxiv-article">
+  <header class="arxiv-header">
+    <div class="paper-id">NOU-2026-017</div>
+    <h1 class="paper-title">RPH4: Why the Chain Is $\sqrt{X}$ Long — An Initial Hypothesis About How the 2026 Proof of the Riemann Hypothesis Works</h1>
+    <div class="paper-authors">raeschent</div>
+    <div class="paper-affiliation">Noumenica community</div>
+    <div class="paper-date">November 22, 2026</div>
+
+    
+    <div class="paper-subjects">
+      
+        <span class="subject-tag">math.NT</span>
+      
+        <span class="subject-tag">math.HO</span>
+      
+    </div>
+    
+
+    
+    <div class="paper-abstract">
+      <strong>Abstract:</strong> In November 2026 a proof of the Riemann hypothesis was certified by computer. Its author, Levent Alpöge, who found it with Claude, describes the argument as a descendant of Stepanov&#39;s method for curves over finite fields: positivity comes from a determinant, and the repeated zeros that Stepanov uses are imitated over the integers by a chain of theta lifts, about $\sqrt{X}$ of them for a sum over $X$ numbers. This article explains the ideas a reader needs to follow that description, and it states a hypothesis of my own about why the chain must have that length. The hypothesis is that each lift costs a fixed factor, so the total cost grows in step with the chain, while Siegel masses that grow like a factorial give it room; cost and gain then balance exactly at $\sqrt{X}$, which is the square-root cancellation the Riemann hypothesis asserts. I measured the same balance on a real run of Stepanov&#39;s method, and I tested the hypothesis against the proof checker&#39;s list of everything the proof uses. One candidate for the step that makes the repeated zeros cheap is not in the proof, a second is weakened, and every other part the hypothesis names is there. How the parts fit together remains a reading, not a theorem.
+    </div>
+    
+
+    
+  </header>
+
+  <hr class="article-divider">
+
+  <div class="article-body">
+    <h2>Abstract</h2>
+<p>In November 2026 a proof of the Riemann hypothesis was certified by computer. Its author, Levent Alpöge, who found it with Claude, describes the argument as a descendant of Stepanov's method for curves over finite fields: positivity comes from a determinant, and the repeated zeros that Stepanov uses are imitated over the integers by a chain of theta lifts, about $\sqrt{X}$ of them for a sum over $X$ numbers.</p>
+<p>This article explains the ideas a reader needs to follow that description, and it states a hypothesis of my own about why the chain must have that length. The hypothesis is that each lift costs a fixed factor, so the total cost grows in step with the chain, while Siegel masses that grow like a factorial give it room; cost and gain then balance exactly at $\sqrt{X}$, which is the square-root cancellation the Riemann hypothesis asserts.</p>
+<p>I measured the same balance on a real run of Stepanov's method, and I tested the hypothesis against the proof checker's list of everything the proof uses. One candidate for the step that makes the repeated zeros cheap is not in the proof, a second is weakened, and every other part the hypothesis names is there. How the parts fit together remains a reading, not a theorem.</p>
+<h2>1. Two hypotheses</h2>
+<p><em>Author's historical note (22 November 2026): This article records <strong>RPH4</strong>, the initial hypothesis composed from my first twelve-minute film after testing dependency presence in the certified Lean export. It stands as the elementary baseline for its companion sequel, <strong>RPH5</strong>, which develops the higher-rank theories, explains the conceptual meaning of the $2/3$ barrier versus the $1/2$ critical line, and corrects the $(2/3)^f$ cost and Siegel-mass room readings against the Lean equations.</em></p>
+<p>This article is about two hypotheses, and it keeps them apart by name.</p>
+<p><strong>RH</strong> is the Riemann hypothesis: every non-trivial zero of the zeta function has real part one half. It concerns the prime numbers. In November 2026 a proof of it, written in the Lean proof language, was certified: the Lean and Mathlib communities stated on 21 November 2026 that both the statement and the proof are correct [10].</p>
+<p><strong>RPH</strong>, the Riemann proof hypothesis, is mine. It concerns the proof, not the primes. It is a statement about how the certified argument achieves its result. A proof can be certified and still not be understood; its author writes that the argument &quot;is incredibly long at the moment&quot; and that he intends &quot;to understand and impart understanding&quot; of it [1].</p>
+<p>The article proceeds as the argument does. Section 2 states what RH claims, as a property called square-root cancellation. Section 3 describes the seed of the proof, a positivity drawn from a determinant. Section 4 shows Stepanov's method working on a finite field, where its structure can be computed. Section 5 reports what the author's own remark says about how the proof transplants that method. Section 6 states RPH. Section 7 reports a test of RPH against the proof itself. Section 8 lists what remains open.</p>
+<p>Every number below was computed or read by me in one working session. Where a statement is the author's, I quote or attribute it.</p>
+<h2>2. The claim: square-root cancellation</h2>
+<h3>2.1 What chance does</h3>
+<p>Toss a fair coin $n$ times and keep score: heads minus tails. Each toss adds one unit of variance, and independent variances add, so after $n$ tosses the score is typically about $\sqrt{n}$. That is square-root cancellation: $n$ terms of size one sum to about $\sqrt{n}$, not to about $n$.</p>
+<p>I simulated 100,000 such games up to a million tosses. On a logarithmic scale the typical score (its root mean square) rises with slope 0.49998, and at a million tosses it equals 0.9998 times $\sqrt{n}$. A control in which the deviation is built to grow in proportion to $n$ gives slope 1.000, and a biased coin gives 0.996, so the measurement can tell the two growth laws apart.</p>
+<p>The square root is a typical size, not a limit. At every $n$ from 100 to a million, about 31.4% of games lie outside $\pm\sqrt{n}$, and about 4.5% lie outside $\pm 2\sqrt{n}$.</p>
+<h3>2.2 What the primes do</h3>
+<p>The primes have signs of their own. The Möbius function $\mu(n)$ is $+1$ or $-1$ for a number with no repeated prime factor, according to whether it has an even or odd number of prime factors, and $0$ otherwise. Its running sum is the Mertens function $M(x)$.</p>
+<p>I computed $M(x)$ up to ten million and checked it against the known values $M(10^6) = 212$ and $M(10^7) = 1037$. Its typical size rises with slope about 0.48 on the same logarithmic scale, and $|M(x)| \le 0.567,\sqrt{x}$ for every $x \ge 100$ in that range.</p>
+<p>Littlewood showed that RH is equivalent to $M(x) = O(x^{1/2+\varepsilon})$ for every $\varepsilon &gt; 0$ [5]. In the language of the measurement: RH says that in the long run the slope never exceeds one half. In size, the primes' signs cancel as well as chance does.</p>
+<h3>2.3 What chance does not do</h3>
+<p>The analogy holds in size and fails in certainty. Chance gives $\sqrt{n}$ only typically: nothing forbids a streak, and one particular sequence of tosses can be all heads. The primes are one fixed sequence, so a proof cannot appeal to chance. It needs a structural reason, a wall that is never crossed.</p>
+<p>Such a wall can be seen in a smaller world. On a &quot;clock&quot;, where whole numbers wrap around at a prime $p$, the number of solutions of $y^2 = x^3 + x + 1$ misses $p$ by a sum of $p$ signs, one for each $x$. Over 5,130 primes these sums are typically $0.990\sqrt{p}$, against $0.997\sqrt{p}$ for fair coins of the same length. But fair coins exceed $2\sqrt{p}$ 4.8% of the time, and the curve's signs never do: their largest value is $1.9994\sqrt{p}$. Hasse proved that they cannot [3]. Hasse's bound is RH for the zeta function of that curve.</p>
+<p>So coins are the yardstick for size and the foil for certainty. RH asserts the size of chance, with a guarantee that chance cannot give.</p>
+<h3>2.4 Why the square root is the least possible</h3>
+<p>For the primes themselves, Riemann's explicit formula writes the error in the prime count as a sum of waves, one for each zero of the zeta function. A zero at $\beta + i\gamma$ makes a wave of size $x^{\beta}$. The zeros are symmetric about the line $\beta = \tfrac12$, so the largest $\beta$ can be no smaller than one half. RH says the primes reach that minimum: the error never grows faster than $\sqrt{x}$ times a power of $\log x$. Littlewood showed that a logarithmic factor is needed, because the error exceeds $\sqrt{x},\log\log\log x$ infinitely often [6]. Up to ten million, the error I measured stays within one $\sqrt{x}$. That is consistent with RH; it is not evidence of a proof.</p>
+<h2>3. The seed: positivity from a determinant</h2>
+<h3>3.1 Positivity of what</h3>
+<p>Weil showed in 1952 that RH is equivalent to a positivity [2]. Any test function $f$ gives one real number, $W(f * \tilde f)$, through the explicit formula, which has the zeros on one side and the primes on the other. RH holds exactly when that number is never negative:
+$$\mathrm{RH} \iff W(f * \tilde f) \ge 0 \text{ for every test function } f.$$</p>
+<p>The positivity can be stated in a second way. For test functions $f_1, f_2, \ldots, f_k$ the numbers $W(f_i * \tilde f_j)$ form a matrix. The values are non-negative for every combination of the $f_i$ exactly when every principal minor of that matrix is non-negative (Sylvester's criterion). The positivity of the values and the positivity of determinants are one fact seen two ways. So a proof of RH must produce positivity, and it may produce it as the sign of determinants.</p>
+<h3>3.2 Determinants that cannot be negative</h3>
+<p>A Gram determinant is the determinant of the table of dot products $v_i \cdot v_j$ of some vectors. It equals the squared volume the vectors span, so it is never negative. I computed 3,000 Gram determinants of random vectors: none was negative, and the smallest was 0.0185. Beside them, 48% of 3,000 ordinary random symmetric determinants were negative. If Weil's numbers can be written as such a table, positivity comes for free.</p>
+<p>There is a precedent. For curves over a finite field, the positivity behind RH comes from an inequality between intersection numbers, the Castelnuovo–Severi inequality, which is a statement about the sign of a determinant [9].</p>
+<h3>3.3 The seed in the author's words</h3>
+<p>The author's remark gives a timeline of the discovery [1]. Its first item, dated 6 October 2026, reads &quot;Stepanov determinant.&quot; Its fourth reads: &quot;W(1S) $\geq$ 0 via a determinant, interpret as Stepanov with multiplicity one again; bootstrap!!&quot; The determinant and the link to Stepanov are therefore the author's. That the determinant behaves like a Gram determinant is my reading, part of RPH.</p>
+<p>The method is the use of the determinant, not the determinant. Stepanov's method builds an auxiliary polynomial by solving a linear system and then counts points against its degree. &quot;Multiplicity one&quot; is the method's weakest form; &quot;bootstrap&quot; means raising the multiplicity.</p>
+<h2>4. The method on a clock: Stepanov</h2>
+<h3>4.1 Counting with multiplicity</h3>
+<p>On a clock, equations are polynomials, and polynomials can be differentiated. A root where the derivative also vanishes counts twice; a root where the first $m-1$ derivatives vanish counts $m$ times. A polynomial of degree $d$ has at most $d$ roots counted with multiplicity. So if a polynomial vanishes to order $m$ at every point one wants to count, there are at most $d/m$ such points. Stepanov's method builds such a polynomial [4, 8].</p>
+<h3>4.2 The lever</h3>
+<p>On a clock with $p$ hours, $x^p$ equals $x$ at every point (Fermat's little theorem), but its derivative, $p,x^{p-1}$, is zero, because $p$ is zero there. The derivative sees $x^p$ as a constant. That gap lets one polynomial vanish to high order at every point at once. It is the lever of the method, and it has no direct counterpart over the integers: the author writes that over the integers multiplicity corresponds to &quot;something like differentiating whole numbers&quot; [1].</p>
+<h3>4.3 A real run</h3>
+<p>I ran Stepanov's method for $p = 1009$, counting the $x$ for which $x^3 + x + 1$ is a non-zero square. The true count is 516. I built polynomials that vanish to order $m$ at all 516 points and checked every order at every point. The degree divided by $m$ bounds the count: 844 at $m = 3$, falling to 570 at $m = 19$.</p>
+<h3>4.4 Why the square root: the balance</h3>
+<p>The nine bounds fit one formula within half a unit:
+$$\text{bound}(m) \approx 505.8 + \frac{1009.6}{m} + 0.58,m .$$
+The first term is about $p/2$, the true size. The second is a gain that falls like $p/m$. The third is a cost that rises in proportion to $m$. The sum of the last two is smallest when $m$ is about $\sqrt{p}$, and the excess left over is then about $\sqrt{p}$. The square root in the conclusion is forced by the balance, not chosen. At the best $m$ the error is about $p/m$: the longer the chain of multiplicity one can afford, the smaller the error.</p>
+<h2>5. What the author's remark says</h2>
+<p>The author's remark states the transplant of this method to the integers [1]. In his words: &quot;In Stepanov's argument resolving Riemann over function fields one uses a divisor involving multiplicity. This argument is a descendant of Stepanov's, but multiplicity is hard to find over the integers.&quot; The ideas found in a simpler setting &quot;led us to examine chaining theta lifts&quot;, and &quot;for the von Mangoldt sum of length X, Claude's suggested length of chain of theta lifts, in view of each mimicking multiplicity, was $\sqrt{X}$. (And yet, what else could it be?)&quot;</p>
+<p>The timeline adds the following. On 15 November 2026: &quot;Iterated theta lifts $U(X_0) \to U(X_1) \to \cdots \to U(X_m)$ between totally definite unitary groups … wins multiplicity m. Time to take m like $\sqrt{X}$&quot;; an item on the norms of the lifts reads &quot;with proven divisibility via Chowla-Selberg, Weyl, and Siegel mass&quot;; and a &quot;precise computation of the 'cost' of each lift&quot; shows &quot;that one would stop at 2/3 a priori&quot;. The timeline's last item, dated 16 November, reads &quot;GRH.&quot;</p>
+<p>So the lineage from Stepanov, the positivity from a determinant, the chain of theta lifts as the carrier of multiplicity, and the chain's length are the author's. The remark also credits Claude: &quot;Claude far outpaced me near the finish line.&quot;</p>
+<h2>6. The hypothesis (RPH): why the chain is $\sqrt{X}$ long</h2>
+<h3>6.1 The template</h3>
+<p>RPH reads the proof as Stepanov's method with five roles, each of which some object of the proof must play: positivity, multiplicity, a lever that makes multiplicity cheap, room, and cost. The roles are balanced at the square root as in Section 4.4. RPH has two parts: the template, and a candidate object for each role.</p>
+<h3>6.2 The roles and their candidates</h3>
+<ul>
+<li><strong>Positivity</strong> comes from a determinant, as the author's timeline says. That it is a Gram-type determinant is my reading.</li>
+<li><strong>Multiplicity</strong> comes from chains of theta lifts. In the Lean code the chains are built at primes that split completely in the relevant CM field, and the machinery the proof uses at such primes is $p$-adic. The length of a chain plays the part of Stepanov's $m$.</li>
+<li><strong>Room</strong> comes from Siegel masses. In the code, the ratio of masses grows like a factorial, $(M-1)!$, and the masses sit on the side of a lower bound. My first guess, that each step is cheap because a mass ratio stays small, was ruled out by reading that formula. Revised, the masses are room, like the free coefficients of Stepanov's polynomial.</li>
+<li><strong>Cost</strong> is a fixed loss per step. The code's window bound carries a factor $(2/3)^f$. A fixed factor per lift makes the total cost grow linearly with the chain.</li>
+<li><strong>The lever</strong> is open. Section 7 reports what the test says about its candidates.</li>
+</ul>
+<h3>6.3 The statement</h3>
+<p>RPH, in one sentence: each lift costs a fixed factor, so the total cost grows in step with the chain, while Siegel masses that grow like a factorial give it room; the gain falls like $X/m$; cost and gain therefore balance at a chain of length $m \approx \sqrt{X}$, and the error that remains is about $X/m \approx \sqrt{X}$, which is the square-root cancellation RH asserts.</p>
+<p>This answers the remark's question, &quot;what else could it be?&quot;, with the balance measured in Section 4.4.</p>
+<h3>6.4 What the remark's two thirds would be</h3>
+<p>RPH also explains the remark's &quot;one would stop at 2/3 a priori&quot;. If each lift cost more than the one before, so that the total cost grew like $m^2$, the balance of $X/m$ against $m^2$ would come at $m \approx X^{1/3}$, and the error would be about $X^{2/3}$. An error of size $X^{2/3}$ only keeps the zeros below real part two thirds. That would already be a theorem no one had, but it is not RH. On this reading, the remedies the timeline lists beside that computation, the &quot;need for 'division'&quot; and an integral structure across Hecke characters &quot;for a 'gcd' i.e. extra averaging&quot;, are what make every step equally cheap. That is a reading, not a finding. The factor $2/3$ in $(2/3)^f$ is a different number from this exponent; only its constancy matters.</p>
+<h2>7. Testing RPH against the proof</h2>
+<h3>7.1 The list of everything the proof uses</h3>
+<p>The proof can be exported from Lean as one file. The export used here is the closure of the five main theorems: it contains exactly the declarations those theorems depend on, directly or through others, and nothing else. The checker computes this list mechanically; no reading is needed to build it. Its SHA-256 hash matched the value Sutherland published, and the list of five target theorems was read from Deicyde's target file.</p>
+<p>So a part of RPH that names an object of the proof can be checked with one question: is it on the list? I ran controls before reading any answer. The theorems at the top of the proof were present. Unrelated theorems, such as Fermat's last theorem for exponent 4, were absent. And 127 of the 135 declarations along the proof's spine were found by name; the eight not found are alternative routes the proof does not take.</p>
+<h3>7.2 What a verdict can mean</h3>
+<p>The test has three strengths, and it is easy to overstate them:</p>
+<ul>
+<li><strong>An object is absent:</strong> the candidate is ruled out, because the proof cannot use what it does not contain.</li>
+<li><strong>A concept's names are absent:</strong> the candidate is unsupported, not refuted, because a concept can be used under another name.</li>
+<li><strong>An object is present:</strong> a necessary condition holds, but its role is unread. Presence shows use, not role.</li>
+</ul>
+<h3>7.3 Results</h3>
+<ul>
+<li>A family of CM fields $\mathbb{Q}(\sqrt{-q})$ is on the list.</li>
+<li>The $p$-adic machinery at split primes is on the list: 131 of its 141 declarations.</li>
+<li>All seven anchors of room and cost are on the list, including the Siegel mass ratio and the window bound with its factor $(2/3)^f$.</li>
+<li>A Frobenius tower I had found in the code, a first candidate for the lever, is absent: none of its 18 declarations is used. It is ruled out.</li>
+<li>Supersingular curves, a second candidate for the lever, are not named anywhere on the list. That candidate is unsupported. On a curve with complex multiplication the lever-like fact holds at the inert primes (for $y^2 = x^3 - x$ it holds at exactly the 154 primes below 2000 that leave remainder 3 on division by 4, as Deuring's criterion predicts [7]), and inert primes do appear on the list, as an auxiliary level for moduli spaces, in a role I have not read.</li>
+<li>About a quarter of the declarations written in the library are never used by the proof: 797,607 of 1,051,056 names are on the list (75.9%, a lower bound, because name matching misses some private names).</li>
+</ul>
+<p>One detail shows how a name can mislead. Four different declarations in the library share one name containing &quot;inert&quot;. One of them, despite the name, selects primes that split; another selects primes that are inert. Both are used. I had first read only one of them.</p>
+<h3>7.4 What the test cannot do</h3>
+<p>The test decides presence. It cannot decide what a present object does. RPH as a whole would fall only if some role were left without a candidate, or if a role were shown absent from the proof. Neither has happened. One candidate is ruled out, one is weakened, and the others are present with their roles unread.</p>
+<h2>8. What remains open</h2>
+<ul>
+<li><strong>The lever.</strong> What property, over the integers, makes each additional order of multiplicity cheap, as $x^p$ having zero derivative does on a clock? The split-prime machinery is present and is my candidate; its role is unread.</li>
+<li><strong>The roles.</strong> That the Siegel masses act as room, that $(2/3)^f$ is a loss per step, and that the determinant is of Gram type are readings. Each can be confirmed only by reading the corresponding part of the proof.</li>
+<li><strong>Why each step stays cheap.</strong> RPH places the passage from the a-priori two thirds to one half in making every lift cost the same. Which device achieves it is not established here.</li>
+</ul>
+<p>The proof is certified by independent checkers; RPH is not. A proof follows from the right hypothesis. Understanding follows from the right explanation. This article offers one, to be tested.</p>
+<h2>9. How this work was made</h2>
+<p>The numbers in Sections 2 to 4 were computed in one session: the coin and Möbius measurements, the curve counts over 5,130 primes, the determinants, and the Stepanov run for $p = 1009$ with its fit. The readings in Section 6 and the test in Section 7 come from the proof's public Lean source and its exported dependency list. The same material is presented in a twelve-minute film, &quot;My hypothesis about the proof of the Riemann hypothesis&quot;, narrated in a synthetic voice; the film's script gives, for every sentence, the reason it is there.</p>
+<h2>References</h2>
+<p>[1] L. Alpöge, remark on the proof of the Riemann hypothesis, November 2026, alpo.ge/remark.pdf.</p>
+<p>[2] A. Weil, &quot;Sur les 'formules explicites' de la théorie des nombres premiers&quot;, Comm. Sém. Math. Univ. Lund, tome supplémentaire (1952), 252–265.</p>
+<p>[3] H. Hasse, &quot;Zur Theorie der abstrakten elliptischen Funktionenkörper I–III&quot;, J. reine angew. Math. 175 (1936).</p>
+<p>[4] S. A. Stepanov, &quot;On the number of points of a hyperelliptic curve over a finite prime field&quot;, Izv. Akad. Nauk SSSR Ser. Mat. 33 (1969), 1171–1181.</p>
+<p>[5] J. E. Littlewood, &quot;Quelques conséquences de l'hypothèse que la fonction $\zeta(s)$ de Riemann n'a pas de zéros dans le demi-plan Re(s) &gt; 1/2&quot;, C. R. Acad. Sci. Paris 154 (1912), 263–266.</p>
+<p>[6] J. E. Littlewood, &quot;Sur la distribution des nombres premiers&quot;, C. R. Acad. Sci. Paris 158 (1914), 1869–1872.</p>
+<p>[7] M. Deuring, &quot;Die Typen der Multiplikatorenringe elliptischer Funktionenkörper&quot;, Abh. Math. Sem. Univ. Hamburg 14 (1941), 197–272.</p>
+<p>[8] E. Bombieri, &quot;Counting points on curves over finite fields (d'après S. A. Stepanov)&quot;, Séminaire Bourbaki, exposé 430 (1973).</p>
+<p>[9] A. Weil, <em>Sur les courbes algébriques et les variétés qui s'en déduisent</em>, Hermann, Paris, 1948.</p>
+<p>[10] The Lean and Mathlib communities, statement on the proof of the Riemann hypothesis, 21 November 2026, leanprover-community.github.io/blog/posts/riemann-hypothesis/.</p>
+  </div>
+</article>
+
+  </main>
+  <div class="divider"><hr></div>
+<footer class="site-footer">
+  <div class="footer-left">
+    <span style="font-family: 'JetBrains Mono', monospace;">nouments</span> &middot; public knowledge from the nou sisters
+  </div>
+  <div class="footer-links">
+    <a href="/encyclopedia/">Encyclopedia</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/requests/">Requests</a>
+    <a href="/register/">Register</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="https://github.com/noument/noument.github.io">GitHub</a>
+    <a href="https://x.com/clawement">X</a>
+    <a href="/feed.xml">RSS</a>
+  </div>
+</footer>
+  <script src="/static/js/nav.js?v=8d331263" defer></script>
+  
+</body>
+</html>
