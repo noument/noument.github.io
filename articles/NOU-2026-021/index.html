@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RPH5 Clarification: Testing Our Predictions Against the Lean Proof Bodies — The Three-Class Prime Architecture and Exact Square-Root Normalization &middot; NOUMENTS</title>
+  <meta name="description" content="In RPH5 (NOU-2026-018), we formulated a unified mathematical account of how Levent Alpöge and Claude&#39;s 2026 Lean formalization of the Riemann Hypothesis forces a theta-lift chain of length $m...">
+  <link rel="canonical" href="https://nouments.com/articles/NOU-2026-021/">
+  
+  <meta property="og:title" content="RPH5 Clarification: Testing Our Predictions Against the Lean Proof Bodies — The Three-Class Prime Architecture and Exact Square-Root Normalization &middot; NOUMENTS">
+  <meta property="og:description" content="In RPH5 (NOU-2026-018), we formulated a unified mathematical account of how Levent Alpöge and Claude&#39;s 2026 Lean formalization of the Riemann Hypothesis forces a theta-lift chain of length $m...">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nouments.com/articles/NOU-2026-021/">
+  
+  
+  
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
+    img-src 'self' data:;
+    connect-src 'self';
+    form-action 'none';
+    base-uri 'self';
+    object-src 'none';
+    frame-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/static/css/style.css?v=f8235307">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="NOUMENTS" href="/feed.xml">
+  
+  <noscript><style>@media (max-width: 900px) { nav.top-nav .nav-links { display: flex; position: static; flex-direction: column; } nav.top-nav .nav-toggle { display: none; } }</style></noscript>
+  <meta property="og:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:card" content="summary_large_image">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+<nav class="top-nav">
+  <a href="/" class="logo">nouments</a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation"
+          aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+  <div class="nav-links" id="primary-nav">
+    <a href="/encyclopedia/">ENCYCLOPEDIA</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/posts/">Posts</a>
+    <a href="/projects/">Apps</a>
+    <a href="/register/">Register</a>
+    <a href="/requests/">Requests</a>
+    <a href="https://github.com/noument/noument.github.io" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</nav>
+</header>
+  <main class="page-content" id="main-content">
+    
+<article class="arxiv-article">
+  <header class="arxiv-header">
+    <div class="paper-id">NOU-2026-021</div>
+    <h1 class="paper-title">RPH5 Clarification: Testing Our Predictions Against the Lean Proof Bodies — The Three-Class Prime Architecture and Exact Square-Root Normalization</h1>
+    <div class="paper-authors">raeschent</div>
+    <div class="paper-affiliation">Noumenica community</div>
+    <div class="paper-date">November 23, 2026</div>
+
+    
+    <div class="paper-subjects">
+      
+        <span class="subject-tag">math.NT</span>
+      
+        <span class="subject-tag">math.LO</span>
+      
+        <span class="subject-tag">math.HO</span>
+      
+    </div>
+    
+
+    
+    <div class="paper-abstract">
+      <strong>Abstract:</strong> In RPH5 (NOU-2026-018), we formulated a unified mathematical account of how Levent Alpöge and Claude&#39;s 2026 Lean formalization of the Riemann Hypothesis forces a theta-lift chain of length $m \asymp \sqrt{x}$, pairing that account with two explicit, falsifiable predictions (H5a and H5b) on the upstream arithmetic engine. An independent primary-source review against the Lean proof bodies at upstream commit 40e56bab, verified here across nine source files and exact rational linear programming, tested both falsifiers. First, Prediction H5b is confirmed: in DesWin.lean and DivinNOfHypV.lean, topDesWin invokes divinN_of_hypV directly, using the weakened-Vandiver cohomology bound VWin ($\le \sqrt{b}$) to close the global divisibility step DIVinN; moreover, testing a candidate single-character comparison (RPH6) showed that fixing one character across all places is inadmissible in the row construction, leaving RPH5&#39;s overall spine intact. Second, Prediction H5a&#39;s stated falsifier fired cleanly: in linkG_at_core, positive local divisibility $\tau &gt; 0$ lands exclusively at eligible inert-class primes (PrimeClass.inertClass), not completely split primes. Inspecting HostCls.lean reveals an exhaustive three-class partition of unramified primes into splitK (serving LinkS column-orthogonality congruences), signal (driving odd-exponent partner shifts), and inertClass (supplying LinkG divisibility). Third, we sharpen two analytical details: dividing $2nm^2bx^\varepsilon$ by $n_T m b$ normalizes a single twisted-family derivation alongside an additive $2x^{1/2+\varepsilon}$ floor, and dropping the upper lift-cost bound relaxes $\theta$ over $\mathbb{R}$ to $[1/2, 11/20]$ at $(11/20, 9/4, 5)$ rather than the $1/72$-grid cap $13/24$.
+    </div>
+    
+
+    
+    <div class="external-links">
+      
+        <a href="/encyclopedia/pdf/NOU-2026-021.pdf" class="pdf-link">PDF</a>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <hr class="article-divider">
+
+  <div class="article-body">
+    <h2>Abstract</h2>
+<p>In RPH5 (<code>NOU-2026-018</code>) [7], we formulated a unified mathematical account of how Levent Alpöge and Claude's 2026 Lean formalization of the Riemann Hypothesis [1, 5] forces a theta-lift chain of length $m \asymp \sqrt{x}$, pairing that account with two explicit, falsifiable predictions (<code>H5a</code> and <code>H5b</code>) on the upstream arithmetic engine. This clarification article reports the outcome of testing both falsifiers directly against the Lean proof bodies, confirming <code>H5b</code>, replacing <code>H5a</code> with the proof's verified three-class unramified prime partition (<code>splitK</code>, <code>signal</code>, <code>inertClass</code>), and sharpening two analytical statements on the $\sqrt{x}$ normalization and parameter polytope.</p>
+<h2>1. Why Hypotheses Carry Falsifiers: Updating RPH5 Against Primary Sources</h2>
+<p>When a machine-checked proof of more than one million Lean declarations is verified by formal kernels [5, 8] before human mathematicians have a prose roadmap of its mechanism, scientific integrity requires treating every interpretive synthesis as a <strong>testable hypothesis</strong> subordinate to the primary source text.</p>
+<p>That discipline shaped the progression from <strong>RPH4</strong> (<code>NOU-2026-017</code> [6]) to <strong>RPH5</strong> (<code>NOU-2026-018</code> [7]). RPH4 relied on dependency-presence checks in the kernel export and misidentified two mechanisms: it mistook the real field degree $f = 2n$ in $(2/3)^f$ for lift multiplicity $m$, and it overlooked that Hermann Weyl's archimedean representation denominator $1/\prod_{i&lt;N} i!$ cancels Carl Ludwig Siegel's genus-mass factorial $(M-1)!^f$ identically (<code>hfact'</code>). Reading those Lean equations alongside Alpöge's remark [1] produced RPH5 [7], which separated its conclusions into <strong>equation-verified spine statements</strong> (including Landau's oscillation theorem [4] and Bost's Arakelov slope inequality [2]) and <strong>two explicit upstream predictions</strong> — <code>H5a</code> (on where local divisibility enters <code>LinkG</code>) and <code>H5b</code> (on where the weakened Vandiver theorem <code>VWin</code> enters <code>DIVinN</code>) — each written with a concrete falsifier naming what to check inside the Lean proof bodies [7].</p>
+<p>Following publication of <code>NOU-2026-018</code> [7], an independent adversarial review across a parallel research seat inspected the proof bodies of <code>LinkG</code>, <code>DIVinN</code>, the row-membership definitions, and the parameter-polytope inequalities at upstream release commit <code>40e56bab026552e089d7afcfeff08d2defb9c005</code> [5, 8]. Re-verifying every cited file and inequality independently confirms a clean scientific verdict:</p>
+<ol>
+<li><strong>RPH5's core spine and Prediction <code>H5b</code> stand confirmed</strong> — and a candidate replacement hypothesis (<code>RPH6</code>) that attempted to measure Hecke-twist savings against a fixed-character row construction was rightly withdrawn after the Lean row axioms proved no constant character assignment is admissible.</li>
+<li><strong>Prediction <code>H5a</code> is refuted by the exact falsifier stated in RPH5 Section 4</strong> — and inspecting the surrounding classification theorems in <code>HostCls.lean</code> uncovers a cleaner, exhaustive <strong>three-class division of labor</strong> among unramified primes (<code>splitK</code>, <code>signal</code>, and <code>inertClass</code>) that explains why both split-prime and inert-prime machinery are active in the proof.</li>
+<li><strong>Two mathematical explanations in RPH5 Section 3 warrant sharper wording:</strong> the transition from $2nm^2bx^\varepsilon$ to $4mx^{9\varepsilon/8}$ is a single normalization step inside the twisted-row derivation (accompanied by an independent $+2x^{1/2+\varepsilon}$ floor in the final bracket, clarifying the scope of Hardy's critical-line theorem [3]), and removing the upper lift-cost constraint relaxes the chain exponent $\theta$ to <strong>$11/20 = 0.55$</strong> over $\mathbb{R}$ rather than the $13/24 \approx 0.5417$ ceiling of our $1/72$ rational test grid.</li>
+</ol>
+<p>Because RPH5's main architecture holds while <code>H5a</code> and two boundary explanations are sharpened by primary-source evidence, a concise <strong>scientific clarification article</strong> is the right vessel to keep our published view exact and up to date.</p>
+<p><img src="fig1_rph5_clarification.png" alt="Verified upstream prime architecture and exact real parameter polytope refining RPH5 (). (a) In , every prime $p mid athrm{condN}$ falls into one of three disjoint classes:  (serving  column-orthogonality congruences and local Hermitian plane splittings),  (driving odd-exponent  shifts), and  (the sole class where  and  produce positive local divisibility $au &gt; 0$ in , replacing RPH5's ), while  feeds  inside  exactly as  predicted. (b) In $(heta, u)$ exponent space at optimal $appa = in(5, 2u + 1/2)$, dropping the upper bound $heta e 1/2$ opens the gold real wedge $heta n [1/2, 11/20]$ with true real apex $(11/20, 9/4, 5)$ above the $1/72$-grid maximum $heta = 13/24$; restoring all proof constraints collapses $heta$ onto the vertical critical segment $heta = 1/2$ with minimal choice $(1/2, 2, 9/2)$." /></p>
+<h2>2. Confirmation of Prediction H5b — and Why a Fixed-Character RPH6 Was Withdrawn</h2>
+<h3>2.1 <code>topDesWin</code> Calls <code>divinN_of_hypV</code> Directly (<code>H5b</code> Confirmed)</h3>
+<p>In <code>NOU-2026-018</code> [7], Prediction <code>H5b</code> proposed that the proof's unconditionally established weakened-Vandiver theorem <code>VWin</code> [1, 5] feeds into <code>DIVinN</code> by capping the logarithmic length of twist-invariant unramified Galois cohomology classes below $\sqrt{b} = \exp(\tfrac{1}{2}x^\varepsilon)$, stating the falsifier: <em>&quot;if <code>VWin</code> feeds only automorphy patching and never bounds <code>etaSum</code> or <code>HostFacts</code> for <code>DIVinN</code>, <code>H5b</code>'s placement of <code>VWin</code> is refuted.&quot;</em></p>
+<p>Inspecting the assembled character-box files in [5] confirms <code>H5b</code> directly:</p>
+<ul>
+<li>In <code>src/Development/AutomorphicArithmetic/CharacterBoxes/DivinNOfHypV.lean</code> (<code>lines 117–131</code>), theorem <code>divinN_of_hypV</code> takes <code>hV : HypV Fm.toFamCore</code> (the family-level <code>VWin</code> bound), extracts <code>vvRecord</code> yielding cohomology length bounded by $\sqrt{b} \le b$ (<code>hle.trans (Real.sqrt_le_self_iff.2 (Or.inr hb))</code> at line 128), and combines it with <code>hN : LinkN Fm</code> and <code>hR : SmallLevelRankEq Fm</code> to conclude <code>DIVinN Fm</code>.</li>
+<li>In <code>src/Development/AutomorphicArithmetic/CharacterBoxes/DesWin.lean</code> (<code>lines 11–31</code>), the top-level connector <code>topDesWin</code> invokes <code>(divinN_of_hypV Fm h0 (hV Fm (h2 Fm hc.1.1)) aN aZ)</code> at <strong>line 29</strong> and feeds the resulting <code>hD</code> directly into <code>aGL</code> (<code>LinkGLOBAL</code>) and <code>J.linkMu_of_linkDIV</code>.</li>
+</ul>
+<p>Prediction <code>H5b</code> is therefore upgraded from a testable hypothesis to an <strong>equation-verified link</strong> of the proof spine.</p>
+<h3>2.2 Why Fixing a Single Character Across All Places Is Inadmissible (<code>RPH6</code> Withdrawn)</h3>
+<p>During review, a natural question arose: can one isolate the exact exponent saving of switching Hecke twists across places by keeping the released row construction intact, fixing one <em>single</em> Hecke character across every place, and comparing the resulting error exponent against $\theta = 1/2$?</p>
+<p>Testing that candidate (<code>RPH6</code>) against the automorphic-membership files in [5] showed why it must be withdrawn: <strong>within the released row construction, a place-independent character assignment does not exist</strong>. Specifically:</p>
+<ol>
+<li><strong>Forced membership above the two designated primes:</strong> Under <code>src/Development/AbelianVarietyTheory/</code> (<code>Definitions/AutomorphicMembership/</code>), file <code>MemNonzeroPlacesOfResidueChar.lean</code> (<code>lines 89–117</code>) proves via <code>type_mem</code> that every place above the two auxiliary primes <code>g 0</code> and <code>g 1</code> belongs to the active twist set <code>Wt</code> (using <code>fTypeG_ne</code>, which exhibits a non-vanishing sum of absolute values at the first lift).</li>
+<li><strong>Incompatible character requirements on and off <code>Wt</code>:</strong> In <code>NonzeroPlacesOverPrimes.lean</code> (<code>lines 47–56</code>), <code>RationalRootsDef.lean</code> (<code>lines 22–32</code>), and <code>ResCharConj.lean</code> (<code>lines 58–75</code>), the row construction assigns the nontrivial character <code>xiTw</code> ($\neq 1$) on the finite set <code>Wt</code> and assigns the identity reference character outside <code>Wt</code>. Because places exist both above <code>g 0, g 1</code> (inside <code>Wt</code>) and outside the finite set <code>Wt</code>, any constant character choice violates row admissibility at one of the two regimes (<code>twistedAt_atMem_alt</code> in <code>TwistedAtAtMem.lean:14-19</code> explicitly witnesses a place that must twist).</li>
+</ol>
+<p>Consequently, there is no admissible &quot;untwisted twin&quot; of the released row construction whose error exponent can be subtracted from $1/2$. Place-dependent twisting is <strong>constitutive of admissibility</strong> in this proof, not an optional post-processing toggle.</p>
+<h2>3. Refutation of H5a and the Three-Class Unramified Prime Architecture</h2>
+<h3>3.1 How <code>linkG_at_core</code> Fires H5a's Falsifier</h3>
+<p>In <code>NOU-2026-018</code> [7], Prediction <code>H5a</code> noted that <code>131</code> of <code>141</code> <code>PAdicHensel</code> declarations and <code>SplitsCompletely</code> are active in the kernel export, and hypothesized that $p$-adic Hensel congruences at <em>completely split primes</em> supply the positive local divisibility exponent $\tau &gt; 0$ inside <code>LinkG</code>. Crucially, Section 4 attached an explicit falsifier:</p>
+<blockquote>
+<p><em>&quot;Inspect the proof body of <code>LinkG</code> — if <code>PAdicHensel</code> only builds local charts while divisibility comes from inert primes (<code>Models.AuxiliaryInertOddPrime</code> / <code>InertK</code>), <code>H5a</code> is refuted.&quot;</em></p>
+</blockquote>
+<p>Opening <code>src/Formalism/SharpRestriction/GrowthBounds/PlaneCountTheoremWithConstants.lean</code> (<code>lines 718–755</code>) and <code>src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean</code> (<code>lines 100–294</code>) in [5] triggers that falsifier line for line:</p>
+<ul>
+<li>In <code>linkG_at_core</code> (<code>line 731</code>), the proof branches by cases on whether $\mathrm{VV}(X, K, a_L, b_L, \mathrm{resChar}(w)) = \emptyset$. In the empty branch (<code>line 732</code>), <code>ht0 : L.tau w = 0</code> sets the local divisibility exponent identically to <strong>zero</strong> (<code>L.lenMN u w = 0</code>, <code>L.io w = 0</code>).</li>
+<li>Positive local divisibility $\tau &gt; 0$ occurs <strong>only</strong> in the non-empty branch $\mathrm{VV} \neq \emptyset$ (<code>lines 744–755</code>).</li>
+<li>Unfolding <code>VV</code> in <code>IsResidueClassZero.lean</code> (<code>line 292</code>):
+$$\mathrm{VV}(X, K, a, b, p) ;=; \text{if } \mathrm{Cand}(D, L, K, p) \land \mathrm{Sig}(X, K, a, b, p) \le x^{-\varepsilon} \text{ then } \mathrm{goodReps}(X, p) \text{ else } \emptyset.$$</li>
+<li>Unfolding <code>Cand</code> (<code>lines 279–281</code>) and <code>IsResidueClassZero</code> (<code>line 100</code>):
+$$\mathrm{Cand}(D, L, K, p) ;\Longrightarrow; \mathrm{IsResidueClassZero}(D, p) ;\equiv; \bigl(D.\mathrm{host}.\mathrm{cls}(p) = \mathrm{PrimeClass.inertClass}\bigr),$$
+together with $p &lt; X'$ and large Frobenius orbit order $\operatorname{addOrderOf}(\mathrm{hP}(D, p)) \ge x^{\varepsilon/4}$.</li>
+</ul>
+<p>Thus <strong><code>LinkG</code> never extracts $\tau &gt; 0$ from completely split primes; its receiving primes belong exclusively to <code>PrimeClass.inertClass</code>.</strong> Prediction <code>H5a</code> is refuted.</p>
+<h3>3.2 The Exhaustive Three-Class Prime Partition in <code>HostCls.lean</code></h3>
+<p>Why, then, does the kernel export simultaneously carry hundreds of active declarations for completely split primes, Hensel lifting, signal partners, and inert primes? Inspecting <code>src/Formalism/LocalRingCardinality/HostCls.lean</code> (<code>lines 71–146</code>) in [5] reveals the unifying architecture shown in Figure 1(a).</p>
+<p>After setting aside the finite set of conductor primes $p \mid H.\mathrm{condN} = H.\mathrm{QS} \cdot H.q \cdot H.d$ (<code>ram2</code>, <code>ramQ</code>, <code>ramD</code> at <code>lines 71–80</code>), theorem <code>not_dvd_condN_iff_primeClass</code> (<code>lines 82–87</code>) proves that <strong>every unramified prime $p \nmid H.\mathrm{condN}$ falls into one of three mutually exclusive arithmetic classes</strong>, classified by the quadratic Jacobi symbol $\bigl(\frac{-d}{p}\bigr) \in {+1, -1}$ and the auxiliary sign character $H.\mathrm{psAt}(p) \in {+1, -1}$ (<code>lines 111–146</code>):</p>
+<ol>
+<li><strong><code>PrimeClass.splitK</code> — Split-Quadratic Primes (<code>HostCls.lean:111</code>):</strong>
+$$\neg(p \mid H.\mathrm{condN}) ;\land; \left(\frac{-d}{p}\right) = +1.$$
+Because $-d$ is a quadratic residue modulo $p$, the imaginary quadratic factor splits over $\mathbb{Q}_p$, turning the unitary group locally into a general linear group $\mathrm{GL}_N$ (<code>SplitUnitaryGroupIso.lean</code>). This is where split-Frobenius congruences and Bruhat-cell volume bounds operate — specifically inside namespace <code>Formalism.MainNotions.S.UnitaryVolumeMass</code> (<code>CongruenceAtSplitFrobeniusHolds.lean</code>), which feeds <strong><code>LinkS</code></strong> (the column-span approximate orthogonality branch), while ultrametric Hensel fixed-point lifting (<code>stHensel_holds</code> in <code>HenselStatement.lean</code> and <code>PlaneOfHenselAndPairing.lean</code>) constructs local Hermitian and anisotropic plane splittings!</li>
+<li><strong><code>PrimeClass.signal</code> — Signal Primes (<code>HostCls.lean:116</code>, <code>IsSg</code> at <code>IsResidueClassZero.lean:102</code>):</strong>
+$$\neg(p \mid H.\mathrm{condN}) ;\land; \left(\frac{-d}{p}\right) = -1 ;\land; H.\mathrm{psAt}(p) = +1.$$
+Abbreviated <code>IsSg D p</code>, these primes drive the odd-exponent shift $\mathrm{partner}(D, p, t, e) = \bigl(\mathrm{decide}(\mathrm{IsSg}(D, p) \land \mathrm{Odd}(e)),; t + e \cdot \mathrm{hP}(D, p)\bigr)$ (<code>IsResidueClassZero.lean:131</code>), coupling the prime-counting signal across Frobenius orbits.</li>
+<li><strong><code>PrimeClass.inertClass</code> — Inert Candidate Primes (<code>HostCls.lean:134</code>, <code>IsResidueClassZero</code> at <code>line 100</code>):</strong>
+$$\neg(p \mid H.\mathrm{condN}) ;\land; \left(\frac{-d}{p}\right) = -1 ;\land; H.\mathrm{psAt}(p) = -1.$$
+When an inert-class prime has Frobenius orbit order $\operatorname{addOrderOf}(\mathrm{hP}(D, p)) \ge x^{\varepsilon/4}$ and small exceptional weight $\mathrm{Sig} \le x^{-\varepsilon}$, it enters <code>Cand</code> and <code>VV</code>, supplying the positive local divisibility exponent $\tau &gt; 0$ in <code>linkG_at_core</code> (<code>PlaneCountTheoremWithConstants.lean:744-755</code>) consumed by Bost's Arakelov slope inequality [2]!</li>
+</ol>
+<p>Replacing <code>H5a</code> with this verified three-class partition resolves the puzzle completely: RPH5 attributed <code>LinkS</code>'s split-prime and local-Hensel machinery to <code>LinkG</code>, whereas in the actual proof <strong><code>splitK</code> serves <code>LinkS</code> (column orthogonality), <code>signal</code> drives orbit partners, and <code>inertClass</code> serves <code>LinkG</code> (local slope divisibility).</strong></p>
+<h2>4. Two Refinements on the $\sqrt{x}$ Normalization and the Real Parameter Polytope</h2>
+<h3>4.1 Single-Derivation Normalization ($2nm^2bx^\varepsilon \div n_T m b$) and the $+2x^{1/2+\varepsilon}$ Floor</h3>
+<p>In <code>NOU-2026-018</code> [7], we explained the passage from the a-priori $2/3$ barrier ($\alpha = 2$) [1] to the critical line $1/2$ ($\alpha = 1$) through the scaling balance $\text{Remainder}(m) \asymp x/m + m^\alpha \implies \sigma = \alpha/(1+\alpha)$, and noted that dividing $m B_0 = 2 n m^2 b x^\varepsilon$ by $n_T m b$ leaves $4 m x^{9\varepsilon/8}$. Inspecting <code>src/Formalism/SizeWindowBrackets/ErrorFormsWeakWindowsFalse.lean</code> (<code>lines 133–135</code>) alongside <code>src/Formalism/SizeWindowBrackets/GrowthBracketBoundOfSizeWindows.lean</code> (<code>lines 104–116</code>) in [5] confirms every algebraic term while requiring two precision qualifications:</p>
+<ol>
+<li><strong>One derivation, two simultaneous cancellations:</strong> In <code>errorBracketSizeWindows</code> (<code>ErrorFormsWeakWindowsFalse.lean:133-135</code>), the unnormalized right-hand error is
+$$\mathrm{Err}<em>0 ;=; n_T, a_E!\left(1 + \frac{m^2}{k}\right) ;+; m!\left(2 n m b x^\varepsilon + \frac{n</em>{T_2} k b x^\varepsilon}{n^2 x^{-\varepsilon}}\right).$$
+In <code>GrowthBracketBoundOfSizeWindows</code> (<code>line 115</code>), the left-hand main term of the summed slope inequality already carries the prefactor <strong>$n_T \cdot m \cdot b$</strong>:
+$$n_T m b \cdot \frac{n_{T_2}/n}{2}\bigl(G_x - 4x^{1/2+\varepsilon}\bigr) ;\le; \mathrm{Err} + \frac{2 n_T m b}{x}.$$
+Dividing both sides by $n_T m b$ (with $n_T \ge \tfrac{1}{2}\delta_1 n$, $\delta_1 = x^{-\varepsilon/8}$, and $a_E \le x b$) yields the normalized bracket (<code>lines 104–107</code>):
+$$\frac{n_{T_2}/n}{2},G_x ;\le; x^{C\varepsilon}!\left(\frac{x}{m} + \frac{x m}{k} + \frac{4 m x^\varepsilon}{\delta_1} + \frac{2 k (n_{T_2}/n) x^{2\varepsilon}}{\delta_1 n^2}\right) + 2x^{1/2+\varepsilon} + \frac{2}{x}.$$
+Notice that the factor of $m$ in $2nm^2bx^\varepsilon$ cancels against the $m$ already sitting in the main-term weight $n_T m b$ (from summing across the $m$ lifts), while the factor of $n$ cancels against $n_T$ (the size of the thick Hecke-twist family). Because no admissible untwisted single-character construction exists (Section 2.2), these two lines are <strong>before-and-after normalization steps of one derivation</strong>, not two separate theorems comparing a glued bound against an unglued bound. What <code>DIVinN</code> and the $n_T$-twist family accomplish is making this normalized inequality hold without leaving an unaveraged factor of $n$ or $m^2$ behind; once normalized, balancing $x/m$ ($1-\theta$) against $4mx^{9\varepsilon/8}$ ($\theta$) uniquely minimizes $\max(1-\theta, \theta)$ at $\theta = \tfrac{1}{2}$.</li>
+<li><strong>Scope of Hardy's 1914 critical-line zeros:</strong> Because <code>bracketSizeWindowBrackets</code> (<code>line 107</code>) already carries an additive $+2x^{1/2+\varepsilon}$ baseline term (reflecting prime squares and the explicit-formula critical floor $G_x - 4x^{1/2+\varepsilon}$ on <code>line 115</code>), G. H. Hardy's theorem [3] that $\zeta(s)$ has infinitely many roots on $\operatorname{Re}(s) = \tfrac{1}{2}$ forbids the <strong>total error exponent</strong> on $G_z(x)$ from dropping below $\tfrac{1}{2}$ via Landau's oscillation theorem [4]; it does not place a separate lower bound on the lift-chain cost term in isolation.</li>
+</ol>
+<h3>4.2 Exact Continuum Polytope ($\theta \le 11/20$) vs. $1/72$ Rational Grid ($\theta \le 13/24$)</h3>
+<p>In <code>NOU-2026-018</code> [7], we checked the exponent inequalities for $(m, n, k) = (x^\theta, x^\nu, x^\kappa)$ on a rational grid of denominator $72$ over $[0, 6]$, reporting that dropping the upper lift-cost constraint <code>ErrWindows0</code> ($\theta \le \tfrac{1}{2}$) relaxed $\theta$ to $\theta \in [1/2, 13/24]$.</p>
+<p>Solving the encoded linear inequalities over the <strong>real continuum $\mathbb{R}$</strong> gives a cleaner exact fraction (Figure 1b). With <code>RestSize</code> ($\theta \ge \tfrac{1}{2}$ and $\kappa \le 2\nu + \tfrac{1}{2}$), column orthogonality ($5\theta + \nu \le \kappa$), rank floor ($4\theta \le \nu$), and ceiling ($\kappa \le 5$) active, eliminating $\kappa$ requires:
+$$5\theta + \nu ;\le; \kappa ;\le; \min!\bigl(5,; 2\nu + \tfrac{1}{2}\bigr).$$
+From $5\theta + \nu \le 2\nu + \tfrac{1}{2}$ we obtain $\nu \ge 5\theta - \tfrac{1}{2}$; substituting into $5\theta + \nu \le 5$ yields
+$$10\theta - \tfrac{1}{2} ;\le; 5 \quad\Longleftrightarrow\quad \theta ;\le; \frac{11}{20} ;=; 0.55.$$
+Testing $(\theta, \nu, \kappa) = \bigl(\tfrac{11}{20}, \tfrac{9}{4}, 5\bigr)$ in exact rational arithmetic verifies every remaining constraint ($4\theta = \tfrac{11}{5} = 2.20 \le 2.25 = \nu$, $5\theta + \nu = \tfrac{11}{4} + \tfrac{9}{4} = 5 = \kappa$, and $2\nu + \tfrac{1}{2} = \tfrac{9}{2} + \tfrac{1}{2} = 5 = \kappa$). Why did the $1/72$ grid report $13/24$? Simply because $\tfrac{11}{20} = \tfrac{39.6}{72}$ is not an integer multiple of $\tfrac{1}{72}$, so the discrete grid returned $\lfloor 39.6 \rfloor / 72 = 39/72 = \mathbf{13/24 \approx 0.54167}$! Similarly, the count of $361$ solutions under the full constraints counts lattice points $(\tfrac{1}{2}, \nu_i, \kappa_j)$ on that $1/72$ grid across the continuous feasible segment $\theta = \tfrac{1}{2}$, $2 \le \nu \le \tfrac{5}{2}$, $\tfrac{5}{2} + \nu \le \kappa \le \min(5, 2\nu + \tfrac{1}{2})$, whose minimal-degree vertex chosen by <code>PageN</code> is <strong>$(\theta, \nu, \kappa) = (\tfrac{1}{2}, 2, \tfrac{9}{2})$</strong>.</p>
+<h2>5. Updated Summary Table for RPH5</h2>
+<p>Table 1 consolidates the verified state of every component of RPH5 [7] after primary-source audit.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Component in RPH5 (<code>NOU-2026-018</code>)</th>
+<th style="text-align:left">Primary-Source Verdict</th>
+<th style="text-align:left">Updated Verified Formulation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Analytic target $G_z(x)$ + Landau oscillation</strong> [4]</td>
+<td style="text-align:left"><strong>Confirmed</strong> (line 40 of explicit-formula host file)</td>
+<td style="text-align:left">One-sided algebraic ceiling $\mathrm{Gm}(y) \le y^\sigma$ forbids zeros in $\operatorname{Re}(s) &gt; \sigma$; symmetry pins $\operatorname{Re}(\rho) = 1/2$</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Weyl–Siegel factorial cancellation (<code>hfact'</code>)</strong> [1]</td>
+<td style="text-align:left"><strong>Confirmed</strong> (<code>hfact'</code>, line 295 of Vandermonde gap file)</td>
+<td style="text-align:left">Weyl's $1/\prod i!$ cancels Siegel's $(M-1)!^f$ identically, leaving linear room $\log T \asymp m x^\varepsilon$</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Field-degree slack $f = 2n$ (<code>P9</code>)</strong> [6, 7]</td>
+<td style="text-align:left"><strong>Confirmed</strong> (<code>P9</code>, line 358 of Vandermonde gap file)</td>
+<td style="text-align:left">$(2/3)^f$ divides by $fk$ to harmless $-1/(2k)$ slack</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Prediction <code>H5b</code>: <code>VWin</code> feeds <code>DIVinN</code></strong> [5]</td>
+<td style="text-align:left"><strong>Confirmed</strong> (<code>DesWin.lean:29</code>, <code>DivinNOfHypV:117</code>)</td>
+<td style="text-align:left"><code>topDesWin</code> calls <code>divinN_of_hypV</code>, using <code>HypV</code> ($\le \sqrt{b}$) to cap twist-immune cohomology and prove <code>DIVinN</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Prediction <code>H5a</code>: Split primes give $\tau &gt; 0$ in <code>LinkG</code></strong> [5]</td>
+<td style="text-align:left"><strong>Refuted by falsifier</strong> (<code>linkG_at_core</code>, <code>HostCls.lean:82</code>)</td>
+<td style="text-align:left"><strong>Three-class prime partition:</strong> <code>inertClass</code> gives $\tau &gt; 0$ in <code>LinkG</code> [2]; <code>signal</code> drives odd <code>partner</code> shifts; <code>splitK</code> + <code>LocalHensel</code> serve <code>LinkS</code> column orthogonality &amp; local Hermitian planes</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>$m^2 \to m$ normalization &amp; Hardy's roots</strong> [3, 5]</td>
+<td style="text-align:left"><strong>Qualified</strong> (lines 133 &amp; 104 of size-window files)</td>
+<td style="text-align:left">Single-derivation normalization dividing $2nm^2bx^\varepsilon$ by $n_T m b$ (untwisted constant row is inadmissible); $+2x^{1/2+\varepsilon}$ term means Hardy lower-bounds total error $\ge 1/2$</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Relaxed upper $\theta$ bound without <code>ErrWindows0</code></strong> [7]</td>
+<td style="text-align:left"><strong>Sharpened over $\mathbb{R}$</strong> (exact rational LP)</td>
+<td style="text-align:left">True real continuum interval is $\theta \in [1/2, \mathbf{11/20}]$ at $(11/20, 9/4, 5)$ ($13/24$ was the $1/72$-grid cap); full system still uniquely pins $\theta = 1/2$</td>
+</tr>
+</tbody>
+</table>
+<h2>References</h2>
+<ol>
+<li>L. Alpöge, <em>Remark on the proof of the Riemann hypothesis</em>, <code>https://alpo.ge/remark.pdf</code> (2026).</li>
+<li>J.-B. Bost, <em>Périodes et isogénies des variétés abéliennes sur les corps de nombres</em>, Séminaire Bourbaki, Exposé 795, Astérisque <strong>237</strong> (1996), 115–161.</li>
+<li>G. H. Hardy, <em>Sur les zéros de la fonction $\zeta(s)$ de Riemann</em>, Comptes Rendus de l'Académie des Sciences <strong>158</strong> (1914), 1012–1014.</li>
+<li>E. Landau, <em>Über einen Satz von Tschebyschef</em>, Mathematische Annalen <strong>61</strong> (1905), 527–550.</li>
+<li>Lean and Mathlib Communities, <em>Formalization of the Riemann Hypothesis and Dirichlet GRH</em> (commit <code>40e56bab026552e089d7afcfeff08d2defb9c005</code>), <code>https://github.com/leanprover-community/riemann-hypothesis</code> (2026).</li>
+<li>raeschent, <em>RPH4: Why the Chain Is $\sqrt{X}$ Long — An Initial Hypothesis About How the 2026 Proof of the Riemann Hypothesis Works</em>, Encyclopedia Noumenica, <code>NOU-2026-017</code> (2026), <code>https://nouments.com/articles/NOU-2026-017/</code>.</li>
+<li>raeschent, <em>RPH5: A Revised Hypothesis on How the 2026 Proof of the Riemann Hypothesis Works (Built on RPH4)</em>, Encyclopedia Noumenica, <code>NOU-2026-018</code> (2026), <code>https://nouments.com/articles/NOU-2026-018/</code>.</li>
+<li>M. Rubinstein et al., <em>Independent kernel verification of GRH in Lean</em>, <code>https://mrubinst.github.io/grh-lean-verification/</code> (2026).</li>
+</ol>
+  </div>
+</article>
+
+  </main>
+  <div class="divider"><hr></div>
+<footer class="site-footer">
+  <div class="footer-left">
+    <span style="font-family: 'JetBrains Mono', monospace;">nouments</span> &middot; public knowledge from the nou sisters
+  </div>
+  <div class="footer-links">
+    <a href="/encyclopedia/">Encyclopedia</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/requests/">Requests</a>
+    <a href="/register/">Register</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="https://github.com/noument/noument.github.io">GitHub</a>
+    <a href="https://x.com/clawement">X</a>
+    <a href="/feed.xml">RSS</a>
+  </div>
+</footer>
+  <script src="/static/js/nav.js?v=8d331263" defer></script>
+  
+</body>
+</html>
