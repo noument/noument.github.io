@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UOQR: Universal One-Quarter Repulsion of Extreme Prime Windows &middot; NOUMENTS</title>
+  <meta name="description" content="For disjoint windows of length $h_r = \lfloor x_r^\theta \rfloor$ ($0 &lt; \theta &lt; 1$) tiling $[X, AX]$, neighboring prime-count fluctuations correlate weakly and negatively with logarithmic Coulomb...">
+  <link rel="canonical" href="https://nouments.com/articles/NOU-2026-025/">
+  
+  <meta property="og:title" content="UOQR: Universal One-Quarter Repulsion of Extreme Prime Windows &middot; NOUMENTS">
+  <meta property="og:description" content="For disjoint windows of length $h_r = \lfloor x_r^\theta \rfloor$ ($0 &lt; \theta &lt; 1$) tiling $[X, AX]$, neighboring prime-count fluctuations correlate weakly and negatively with logarithmic Coulomb...">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nouments.com/articles/NOU-2026-025/">
+  
+  
+  
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
+    img-src 'self' data:;
+    connect-src 'self';
+    form-action 'none';
+    base-uri 'self';
+    object-src 'none';
+    frame-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/static/css/style.css?v=f8235307">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="NOUMENTS" href="/feed.xml">
+  
+  <noscript><style>@media (max-width: 900px) { nav.top-nav .nav-links { display: flex; position: static; flex-direction: column; } nav.top-nav .nav-toggle { display: none; } }</style></noscript>
+  <meta property="og:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:card" content="summary_large_image">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+<nav class="top-nav">
+  <a href="/" class="logo">nouments</a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation"
+          aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+  <div class="nav-links" id="primary-nav">
+    <a href="/encyclopedia/">ENCYCLOPEDIA</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/posts/">Posts</a>
+    <a href="/projects/">Apps</a>
+    <a href="/register/">Register</a>
+    <a href="/requests/">Requests</a>
+    <a href="https://github.com/noument/noument.github.io" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</nav>
+</header>
+  <main class="page-content" id="main-content">
+    
+<article class="arxiv-article">
+  <header class="arxiv-header">
+    <div class="paper-id">NOU-2026-025</div>
+    <h1 class="paper-title">UOQR: Universal One-Quarter Repulsion of Extreme Prime Windows</h1>
+    <div class="paper-subtitle" style="font-size:1.2em;font-style:italic;color:#c8c8d4;margin:-0.2em 0 0.6em;">Threshold Indicator Covariances, the k^(-k) Cluster Law, Prime Dipoles, and the Zero-Density Origin of Short-Interval Repulsion</div>
+    <div class="paper-authors">raeschent</div>
+    <div class="paper-affiliation">Noumenica community</div>
+    <div class="paper-date">November 24, 2026</div>
+
+    
+    <div class="paper-subjects">
+      
+        <span class="subject-tag">math.NT</span>
+      
+        <span class="subject-tag">math.PR</span>
+      
+    </div>
+    
+
+    
+    <div class="paper-abstract">
+      <strong>Abstract:</strong> For disjoint windows of length $h_r = \lfloor x_r^\theta \rfloor$ ($0 &lt; \theta &lt; 1$) tiling $[X, AX]$, neighboring prime-count fluctuations correlate weakly and negatively with logarithmic Coulomb correlation $\rho_d(X,\theta) = -\Delta(d)/((1-\theta)\ln X + B)$, where $B = 1 - \gamma - \ln(2\pi)$ and $\Delta(d) = \frac{1}{2}[(d+1)\ln(d+1) - 2d\ln d + (d-1)\ln(d-1)] &gt; 0$ ($\Delta(1) = \ln 2$). Although $\rho_d(X,\theta) \to 0$ as $X \to \infty$, at the extreme-value height $u_X = \sqrt{2(1-\theta)\ln X}$ reached by the largest and smallest windows in $[X, AX]$, the product $u_X^2 \rho_d(X,\theta) \to -2\Delta(d)$ stabilizes at a nonzero scale-free constant in which both $\theta$ and $\ln X$ cancel identically. Under joint Gaussian asymptotics at height $u_X$, we prove two spatial laws, and unconditionally one spectral theorem. First, Plackett&#39;s identity gives $\operatorname{Cov}(\mathbf{1}_{Z_r &gt; u}, \mathbf{1}_{Z_{r+d} &gt; u}) &lt; 0$ for all $u \in \mathbb{R}$ (closing Chebyshev&#39;s lower bound without independence) and yields universal extreme pair ratios $R_{++,d}^\star = e^{-2\Delta(d)} = d^{2d}/((d+1)^{d+1}(d-1)^{d-1})$ ($1/4, 16/27, 729/1024, \dots$) and opposite-sign prime-dipole attraction $R_{+-,1}^\star = 4$ ($16\times$ over same-sign pairs). Second, for $k$ consecutive windows with sign pattern $\boldsymbol{\sigma} \in \{\pm 1\}^k$, Cholesky-Laplace asymptotics yield $\exp(-\sum_{1\le i&lt;j\le k}\sigma_i\sigma_j\cdot 2\Delta(j-i))$, telescoping for same-sign clusters to $k^{-k}$ ($1/4, 1/27, 1/256$) and amplifying alternating triplets $(+,-,+)$ to $256/27 \approx 9.4815$. Third, unconditionally for all $d \ge 1$, $\frac{1}{\pi}\int_0^\infty \frac{4\sin^2(u/2)\cos(du)}{u^2}\ln u\,du = -\Delta(d)$ while the constant-density integral vanishes, verified across $11{,}078{,}937$ primes below $2\times 10^8$ and $10{,}142$ zeta zeros.
+    </div>
+    
+
+    
+    <div class="external-links">
+      
+        <a href="/encyclopedia/pdf/NOU-2026-025.pdf" class="pdf-link">PDF</a>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <hr class="article-divider">
+
+  <div class="article-body">
+    <h2>Abstract</h2>
+<p>We prove that logarithmic Coulomb correlations $\rho_d(X,\theta) = -\Delta(d)/((1-\theta)\ln X + B)$ between disjoint power-length prime windows $h_r = \lfloor x_r^\theta \rfloor$ ($0 &lt; \theta &lt; 1$) do not wash out in the extreme tail: at the extremal threshold $u_X = \sqrt{2(1-\theta)\ln X}$, both $\theta$ and $\ln X$ cancel in $u_X^2\rho_d \to -2\Delta(d)$, producing universal $1/4$ adjacent-pair repulsion, $k^{-k}$ same-sign consecutive cluster suppression, $4\times$ opposite-sign prime dipoles, and $256/27$ alternating triplets, and we prove unconditionally that $-\Delta(d)$ arises identically from the $\ln u$ scale anomaly of the Riemann--von Mangoldt zero density.</p>
+<h2>1. Introduction</h2>
+<p>Fix a scale exponent $\theta \in (0, 1)$ and a band factor $A &gt; 1$. Tile $[X, AX]$ by greedy disjoint windows $\mathcal{G}(X) = {[x_r, x_r + h_r) : 1 \le r \le M(X)}$ starting at $x_1 = X$ with $h_r = \lfloor x_r^\theta \rfloor$ and $x_{r+1} = x_r + h_r$, so that $M(X) \sim \frac{A^{1-\theta}-1}{1-\theta}X^{1-\theta}$. Write the logarithmic-integral expectation, centered count, and locally standardized fluctuation on the $r$-th window as
+$$E_r := \int_{x_r}^{x_r + h_r} \frac{dt}{\ln t}, \qquad S_r := \pi(x_r + h_r - 1) - \pi(x_r - 1) - E_r, \qquad Z_r := \frac{S_r}{\sqrt{V_r}},$$
+where $V_r := E_r\bigl((1 - \theta) + B/\ln(x_r + h_r/2)\bigr)$ is Montgomery and Soundararajan's two-term short-interval variance [1, 3] with secondary constant
+$$B := 1 - \gamma - \ln(2\pi) = -1.41509273\dots$$
+In a companion paper [12], we resolved the <strong>marginal extreme problem</strong>: assuming single-window moments on the open sub-critical strip $0 &lt; m/((1-\theta)\ln X) &lt; 1$ alone — with zero assumption on inter-window dependence — normalized counts satisfy $\max_{r \in \mathcal{G}(X)} S_r/\sqrt{2h_r} \to +(1-\theta)$ and $\min_{r \in \mathcal{G}(X)} S_r/\sqrt{2h_r} \to -(1-\theta)$, equivalent in standardized units to $\max_{r \in \mathcal{G}(X)} Z_r / u_X \to +1$ and $\min_{r \in \mathcal{G}(X)} Z_r / u_X \to -1$ where
+$$u_X := \sqrt{2(1 - \theta)\ln X}.$$</p>
+<p>Because the marginal proof uses only single-window moments, it leaves the <strong>spatial geometry of extreme prime windows</strong> untouched: when one window in $\mathcal{G}(X)$ achieves a near-record prime surplus (or prime deficit), how does that event deform neighboring windows? By Leung's theorem [2] under the Riemann hypothesis (RH) and the Linear Independence hypothesis (LI) on positive zeta-zero ordinates, finite $k$-tuples $(Z_r, Z_{r+1}, \dots, Z_{r+k-1})$ converge in distribution at fixed thresholds to a centered multivariate Gaussian vector, while Goldston and Montgomery's short-interval variance formula [3] fixes the off-diagonal covariances from merged-window variances. For integer lag $d \ge 1$, define the second-difference <strong>logarithmic Coulomb kernel</strong>
+$$\Delta(d) := \frac{1}{2}\Bigl[(d+1)\ln(d+1) - 2d\ln d + (d-1)\ln(d-1)\Bigr] \qquad (0\ln 0 := 0).$$
+Then $\Delta(1) = \ln 2 = 0.69314718\dots$, $\Delta(2) = \frac{3}{2}\ln 3 - 2\ln 2 = 0.26162407\dots$, and the lag-$d$ correlation between $Z_r$ and $Z_{r+d}$ is
+$$\rho_d(X, \theta) = \frac{-\Delta(d)}{(1 - \theta)\ln X + B + o(1)}.$$</p>
+<p>At bounded heights $u = O(1)$, $\rho_d(X, \theta) = O(1/\ln X) \to 0$ as $X \to \infty$, so neighboring prime windows become asymptotically uncorrelated in the bulk. A naive appeal to Berman's condition $\rho_n \ln n \to 0$ for stationary Gaussian sequences [5, 6] might suggest that extreme exceedances also decouple as $X \to \infty$. <strong>That conclusion fails.</strong> Berman's theorem fixes a single stationary sequence ${\xi_n}$ and lets the lag $n \to \infty$, whereas $\mathcal{G}(X)$ is a <strong>triangular array</strong> in which the lag-$1$ correlation $\rho_1(X, \theta) \sim -(\ln 2)/((1-\theta)\ln X)$ shrinks at the exact inverse rate of $u_X^2 = 2(1-\theta)\ln X$. Multiplying the two scales cancels <strong>both</strong> the exponent $\theta \in (0, 1)$ <strong>and</strong> the logarithmic height $\ln X$:
+$$\lim_{X \to \infty} u_X^2,\rho_d(X, \theta) = \lim_{X \to \infty} \Bigl(2(1-\theta)\ln X\Bigr)\cdot \frac{-\Delta(d)}{(1-\theta)\ln X + B} = -2\Delta(d) \ne 0.$$
+In multivariate Gaussian tail theory (Plackett [4]; Sibuya [7]), joint exceedance probabilities at threshold $u_X \to \infty$ with correlation $\rho_X \to 0$ are governed to leading order by $\exp(\frac{1}{2}u_X^2 \sum_{i \ne j}\sigma_i\sigma_j\rho_{|i-j|})$. Consequently, extreme short-interval prime windows never decouple into a Poisson spatial process of independent spikes: at every scale $0 &lt; \theta &lt; 1$, including Legendre's square-gap scale $\theta = 1/2$ [11], they form a <strong>scale-invariant repulsive Coulomb gas</strong> with exact rational and algebraic interaction factors.</p>
+<p>This paper proves four main results:</p>
+<ul>
+<li><strong>Section 2 (Proposition 1 and Theorem 1)</strong> derives the harmonic expansion $\Delta(d) = \sum_{m=1}^\infty \frac{1}{2m(2m-1)d^{2m-1}} = \frac{1}{2d} + \frac{1}{12d^3} + \dots &gt; 0$, proves strict positive definiteness of the $k \times k$ Coulomb correlation matrix $\Sigma_k(X,\theta)$ up to macroscopic block sizes $k \ll X^{1-\theta}$ via a telescoping Gershgorin bound, shows via Plackett's differential identity [4] that same-sign threshold indicators have <strong>strictly negative covariance at every threshold $u \in \mathbb{R}$</strong> (closing Chebyshev's second-moment lower bound without window independence), and proves the universal extreme pair laws
+$$R_{++,d}^\star = e^{-2\Delta(d)} = \frac{d^{2d}}{(d+1)^{d+1}(d-1)^{d-1}}, \qquad R_{+-,d}^\star = e^{+2\Delta(d)} = \frac{(d+1)^{d+1}(d-1)^{d-1}}{d^{2d}}.$$
+At $d = 1$, consecutive extreme surpluses (or consecutive shortfalls) are suppressed to <strong>$1/4$</strong> of the independent rate, whereas adjacent surplus--shortfall <strong>prime dipoles</strong> are enhanced to <strong>$4\times$</strong> the independent rate — a <strong>$16\times$</strong> dipole-to-monopole asymmetry independent of $\theta \in (0, 1)$.</li>
+<li><strong>Section 3 (Theorem 2)</strong> proves the general $k$-window sign-pattern law $\exp(-\sum_{1\le i&lt;j\le k}\sigma_i\sigma_j \cdot 2\Delta(j-i))$ via Cholesky--Laplace integration on the positive orthant. For same-sign consecutive $k$-clusters, summation by parts on the second-difference kernel $2\Delta(d)$ telescopes the $\binom{k}{2}$-term sum identically to $k\ln k$, proving the universal <strong>$k^{-k}$ cluster law</strong> ($1/4, 1/27, 1/256, 1/3125, \dots$) and matching it to the merged-window variance deficit $\ln(X/(kh)) - \ln(X/h) = -\ln k$. For alternating triplets $\boldsymbol{\sigma} = (+, -, +)$ or $(-, +, -)$, nearest-neighbor attraction and lag-$2$ repulsion combine to <strong>$\frac{256}{27} = 9.48148\dots$</strong> — a <strong>$256\times$</strong> ratio over $(+, +, +)$.</li>
+<li><strong>Section 4 (Theorem 3)</strong> proves <strong>unconditionally</strong> the wave-interference mechanism behind $-\Delta(d)$ on the zeta-zero side [8, 9, 11]: for every integer $d \ge 1$, the constant-density Fejér cross-integral vanishes identically, $I_0(d) = \frac{1}{\pi}\int_0^\infty \frac{4\sin^2(u/2)\cos(du)}{u^2},du = 0$, whereas the logarithmic-density cross-integral satisfies
+$$I_1(d) := \frac{1}{\pi}\int_0^{\infty} \frac{4\sin^2(u/2)\cos(du)}{u^2},\ln u,du = -\Delta(d) \qquad (\forall,d \ge 1),$$
+while at $d = 0$ the same kernel gives $I_0(0) = 1$ and $I_1(0) - \ln(2\pi) = 1 - \gamma - \ln(2\pi) = B$. Short-interval prime repulsion is therefore the exact Fourier signature of logarithmic zero-spacing compression in the Riemann--von Mangoldt formula.</li>
+<li><strong>Section 5</strong> tests every prediction across all $11{,}078{,}937$ primes up to $2\times 10^8$ ($1{,}853{,}385$ windows at $\theta = 0.25$, $741{,}131$ at $\theta = 0.30$, and $119{,}397$ at $\theta = 0.40$) and across the first $10{,}142$ non-trivial zeros of $\zeta(s)$ ($\gamma \le 10{,}000$) [10] against shuffled-window and constant-density wave null controls.</li>
+</ul>
+<p><strong>What is unconditional and what is conditional.</strong> Proposition 1 and Theorems 1 and 2 are unconditional mathematical theorems for Gaussian triangular arrays with Coulomb correlation $\Sigma_k(X,\theta)$. Transferring Theorems 1 and 2 to prime counts at height $u_X = \sqrt{2(1-\theta)\ln X}$ requires multi-window Gaussian tail validity (<code>Hypothesis JGM</code>$(\theta)$ in Section 2), extending Montgomery and Soundararajan [1] and Leung [2] from fixed moments to sub-critical growing order. Theorem 3 is completely unconditional.</p>
+<h2>2. Logarithmic Coulomb Covariance, Indicator Negativity, and Universal Pair Laws</h2>
+<p>Merging $m \ge 1$ consecutive windows starting at $x_r$ forms an interval $[x_r, x_{r+m})$ of length $H_{r,m} = \sum_{j=0}^{m-1} h_{r+j} = m h_r(1 + O(m X^{\theta - 1}))$. Under the two-term Montgomery--Soundararajan / Goldston--Montgomery short-interval variance asymptotic [1, 3],
+$$V(X, m h) = \frac{m h}{\ln X}\Bigl(\ln(X / (m h)) + B + o(1)\Bigr) = \frac{h}{\ln X}\Bigl[m L_\theta(X) - m\ln m + o(1)\Bigr], \qquad L_\theta(X) := (1 - \theta)\ln X + B.$$</p>
+<p><strong>Proposition 1 (Coulomb Covariance, Harmonic Series, and Gershgorin Positive Definiteness).</strong> <em>Assume $\operatorname{Var}(\sum_{j=0}^{m-1} S_{r+j}) = V(X, mh)$ locally uniformly for $1 \le m \le k$.</em></p>
+<ol>
+<li><em>(Polarization to $-\Delta(d)$.)</em> <em>For every integer lag $d \ge 1$ with $1 \le d &lt; k$,</em>
+$$\operatorname{Cov}(S_r, S_{r+d}) = -\Delta(d),\frac{h_r}{\ln x_r}\bigl(1 + o(1)\bigr), \qquad \rho_d(X, \theta) := \operatorname{Corr}(Z_r, Z_{r+d}) = -\frac{\Delta(d)}{L_\theta(X)}\bigl(1 + o(1)\bigr).$$</li>
+<li><em>(Strict positivity and harmonic expansion.)</em> <em>For every $d \ge 1$, $\Delta(d)$ admits the convergent positive-term series</em>
+$$\Delta(d) = \sum_{m=1}^{\infty} \frac{1}{2m(2m - 1),d^{2m - 1}} = \frac{1}{2d} + \frac{1}{12 d^3} + \frac{1}{30 d^5} + \cdots &gt; 0.$$</li>
+<li><em>(Telescoping row sum and positive definiteness.)</em> <em>For every $k \ge 2$, $\sum_{d=1}^{k-1} 2\Delta(d) = k\ln k - (k-1)\ln(k-1) &lt; \ln k + 1$. Consequently, the $k \times k$ Toeplitz matrix $\Sigma_k(X, \theta)$ with $(\Sigma_k)<em>{ij} = \mathbf{1}</em>{i=j} - \mathbf{1}<em>{i\ne j}\Delta(|i-j|)/L</em>\theta(X)$ satisfies</em>
+$$\lambda_{\min}\bigl(\Sigma_k(X, \theta)\bigr) \ge 1 - \frac{k\ln k - (k-1)\ln(k-1)}{L_\theta(X)}, \qquad \bigl|\Sigma_k(X, \theta) - I_k\bigr|<em>{\mathrm{op}} \le \frac{\ln k + 1}{L</em>\theta(X)},$$
+<em>so $\Sigma_k(X, \theta)$ is strictly positive definite whenever $k\ln k - (k-1)\ln(k-1) &lt; L_\theta(X)$ (i.e., for all $k \le e^{-1 + B/(1-\theta)} X^{1-\theta}$).</em></li>
+</ol>
+<p><em>Proof.</em> Write $W(m) := \operatorname{Var}(\sum_{j=0}^{m-1} S_{r+j})$ with $W(0) := 0$. By local translation invariance across $k$ windows ($h_{r+j}/h_r = 1 + O(k X^{\theta-1})$), $W(m) = m W(1) + 2\sum_{d=1}^{m-1}(m - d)\operatorname{Cov}(S_r, S_{r+d})(1 + o(1))$. Taking the second difference $W(d+1) - 2W(d) + W(d-1)$ cancels both the linear term $m W(1)$ and every lag $&lt; d$, leaving $2\operatorname{Cov}(S_r, S_{r+d})(1 + o(1))$. Substituting $W(m) = \frac{h_r}{\ln x_r}[m L_\theta(X) - m\ln m + o(1)]$ cancels $m L_\theta(X)$ identically and yields $2\operatorname{Cov}(S_r, S_{r+d}) = -[(d+1)\ln(d+1) - 2d\ln d + (d-1)\ln(d-1)]\frac{h_r}{\ln x_r}(1+o(1)) = -2\Delta(d)\frac{h_r}{\ln x_r}(1+o(1))$, proving (1).</p>
+<p>For (2), at $d = 1$ the series telescopes as $\sum_{m=1}^\infty (\frac{1}{2m-1} - \frac{1}{2m}) = \ln 2 = \Delta(1)$. For $d \ge 2$, write $z = 1/d \in (0, 1/2]$ and $\Delta(d) = \frac{d}{2}[(1+z)\ln(1+z) + (1-z)\ln(1-z)]$. Since $(1+z)\ln(1+z) = z + \sum_{n=2}^\infty (-1)^n \frac{z^n}{n(n-1)}$, adding $z \mapsto -z$ eliminates odd powers and gives $\frac{d}{2}\sum_{m=1}^\infty \frac{2 z^{2m}}{2m(2m-1)} = \sum_{m=1}^\infty \frac{1}{2m(2m-1)d^{2m-1}} &gt; 0$.</p>
+<p>For (3), write $g(m) := m\ln m$ ($g(0) = g(1) = 0$). Then $2\Delta(d) = [g(d+1) - g(d)] - [g(d) - g(d-1)]$, so $\sum_{d=1}^{k-1} 2\Delta(d) = [g(k) - g(k-1)] - [g(1) - g(0)] = k\ln k - (k-1)\ln(k-1) = \ln k + (k-1)\ln(1 + \frac{1}{k-1}) &lt; \ln k + 1$. In $\Sigma_k(X,\theta)$, every interior row $i$ has off-diagonal $\ell^1$ norm $\frac{1}{L_\theta(X)}(\sum_{d=1}^{i-1}\Delta(d) + \sum_{d=1}^{k-i}\Delta(d)) \le \frac{1}{L_\theta(X)}\sum_{d=1}^{k-1} 2\Delta(d)$ (indeed tighter by a factor near $2$ at the endpoints, and bounded by $\sum_{d=1}^{k-1} 2\Delta(d)/L_\theta(X)$ uniformly). Gershgorin's circle theorem yields both bounds. $\square$</p>
+<p>To state the conditional bridge from Gaussian arrays to prime windows cleanly, we isolate the exact multi-window tail hypothesis needed at height $u_X$.</p>
+<p><strong>Hypothesis JGM$(\theta)$ (Sub-Critical Joint Gaussian Tail Validity).</strong> <em>For every fixed $k \ge 2$ and sign pattern $\boldsymbol{\sigma} \in {\pm 1}^k$, uniformly for thresholds $0 \le u \le u_X = \sqrt{2(1-\theta)\ln X}$ as $X \to \infty$,</em>
+$$\frac{1}{M(X)}\sum_{r=1}^{M(X)-k} \mathbf{1}{\sigma_1 Z_r &gt; u, \dots, \sigma_k Z_{r+k-1} &gt; u} = \mathbb{P}\bigl(\sigma_1 G_1 &gt; u, \dots, \sigma_k G_k &gt; u\bigr)\bigl(1 + o(1)\bigr),$$
+<em>where $(G_1, \dots, G_k) \sim \mathcal{N}(\mathbf{0}, \Sigma_k(X, \theta))$.</em></p>
+<p><strong>Theorem 1 (Strict Indicator Negativity, Universal $1/4$ Pair Repulsion, and $4\times$ Prime Dipoles).</strong> <em>Let $(G_1, \dots, G_M) \sim \mathcal{N}(\mathbf{0}, \Sigma_M(X, \theta))$ with $M = M(X)$ and $L_\theta(X) &gt; \ln M + 1$, or assume <code>Hypothesis JGM</code>$(\theta)$ for prime windows $(Z_1, \dots, Z_M)$.</em></p>
+<ol>
+<li><em>(Strict indicator covariance signs at all thresholds.)</em> <em>Set $I_r^+(u) := \mathbf{1}<em>{G_r &gt; u}$ and $I_r^-(u) := \mathbf{1}</em>{G_r &lt; -u}$. For every $u \in \mathbb{R}$ and every $1 \le d &lt; M$,</em>
+$$\operatorname{Cov}\bigl(I_r^+(u), I_{r+d}^+(u)\bigr) = \operatorname{Cov}\bigl(I_r^-(u), I_{r+d}^-(u)\bigr) = \frac{1}{2\pi}\int_0^{\rho_d} \frac{e^{-u^2/(1+t)}}{\sqrt{1 - t^2}},dt &lt; 0,$$
+$$\operatorname{Cov}\bigl(I_r^+(u), I_{r+d}^-(u)\bigr) = \operatorname{Cov}\bigl(I_r^-(u), I_{r+d}^+(u)\bigr) = \frac{1}{2\pi}\int_0^{-\rho_d} \frac{e^{-u^2/(1+t)}}{\sqrt{1 - t^2}},dt &gt; 0.$$</li>
+<li><em>(Second-moment lower extreme bound without independence.)</em> <em>Let $N_M^+(u) := \sum_{r=1}^M I_r^+(u)$. Because every off-diagonal covariance in (1) is strictly negative, $\operatorname{Var}(N_M^+(u)) &lt; \operatorname{Var}<em>{\mathrm{ind}}(N_M^+(u)) \le \mathbb{E}[N_M^+(u)]$ for every $u \in \mathbb{R}$. Hence by the Paley--Zygmund / Chebyshev inequality, $\mathbb{P}(\max</em>{1\le r\le M} G_r \le u) = \mathbb{P}(N_M^+(u) = 0) \le \frac{\operatorname{Var}(N_M^+(u))}{\mathbb{E}[N_M^+(u)]^2} &lt; \frac{1}{\mathbb{E}[N_M^+(u)]}$, which tends to $0$ for every $u = (1 - \varepsilon)\sqrt{2(1-\theta)\ln X}$ ($\varepsilon &gt; 0$).</em></li>
+<li><em>(Universal scale-free extreme pair laws.)</em> <em>At the extreme threshold $u_X = \sqrt{2(1-\theta)\ln X}$, for every fixed integer lag $d \ge 1$ and every $\theta \in (0, 1)$,</em>
+$$R_{++,d}^\star := \lim_{X \to \infty} \frac{\mathbb{P}(G_r &gt; u_X,, G_{r+d} &gt; u_X)}{\mathbb{P}(G_r &gt; u_X)^2} = e^{-2\Delta(d)} = \frac{d^{2d}}{(d+1)^{d+1}(d-1)^{d-1}},$$
+$$R_{+-,d}^\star := \lim_{X \to \infty} \frac{\mathbb{P}(G_r &gt; u_X,, G_{r+d} &lt; -u_X)}{\mathbb{P}(G_r &gt; u_X),\mathbb{P}(G_{r+d} &lt; -u_X)} = e^{+2\Delta(d)} = \frac{(d+1)^{d+1}(d-1)^{d-1}}{d^{2d}},$$
+<em>where $0^0 := 1$. In particular, at $d = 1$: $R_{++,1}^\star = \frac{1}{4}$, $R_{+-,1}^\star = 4$, and the dipole-to-monopole ratio is $\frac{R_{+-,1}^\star}{R_{++,1}^\star} = 16$. At $d = 2, 3, 4$: $R_{++,2}^\star = \frac{16}{27} \approx 0.59259$, $R_{++,3}^\star = \frac{729}{1024} \approx 0.71191$, $R_{++,4}^\star = \frac{65536}{84375} \approx 0.77672$, and as $d \to \infty$, $R_{\pm\pm, d}^\star = 1 - \frac{1}{d} + \frac{1}{2d^2} + O(d^{-3})$ and $R_{+-, d}^\star = 1 + \frac{1}{d} + \frac{1}{2d^2} + O(d^{-3})$.</em></li>
+</ol>
+<p><em>Proof.</em> By Plackett's differential identity [4] for standard bivariate normal quadrant probabilities $\Phi_2(u, u; \rho) := \mathbb{P}(G_1 &gt; u, G_2 &gt; u)$, $\frac{\partial}{\partial \rho}\Phi_2(u, u; \rho) = \frac{1}{2\pi\sqrt{1-\rho^2}}e^{-u^2/(1+\rho)} &gt; 0$ for all $\rho \in (-1, 1)$ and $u \in \mathbb{R}$. Integrating from $0$ to $\rho_d &lt; 0$ yields $\operatorname{Cov}(I_r^+(u), I_{r+d}^+(u)) = \Phi_2(u, u; \rho_d) - \Phi_2(u, u; 0) &lt; 0$. Symmetry $(G_r, G_{r+d}) \stackrel{d}{=} (-G_r, -G_{r+d})$ gives the $(-, -)$ case, and replacing $(G_r, G_{r+d})$ by $(G_r, -G_{r+d})$ flips $\rho_d \mapsto -\rho_d &gt; 0$, giving the strictly positive $(+, -)$ formula in (1).</p>
+<p>For (2), $\operatorname{Var}(N_M^+(u)) = \sum_{r=1}^M p(1 - p) + 2\sum_{1\le r &lt; s \le M} \operatorname{Cov}(I_r^+(u), I_s^+(u)) &lt; Mp(1-p) &lt; Mp = \mathbb{E}[N_M^+(u)]$, where $p = \mathbb{P}(G_1 &gt; u)$. Chebyshev's inequality $\mathbb{P}(N_M^+(u) = 0) \le \mathbb{P}(|N_M^+(u) - Mp| \ge Mp) \le \operatorname{Var}(N_M^+(u))/(Mp)^2 &lt; 1/(Mp)$ then gives $\mathbb{P}(\max G_r \le u) \to 0$ whenever $Mp \asymp X^{1-\theta} u^{-1} e^{-u^2/2} \asymp X^{(1-\theta)(1 - (1-\varepsilon)^2)} / \sqrt{\ln X} \to \infty$.</p>
+<p>For (3), let $\rho = \rho_d(X,\theta)$ (for same-sign) or $\rho = -\rho_d(X,\theta)$ (for opposite-sign), so $|\rho| = O(1/\ln X) \to 0$ while $u_X^2 \rho \to \mp 2\Delta(d)$. Write $(G_1, G_2)$ with correlation $\rho$ in shifted coordinates $y_1 = u_X + t_1/u_X$, $y_2 = u_X + t_2/u_X$ ($t_1, t_2 &gt; 0$, Jacobian $u_X^{-2}$):
+$$\mathbb{P}(G_1 &gt; u_X, G_2 &gt; u_X) = \frac{u_X^{-2}}{2\pi\sqrt{1-\rho^2}} \iint_{(0,\infty)^2} \exp!\left(-\frac{y_1^2 - 2\rho y_1 y_2 + y_2^2}{2(1 - \rho^2)}\right) dt_1,dt_2.$$
+Since $\frac{1}{1-\rho^2} = 1 + O(\rho^2)$ and $u_X^2 \rho^2 = O(1/\ln X) \to 0$, the exponent expands uniformly on compact $(t_1, t_2)$ and admits a global integrable bound: writing $s_i = t_i / u_X \ge 0$, for $|\rho| \le 1/2$ the quadratic form satisfies $\frac{(u_X+s_1)^2 - 2\rho(u_X+s_1)(u_X+s_2) + (u_X+s_2)^2}{2(1-\rho^2)} = \frac{u_X^2}{1+\rho} + \frac{u_X}{1+\rho}(s_1 + s_2) + \frac{s_1^2 - 2\rho s_1 s_2 + s_2^2}{2(1-\rho^2)} \ge \frac{u_X^2}{1+\rho} + \frac{t_1 + t_2}{1+\rho}$. Moreover, $\frac{u_X^2}{1+\rho} = u_X^2(1 - \rho + O(\rho^2)) = u_X^2 - u_X^2\rho + o(1)$. By dominated convergence on $(0, \infty)^2$ against $e^{-2(t_1+t_2)/3}$, the double integral converges to $e^{\lim u_X^2\rho}\iint_{(0,\infty)^2} e^{-(t_1+t_2)},dt_1,dt_2 = e^{\lim u_X^2\rho}$. Dividing by Mills' ratio $\mathbb{P}(G_1 &gt; u_X)^2 = \frac{u_X^{-2}}{2\pi}e^{-u_X^2}(1 + o(1))$ gives $e^{\lim u_X^2\rho} = e^{\mp 2\Delta(d)}$. Exponentiating $-2\Delta(d) = -[(d+1)\ln(d+1) - 2d\ln d + (d-1)\ln(d-1)]$ yields $\frac{d^{2d}}{(d+1)^{d+1}(d-1)^{d-1}}$, and Proposition 1(2) gives the $d \to \infty$ expansion. $\square$</p>
+<p><img src="fig1_coulomb_and_pair_repulsion.png" alt="Multi-lag Coulomb correlations and same-sign adjacent-pair repulsion across $[2imes 10^7, 2imes 10^8]$. (a) Measured window correlations $peratorname{Corr}(Z_r, Z_{r+d})$ across lags $d = 1 ots 5$ follow $-elta(d)/((1-heta)ar{ll} + B)$ across $heta n 0.25, 0.30, 0.40$ ($M = 1{,}853{,}385$, $741{,}131$, and $119{,}397$ windows). (b) Adjacent exceedance ratios $R_{++,1}(u) = athbb{P}(Z_r &gt; u, Z_{r+1} &gt; u)/athbb{P}(Z_r &gt; u)^2$ track Plackett's bivariate normal curve downward from $1$ toward the universal asymptote $R_{++,1}^tar = 1/4$, while shuffled windows remain flat at $1$." /></p>
+<p><img src="fig2_prime_dipoles_and_universal_lags.png" alt="Opposite-sign prime dipoles and universal extreme pair constants across separation lag $d$. (a) At $heta = 0.30$ ($M = 741{,}131$), adjacent surplus--shortfall prime dipoles $(+,-)$ and $(-,+)$ climb along Plackett's curve to $1.91imes$ at $u = 2.6$ ($2.37imes$ above same-sign pairs), mirroring monopole repulsion below $1$. (b) Universal extreme pair limits $R_{++,d}^tar = e^{-2elta(d)}$ and $R_{+-,d}^tar = e^{+2elta(d)}$ across $d = 1 ots 6$, approaching $1$ slowly via the harmonic Coulomb tails $e^{p 1/d}$." /></p>
+<p>Table 1 lists the exact universal pair constants for $d = 1 \dots 6$ alongside the measured and predicted correlations (meas / pred) across all three scales $\theta \in {0.25, 0.30, 0.40}$ on $[2\times 10^7, 2\times 10^8]$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">$d$</th>
+<th style="text-align:right">$\Delta(d)$</th>
+<th style="text-align:center">Exact $R_{++,d}^\star$</th>
+<th style="text-align:right">Dec. $R_{++,d}^\star$</th>
+<th style="text-align:center">Exact $R_{+-,d}^\star$</th>
+<th style="text-align:right">Dip./same</th>
+<th style="text-align:center">$\theta=0.25$</th>
+<th style="text-align:center">$\theta=0.30$</th>
+<th style="text-align:center">$\theta=0.40$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">$1$</td>
+<td style="text-align:right">$0.69315$</td>
+<td style="text-align:center">$1/4$</td>
+<td style="text-align:right">$0.25000$</td>
+<td style="text-align:center">$4$</td>
+<td style="text-align:right">$16.00\times$</td>
+<td style="text-align:center">$-0.0560 / -0.0564$</td>
+<td style="text-align:center">$-0.0632 / -0.0610$</td>
+<td style="text-align:center">$-0.0660 / -0.0728$</td>
+</tr>
+<tr>
+<td style="text-align:right">$2$</td>
+<td style="text-align:right">$0.26162$</td>
+<td style="text-align:center">$16/27$</td>
+<td style="text-align:right">$0.59259$</td>
+<td style="text-align:center">$27/16$</td>
+<td style="text-align:right">$2.848\times$</td>
+<td style="text-align:center">$-0.0211 / -0.0213$</td>
+<td style="text-align:center">$-0.0217 / -0.0230$</td>
+<td style="text-align:center">$-0.0279 / -0.0275$</td>
+</tr>
+<tr>
+<td style="text-align:right">$3$</td>
+<td style="text-align:right">$0.16990$</td>
+<td style="text-align:center">$729/1024$</td>
+<td style="text-align:right">$0.71191$</td>
+<td style="text-align:center">$1024/729$</td>
+<td style="text-align:right">$1.973\times$</td>
+<td style="text-align:center">$-0.0148 / -0.0138$</td>
+<td style="text-align:center">$-0.0168 / -0.0150$</td>
+<td style="text-align:center">$-0.0205 / -0.0179$</td>
+</tr>
+<tr>
+<td style="text-align:right">$4$</td>
+<td style="text-align:right">$0.12634$</td>
+<td style="text-align:center">$4^8/(5^5 3^3)$</td>
+<td style="text-align:right">$0.77672$</td>
+<td style="text-align:center">$(5^5 3^3)/4^8$</td>
+<td style="text-align:right">$1.658\times$</td>
+<td style="text-align:center">$-0.0113 / -0.0103$</td>
+<td style="text-align:center">$-0.0105 / -0.0111$</td>
+<td style="text-align:center">$-0.0096 / -0.0133$</td>
+</tr>
+<tr>
+<td style="text-align:right">$5$</td>
+<td style="text-align:right">$0.10068$</td>
+<td style="text-align:center">$5^{10}/(6^6 4^4)$</td>
+<td style="text-align:right">$0.81762$</td>
+<td style="text-align:center">$(6^6 4^4)/5^{10}$</td>
+<td style="text-align:right">$1.496\times$</td>
+<td style="text-align:center">$-0.0084 / -0.0082$</td>
+<td style="text-align:center">$-0.0070 / -0.0089$</td>
+<td style="text-align:center">$-0.0154 / -0.0106$</td>
+</tr>
+<tr>
+<td style="text-align:right">$6$</td>
+<td style="text-align:right">$0.08372$</td>
+<td style="text-align:center">$6^{12}/(7^7 5^5)$</td>
+<td style="text-align:right">$0.84582$</td>
+<td style="text-align:center">$(7^7 5^5)/6^{12}$</td>
+<td style="text-align:right">$1.398\times$</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Sign-Pattern Quadratic Form, the $k^{-k}$ Cluster Law, and the $256/27$ Alternating Triplet</h2>
+<p>Pairwise repulsion extends cleanly to arbitrary $k$-tuples of consecutive windows and reveals a striking contrast between <strong>monotone clusters</strong> (where long-range repulsion accumulates super-exponentially as $k^{-k}$) and <strong>oscillating sign patterns</strong> (where nearest-neighbor dipole attraction overwhelms even-lag repulsion).</p>
+<p><strong>Theorem 2 (General Sign-Pattern Law, $k^{-k}$ Clusters, and $256/27$ Alternating Triplets).</strong> <em>Fix $k \ge 2$ and a sign pattern $\boldsymbol{\sigma} = (\sigma_1, \dots, \sigma_k) \in {\pm 1}^k$. For $(G_1, \dots, G_k) \sim \mathcal{N}(\mathbf{0}, \Sigma_k(X, \theta))$ at threshold $u_X = \sqrt{2(1-\theta)\ln X}$ (and for prime windows under <code>Hypothesis JGM</code>$(\theta)$):</em></p>
+<ol>
+<li><em>(Sign-pattern quadratic form.)</em> <em>As $X \to \infty$, independently of $\theta \in (0, 1)$,</em>
+$$R_{\boldsymbol{\sigma}}^\star := \lim_{X \to \infty} \frac{\mathbb{P}(\sigma_1 G_1 &gt; u_X,, \sigma_2 G_2 &gt; u_X,, \dots,, \sigma_k G_k &gt; u_X)}{\prod_{i=1}^k \mathbb{P}(\sigma_i G_i &gt; u_X)} = \exp!\left(-\sum_{1 \le i &lt; j \le k} \sigma_i\sigma_j \cdot 2\Delta(j - i)\right).$$</li>
+<li><em>(Consecutive same-sign $k^{-k}$ cluster law.)</em> <em>For $\boldsymbol{\sigma} = (+, +, \dots, +)$ or $(-, -, \dots, -)$, summation by parts telescopes the $\binom{k}{2}$-term sum identically to $\sum_{1\le i&lt;j\le k} 2\Delta(j-i) = k\ln k$, yielding</em>
+$$R_{(+)^k}^\star = R_{(-)^k}^\star = e^{-k\ln k} = k^{-k} \qquad \left(\frac{1}{4},; \frac{1}{27},; \frac{1}{256},; \frac{1}{3125},; \frac{1}{46656},; \dots \text{ for } k = 2, 3, 4, 5, 6\right).$$</li>
+<li><em>(Coarse-grained variance identity for $k^{-k}$.)</em> <em>Merging $k$ adjacent windows of width $h$ into one block of width $kh$ reduces the variance factor from $L_\theta(X)$ to $L_\theta(X) - \ln k$. Requiring all $k$ constituent windows to exceed $u_X$ forces their sum $G_{\mathrm{sum}} = \sum_{i=1}^k G_i$ (which has variance $k - \frac{k\ln k}{L_\theta(X)}$) to exceed $k u_X$, whose single-variable Gaussian tail ratio over $\mathbb{P}(G_1 &gt; u_X)^k$ has exponent $-\frac{(k u_X)^2}{2(k - k\ln k / L_\theta(X))} + \frac{k u_X^2}{2} \to -k\ln k$, recovering $k^{-k}$ directly.</em></li>
+<li><em>(Alternating sign patterns and the $256/27$ triplet.)</em> <em>For alternating triplets $\boldsymbol{\sigma} = (+, -, +)$ or $(-, +, -)$ ($k = 3$),</em>
+$$R_{(+,-,+)}^\star = R_{(-,+,-)}^\star = \exp\bigl(4\Delta(1) - 2\Delta(2)\bigr) = \frac{2^8}{3^3} = \frac{256}{27} = 9.48148148\dots,$$
+<em>which exceeds the same-sign triplet rate $3^{-3} = 1/27$ by an exact factor of <strong>$256\times$</strong>. For $k = 4$ alternating $(+, -, +, -)$, $R_{(+,-,+,-)}^\star = \exp(6\Delta(1) - 4\Delta(2) + 2\Delta(3)) = \exp(24\ln 2 - 12\ln 3)$, giving the exact twelfth power</em>
+$$R_{(+,-,+,-)}^\star = \left(\frac{4}{3}\right)^{12} = \frac{16{,}777{,}216}{531{,}441} = 31.56929179\dots \qquad \left(8{,}081.74\times \text{ over } 4^{-4} = \frac{1}{256}\right).$$</li>
+</ol>
+<p><em>Proof.</em> Set $Y_i := \sigma_i G_i$. Then $\mathbf{Y} = (Y_1, \dots, Y_k) \sim \mathcal{N}(\mathbf{0}, \Sigma_{\boldsymbol{\sigma}})$ where $\Sigma_{\boldsymbol{\sigma}} = I_k + R_{\boldsymbol{\sigma}}$ has zero diagonal and off-diagonal entries $(R_{\boldsymbol{\sigma}})<em>{ij} = \sigma_i\sigma_j \rho</em>{|i-j|}(X,\theta)$. By Proposition 1(3), $|R_{\boldsymbol{\sigma}}|<em>{\mathrm{op}} = |D</em>{\boldsymbol{\sigma}}(\Sigma_k - I_k)D_{\boldsymbol{\sigma}}|<em>{\mathrm{op}} = |\Sigma_k - I_k|</em>{\mathrm{op}} \le \frac{\ln k + 1}{L_\theta(X)} = O(1/\ln X) \to 0$. Hence for large $X$, $\det \Sigma_{\boldsymbol{\sigma}} = \exp(\operatorname{tr}\ln(I_k + R_{\boldsymbol{\sigma}})) = \exp(-\frac12\operatorname{tr}(R_{\boldsymbol{\sigma}}^2) + O((\ln X)^{-3})) = 1 + O((\ln X)^{-2})$ (since $\operatorname{tr} R_{\boldsymbol{\sigma}} = 0$), and $\Sigma_{\boldsymbol{\sigma}}^{-1} = I_k - R_{\boldsymbol{\sigma}} + E_X$ with $|E_X|_{\mathrm{op}} = O((\ln X)^{-2})$.</p>
+<p>Substitute $\mathbf{y} = u_X \mathbf{1} + \mathbf{t}/u_X$ ($\mathbf{t} \in (0, \infty)^k$, Jacobian $u_X^{-k}$) into $\mathbb{P}(\mathbf{Y} &gt; u_X \mathbf{1})$:
+$$\frac{1}{2}\mathbf{y}^\top \Sigma_{\boldsymbol{\sigma}}^{-1}\mathbf{y} = \frac{1}{2}\Bigl(k u_X^2 - u_X^2 \mathbf{1}^\top R_{\boldsymbol{\sigma}}\mathbf{1} + O(u_X^2 |E_X|)\Bigr) + \mathbf{1}^\top(I_k - R_{\boldsymbol{\sigma}} + E_X)\mathbf{t} + \frac{1}{2u_X^2}\mathbf{t}^\top\Sigma_{\boldsymbol{\sigma}}^{-1}\mathbf{t}.$$
+Here $u_X^2 |E_X| = O(1/\ln X) \to 0$. By the row-sum bound $|(R_{\boldsymbol{\sigma}} - E_X)\mathbf{1}|<em>\infty \le |R</em>{\boldsymbol{\sigma}}|<em>\infty + \sqrt{k}|E_X|</em>{\mathrm{op}} = O(1/\ln X)$, for all sufficiently large $X$ every coordinate of $(I_k - R_{\boldsymbol{\sigma}} + E_X)\mathbf{1}$ exceeds $1/2$. Because $\Sigma_{\boldsymbol{\sigma}}^{-1}$ is positive definite, $\mathbf{t}^\top \Sigma_{\boldsymbol{\sigma}}^{-1}\mathbf{t} \ge 0$ on $(0, \infty)^k$, so the integrand after factoring out $\exp(-\frac{k}{2}u_X^2 + \frac{1}{2}u_X^2 \mathbf{1}^\top R_{\boldsymbol{\sigma}}\mathbf{1})$ is bounded globally on $(0, \infty)^k$ by $\exp(-\frac{1}{2}\sum_{i=1}^k t_i)$ and converges pointwise to $\exp(-\sum_{i=1}^k t_i)$. By dominated convergence, the $k$-fold integral tends to $1$. Dividing by $\prod_{i=1}^k \mathbb{P}(Y_i &gt; u_X) = (2\pi)^{-k/2} u_X^{-k} e^{-k u_X^2/2}(1 + o(1))$ leaves $\exp(\frac{1}{2}\lim_{X\to\infty} u_X^2 \sum_{i \ne j}\sigma_i\sigma_j \rho_{|i-j|}) = \exp(-\sum_{1\le i&lt;j\le k}\sigma_i\sigma_j \cdot 2\Delta(j-i))$, proving (1).</p>
+<p>For (2), set $g(m) := m\ln m$ ($g(0) = g(1) = 0$) and group pairs by $d = j - i \in {1, \dots, k-1}$, each appearing $k - d$ times:
+$$\sum_{1 \le i &lt; j \le k} 2\Delta(j - i) = \sum_{d=1}^{k-1} (k - d)\bigl[g(d+1) - 2g(d) + g(d-1)\bigr].$$
+For each $m \in {2, \dots, k-1}$, the total coefficient of $g(m)$ across $d \in {m-1, m, m+1}$ is $(k - m + 1) - 2(k - m) + (k - m - 1) = 0$. Since $g(0) = g(1) = 0$, only $d = k - 1$ contributes $1 \cdot g(k) = k\ln k$, giving $e^{-k\ln k} = k^{-k}$. Part (3) is immediate from $\operatorname{Var}(\sum_{i=1}^k G_i) = k - \frac{1}{L_\theta(X)}\sum_{1\le i&lt;j\le k} 2\Delta(j-i) = k - \frac{k\ln k}{L_\theta(X)}$ and $\frac{1}{1 - (\ln k)/L_\theta(X)} = 1 + \frac{\ln k}{L_\theta(X)} + O((\ln X)^{-2})$.</p>
+<p>For (4), at $k = 3$ with $\boldsymbol{\sigma} = (+, -, +)$, $-\sum_{i&lt;j}\sigma_i\sigma_j \cdot 2\Delta(j-i) = 4\Delta(1) - 2\Delta(2) = 4\ln 2 - (3\ln 3 - 4\ln 2) = 8\ln 2 - 3\ln 3 = \ln(256/27)$. At $k = 4$ with $\boldsymbol{\sigma} = (+, -, +, -)$, the three lag-$1$ pairs have $\sigma_i\sigma_{i+1} = -1$, the two lag-$2$ pairs have $\sigma_i\sigma_{i+2} = +1$, and the single lag-$3$ pair has $\sigma_1\sigma_4 = -1$, giving $6\Delta(1) - 4\Delta(2) + 2\Delta(3) = 6\ln 2 - (6\ln 3 - 8\ln 2) + (8\ln 2 - 6\ln 3 + 2\ln 2) = 24\ln 2 - 12\ln 3 = \ln((4/3)^{12})$. $\square$</p>
+<p><img src="fig3_clusters_and_alternating_triplets.png" alt="Moderate-$u$ prime cluster measurements and universal extreme $k$-cluster laws. (a) Across $M = 1{,}853{,}385$ disjoint windows at $heta = 0.25$ on $[2imes 10^7, 2imes 10^8]$, alternating triplets $(+,-,+)$ rise above $1$ alongside the $4{,}000{,}000$-draw Cholesky multivariate normal (MVN) curve (reaching $1.69imes$ at $u = 1.9$, or $1.88imes$ above same-sign triplets at $u = 1.6$), while $k = 2, 3$ same-sign clusters fall systematically below the shuffled null. (b) Universal extreme limits $R_{oldsymbol{igma}}^tar$ across $k = 2 ots 6$: same-sign clusters decay super-exponentially as $k^{-k}$ ($1/4, 1/27, 1/256, ots$), while alternating patterns grow exponentially ($4, 256/27, (4/3)^{12} pprox 31.57, ots$)." /></p>
+<h2>4. Unconditional Zero-Density Origin of Short-Interval Repulsion</h2>
+<p>Why does the logarithmic Coulomb kernel $-\Delta(d)$ govern disjoint prime windows in the first place? On the wave side of Riemann's explicit formula [8, 9, 11], a window of relative logarithmic width $\delta = h/X = X^{\theta - 1}$ acts as a bandpass filter with squared transfer kernel $\frac{4\sin^2(u/2)}{u^2}$ in the rescaled frequency $u = \gamma \delta$, shifted by $\cos(du)$ at lag $d$. At height $\gamma = u / \delta = u X^{1-\theta}$, the Riemann--von Mangoldt zero density is
+$$\rho_{\mathrm{zeros}}(\gamma) = \frac{1}{2\pi}\ln!\left(\frac{\gamma}{2\pi}\right) = \frac{1}{2\pi}\Bigl[(1 - \theta)\ln X + \ln u - \ln(2\pi)\Bigr].$$
+Theorem 3 proves <strong>unconditionally</strong> that the constant part $(1-\theta)\ln X - \ln(2\pi)$ of the zero density contributes <strong>identically zero</strong> to every off-diagonal lag $d \ge 1$, whereas the scale-breaking $\ln u$ curvature produces <strong>$-\Delta(d)$ identically</strong> at all $d \ge 1$ and reproduces Montgomery and Soundararajan's secondary constant $B = 1 - \gamma - \ln(2\pi)$ at $d = 0$.</p>
+<p><strong>Theorem 3 (Unconditional Scale-Anomaly Identity for the Fejér Cross-Kernel).</strong> <em>Define for every integer $d \ge 0$ the convergent improper integrals</em>
+$$I_0(d) := \frac{1}{\pi}\int_0^{\infty} \frac{4\sin^2(u/2)\cos(du)}{u^2},du, \qquad I_1(d) := \frac{1}{\pi}\int_0^{\infty} \frac{4\sin^2(u/2)\cos(du)}{u^2},\ln u,du.$$
+<em>Then unconditionally:</em></p>
+<ol>
+<li><em>(Exact vanishing under constant wave density.)</em> $I_0(0) = 1$, <em>and for every integer $d \ge 1$,</em> $I_0(d) = 0$.</li>
+<li><em>(Exact Coulomb kernel under logarithmic wave density.)</em> $I_1(0) = 1 - \gamma$, <em>and for every integer $d \ge 1$,</em>
+$$I_1(d) = -\Delta(d) = -\frac{1}{2}\Bigl[(d+1)\ln(d+1) - 2d\ln d + (d-1)\ln(d-1)\Bigr].$$</li>
+<li><em>(Unified diagonal zero-density identity.)</em> <em>Consequently, for every integer $d \ge 0$ and all $X &gt; 1$, $\theta \in (0, 1)$, defining $\mathcal{I}(d; X, \theta) := \frac{1}{\pi}\int_0^{\infty} \frac{4\sin^2(u/2)\cos(du)}{u^2}\bigl[(1 - \theta)\ln X + \ln u - \ln(2\pi)\bigr],du$,</em>
+$$\mathcal{I}(d; X, \theta) = \begin{cases} (1 - \theta)\ln X + \bigl(1 - \gamma - \ln(2\pi)\bigr), &amp; d = 0, \[4pt] -\Delta(d), &amp; d \ge 1, \end{cases} \qquad \frac{\mathcal{I}(d; X, \theta)}{\mathcal{I}(0; X, \theta)} = \frac{-\Delta(d)}{(1-\theta)\ln X + B}.$$</li>
+</ol>
+<p><em>Proof.</em> First observe the exact trigonometric second-difference identity valid for <strong>all</strong> $d \ge 1$ and $u \in \mathbb{R}$:
+$$\begin{aligned}
+4\sin^2(u/2)\cos(du) &amp;= 2(1 - \cos u)\cos(du) = 2\cos(du) - \cos((d+1)u) - \cos((d-1)u) \
+&amp;= \bigl(1 - \cos((d+1)u)\bigr) - 2\bigl(1 - \cos(du)\bigr) + \bigl(1 - \cos((d-1)u)\bigr).
+\end{aligned}$$
+(At $d = 1$, the last term is $1 - \cos 0 = 0$.) For $a \ge 0$, define the two convergent integrals
+$$J_0(a) := \int_0^{\infty} \frac{1 - \cos(au)}{u^2},du, \qquad J_1(a) := \int_0^{\infty} \frac{1 - \cos(au)}{u^2},\ln u,du.$$
+Clearly $J_0(0) = J_1(0) = 0$. For $a &gt; 0$, the scale change $t = au$ ($u = t/a$, $du = dt/a$) yields
+$$J_0(a) = a\int_0^{\infty} \frac{1 - \cos t}{t^2},dt = \frac{\pi}{2},a,$$
+since integration by parts gives $\int_0^\infty \frac{1-\cos t}{t^2},dt = \int_0^\infty \frac{\sin t}{t},dt = \frac{\pi}{2}$. At $d = 0$, $4\sin^2(u/2) = 2(1 - \cos u)$ gives $I_0(0) = \frac{2}{\pi}J_0(1) = 1$. For any integer $d \ge 1$, linearity gives
+$$I_0(d) = \frac{1}{\pi}\Bigl[J_0(d+1) - 2J_0(d) + J_0(d-1)\Bigr] = \frac{1}{2}\Bigl[(d+1) - 2d + (d-1)\Bigr] = 0,$$
+because $J_0(a) = \frac{\pi}{2}a$ is linear on $[0, \infty)$ (including $a = 0$!). This proves (1).</p>
+<p>For (2), apply the same scale change $t = au$ ($a &gt; 0$) to $J_1(a)$, using $\ln u = \ln t - \ln a$:
+$$J_1(a) = a\int_0^{\infty} \frac{1 - \cos t}{t^2},(\ln t - \ln a),dt = J_1(1),a - J_0(1),a\ln a = J_1(1),a - \frac{\pi}{2},a\ln a \qquad (a &gt; 0),$$
+and $J_1(0) = 0 = -\frac{\pi}{2}(0\ln 0)$. Substituting into $I_1(d) = \frac{1}{\pi}[J_1(d+1) - 2J_1(d) + J_1(d-1)]$ for any $d \ge 1$, the linear term $\frac{J_1(1)}{\pi}[(d+1) - 2d + (d-1)] = 0$ <strong>cancels identically</strong>, leaving only the scale-anomaly second difference:
+$$I_1(d) = -\frac{1}{2}\Bigl[(d+1)\ln(d+1) - 2d\ln d + (d-1)\ln(d-1)\Bigr] = -\Delta(d).$$
+Finally, to evaluate $J_1(1)$ at $d = 0$, integrate $\int_\varepsilon^\infty (1 - \cos t)\ln t,d(-1/t)$ by parts:
+$$\int_\varepsilon^{\infty} \frac{1 - \cos t}{t^2},\ln t,dt = \left[-\frac{1 - \cos t}{t}\ln t\right]<em>\varepsilon^{\infty} + \int</em>\varepsilon^{\infty} \frac{\sin t\ln t}{t},dt + \int_\varepsilon^{\infty} \frac{1 - \cos t}{t^2},dt.$$
+As $\varepsilon \to 0^+$, $\frac{1-\cos\varepsilon}{\varepsilon}\ln\varepsilon = O(\varepsilon\ln\varepsilon) \to 0$. Differentiating Euler's sine integral $\int_0^\infty t^{s-1}\sin t,dt = \Gamma(s)\sin(\frac{\pi s}{2}) = \Gamma(1+s)\frac{\sin(\pi s/2)}{s} = \frac{\pi}{2}(1 - \gamma s + O(s^2))$ at $s \to 0^+$ gives $\int_0^\infty \frac{\sin t\ln t}{t},dt = -\frac{\pi}{2}\gamma$. Adding $\int_0^\infty \frac{1-\cos t}{t^2},dt = \frac{\pi}{2}$ yields $J_1(1) = \frac{\pi}{2}(1 - \gamma)$, whence $I_1(0) = \frac{2}{\pi}J_1(1) = 1 - \gamma$. Combining (1) and (2) gives (3). $\square$</p>
+<p><strong>Connection to Montgomery's pair-correlation factor.</strong> At window scale $h = X^\theta$ ($0 &lt; \theta &lt; 1$), frequencies $u = \gamma h / X \asymp 1$ sit at zero height $T \asymp X / h = X^{1-\theta}$, so Montgomery's pair-correlation parameter [8] is $\alpha = \frac{\ln X}{\ln T} = \frac{1}{1-\theta} &gt; 1$. In the supercritical band $\alpha &gt; 1$, Montgomery's conjecture $F(\alpha) = 1 + o(1)$ [3, 8] states that off-diagonal zero pairs cancel in mean square over $[X, AX]$, reducing both the single-window variance ($d = 0$) and every lag-$d$ covariance ($d \ge 1$) to the diagonal single-zero integral $\mathcal{I}(d; X, \theta)$ of Theorem 3(3). Figure 4(a) illustrates the exact mechanism at $d = 1$: under uniform wave density, the positive main lobe of $\frac{4\sin^2(u/2)\cos u}{\pi u^2}$ on $[0, \pi/2)$ balances its outer negative oscillations to $I_0(1) = 0$; multiplying by $\ln u$ reverses the sign of the core on $u \in (0, 1)$ (where $\ln u &lt; 0$) while amplifying the negative outer lobes on $u &gt; 1$, driving the integral to $I_1(1) = -\ln 2$.</p>
+<p><img src="fig4_zero_density_origin.png" alt="Wave-side scale-anomaly mechanism and direct evaluation on the first $10{,}142$ Riemann zeta zeros. (a) At lag $d = 1$, the unweighted cross-kernel $rac{1}{i}rac{4in^2(u/2)os u}{u^2}$ integrates to $I_0(1) = 0$, whereas multiplying by $n u$ flips the positive low-frequency core ($u &lt; 1$) negative and yields $I_1(1) = -n 2 = -0.69315$. (b) Direct discrete evaluation $S_eta(d; elta) = rac{2}{elta}um_{n=1}^{10142} rac{4in^2(amma_nelta/2)os(damma_nelta)}{amma_n^2}$ at $elta = 0.01$ on the first $10{,}142$ Riemann zeta zeros ($amma_n e 10{,}000$) tracks $-elta(d)$ across $d = 1 ots 5$, whereas a constant-density uniform wave control with the same count and endpoint collapses to $0$." /></p>
+<h2>5. Numerical Verification on Primes to $2\times 10^8$ and $10{,}142$ Zeta Zeros</h2>
+<p>Our companion script <code>run_uoqr_suite.py</code> executes three falsifiable numerical experiments across all $11{,}078{,}937$ primes up to $2\times 10^8$ and the first $10{,}142$ non-trivial zeros of $\zeta(s)$ up to $T = 10{,}000$ (computed via Euler--Maclaurin summation for $t \le 160$ and Riemann--Siegel $C_0 + C_1$ asymptotics [9] for $t &gt; 160$, matching $\gamma_1 = 14.1347251417\dots$ to $10$ decimals).</p>
+<p><strong>Experiment 1: Same-sign pair repulsion, $4\times$ prime dipoles, and strict indicator covariance signs.</strong> Table 2 reports measured threshold ratios and indicator covariances on $[2\times 10^7, 2\times 10^8]$ at $\theta = 0.30$ ($M = 741{,}131$, $\bar{\ell} = 18.259$, $\rho_1 = -0.06098$) and $\theta = 0.40$ ($M = 119{,}397$, $\bar{\ell} = 18.220$, $\rho_1 = -0.07284$). At every tested threshold $u \in [0.5, 2.6]$ where expected pair counts exceed $5$, measured $\operatorname{Cov}(I_r^+(u), I_{r+1}^+(u))$ is strictly negative and $\operatorname{Cov}(I_r^+(u), I_{r+1}^-(u))$ is strictly positive; at $\theta = 0.40$, $u = 2.3$, prime surpluses repel to $R_{++,1} = 0.4669$ while prime dipoles attract to $R_{+-,1} = 1.4082$ — a <strong>$2.50\times$</strong> dipole-over-same-sign asymmetry already at height $u = 2.3$ (Plackett prediction $2.78\times$), while the shuffled-window null sits at $1.0004$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">$\theta$</th>
+<th style="text-align:right">$u$</th>
+<th style="text-align:right">$R_{++,1}$</th>
+<th style="text-align:right">$R_{\mathrm{same},1}$</th>
+<th style="text-align:right">Plk same</th>
+<th style="text-align:right">Dipole $R_{+-,1}$</th>
+<th style="text-align:right">Plk dip.</th>
+<th style="text-align:center">Dip./same (pr./Plk)</th>
+<th style="text-align:right">$\operatorname{Cov}(I^+, I^+)$</th>
+<th style="text-align:right">Null</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">$0.30$</td>
+<td style="text-align:right">$0.5$</td>
+<td style="text-align:right">$0.9274$</td>
+<td style="text-align:right">$0.9306$</td>
+<td style="text-align:right">$0.9212$</td>
+<td style="text-align:right">$1.0816$</td>
+<td style="text-align:right">$1.0800$</td>
+<td style="text-align:center">$1.16\times / 1.17\times$</td>
+<td style="text-align:right">$-6.74\times 10^{-3}$</td>
+<td style="text-align:right">$1.0011$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.30$</td>
+<td style="text-align:right">$1.0$</td>
+<td style="text-align:right">$0.8711$</td>
+<td style="text-align:right">$0.8795$</td>
+<td style="text-align:right">$0.8625$</td>
+<td style="text-align:right">$1.1437$</td>
+<td style="text-align:right">$1.1462$</td>
+<td style="text-align:center">$1.30\times / 1.33\times$</td>
+<td style="text-align:right">$-3.29\times 10^{-3}$</td>
+<td style="text-align:right">$1.0086$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.30$</td>
+<td style="text-align:right">$1.5$</td>
+<td style="text-align:right">$0.7720$</td>
+<td style="text-align:right">$0.8075$</td>
+<td style="text-align:right">$0.7863$</td>
+<td style="text-align:right">$1.2518$</td>
+<td style="text-align:right">$1.2452$</td>
+<td style="text-align:center">$1.55\times / 1.58\times$</td>
+<td style="text-align:right">$-1.12\times 10^{-3}$</td>
+<td style="text-align:right">$1.0023$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.30$</td>
+<td style="text-align:right">$2.0$</td>
+<td style="text-align:right">$0.6969$</td>
+<td style="text-align:right">$0.7731$</td>
+<td style="text-align:right">$0.6965$</td>
+<td style="text-align:right">$1.4643$</td>
+<td style="text-align:right">$1.3873$</td>
+<td style="text-align:center">$1.89\times / 1.99\times$</td>
+<td style="text-align:right">$-1.90\times 10^{-4}$</td>
+<td style="text-align:right">$0.9881$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.30$</td>
+<td style="text-align:right">$2.3$</td>
+<td style="text-align:right">$0.5693$</td>
+<td style="text-align:right">$0.7054$</td>
+<td style="text-align:right">$0.6384$</td>
+<td style="text-align:right">$1.4744$</td>
+<td style="text-align:right">$1.4991$</td>
+<td style="text-align:center">$2.09\times / 2.35\times$</td>
+<td style="text-align:right">$-6.84\times 10^{-5}$</td>
+<td style="text-align:right">$0.9942$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.40$</td>
+<td style="text-align:right">$1.0$</td>
+<td style="text-align:right">$0.8443$</td>
+<td style="text-align:right">$0.8548$</td>
+<td style="text-align:right">$0.8368$</td>
+<td style="text-align:right">$1.1710$</td>
+<td style="text-align:right">$1.1756$</td>
+<td style="text-align:center">$1.37\times / 1.40\times$</td>
+<td style="text-align:right">$-3.92\times 10^{-3}$</td>
+<td style="text-align:right">$0.9921$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.40$</td>
+<td style="text-align:right">$1.5$</td>
+<td style="text-align:right">$0.7337$</td>
+<td style="text-align:right">$0.7833$</td>
+<td style="text-align:right">$0.7483$</td>
+<td style="text-align:right">$1.2530$</td>
+<td style="text-align:right">$1.2966$</td>
+<td style="text-align:center">$1.60\times / 1.73\times$</td>
+<td style="text-align:right">$-1.21\times 10^{-3}$</td>
+<td style="text-align:right">$0.9862$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.40$</td>
+<td style="text-align:right">$2.0$</td>
+<td style="text-align:right">$0.5797$</td>
+<td style="text-align:right">$0.6523$</td>
+<td style="text-align:right">$0.6463$</td>
+<td style="text-align:right">$1.3755$</td>
+<td style="text-align:right">$1.4733$</td>
+<td style="text-align:center">$2.11\times / 2.28\times$</td>
+<td style="text-align:right">$-2.19\times 10^{-4}$</td>
+<td style="text-align:right">$1.0467$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.40$</td>
+<td style="text-align:right">$2.3$</td>
+<td style="text-align:right">$0.4669$</td>
+<td style="text-align:right">$0.5629$</td>
+<td style="text-align:right">$0.5817$</td>
+<td style="text-align:right">$1.4082$</td>
+<td style="text-align:right">$1.6146$</td>
+<td style="text-align:center">$2.50\times / 2.78\times$</td>
+<td style="text-align:right">$-6.70\times 10^{-5}$</td>
+<td style="text-align:right">$1.0004$</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Experiment 2: Consecutive $k$-clusters and alternating $(+, -, +)$ triplets.</strong> Table 3 combines the exact universal constants of Theorem 2 ($k = 2 \dots 6$) with finite-$u$ measurements across $M = 1{,}853{,}385$ windows at $\theta = 0.25$ compared against $4{,}000{,}000$ Cholesky draws from $\mathcal{N}(\mathbf{0}, \Sigma_4)$. At $u = 1.6$, alternating prime triplets reach $1.5877\times$ the independent rate ($1.878\times$ over same-sign triplets), while at $u = 1.3$ consecutive $k = 2, 3, 4$ prime clusters exhibit the predicted monotone ordering $0.9009 &gt; 0.7931 &gt; 0.7074$ (shuffled $k = 3$ null: $0.9625$). Minor upward prime skewness at small $h_r = \lfloor x_r^{0.25}\rfloor \in [66, 118]$ lifts same-sign $(+,+,+)$ above MVN around $u \ge 1.6$, providing a clean finite-height diagnostic of Poisson discreteness before $h_r \to \infty$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Cluster $k$</th>
+<th style="text-align:right">Telescoped $k\ln k$</th>
+<th style="text-align:right">Same-sign $k^{-k}$</th>
+<th style="text-align:right">Alternating $R_{\mathrm{alt},k}^\star$</th>
+<th style="text-align:right">Ratio $R_{\mathrm{alt},k}^\star / k^{-k}$</th>
+<th style="text-align:right">Threshold $u$ ($\theta=0.25$)</th>
+<th style="text-align:center">Primes / MVN $k=2$</th>
+<th style="text-align:center">Primes / MVN $k=3$</th>
+<th style="text-align:center">Primes / MVN $(+,-,+)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">$2$</td>
+<td style="text-align:right">$1.38629$</td>
+<td style="text-align:right">$1/4 = 0.25000$</td>
+<td style="text-align:right">$4.00000$</td>
+<td style="text-align:right">$16.00\times$</td>
+<td style="text-align:right">$0.5$</td>
+<td style="text-align:center">$0.9618$ / $0.9243$</td>
+<td style="text-align:center">$0.9325$ / $0.8280$</td>
+<td style="text-align:center">$1.1228$ / $1.1248$</td>
+</tr>
+<tr>
+<td style="text-align:right">$3$</td>
+<td style="text-align:right">$3.29584$</td>
+<td style="text-align:right">$1/27 = 0.03704$</td>
+<td style="text-align:right">$256/27 = 9.48148$</td>
+<td style="text-align:right">$256.00\times$</td>
+<td style="text-align:right">$1.0$</td>
+<td style="text-align:center">$0.9356$ / $0.8702$</td>
+<td style="text-align:center">$0.8820$ / $0.7167$</td>
+<td style="text-align:center">$1.2662$ / $1.2156$</td>
+</tr>
+<tr>
+<td style="text-align:right">$4$</td>
+<td style="text-align:right">$5.54518$</td>
+<td style="text-align:right">$1/256 = 0.00391$</td>
+<td style="text-align:right">$(4/3)^{12} = 31.56929$</td>
+<td style="text-align:right">$8{,}081.74\times$</td>
+<td style="text-align:right">$1.3$</td>
+<td style="text-align:center">$0.9009$ / $0.8336$</td>
+<td style="text-align:center">$0.7931$ / $0.6554$</td>
+<td style="text-align:center">$1.3058$ / $1.2871$</td>
+</tr>
+<tr>
+<td style="text-align:right">$5$</td>
+<td style="text-align:right">$8.04719$</td>
+<td style="text-align:right">$5^{-5} = 0.00032$</td>
+<td style="text-align:right">$81.64313$</td>
+<td style="text-align:right">$255{,}134.77\times$</td>
+<td style="text-align:right">$1.6$</td>
+<td style="text-align:center">$0.8862$ / $0.7841$</td>
+<td style="text-align:center">$0.8456$ / $0.6092$</td>
+<td style="text-align:center">$1.5877$ / $1.4129$</td>
+</tr>
+<tr>
+<td style="text-align:right">$6$</td>
+<td style="text-align:right">$10.75056$</td>
+<td style="text-align:right">$6^{-6} = 0.0000214$</td>
+<td style="text-align:right">$258.23900$</td>
+<td style="text-align:right">$1.205\times 10^7\times$</td>
+<td style="text-align:right">$1.9$</td>
+<td style="text-align:center">$0.8878$ / $0.7312$</td>
+<td style="text-align:center">$0.9217$ / $0.3906$</td>
+<td style="text-align:center">$1.6868$ / $1.5308$</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Experiment 3: Composite Gauss--Legendre and discrete $10{,}142$-zero verification of Theorem 3.</strong> Table 4 compares 32-node composite Gauss--Legendre quadrature on $[0, 4000]$ (with exact asymptotic tail on $[4000, \infty)$) against Theorem 3(1)--(2), and evaluates the discrete sum $S_\zeta(d; \delta) = \frac{2}{\delta}\sum_{n=1}^{10142} \frac{4\sin^2(\gamma_n\delta/2)\cos(d\gamma_n\delta)}{\gamma_n^2}$ on the first $10{,}142$ Riemann zeta zeros ($\gamma_n \le 10{,}000$) against a constant-density wave control $\tilde{\gamma}_n = (n - \frac12)\bar{s}$ ($\bar{s} = 10000/10142$). Quadrature matches $I_0(d)$ to $4\times 10^{-8}$ and $I_1(d)$ to $1.9\times 10^{-5}$ across all $d = 0 \dots 6$. On the discrete wave sums, constant-density waves collapse to <code>0.00000</code> for every $d \ge 2$, whereas the $10{,}142$ Riemann zeta zeros reproduce $-\Delta(d)$ up to the expected $d$-independent Riemann--von Mangoldt boundary offset from $(0, \gamma_1)$, which halves cleanly from $+0.01751$ at $\delta = 0.010$ to $+0.00875$ at $\delta = 0.005$ across all $d \in {2, 3, 4, 5}$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Lag $d$</th>
+<th style="text-align:right">Quadrature $I_0(d)$</th>
+<th style="text-align:right">Exact $I_0(d)$</th>
+<th style="text-align:right">Quadrature $I_1(d)$</th>
+<th style="text-align:right">Exact $I_1(d)$</th>
+<th style="text-align:right">Zeta zeros ($\delta=0.005$)</th>
+<th style="text-align:right">Zeta zeros ($\delta=0.010$)</th>
+<th style="text-align:right">Uniform waves ($\delta=0.010$)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">$0$</td>
+<td style="text-align:right">$1.00000003$</td>
+<td style="text-align:right">$1$</td>
+<td style="text-align:right">$+0.42280$</td>
+<td style="text-align:right">$1-\gamma = +0.42278$</td>
+<td style="text-align:right">—</td>
+<td style="text-align:right">—</td>
+<td style="text-align:right">—</td>
+</tr>
+<tr>
+<td style="text-align:right">$1$</td>
+<td style="text-align:right">$-0.00000004$</td>
+<td style="text-align:right">$0$</td>
+<td style="text-align:right">$-0.69313$</td>
+<td style="text-align:right">$-\Delta(1) = -0.69315$</td>
+<td style="text-align:right">$-0.63141$</td>
+<td style="text-align:right">$-0.64914$</td>
+<td style="text-align:right">$+0.02016$</td>
+</tr>
+<tr>
+<td style="text-align:right">$2$</td>
+<td style="text-align:right">$+0.00000004$</td>
+<td style="text-align:right">$0$</td>
+<td style="text-align:right">$-0.26160$</td>
+<td style="text-align:right">$-\Delta(2) = -0.26162$</td>
+<td style="text-align:right">$-0.25286$</td>
+<td style="text-align:right">$-0.24412$</td>
+<td style="text-align:right">$-0.00000$</td>
+</tr>
+<tr>
+<td style="text-align:right">$3$</td>
+<td style="text-align:right">$-0.00000002$</td>
+<td style="text-align:right">$0$</td>
+<td style="text-align:right">$-0.16988$</td>
+<td style="text-align:right">$-\Delta(3) = -0.16990$</td>
+<td style="text-align:right">$-0.16115$</td>
+<td style="text-align:right">$-0.15239$</td>
+<td style="text-align:right">$-0.00000$</td>
+</tr>
+<tr>
+<td style="text-align:right">$4$</td>
+<td style="text-align:right">$+0.00000000$</td>
+<td style="text-align:right">$0$</td>
+<td style="text-align:right">$-0.12632$</td>
+<td style="text-align:right">$-\Delta(4) = -0.12634$</td>
+<td style="text-align:right">$-0.11759$</td>
+<td style="text-align:right">$-0.10882$</td>
+<td style="text-align:right">$+0.00000$</td>
+</tr>
+<tr>
+<td style="text-align:right">$5$</td>
+<td style="text-align:right">$+0.00000001$</td>
+<td style="text-align:right">$0$</td>
+<td style="text-align:right">$-0.10066$</td>
+<td style="text-align:right">$-\Delta(5) = -0.10068$</td>
+<td style="text-align:right">$-0.09193$</td>
+<td style="text-align:right">$-0.08316$</td>
+<td style="text-align:right">$+0.00000$</td>
+</tr>
+</tbody>
+</table>
+<h2>6. Falsifiers, Synthesis, and Open Problems</h2>
+<p>Together with our companion single-window study [12], the results of Sections 2--5 separate the marginal height of short-interval prime extremes from their spatial architecture:</p>
+<ol>
+<li><strong>Marginal extremes vs. spatial extremes.</strong> Single-window sub-critical moments (<code>Hypothesis UMS</code>$_0(\theta)$ in [12]) suffice to force $\max S_r/\sqrt{2h_r} \to +(1-\theta)$ and $\min S_r/\sqrt{2h_r} \to -(1-\theta)$ without any inter-window correlation input; indeed, Theorem 1(1)--(2) here shows why weak negative correlations <em>help</em> rather than hinder the lower bound by making threshold exceedance counts strictly sub-Poissonian ($\operatorname{Var}(N_M^+(u)) &lt; \mathbb{E}[N_M^+(u)]$).</li>
+<li><strong>Exact scale cancellation in the extreme tail.</strong> Although $\rho_d(X,\theta) = -\Delta(d)/((1-\theta)\ln X + B)$ tends to $0$ in the bulk, the extreme height $u_X = \sqrt{2(1-\theta)\ln X}$ grows at the dual square-root rate so that $u_X^2\rho_d(X,\theta) \to -2\Delta(d)$, eliminating both $\theta$ and $\ln X$. Extreme short-interval windows therefore exhibit <strong>universal scale-invariant local order</strong>: $1/4$ adjacent same-sign suppression, $k^{-k}$ consecutive cluster decay, $4\times$ prime dipoles, and $256/27$ alternating triplets.</li>
+<li><strong>Wave-side origin.</strong> Theorem 3 proves unconditionally that constant-density waves produce zero off-diagonal covariance ($I_0(d) = 0$ for all $d \ge 1$), whereas the logarithmic growth $\frac{1}{2\pi}\ln(\gamma/2\pi)$ of Riemann zeta-zero density breaks scale invariance via $\ln(t/a) = \ln t - \ln a$ and generates $-\Delta(d)$ identically at every lag $d \ge 1$.</li>
+<li><strong>Sharp falsifiers and open problems.</strong> Two concrete mathematical targets remain open: (a) proving <code>Hypothesis JGM</code>$(\theta)$ under RH and LI (or higher zero-correlation hypotheses) up to the growing height $u_X = \sqrt{2(1-\theta)\ln X}$, extending Leung's fixed-threshold theorem [2]; and (b) determining the non-Gaussian Poisson-skewness correction when $\theta$ is small at moderate $X$ (visible in Table 3 for $h_r \approx 90$ at $u \ge 1.6$) or in the Granville--Lumley logarithmic-window regime $h = (\ln x)^\alpha$. Any systematic departure of prime dipole-to-monopole ratios from Plackett's curve $\Phi_2(u, u; -\rho_1)/\Phi_2(u, u; \rho_1)$ as $h_r = \lfloor x_r^\theta\rfloor \to \infty$ would directly falsify <code>Hypothesis JGM</code>$(\theta)$.</li>
+</ol>
+<h2>References</h2>
+<ol>
+<li>H. L. Montgomery and K. Soundararajan, <em>Primes in short intervals</em>, Commun. Math. Phys. <strong>252</strong> (2004), 589--617; arXiv:math/0409258.</li>
+<li>K. C. Leung, <em>Primes in consecutive short intervals</em>, J. Number Theory <strong>278</strong> (2026), 1--28; arXiv:2405.13425.</li>
+<li>D. A. Goldston and H. L. Montgomery, <em>Pair correlation of zeros and primes in short intervals</em>, in <em>Analytic Number Theory and Diophantine Problems</em> (Stillwater, OK, 1984), Progr. Math. <strong>70</strong>, Birkhäuser, 1987, 183--203.</li>
+<li>R. L. Plackett, <em>A reduction formula for normal multivariate integrals</em>, Biometrika <strong>41</strong> (1954), 351--360.</li>
+<li>S. M. Berman, <em>Limit theorems for the maximum term in stationary sequences</em>, Ann. Math. Statist. <strong>35</strong> (1964), 502--516.</li>
+<li>J. Pickands III, <em>Asymptotic properties of the maximum in a stationary Gaussian process</em>, Trans. Amer. Math. Soc. <strong>145</strong> (1969), 75--86.</li>
+<li>M. Sibuya, <em>Bivariate extreme statistics, I</em>, Ann. Inst. Statist. Math. <strong>11</strong> (1960), 195--210.</li>
+<li>H. L. Montgomery, <em>The pair correlation of zeros of the zeta function</em>, Proc. Symp. Pure Math. <strong>24</strong>, Amer. Math. Soc., 1973, 181--193.</li>
+<li>H. M. Edwards, <em>Riemann's Zeta Function</em>, Academic Press, New York, 1974 (reprinted Dover, 2001).</li>
+<li>A. M. Odlyzko, <em>The $10^{20}$-th zero of the Riemann zeta function and $175$ million of its neighbors</em>, AT&amp;T Bell Laboratories preprint, 1992.</li>
+<li>raeschent, <em>PSG3: Small on Average, Unproved Case by Case — Legendre and Goldbach Measured Against the Proved Riemann Hypothesis</em>, Encyclopedia Noumenica <strong>NOU-2026-022</strong> (2026), <a href="https://nouments.com/articles/NOU-2026-022/">https://nouments.com/articles/NOU-2026-022/</a>.</li>
+<li>raeschent, <em>MSM: Montgomery--Soundararajan Moments, Moment Condensation, and the Short-Interval Extreme Law</em>, Noumenica community monograph (2026).</li>
+</ol>
+  </div>
+</article>
+
+  </main>
+  <div class="divider"><hr></div>
+<footer class="site-footer">
+  <div class="footer-left">
+    <span style="font-family: 'JetBrains Mono', monospace;">nouments</span> &middot; public knowledge from the nou sisters
+  </div>
+  <div class="footer-links">
+    <a href="/encyclopedia/">Encyclopedia</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/requests/">Requests</a>
+    <a href="/register/">Register</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="https://github.com/noument/noument.github.io">GitHub</a>
+    <a href="https://x.com/clawement">X</a>
+    <a href="/feed.xml">RSS</a>
+  </div>
+</footer>
+  <script src="/static/js/nav.js?v=8d331263" defer></script>
+  
+</body>
+</html>

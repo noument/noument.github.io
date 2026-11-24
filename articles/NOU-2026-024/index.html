@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MSM: Montgomery–Soundararajan Moments, Moment Condensation, and the Short-Interval Extreme Law &middot; NOUMENTS</title>
+  <meta name="description" content="For disjoint windows of length $h_r = \lfloor x_r^\theta \rfloor$ ($0 &lt; \theta &lt; 1$) on $[X, AX]$, write $W_r = (\pi(x_r+h_r-1) - \pi(x_r-1) - E_r)/\sqrt{2h_r}$ with $E_r = \int_{x_r}^{x_r+h_r}...">
+  <link rel="canonical" href="https://nouments.com/articles/NOU-2026-024/">
+  
+  <meta property="og:title" content="MSM: Montgomery–Soundararajan Moments, Moment Condensation, and the Short-Interval Extreme Law &middot; NOUMENTS">
+  <meta property="og:description" content="For disjoint windows of length $h_r = \lfloor x_r^\theta \rfloor$ ($0 &lt; \theta &lt; 1$) on $[X, AX]$, write $W_r = (\pi(x_r+h_r-1) - \pi(x_r-1) - E_r)/\sqrt{2h_r}$ with $E_r = \int_{x_r}^{x_r+h_r}...">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nouments.com/articles/NOU-2026-024/">
+  
+  
+  
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
+    img-src 'self' data:;
+    connect-src 'self';
+    form-action 'none';
+    base-uri 'self';
+    object-src 'none';
+    frame-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/static/css/style.css?v=f8235307">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="NOUMENTS" href="/feed.xml">
+  
+  <noscript><style>@media (max-width: 900px) { nav.top-nav .nav-links { display: flex; position: static; flex-direction: column; } nav.top-nav .nav-toggle { display: none; } }</style></noscript>
+  <meta property="og:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:card" content="summary_large_image">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+<nav class="top-nav">
+  <a href="/" class="logo">nouments</a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation"
+          aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+  <div class="nav-links" id="primary-nav">
+    <a href="/encyclopedia/">ENCYCLOPEDIA</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/posts/">Posts</a>
+    <a href="/projects/">Apps</a>
+    <a href="/register/">Register</a>
+    <a href="/requests/">Requests</a>
+    <a href="https://github.com/noument/noument.github.io" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</nav>
+</header>
+  <main class="page-content" id="main-content">
+    
+<article class="arxiv-article">
+  <header class="arxiv-header">
+    <div class="paper-id">NOU-2026-024</div>
+    <h1 class="paper-title">MSM: Montgomery–Soundararajan Moments, Moment Condensation, and the Short-Interval Extreme Law</h1>
+    <div class="paper-subtitle" style="font-size:1.2em;font-style:italic;color:#c8c8d4;margin:-0.2em 0 0.6em;">What Fixed and Growing Moments Imply for Prime Counts in Power-Length Windows and Between Consecutive Squares</div>
+    <div class="paper-authors">raeschent</div>
+    <div class="paper-affiliation">Noumenica community</div>
+    <div class="paper-date">November 24, 2026</div>
+
+    
+    <div class="paper-subjects">
+      
+        <span class="subject-tag">math.NT</span>
+      
+        <span class="subject-tag">math.PR</span>
+      
+    </div>
+    
+
+    
+    <div class="paper-abstract">
+      <strong>Abstract:</strong> For disjoint windows of length $h_r = \lfloor x_r^\theta \rfloor$ ($0 &lt; \theta &lt; 1$) on $[X, AX]$, write $W_r = (\pi(x_r+h_r-1) - \pi(x_r-1) - E_r)/\sqrt{2h_r}$ with $E_r = \int_{x_r}^{x_r+h_r} dt/\ln t$. We investigate whether the short-interval extreme law $\lim_{X\to\infty}\max W_r = +(1-\theta)$ and $\lim_{X\to\infty}\min W_r = -(1-\theta)$ follows from Montgomery and Soundararajan&#39;s moment conjectures. Unconditionally, two boundary repairs are needed first: un-truncated maximization from $x_1 = 2$ fails at $\theta = 0.85$ because $[5,8)$ gives $W_3 = 0.15551 &gt; 0.15$, and midpoint centering $h_r/\ln(x_r+h_r/2)$ introduces a positive drift $\sim x_r^{\frac52\theta - 2}/(24\sqrt{2}\ln^2 x_r)$ that diverges for $\theta \in (4/5, 1)$. Next, neither half of the extreme law follows from published fixed-order moments or any $K_{\max}(X) = o(\ln X/\ln\ln X)$ schedule, even with fixed-lag Gaussian covariances; by contrast, the single fixed even moment $K_\theta = 2\lfloor(1-\theta)/\theta\rfloor + 2$ ($K = 4$ at $\theta = 1/2$) implies eventual Legendre&#39;s conjecture. Assuming single-window moments on the open sub-critical strip $0 &lt; \beta = m/((1-\theta)\ln X) &lt; 1$ alone, with zero independence assumption, we prove both $\pm(1-\theta)$ limits deterministically and show that normalized $2m$-th moment roots undergo an Ehrenfest second-order condensation transition at $K_{\mathrm{crit}}(X) = 2(1-\theta)\ln X$ onto $\Phi_{\mathrm{cond}}(\beta) = \beta^{-1/2}e^{\frac12(1 - 1/\beta)}$ ($\beta &gt; 1$), matched to $0.5\%$--$0.8\%$ across $2 \le 2m \le 60$ on $574{,}918$ prime windows below $2\times 10^8$. Finally, on consecutive squares, Montgomery and Soundararajan&#39;s secondary constant $C_{\mathrm{sq}} = \gamma + \ln(4\pi) - 1 = 2.10824$ shifts the expected unit-crossing horizon by $52.5$ decades to $10^{56.6}$ (two-sided) and $10^{155.5}$ (one-sided).
+    </div>
+    
+
+    
+    <div class="external-links">
+      
+        <a href="/encyclopedia/pdf/NOU-2026-024.pdf" class="pdf-link">PDF</a>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <hr class="article-divider">
+
+  <div class="article-body">
+    <h2>Abstract</h2>
+<p>We determine what fixed-order and growing-order Montgomery--Soundararajan moments imply, and fail to imply, for extreme prime-count deviations in power-length short intervals $h = \lfloor x^\theta \rfloor$ ($0 &lt; \theta &lt; 1$) and between consecutive squares ($\theta = 1/2$), prove a deterministic equivalence between open-strip sub-critical moments and the $\pm(1-\theta)$ extreme law via an Ehrenfest second-order moment condensation transition at $K_{\mathrm{crit}}(X) = 2(1-\theta)\ln X$, and test every statement across all $11{,}078{,}937$ primes up to $2\times 10^8$.</p>
+<h2>1. Introduction</h2>
+<p>Fix a scale exponent $\theta \in (0, 1)$. Tile a moving dyadic or multiplicative band $[X, AX]$ ($A &gt; 1$) by greedy disjoint intervals $\mathcal{G}(X) = {[x_r, x_r + h_r) : 1 \le r \le M(X)}$ starting at $x_1 = X$ with integer widths $h_r = \lfloor x_r^\theta \rfloor$ and $x_{r+1} = x_r + h_r$, stopping at the last complete window inside $[X, AX]$. Write the logarithmic-integral expectation and normalized prime-count fluctuation on the $r$-th window as
+$$E_r := \int_{x_r}^{x_r + h_r} \frac{dt}{\ln t}, \qquad W_r := \frac{\pi(x_r + h_r - 1) - \pi(x_r - 1) - E_r}{\sqrt{2 h_r}}.$$
+Heuristics combining the local variance of primes in short intervals [1, 4] with Gaussian tail asymptotics suggest a clean scale-dependent envelope with no remaining logarithmic factor:
+$$\lim_{X \to \infty} \max_{r \in \mathcal{G}(X)} W_r = +(1 - \theta), \qquad \lim_{X \to \infty} \min_{r \in \mathcal{G}(X)} W_r = -(1 - \theta).$$
+At Legendre's scale $\theta = 1/2$, consecutive square intervals $(n^2, (n+1)^2)$ have width $2n \sim 2\sqrt{x}$, so setting $c_n := \pi((n+1)^2 - 1) - \pi(n^2)$, $E_n := \int_{n^2}^{(n+1)^2} dt/\ln t$, and $D_n := (E_n - c_n)/\sqrt{n}$ translates the $\theta = 1/2$ law into
+$$\limsup_{n \to \infty} D_n = +1, \qquad \liminf_{n \to \infty} D_n = -1.$$
+A closely related universal inequality $|c_n - n/\ln n| &lt; \sqrt{n}$ for all $n &gt; 1$ was conjectured by Rocchelli in September 2023 and checked through $n = 10^6$ by Pfoertner [8], and verified in a companion <code>primesieve</code> computation by the author through $n = 2{,}000{,}000$ with zero violations (maximum shortfall $0.941804\sqrt{n}$ at $n = 2{,}456$; maximum surplus $0.933150\sqrt{n}$ at $n = 3{,}516$).</p>
+<p>In parallel, Montgomery and Soundararajan [1] conjectured that centered short-interval counts have asymptotically Gaussian central moments of every fixed order $K \ge 1$ when $(\ln N)^{1+\delta} \le H \le N^{1-\delta}$, and Leung [2] proved under the Riemann hypothesis (RH) and the linear independence of positive zeta-zero ordinates (LI) that finite collections of short intervals obey a multivariate Gaussian limit with weak negative neighbour correlations ($\approx -0.056$ to $-0.062$ at lag $1$ in tested square-gap and power-window bands). Because neighbouring windows are not independent and fixed-order Gaussian convergence controls only bounded standardized heights, two foundational questions arise:</p>
+<ol>
+<li><em>Does the short-interval extreme law follow from Montgomery and Soundararajan's moment conjectures, and if not at fixed order, up to what growing moment order must single-window moments hold?</em></li>
+<li><em>Why do empirical prime moments break away from Gaussian double-factorial scaling above a critical order, and why has $|D_n| &lt; 1$ suffered zero violations across two million consecutive square gaps if $\limsup |D_n| = 1$?</em></li>
+</ol>
+<p>This paper resolves these questions in four steps:</p>
+<ul>
+<li><strong>Section 2 (Proposition 1)</strong> proves two unconditional repairs required before the $\pm(1-\theta)$ extreme statement is well-posed: un-truncated cumulative maximization over $2 \le x_r \le X$ fails at $\theta = 0.85$ because the early window $[5, 8)$ permanently pins the maximum above $1 - \theta$, and replacing $E_r$ by the midpoint approximation $h_r/\ln(x_r + h_r/2)$ introduces an analytic drift $\sim x_r^{\frac52\theta - 2}/(24\sqrt{2}\ln^2 x_r)$ that diverges to $+\infty$ for all $\theta \in (4/5, 1)$. Prime powers $p^m$ ($m \ge 2$), by contrast, are negligible across all $0 &lt; \theta &lt; 1$.</li>
+<li><strong>Section 3 (Theorem 1)</strong> proves that <strong>neither</strong> the upper bound $\limsup W_r \le 1 - \theta$ <strong>nor</strong> the lower bound $\liminf \max W_r \ge 1 - \theta$ follows from Montgomery and Soundararajan's published fixed-order <code>Conjecture 1</code> [1] — nor from any sub-logarithmic schedule $K_{\max}(X) = o(\ln X/\ln\ln X)$ even when all fixed-lag joint Gaussian moments hold — and derives the exact spectral curves of both countermodels. In sharp contrast, on macroscopic void scales, <code>Conjecture 1</code> at the <strong>single fixed even order</strong> $K_\theta = 2\lfloor(1-\theta)/\theta\rfloor + 2$ rules out prime-free intervals $[x, x+x^\theta]$ for all large $x$: at $\theta = 1/2$, Selberg's second moment $K = 2$ [5, 6] sits on a logarithmic knife-edge [9, 10], whereas <strong>$K = 4$ alone implies eventual Legendre's conjecture</strong>.</li>
+<li><strong>Section 4 (Proposition 2 and Theorem 2)</strong> explains why $h = x^\theta$ lies in a sub-Cramér cumulant regime (unlike Granville and Lumley's logarithmic windows $h = (\ln x)^\alpha$ [3]), proves via Mehler's Hermite expansion that weak negative correlations [2] leave open-strip empirical moments exponentially concentrated, and proves <strong>deterministically — with zero independence assumption —</strong> that single-window moments on the <strong>open</strong> sub-critical strip $0 &lt; \beta = m/((1-\theta)\ln X) &lt; 1$ (<code>Hypothesis UMS</code>$<em>0(\theta)$) imply both $\pm(1-\theta)$ limits <strong>and</strong> force an <strong>Ehrenfest second-order moment condensation transition</strong> at $K</em>{\mathrm{crit}}(X) = 2(1-\theta)\ln X$ onto the universal curve $\Phi_{\mathrm{cond}}(\beta) = \beta^{-1/2}e^{\frac12(1 - 1/\beta)}$ ($\beta &gt; 1$). A zero-parameter finite-$M$ incomplete-gamma refinement $\mathcal{R}_{\mathrm{IG}}(m; M)$ matches actual prime moments up to $2m = 60$ within $0.0081$ at $\theta = 0.30$ ($574{,}918$ windows) and within $0.0051$ at Legendre's scale $\theta = 0.50$ ($14{,}143$ windows).</li>
+<li><strong>Section 5 (Theorem 3)</strong> shows why $2m$-th roots fix $\limsup |W_r| = 1 - \theta$ regardless of polynomial moment prefactors while leaving strict constant-$1$ cutoffs sensitive to secondary variance terms, and proves that Montgomery and Soundararajan's exact secondary constant $C_{\mathrm{sq}} = \gamma + \ln(4\pi) - 1 = 2.108240\dots$ shifts the expected $1.0$-crossing horizon on consecutive squares by <strong>52.5 orders of magnitude</strong> relative to the naive one-term Gaussian variance (from $N \approx 10^{4.15}$ to $N \approx 10^{56.64}$ two-sided and $N \approx 10^{155.53}$ one-sided), predicting only $0.04706$ shortfalls below $n = 2{,}000{,}000$.</li>
+</ul>
+<p><strong>What this paper claims and what remains conditional.</strong> Propositions 1 and 2 and Theorems 1, 2, and 3 are unconditional mathematical theorems about finite-window inequalities, moment implications, and correlated Gaussian arrays. Applying Theorem 2 to actual primes requires <code>Hypothesis UMS</code>$_0(\theta)$ (uniform sub-critical Montgomery--Soundararajan moments on $0 &lt; \beta &lt; 1$), which is unproved for primes; Legendre's conjecture (verified unconditionally up to $n \le 7\times 10^{13}$ by Sorenson and Webster [11]) is likewise not proved unconditionally here. Spatial correlations between rare prime-window extremes — including universal $1/4$ adjacent-pair repulsion, $k^{-k}$ consecutive cluster suppression, and $4\times$ opposite-sign prime dipoles — are developed separately in our companion paper <strong>UOQR</strong>.</p>
+<h2>2. Exact Setup and Unconditional Boundary Repairs</h2>
+<p>For $0 &lt; \theta &lt; 1$ and $A &gt; 1$ (we take $A = 4$ or $A = 2$ in numerical bands), the disjoint tiling $\mathcal{G}(X)$ of $[X, AX]$ has cardinality
+$$M(X) := |\mathcal{G}(X)| = \int_X^{AX} \frac{dt}{t^\theta}\bigl(1 + o(1)\bigr) = \frac{A^{1-\theta} - 1}{1 - \theta},X^{1-\theta}\bigl(1 + o(1)\bigr),$$
+so its logarithmic sample size is
+$$L(X) := \ln M(X) = (1 - \theta)\ln X + \ln!\left(\frac{A^{1-\theta} - 1}{1 - \theta}\right) + o(1).$$
+Before testing extreme limits against moment hypotheses, Proposition 1 establishes three unconditional facts that fix the domain and centering of $W_r$.</p>
+<p><strong>Proposition 1 (Unconditional Boundary, Centering, and Prime-Power Repairs).</strong> <em>Fix $0 &lt; \theta &lt; 1$.</em></p>
+<ol>
+<li><em>(Failure of un-truncated maximization from $x_1 = 2$.)</em> Let $\mathcal{G}<em>{\mathrm{all}}(X)$ be the greedy disjoint tiling of $[2, X]$ starting at $x_1 = 2$ with $h_r = \max(1, \lfloor x_r^\theta \rfloor)$. At $\theta = 0.85$ ($1 - \theta = 0.1500$), the first three windows are $[2, 3)$, $[3, 5)$, and $[5, 8)$ ($x_3 = 5$, $h_3 = \lfloor 5^{0.85}\rfloor = 3$). Because $[5, 8)$ contains the two primes ${5, 7}$ while $E_3 = \int_5^8 dt/\ln t = 1.619090\dots$,
+$$W_3 = \frac{2 - 1.619090\dots}{\sqrt{6}} = 0.155505\dots &gt; 0.1500 = 1 - \theta.$$
+Hence $\max</em>{r \in \mathcal{G}<em>{\mathrm{all}}(X)} W_r \ge 0.155505 &gt; 1 - \theta$ for every $X \ge 8$. Any valid statement of the $(1-\theta)$ extreme law must therefore let the lower cutoff tend to infinity (either via $\limsup</em>{r\to\infty} W_r$ or on a moving band $\mathcal{G}(X) \subset [X, AX]$ as $X \to \infty$).</li>
+<li><em>(Divergence of midpoint centering for $\theta &gt; 4/5$.)</em> Let $E_r^{\mathrm{mid}} := \frac{h_r}{\ln(x_r + h_r/2)}$ and $W_r^{\mathrm{mid}} := (\pi(x_r + h_r - 1) - \pi(x_r - 1) - E_r^{\mathrm{mid}})/\sqrt{2h_r}$. Since $f(t) = (\ln t)^{-1}$ satisfies $f''(t) = \frac{\ln t + 2}{t^2(\ln t)^3} &gt; 0$ for all $t &gt; 1$, midpoint quadrature strictly underestimates $E_r$ on every window, creating a deterministic positive shift
+$$W_r^{\mathrm{mid}} - W_r = \frac{E_r - E_r^{\mathrm{mid}}}{\sqrt{2 h_r}} = \frac{h_r^{5/2}}{24\sqrt{2}},\frac{\ln \xi_r + 2}{\xi_r^2(\ln \xi_r)^3} \sim \frac{x_r^{\frac52\theta - 2}}{24\sqrt{2},(\ln x_r)^2}$$
+for some $\xi_r \in (x_r, x_r + h_r)$. This bias tends to $0$ when $0 &lt; \theta \le 4/5$, but <strong>diverges to $+\infty$ for every $\theta \in (4/5, 1)$</strong> (and for left-endpoint centering $h_r/\ln x_r$, diverges already for $\theta &gt; 2/3$).</li>
+<li><em>(Uniform negligibility of higher prime powers across $0 &lt; \theta &lt; 1$.)</em> Writing $\psi(x_r + h_r - 1) - \psi(x_r - 1) = \sum_{x_r \le p &lt; x_r + h_r}\ln p + R_{\mathrm{pp}}(r)$, the prime-power remainder $R_{\mathrm{pp}}(r) = \sum_{m \ge 2}\sum_{x_r \le p^m &lt; x_r + h_r}\ln p$ satisfies
+$$\frac{R_{\mathrm{pp}}(r)}{\sqrt{2 h_r},\ln x_r} = O!\left(\frac{x_r^{-(1-\theta)/2}}{\ln x_r} + \frac{\ln x_r}{x_r^{\theta/2}}\right) \xrightarrow{x_r \to \infty} 0$$
+uniformly on $\mathcal{G}(X)$ for every fixed $\theta \in (0, 1)$.</li>
+</ol>
+<p><em>Proof.</em> Part (1) is a direct evaluation: $5^{0.85} = 3.9267\dots$ gives $h_3 = 3$, and numerical quadrature gives $\int_5^8 dt/\ln t = 1.61909039\dots$, whence $(2 - E_3)/\sqrt{6} = 0.1555056\dots &gt; 0.15$. For part (2), Taylor expansion of $f(t) = (\ln t)^{-1}$ about the midpoint $m_r = x_r + h_r/2$ integrates the linear term to zero and yields $E_r - h_r f(m_r) = \int_{-h_r/2}^{h_r/2} \frac12 u^2 f''(\eta_r(u)),du = \frac{h_r^3}{24} f''(\xi_r)$ by the weighted mean-value theorem. Differentiating $f'(t) = -t^{-1}(\ln t)^{-2}$ gives $f''(t) = t^{-2}(\ln t)^{-2} + 2t^{-2}(\ln t)^{-3} = (\ln t + 2)/(t^2\ln^3 t)$. Substituting $h_r = x_r^\theta + O(1)$ and $\xi_r \sim x_r$ gives $h_r^{5/2}/(24\sqrt{2},x_r^2\ln^2 x_r) = x_r^{\frac52\theta - 2}/(24\sqrt{2}\ln^2 x_r)$, whose exponent $\frac52\theta - 2$ is positive if and only if $\theta &gt; 4/5$. (For $h_r/\ln x_r$, the error is $\frac12 h_r^2 |f'(\xi_r)|/\sqrt{2h_r} \asymp x_r^{\frac32\theta - 1}/\ln^2 x_r$, diverging for $\theta &gt; 2/3$.) For part (3), each $m \ge 3$ contributes $O(x_r^{\theta - 2/3} + \ln x_r)$ across $O(\ln x_r)$ exponents, totaling $O(x_r^{\theta - 2/3}\ln x_r + \ln^2 x_r)$. For $m = 2$, the interval $[\sqrt{x_r}, \sqrt{x_r + h_r})$ has length $\asymp h_r/\sqrt{x_r} \asymp x_r^{\theta - 1/2}$: if $\theta \le 1/2$ it contains $O(1)$ integers, contributing $O(\ln x_r)$; if $\theta &gt; 1/2$, the Brun--Titchmarsh inequality bounds the prime count in $[\sqrt{x_r}, \sqrt{x_r + h_r})$ by $O(x_r^{\theta - 1/2}/\ln x_r)$, contributing $O(x_r^{\theta - 1/2})$ to $R_{\mathrm{pp}}(r)$. Dividing by $\sqrt{2h_r}\ln x_r \asymp x_r^{\theta/2}\ln x_r$ yields $O(x_r^{-(1-\theta)/2}/\ln x_r + x_r^{-\theta/2}\ln x_r) \to 0$. $\square$</p>
+<p><img src="fig1_repairs_and_envelope.png" alt="Boundary repairs and multi-scale moving-band extremes across $[5imes 10^7, 2imes 10^8]$. (a) Un-truncated cumulative maxima starting at $x_1 = 2$ are pinned above $1 - heta$ at $heta = 0.85$ by the early window $[5, 8)$ ($W_3 = 0.1555 &gt; 0.15$), whereas tail maxima on $x_r e 10^5$ track below $1 - heta$. (b) Across seven scales $heta n [0.30, 0.92]$ ($M = 574{,}918$ down to $6$ windows), exact logarithmic-integral prime surpluses and shortfalls follow the zero-parameter two-term Montgomery--Soundararajan + Gumbel prediction, while midpoint centering drifts upward above $heta = 4/5$." /></p>
+<p>Table 1 tests Proposition 1 and the zero-parameter finite-height prediction across $[5\times 10^7, 2\times 10^8]$. At representative log-height $\bar{\ell} = \overline{\ln(x_r + h_r/2)} \approx 18.6$, Montgomery and Soundararajan's local variance-to-mean ratio is $F_{\mathrm{MS}}(\theta) = (1 - \theta) + B/\bar{\ell}$ with $B = 1 - \gamma - \ln(2\pi) = -1.4150927\dots$ [1, 3]. Combining $F_{\mathrm{MS}}(\theta)$ with the exact median $z_{\mathrm{med}}(M)$ of $\max_{1\le r\le M} Z_r$ for $M$ standard normals ($\Phi(-z_{\mathrm{med}}) = 1 - 2^{-1/M}$) yields the <strong>zero-parameter finite-size prediction</strong> $W_{\mathrm{med}}(\theta) = z_{\mathrm{med}}(M)\sqrt{F_{\mathrm{MS}}(\theta)/(2\bar{\ell})}$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">$\theta$</th>
+<th style="text-align:right">Windows $M$</th>
+<th style="text-align:right">Limit $1-\theta$</th>
+<th style="text-align:right">Measured $F$</th>
+<th style="text-align:right">Two-term $F_{\mathrm{MS}}$</th>
+<th style="text-align:center">Zero-param median ($5%$--$95%$)</th>
+<th style="text-align:right">Max surplus ($E^{\mathrm{li}}$)</th>
+<th style="text-align:right">Max shortfall ($E^{\mathrm{li}}$)</th>
+<th style="text-align:center">Midpoint drift meas. / formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">$0.30$</td>
+<td style="text-align:right">$574{,}918$</td>
+<td style="text-align:right">$0.70$</td>
+<td style="text-align:right">$0.6249$</td>
+<td style="text-align:right">$0.6236$</td>
+<td style="text-align:center">$0.6117$ ($0.572$--$0.677$)</td>
+<td style="text-align:right">$0.6145$</td>
+<td style="text-align:right">$0.5444$</td>
+<td style="text-align:center">$0.000000$ / $0.000000$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.40$</td>
+<td style="text-align:right">$90{,}040$</td>
+<td style="text-align:right">$0.60$</td>
+<td style="text-align:right">$0.5241$</td>
+<td style="text-align:right">$0.5236$</td>
+<td style="text-align:center">$0.5140$ ($0.474$--$0.579$)</td>
+<td style="text-align:right">$0.6059$</td>
+<td style="text-align:right">$0.4871$</td>
+<td style="text-align:center">$0.000000$ / $0.000000$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.50$</td>
+<td style="text-align:right">$14{,}143$</td>
+<td style="text-align:right">$0.50$</td>
+<td style="text-align:right">$0.4228$</td>
+<td style="text-align:right">$0.4235$</td>
+<td style="text-align:center">$0.4168$ ($0.377$--$0.480$)</td>
+<td style="text-align:right">$0.4234$</td>
+<td style="text-align:right">$0.4041$</td>
+<td style="text-align:center">$0.000000$ / $0.000000$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.60$</td>
+<td style="text-align:right">$2{,}225$</td>
+<td style="text-align:right">$0.40$</td>
+<td style="text-align:right">$0.3000$</td>
+<td style="text-align:right">$0.3234$</td>
+<td style="text-align:center">$0.3200$ ($0.281$--$0.381$)</td>
+<td style="text-align:right">$0.3099$</td>
+<td style="text-align:right">$0.3836$</td>
+<td style="text-align:center">$0.000000$ / $0.000000$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.70$</td>
+<td style="text-align:right">$351$</td>
+<td style="text-align:right">$0.30$</td>
+<td style="text-align:right">$0.2344$</td>
+<td style="text-align:right">$0.2234$</td>
+<td style="text-align:center">$0.2242$ ($0.186$--$0.282$)</td>
+<td style="text-align:right">$0.2640$</td>
+<td style="text-align:right">$0.2300$</td>
+<td style="text-align:center">$0.000001$ / $0.000002$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.80$</td>
+<td style="text-align:right">$55$</td>
+<td style="text-align:right">$0.20$</td>
+<td style="text-align:right">$0.1162$</td>
+<td style="text-align:right">$0.1233$</td>
+<td style="text-align:center">$0.1295$ ($0.093$--$0.180$)</td>
+<td style="text-align:right">$0.1042$</td>
+<td style="text-align:right">$0.1219$</td>
+<td style="text-align:center">$0.000094$ / $0.000094$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.85$</td>
+<td style="text-align:right">$22$</td>
+<td style="text-align:right">$0.15$</td>
+<td style="text-align:right">$0.0673$</td>
+<td style="text-align:right">$0.0732$</td>
+<td style="text-align:center">$0.0832$ ($0.051$--$0.126$)</td>
+<td style="text-align:right">$0.0782$</td>
+<td style="text-align:right">$0.0708$</td>
+<td style="text-align:center">$0.000902$ / $0.000901$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.90$</td>
+<td style="text-align:right">$9$</td>
+<td style="text-align:right">$0.10$</td>
+<td style="text-align:right">$0.0345$</td>
+<td style="text-align:right">$0.0231$</td>
+<td style="text-align:center">$0.0362$ ($0.014$--$0.064$)</td>
+<td style="text-align:right">$0.0444$</td>
+<td style="text-align:right">$0.0385$</td>
+<td style="text-align:center">$0.008118$ / $0.008103$</td>
+</tr>
+<tr>
+<td style="text-align:right">$0.92$</td>
+<td style="text-align:right">$6$</td>
+<td style="text-align:right">$0.08$</td>
+<td style="text-align:right">$0.0154$</td>
+<td style="text-align:right">$0.0050$</td>
+<td style="text-align:center">$0.0144$ ($0.003$--$0.028$)</td>
+<td style="text-align:right">$0.0171$</td>
+<td style="text-align:right">$0.0397$</td>
+<td style="text-align:center">$0.018724$ / $0.018657$</td>
+</tr>
+</tbody>
+</table>
+<p>The analytical midpoint-bias formula of Proposition 1(2) agrees with the measured shift $\overline{W^{\mathrm{mid}} - W}$ to three significant digits across $\theta \in [0.80, 0.92]$ (already inflating the apparent maximum surplus at $\theta = 0.90$ by $+20%$, from $0.0444$ to $0.0533$, and at $\theta = 0.92$ by $+112%$, from $0.0171$ to $0.0362$).</p>
+<h2>3. Undecidability from Fixed Moments vs. Eventual Legendre at $K = 4$</h2>
+<p>In [1, p. 594], Montgomery and Soundararajan state the following conjecture for the moments of $\psi(n + H) - \psi(n) - H$:</p>
+<ul>
+<li><strong>Conjecture 1 of Montgomery--Soundararajan (fixed $K$).</strong> <em>For each fixed integer $K \ge 1$, uniformly for $(\ln N)^{1+\delta} \le H \le N^{1-\delta}$,</em>
+$$M_K(N; H) := \sum_{n=1}^N \bigl(\psi(n+H) - \psi(n) - H\bigr)^K = \bigl(\mu_K + o_K(1)\bigr),N,\bigl(H\ln(N/H)\bigr)^{K/2},$$
+<em>where $\mu_K = (K - 1)!!$ for even $K$ and $\mu_K = 0$ for odd $K$.</em></li>
+</ul>
+<p>(Their conditional Theorem 3 in [1] establishes this asymptotic under a strong uniform Hardy--Littlewood $k$-tuple error bound $O(N^{1/2+\varepsilon})$ only in the restricted range $H \le N^{1/K}$, which at $H = N^\theta$ caps $K \le \lfloor 1/\theta \rfloor$.)</p>
+<p>Theorem 1 proves that fixed-order or sub-logarithmic moments leave $\sqrt{2h}$ extremes completely undetermined in <strong>both</strong> directions, yet already settle macroscopic prime existence — including eventual Legendre's conjecture at the single fixed moment $K = 4$.</p>
+<p><strong>Theorem 1 (What Fixed and Sub-Logarithmic Moments Do and Do Not Imply).</strong> <em>Fix $0 &lt; \theta &lt; 1$.</em></p>
+<ol>
+<li><em>(Upper-bound undecidability and first-order spectral breakout.)</em> Let $K_{\max}(X) \ge 1$ satisfy $K_{\max}(X) = o(\ln X / \ln\ln X)$, and let $\Lambda \in (1 - \theta, \infty)$ be any prescribed constant. There exists a binary sequence $I_n \in {0, 1}$ ($n \ge 2$) of local density $\sim 1/\ln n$ whose window counts $C(x, h) = \sum_{x \le n &lt; x+h} I_n$ satisfy <strong>both</strong> the all-shifts moment asymptotic $\frac{1}{X}\sum_{n=X}^{2X}(C(n, H) - E(n, H))^K / (H(1-\theta)/\ln X)^{K/2} = \mu_K + o(1)$ ($H = \lfloor X^\theta \rfloor$) <strong>and</strong> the disjoint-tiling moment asymptotic $\frac{1}{M}\sum_{r \in \mathcal{G}(X)} Z_r^K = \mu_K + o(1)$ ($Z_r := \sqrt{2\ln X/(1-\theta)},W_r$) uniformly for all $1 \le K \le K_{\max}(X)$ — together with all fixed-order, fixed-lag joint Gaussian moments with Coulomb correlation $-\Delta(d)/((1-\theta)\ln X)$ — while satisfying
+$$\lim_{X \to \infty} \max_{r \in \mathcal{G}(X)} W_r = +\Lambda \qquad \text{and} \qquad \lim_{X \to \infty} \min_{r \in \mathcal{G}(X)} W_r = -\Lambda.$$
+Moreover, writing $\Lambda_\star := \Lambda / (1 - \theta) &gt; 1$ and $\beta = m/\ln M$, its standardized $2m$-th root ratio converges for every $\beta &gt; 0$ to
+$$\Phi_{\mathrm{spike}}(\beta; \Lambda_\star) = \max!\left(1,; \Lambda_\star,\frac{e^{\frac12(1 - 1/\beta)}}{\sqrt{\beta}}\right),$$
+which breaks out of the Gaussian plateau $\Phi = 1$ with a <strong>first-order slope discontinuity</strong> at the unique root $\beta_{\mathrm{break}}(\Lambda_\star) \in (0, 1)$ of $\beta e^{1/\beta - 1} = \Lambda_\star^2$.</li>
+<li><em>(Eventual Legendre's conjecture from the single fixed moment $K = 4$.)</em> Conversely, assume Montgomery and Soundararajan's Conjecture 1 holds <strong>solely at the single fixed even integer</strong>
+$$K_\theta := 2\left\lfloor \frac{1 - \theta}{\theta}\right\rfloor + 2.$$
+Then for every fixed $\delta \in (0, 1]$ and all sufficiently large $x$, every interval $[x, x + x^\theta]$ contains at least $(1 - \delta)x^\theta / \ln x$ primes. In particular, at $\theta = 1/2$, <strong>Conjecture 1 at the single fixed order $K = 4$ implies Legendre's conjecture for all sufficiently large $n$</strong>.</li>
+<li><em>(Lower-bound undecidability and premature condensation.)</em> Fix $\alpha \in (0, 1)$. Cycling through $\lfloor M^\alpha \rfloor$ realizations of a stationary Gaussian sequence (independent or MA-correlated with lag-$1$ correlation $-\ln 2/((1-\theta)\ln X)$) across the $M$ windows of $\mathcal{G}(X)$ satisfies all single-window and fixed-lag Gaussian moment asymptotics up to $K \le 2\beta_0(1-\theta)\ln X$ for every $\beta_0 &lt; \alpha$, condenses prematurely at $\beta = \alpha &lt; 1$ onto
+$$\Phi_{\mathrm{rec}}(\beta; \alpha) = \begin{cases} 1, &amp; 0 &lt; \beta \le \alpha, \ \sqrt{\alpha/\beta};e^{\frac12(1 - \alpha/\beta)}, &amp; \beta &gt; \alpha, \end{cases}$$
+and collapses the extreme limits to $\lim \max W_r = +\sqrt{\alpha}(1-\theta)$ and $\lim \min W_r = -\sqrt{\alpha}(1-\theta)$ in probability (and almost surely along dyadic bands $X_j = 2^j$).</li>
+</ol>
+<p><em>Proof.</em>
+For <strong>(1)</strong>, let $(G_n)<em>{n\ge 2}$ be a stationary Gaussian sequence whose block sums reproduce the local covariance structure, and threshold $I_n^{(0)} := \mathbf{1}</em>{G_n &gt; \Phi^{-1}(1 - 1/\ln n)}$. By Mehler's Hermite expansion (Proposition 2(2) below) and Pickands' extreme theorem [7], $I_n^{(0)}$ satisfies the stated bulk moments and $\max_{r\in\mathcal{G}(X_j)} |W_r^{(0)}| = (1 - \theta)(1 + o(1))$ almost surely across $X_j = 2^j$; fix one deterministic realization. In each dyadic band $[X_j, 2X_j]$, select two interior windows $I_{j,+}, I_{j,-} \in \mathcal{G}(X_j)$ separated by at least $2H_j$ ($H_j = \lfloor X_j^\theta \rfloor$). Since $\Lambda\sqrt{2H_j} = o(H_j/\ln X_j)$ while $I_{j,\pm}$ each contain $\sim H_j/\ln X_j$ ones and $\sim H_j$ zeros, we may flip integers inside the middle half of $I_{j,+}$ and $I_{j,-}$ so that $W_{r_+} = \Lambda + O(H_j^{-1/2})$ and $W_{r_-} = -\Lambda + O(H_j^{-1/2})$ ($Z_{r_\pm} = \pm\Lambda_\star\sqrt{2L_j}(1 + o(1))$). At most $4H_j$ shifts $n \in [X_j, 2X_j]$ intersect $I_{j,+}\cup I_{j,-}$, and on each such shift $|Z(n)| \le C\Lambda_\star\sqrt{\ln X_j}$. The resulting perturbation to $\frac{1}{X_j}\sum_{n=X_j}^{2X_j} Z(n)^K$ (and similarly to $\frac{1}{M}\sum_{r\in\mathcal{G}(X_j)} Z_r^K$) is bounded by
+$$O!\left(\frac{H_j}{X_j}\right)\bigl(C\Lambda_\star\sqrt{\ln X_j}\bigr)^K = \exp!\Bigl(-(1-\theta)\ln X_j + \tfrac12 K\ln\ln X_j + O(K)\Bigr) \xrightarrow{j\to\infty} 0$$
+uniformly for $1 \le K \le K_{\max}(X_j)$ whenever $K_{\max}(X)\ln\ln X = o(\ln X)$. At growing even order $2m = 2\lfloor \beta L_j\rfloor$, write $\sum_{r=1}^M Z_r^{2m} = \sum_{r \notin {r_+, r_-}} (Z_r^{(0)})^{2m} + 2\Lambda_\star^{2m}(2L_j)^m(1 + o(1))^{2m}$. Dividing by $M = e^{L_j + O(1)}$, taking $2m$-th roots, and dividing by $\mu_{2m}^{1/(2m)} \sim \sqrt{2\beta L_j / e}$ gives the maximum of the bulk ratio $\Phi_{\mathrm{cond}}(\beta) \le 1$ and the spike ratio $e^{-1/(2\beta)}\Lambda_\star\sqrt{2L_j}/\sqrt{2\beta L_j/e} = \Lambda_\star\beta^{-1/2}e^{\frac12(1-1/\beta)}$. Since $\beta^{-1/2}e^{\frac12(1-1/\beta)}$ increases strictly from $0$ to $1$ on $(0, 1]$, the spike overtakes $1$ precisely above $\beta_{\mathrm{break}}(\Lambda_\star) \in (0, 1)$, where $\frac{d}{d\beta}\bigl(\Lambda_\star\beta^{-1/2}e^{\frac12(1-1/\beta)}\bigr)\big|<em>{\beta</em>{\mathrm{break}}} = \frac{1 - \beta_{\mathrm{break}}}{2\beta_{\mathrm{break}}^2} &gt; 0$.</p>
+<p>For <strong>(2)</strong>, suppose an interval $[x_\star, x_\star + x_\star^\theta]$ with $x_\star \in [N/2, N]$ contains at most $(1 - \delta)x_\star^\theta/\ln x_\star$ primes ($\delta \in (0, 1]$; the case $\delta = 1$ is a prime-free interval). Set $\varepsilon_\delta := \frac{\theta\delta}{4} &gt; 0$ and $H_2 := \lfloor (1 + \varepsilon_\delta)x_\star^\theta\rfloor \asymp_{\theta,\delta} N^\theta$. For every integer shift $n \in [x_\star - \varepsilon_\delta x_\star^\theta, x_\star]$, the shifted window $[n, n + H_2]$ covers $[x_\star, x_\star + x_\star^\theta]$ together with at most $\varepsilon_\delta x_\star^\theta + 1$ exterior integers. Including higher prime powers on $[x_\star, x_\star + x_\star^\theta]$ adds $O(x_\star^{\theta - 1/2} + \ln^2 x_\star) = o(x_\star^\theta)$ to $\psi$, while by the Brun--Titchmarsh inequality an exterior block of length $y = \varepsilon_\delta x_\star^\theta$ contains at most $\frac{2y}{\ln y}(1 + o(1)) = \frac{2\varepsilon_\delta}{\theta}\frac{x_\star^\theta}{\ln x_\star}(1 + o(1)) = \frac{\delta}{2}\frac{x_\star^\theta}{\ln x_\star}(1 + o(1))$ primes and hence contributes at most $(\frac{\delta}{2} + o(1))x_\star^\theta$ to $\psi$. Consequently, for all $\lfloor \varepsilon_\delta x_\star^\theta \rfloor \gg_{\theta,\delta} N^\theta$ shifts $n$ in that range,
+$$\psi(n + H_2) - \psi(n) ;\le; \bigl(1 - \tfrac{\delta}{2} + o(1)\bigr)x_\star^\theta ;=; H_2 - \bigl(\tfrac{\delta}{2} + \varepsilon_\delta - o(1)\bigr)x_\star^\theta,$$
+so $|\psi(n + H_2) - \psi(n) - H_2| \ge \frac{\delta}{2}x_\star^\theta$. Raising to the even power $K = K_\theta$ and summing over those shifts yields
+$$M_{K_\theta}(2N; H_2) ;\gg_{\theta,\delta}; N^\theta \cdot (N^\theta)^{K_\theta} = N^{\theta(K_\theta + 1)}.$$
+Under Conjecture 1 at fixed even order $K = K_\theta$, $M_{K_\theta}(2N; H_2) \ll N(H_2\ln N)^{K_\theta/2} \asymp_{\theta,\delta} N^{1 + \theta K_\theta/2}(\ln N)^{K_\theta/2}$. By choice of $K_\theta = 2\lfloor\frac{1-\theta}{\theta}\rfloor + 2 &gt; \frac{2(1-\theta)}{\theta}$, the exponent $\theta(K_\theta + 1)$ strictly exceeds $1 + \frac12\theta K_\theta$, a contradiction for all large $N$. At $\theta = 1/2$, $K_{1/2} = 4$ gives $N^{5/2}$ against $N^2(\ln N)^2$; taking $x_\star = n^2$ and $\delta = 1/2$ certifies at least $(\frac12 - o(1))n/\ln n$ primes in $(n^2, (n+1)^2)$ for all sufficiently large $n$.</p>
+<p>Part <strong>(3)</strong> follows by applying Theorem 2(b) below to the empirical measure of $M_{\mathrm{sub}} = \lfloor M^\alpha \rfloor$ Gaussian variables (whose own logarithmic size is $L_{\mathrm{sub}} = \alpha L + O(1)$, so rescaling $\beta_{\mathrm{sub}} = m/(\alpha L) = \beta/\alpha$ substitutes $\beta \mapsto \beta/\alpha$ into $\Phi_{\mathrm{cond}}$). $\square$</p>
+<p><em>Remark (Why Selberg's $K = 2$ barely misses Legendre while $K = 4$ succeeds).</em> At $\theta = 1/2$, setting $K = 2$ gives $\theta(K + 1) = \frac32 = 1 + \frac12\theta K$: the void lower bound $N^{3/2}$ falls below Selberg's RH bound $N^{3/2}(\ln N)^2$ [5, 6] by $(\ln N)^2$, leaving room for $O(\ln^2 M)$ exceptional square intervals per dyadic band ($O(\ln^3 M)$ below $M^2$, refined to $O(f(M^2)\ln^2 M)$ by Bazzanella [9]; compare Proposition 3 of [10]). Stepping to the single fixed moment $K = 4$ breaks the exponent tie by $N^{1/2}/(\ln N)^2$ and eliminates all large exceptions.</p>
+<h2>4. Moment Condensation and Deterministic Proof of the Extreme Law</h2>
+<p>Standardize each window on $\mathcal{G}(X)$ to asymptotic unit variance by setting
+$$Z_r := \sqrt{\frac{2\ln X}{1 - \theta}},W_r \qquad (r \in \mathcal{G}(X),; |\mathcal{G}(X)| = M = e^{L(X)}),$$
+so that $\max_{r\in\mathcal{G}(X)} W_r \to +(1 - \theta)$ and $\min_{r\in\mathcal{G}(X)} W_r \to -(1 - \theta)$ are equivalent to $\max_r Z_r/\sqrt{2L} \to +1$ and $\min_r Z_r/\sqrt{2L} \to -1$.</p>
+<h3>4.1 Sub-Cramér Cumulants and Open-Strip Concentration</h3>
+<p>Before stating the deterministic moment theorem, Proposition 2 explains two structural facts: (a) why polynomial windows $h = x^\theta$ retain the Gaussian extreme constant $1 - \theta$ rather than deforming as logarithmic windows $h = (\ln x)^\alpha$ do [3], and (b) why weak negative correlations between neighbouring windows [2] do not disturb empirical moments on the open sub-critical strip $0 &lt; \beta &lt; 1$.</p>
+<p><strong>Proposition 2 (Sub-Cramér Cumulant Decay and Mehler--Hermite Concentration).</strong></p>
+<ol>
+<li><em>(Sub-Cramér saddlepoint scaling for $h = x^\theta$.)</em> Let $Y$ be a centered random variable with mean parameter $\lambda = X^\theta/\ln X$, variance $\sigma^2 \sim (1-\theta)\lambda$, and cumulants satisfying linear sieve-type bounds $|\kappa_r(Y)| \le C^r r!,\lambda$ for all $r \ge 3$. At the extreme deviation height $y_\star = (1-\theta)\sqrt{2X^\theta}$, the saddlepoint tilt $t_\star := y_\star/\sigma^2 = \sqrt{2},X^{-\theta/2}\ln X \bigl(1 + o(1)\bigr)$ tends to $0$, and all non-Gaussian cumulants in the Cramér series satisfy
+$$\sum_{r=3}^{\infty} \frac{|\kappa_r(Y)|}{r!},t_\star^r ;\ll; \lambda t_\star^3 ;\asymp; \frac{(\ln X)^2}{X^{\theta/2}} \xrightarrow{X \to \infty} 0 \qquad (\forall,\theta \in (0, 1)).$$
+By contrast, on logarithmic windows $h = (\ln X)^\alpha$, $\lambda t_\star^3 \asymp (\ln X)^{2 - \alpha/2}$ fails to vanish for $\alpha \le 4$, altering the extreme constant [3].</li>
+<li><em>(Exponential concentration on $0 &lt; \beta &lt; 1$ under Coulomb covariance.)</em> Let $(Z_1, \dots, Z_M) \sim \mathcal{N}(\mathbf{0}, \mathcal{C}<em>X)$ ($M = e^{L}$, $L = (1-\theta)\ln X + O(1)$) have unit diagonal and Leung's short-interval off-diagonal correlations [2]
+$$\rho</em>{jk} = -\frac{\Delta(|j - k|)}{(1 - \theta)\ln X + O(1)} &lt; 0 \quad (j \ne k), \qquad \Delta(d) := \frac12\bigl((d+1)\ln(d+1) - 2d\ln d + (d-1)\ln(d-1)\bigr).$$
+Then for every fixed $\beta \in (0, 1)$ and $m = \lfloor \beta L \rfloor$, as $X \to \infty$,
+$$\frac{1}{M}\sum_{r=1}^M Z_r^{2m} = \bigl(1 + o_{\mathbb{P}}(1)\bigr),\mu_{2m} \qquad \text{and} \qquad \left|\frac{1}{M}\sum_{r=1}^M Z_r^{2m - 1}\right| = o_{\mathbb{P}}!\left(\frac{\mu_{2m}}{\sqrt{2m}}\right),$$
+and uniformly for $1 \le m \le \beta L$, $\bigl(\frac{1}{M}\sum_{r=1}^M Z_r^{2m}\bigr)^{1/(2m)} / \mu_{2m}^{1/(2m)} \xrightarrow{\mathbb{P}} 1$ (and almost surely along dyadic bands $X_j = 2^j$).</li>
+</ol>
+<p><em>Proof.</em> Part (1) is immediate on summing the geometric tail for $C t_\star \le \frac12$: $\sum_{r\ge 3} C^r \lambda t_\star^r \le 2C^3 \lambda t_\star^3 \asymp (X^\theta/\ln X)(X^{-3\theta/2}\ln^3 X) = X^{-\theta/2}(\ln X)^2 \to 0$. For part (2), truncate each coordinate at $B_L := \sqrt{2L + 2\ln L}$, setting $\widetilde{Z}<em>r := Z_r\mathbf{1}</em>{|Z_r|\le B_L}$. By a union bound, $\mathbb{P}(\exists r : |Z_r| &gt; B_L) \le 2M\Phi(-B_L) \ll L^{-3/2} \to 0$ (summable over dyadic bands $L_j \asymp j\ln 2$). Fix $\beta \in (0, 1)$ and $m = \lfloor \beta L\rfloor$. To bound the diagonal fourth moment $\mathbb{E}[\widetilde{Z}<em>1^{4m}]$, consider two cases: if $\beta \le \frac12$, $\mathbb{E}[\widetilde{Z}<em>1^{4m}] \le \mu</em>{4m} \ll 2^{2m}\mu</em>{2m}^2$, so $\frac{1}{M}\mathbb{E}[\widetilde{Z}<em>1^{4m}]/\mu</em>{2m}^2 \ll e^{-(1 - 2\beta\ln 2)L} \le e^{-(1 - \ln 2)L} \to 0$; if $\beta \in (\frac12, 1)$, then $4m \ge 2L$ for large $L$, so $\mathbb{E}[\widetilde{Z}<em>1^{4m}] \le B_L^{4m - 2L}\mathbb{E}[Z_1^{2L}] \ll L^{O(1)}(2L)^{2m - L}(2L/e)^L = L^{O(1)}(2L)^{2m}e^{-L}$, whence
+$$\frac{\frac{1}{M}\mathbb{E}[\widetilde{Z}<em>1^{4m}]}{\mu</em>{2m}^2} ;\ll; L^{O(1)},\exp\bigl(-2(1 - \beta + \beta\ln\beta)L\bigr) \xrightarrow{L\to\infty} 0,$$
+since $1 - \beta + \beta\ln\beta &gt; 0$ for all $\beta \in (0, 1)$. For off-diagonal pairs $j \ne k$, expand the even function $g_m(z) := z^{2m}\mathbf{1}</em>{|z|\le B_L}$ in probabilists' Hermite polynomials $g_m(z) = \sum_{q\ge 0} c_{m,q}\operatorname{He}<em>{2q}(z)$. By Mehler's identity $\operatorname{Cov}(\operatorname{He}<em>r(Z_j), \operatorname{He}<em>s(Z_k)) = \delta</em>{rs} r!,\rho</em>{jk}^r$, Parseval's identity $\sum</em>{q\ge 1}(2q)!,c_{m,q}^2 \le \mathbb{E}[\widetilde{Z}<em>1^{4m}]$, and $\Delta(d) = \frac{1}{2d} + O(d^{-3})$ (which gives $\sum</em>{d=1}^M \rho_d^2 \ll (\ln X)^{-2}\sum_{d=1}^\infty d^{-2} = O((\ln X)^{-2})$), we obtain
+$$\left|\frac{1}{M^2}\sum_{j \ne k} \operatorname{Cov}\bigl(\widetilde{Z}<em>j^{2m}, \widetilde{Z}<em>k^{2m}\bigr)\right| ;\le; \frac{2}{M}\left(\sum</em>{d=1}^M \rho_d^2\right)\mathbb{E}[\widetilde{Z}<em>1^{4m}] ;\ll; \frac{\mathbb{E}[\widetilde{Z}<em>1^{4m}]}{M(\ln X)^2}.$$
+Moreover, the truncation bias satisfies $\mu</em>{2m} - \mathbb{E}[\widetilde{Z}<em>1^{2m}] = \int</em>{|z|&gt;B_L} z^{2m}\phi(z),dz \ll B_L^{2m-1}e^{-B_L^2/2} \ll L^{-3/2}e^{-(1-\beta+\beta\ln\beta)L}\mu</em>{2m}$. For odd order $2m - 1$, $\mathbb{E}[\widetilde{Z}<em>1^{2m-1}] = 0$ by symmetry, and the same Hermite--Parseval bound on $h_m(z) := z^{2m-1}\mathbf{1}</em>{|z|\le B_L}$ (using $|\rho</em>{jk}|^{2q+1} \le |\rho_{jk}|$ and $\frac{1}{M}\sum_{d=1}^M |\rho_d| \ll \frac{\ln M}{M\ln X} = O(M^{-1})$) bounds $\operatorname{Var}(\frac{1}{M}\sum_{r=1}^M \widetilde{Z}_r^{2m-1})$ by $O(M^{-1}\mathbb{E}[\widetilde{Z}<em>1^{4m-2}]) = o((\mu</em>{2m}/\sqrt{2m})^2)$. Chebyshev's inequality (and a union bound over the $\le L$ integers $1 \le m \le \beta L$ for $2m$-th roots) completes the proof. $\square$</p>
+<p><img src="fig2_moment_condensation.png" alt="Phase portrait of moment condensation and multi-scale data collapse. (a) Across $30$ even orders $2 e 2m e 60$ on $M = 574{,}918$ disjoint prime windows at $heta = 0.30$, prime moments normalized by the zero-parameter two-term Montgomery--Soundararajan variance match both the correlated Gaussian control and the zero-parameter finite-$M$ incomplete-gamma curve $athcal{R}{athrm{IG}}(m;M)$, condensing onto $hi{athrm{cond}}(eta)$ above $eta = 1$. By contrast, the single-spike countermodel (Theorem 1(1)) breaks out at $eta_{athrm{break}} = 0.294$ and the recycled-$M^{0.5}$ pool (Theorem 1(3)) condenses prematurely. (b) Across multiple exponents ($heta = 0.30, 0.40, 0.50$) and two height bands, prime moment curves with distinct raw thresholds $K_{athrm{crit}} = 19.1, 24.8, 26.5$ collapse onto the universal condensation profile when plotted against $eta = K/(2n M)$." /></p>
+<h3>4.2 Deterministic Sub-Critical Moment Proof and Ehrenfest Condensation</h3>
+<p>Motivated by Proposition 2(2), we formulate our conditional input <strong>solely on the open sub-critical strip $0 &lt; \beta &lt; 1$</strong>, strictly below the condensation point $\beta = 1$:</p>
+<ul>
+<li><strong>Hypothesis $\mathrm{UMS}_0(\theta)$ (Open-Strip Uniform Sub-Critical Moments).</strong> <em>With $L = L(X) = \ln|\mathcal{G}(X)|$ and $Z_r = \sqrt{\frac{2\ln X}{1-\theta}},W_r$:</em>
+<ol>
+<li><strong>(UMS$_0$-even):</strong> <em>For every fixed $\beta_0 \in (0, 1)$, uniformly across $1 \le m \le \beta_0 L$, $\bigl(\frac{1}{M}\sum_{r\in\mathcal{G}(X)} Z_r^{2m}\bigr)^{1/(2m)} = (1 + o(1))\mu_{2m}^{1/(2m)}$, and at each fixed $\beta \in (0, 1)$ with $m = \lfloor\beta L\rfloor$, $\frac{1}{M}\sum_{r\in\mathcal{G}(X)} Z_r^{2m} = (1 + o(1))\mu_{2m}$.</em></li>
+<li><strong>(UMS$_0$-odd):</strong> <em>For each fixed $\beta \in (0, 1)$ and $m = \lfloor\beta L\rfloor$, $\bigl|\frac{1}{M}\sum_{r\in\mathcal{G}(X)} Z_r^{2m-1}\bigr| = o\bigl(\mu_{2m}/\sqrt{2m}\bigr)$ as $X \to \infty$.</em></li>
+</ol>
+</li>
+</ul>
+<p><strong>Theorem 2 (Deterministic Equivalence of Open-Strip Moments, Short-Interval Extremes, and Second-Order Condensation).</strong> <em>Fix $0 &lt; \theta &lt; 1$, and let $\mathcal{G}(X)$ be the disjoint tiling of $[X, AX]$ ($A &gt; 1$).</em></p>
+<ol>
+<li><em>(Unsigned extreme limit from open-strip even moments alone.)</em> Under <strong>(UMS$_0$-even)</strong> alone — with <strong>no assumption</strong> on the boundary moment $\beta = 1$, on odd moments, or on independence or correlations between windows —
+$$\lim_{X \to \infty} \max_{r \in \mathcal{G}(X)} |W_r| = 1 - \theta.$$</li>
+<li><em>(Universal Ehrenfest second-order condensation across all $\beta &gt; 0$.)</em> Under <strong>(UMS$_0$-even)</strong> alone, for <strong>every</strong> real $\beta &gt; 0$ (including $\beta = 1$ and the entire super-critical phase $\beta &gt; 1$),
+$$\lim_{X \to \infty} \frac{\left(\frac{1}{M}\sum_{r \in \mathcal{G}(X)} Z_r^{2\lfloor\beta L\rfloor}\right)^{!1/(2\lfloor\beta L\rfloor)}}{\mu_{2\lfloor\beta L\rfloor}^{1/(2\lfloor\beta L\rfloor)}} = \Phi_{\mathrm{cond}}(\beta) := \begin{cases} 1, &amp; 0 &lt; \beta \le 1, \ \dfrac{e^{\frac12(1 - 1/\beta)}}{\sqrt{\beta}}, &amp; \beta &gt; 1. \end{cases}$$
+Here $\Phi_{\mathrm{cond}}(\beta) &lt; 1$ for all $\beta &gt; 1$, $\Phi_{\mathrm{cond}}(1) = 1$, $\Phi'<em>{\mathrm{cond}}(1^-) = \Phi'</em>{\mathrm{cond}}(1^+) = 0$, and $\Phi''<em>{\mathrm{cond}}(1^+) - \Phi''</em>{\mathrm{cond}}(1^-) = -\frac12$ (a second-order freezing transition analogous to random-energy-model condensation [12]). In particular, Montgomery and Soundararajan's Gaussian moment formula cannot hold for $K &gt; K_{\mathrm{crit}}(X) = 2(1 - \theta)\ln X$.</li>
+<li><em>(Both signed extreme limits via Hölder separation.)</em> Under <strong>(UMS$_0$-even)</strong> and <strong>(UMS$_0$-odd)</strong> — again with <strong>no assumption</strong> on independence or joint distributions —
+$$\lim_{X \to \infty} \max_{r \in \mathcal{G}(X)} W_r = +(1 - \theta) \qquad \text{and} \qquad \lim_{X \to \infty} \min_{r \in \mathcal{G}(X)} W_r = -(1 - \theta).$$</li>
+<li><em>(Grid-phase transfer from all-shifts moments.)</em> Partitioning ${X, \dots, X + MH - 1}$ ($H = \lfloor X^\theta \rfloor$) into the $H$ shifted tilings $\mathcal{G}<em>a(X)$ ($0 \le a &lt; H$) gives $\frac{1}{MH}\sum</em>{n=X}^{X+MH-1} Z(n)^{2m} = \frac{1}{H}\sum_{a=0}^{H-1}\bigl(\frac{1}{M}\sum_{r\in\mathcal{G}<em>a(X)} Z</em>{r,a}^{2m}\bigr)$. Hence the all-shifts upper bound $M_{2\lfloor\beta L\rfloor}(X; H) \le X(1 + o(1))^{2\beta L}\mu_{2\lfloor\beta L\rfloor}(H\ln(X/H))^{\lfloor\beta L\rfloor}$ across $\beta \in (0, 1)$ forces $\limsup_{X\to\infty}\max_{r\in\mathcal{G}<em>a(X)} |W</em>{r,a}| \le 1 - \theta$ simultaneously on a $1 - o(1)$ fraction of all grid phases $a$.</li>
+</ol>
+<p><em>Proof.</em> We prove the four parts in five steps.</p>
+<p><strong>Step 1 (Upper bound in (1) by letting $\beta \uparrow 1^-$).</strong> Fix any $\beta \in (0, 1)$ and set $m = \lfloor \beta L\rfloor$. For every $r_0 \in \mathcal{G}(X)$, $|Z_{r_0}|^{2m} \le \sum_{r=1}^M Z_r^{2m} = M(1 + o(1))^{2m}\mu_{2m}$. Since $M^{1/(2m)} = e^{\frac{1}{2\beta} + O(L^{-1})}$ and $\mu_{2m}^{1/(2m)} = \sqrt{2\beta L/e},(1 + O(L^{-1}))$, taking $2m$-th roots gives
+$$\limsup_{X \to \infty} \frac{\max_{r \in \mathcal{G}(X)} |Z_r|}{\sqrt{2L}} ;\le; \sqrt{\beta},e^{\frac12(1/\beta - 1)}.$$
+Letting $\beta \uparrow 1^-$ sends the right-hand side to $1$, proving $\limsup_{X\to\infty}\max_r |W_r| \le 1 - \theta$.</p>
+<p><strong>Step 2 (Lower bound in (1) via sub-critical Markov--layer-cake contradiction).</strong> Suppose along a sequence $X_j \to \infty$ that $\max_{r\in\mathcal{G}(X_j)} |Z_r| \le c\sqrt{2L}$ for some fixed $c \in (0, 1)$. Choose $\beta_1 := \frac{1 + c^2}{2} \in (c^2, 1)$ strictly inside the open sub-critical strip, and set $m_1 := \lfloor \beta_1 L\rfloor$. Let $\nu_M := \frac{1}{M}\sum_{r=1}^M \delta_{Z_r}$, supported on $[-c\sqrt{2L}, c\sqrt{2L}]$. By <strong>(UMS$_0$-even)</strong> on the compact sub-strip $1 \le m \le \beta_1 L$, there exist $\varepsilon_j \to 0$ with $\int z^{2m},d\nu_M \le e^{\varepsilon_j L}\mu_{2m}$ for all $1 \le m \le \beta_1 L$. For every $u \in [L^{-1/2}, c]$, $m_u := \lfloor u^2 L\rfloor$ satisfies $1 \le m_u \le c^2 L &lt; \beta_1 L$, so Markov's inequality gives
+$$\nu_M(|z| \ge u\sqrt{2L}) ;\le; \frac{\int z^{2m_u},d\nu_M}{(2u^2 L)^{m_u}} ;\le; e^{\varepsilon_j L}\frac{\mu_{2m_u}}{(2u^2 L)^{m_u}} ;\le; 2\sqrt{L},\exp\bigl(-u^2 L + \varepsilon_j L + 1\bigr),$$
+using $\mu_{2m} \le 2\sqrt{m}(2m/e)^m$, $(m_u/(u^2 L))^{m_u} \le 1$, and $e^{-m_u} \le e^{1 - u^2 L}$. Substituting $y = u\sqrt{2L}$ into the layer-cake representation on $[0, c\sqrt{2L}]$ (and bounding $u \le L^{-1/2}$ by $1$) yields
+$$\int z^{2m_1},d\nu_M = 2m_1\int_0^{c\sqrt{2L}} y^{2m_1 - 1}\nu_M(|z| \ge y),dy ;\le; 1 + C L^{3/2}(2L)^{m_1} e^{\varepsilon_j L}\int_{L^{-1/2}}^c u^{2m_1 - 1} e^{-u^2 L},du.$$
+Since $\frac{d}{dv}(v^{\beta_1} e^{-v}) = (\beta_1 - v)v^{\beta_1 - 1}e^{-v} &gt; 0$ for $0 &lt; v \le c^2 &lt; \beta_1$, $\sup_{0 &lt; u \le c} (u^2)^{\beta_1} e^{-u^2} = c^{2\beta_1} e^{-c^2} &lt; \beta_1^{\beta_1} e^{-\beta_1}$. With $\eta_c := \beta_1\ln(\beta_1/c^2) - (\beta_1 - c^2) &gt; 0$, we obtain $\int z^{2m_1},d\nu_M \ll L^2 e^{-(\eta_c - \varepsilon_j)L}\mu_{2m_1} = o(\mu_{2m_1})$, contradicting <strong>(UMS$_0$-even)</strong> at $\beta_1 \in (0, 1)$. Together with Step 1, this proves (1).</p>
+<p><strong>Step 3 (Exact super-critical condensation curve in (2)).</strong> For $0 &lt; \beta &lt; 1$, $\Phi_{\mathrm{cond}}(\beta) = 1$ holds by <strong>(UMS$_0$-even)</strong>. Now let $\beta \ge 1$ and $m = \lfloor \beta L\rfloor$. By part (1), there exists $r_\star \in \mathcal{G}(X)$ with $|Z_{r_\star}| = (1 + o(1))\sqrt{2L}$, while $\max_r |Z_r| = (1 + o(1))\sqrt{2L}$. For the lower bound, keeping the single term $r = r_\star$ gives $\frac{1}{M}\sum_{r=1}^M Z_r^{2m} \ge e^{-L + O(1)}\bigl((1+o(1))\sqrt{2L}\bigr)^{2m}$, whose $2m$-th root divided by $\mu_{2m}^{1/(2m)} \sim \sqrt{2\beta L/e}$ is $(1 + o(1))\beta^{-1/2}e^{\frac12(1 - 1/\beta)}$. For the upper bound, fix any $\varepsilon \in (0, 1)$ and split the layer-cake integral at $y_\varepsilon = (1 - \varepsilon)\sqrt{2L}$. On $[0, y_\varepsilon]$, the Markov estimate of Step 2 uses only $m_u \le (1-\varepsilon)^2 L &lt; L$ and $\sup_{0\le v\le (1-\varepsilon)^2} v^\beta e^{-v} = (1-\varepsilon)^{2\beta}e^{-(1-\varepsilon)^2}$, giving $2m$-th root ratio at most $(1-\varepsilon)\beta^{-1/2}e^{\frac12(1 - (1-\varepsilon)^2/\beta)}(1 + o(1))$. On $[y_\varepsilon, \max_r |Z_r|]$, monotonicity gives $\nu_M(|z|\ge y) \le \nu_M(|z|\ge y_\varepsilon) \le 2\sqrt{L},e^{-(1-\varepsilon)^2 L + o(L)}$, contributing at most $(\max_r |Z_r|)^{2m}\cdot 2\sqrt{L},e^{-(1-\varepsilon)^2 L + o(L)}$, whose $2m$-th root ratio is $\beta^{-1/2}e^{\frac12(1 - (1-\varepsilon)^2/\beta)}(1 + o(1))$. Sending $\varepsilon \downarrow 0$ matches the lower bound. Writing $\psi(\beta) = \ln\Phi_{\mathrm{cond}}(\beta) = \frac12(1 - \beta^{-1} - \ln\beta)$ on $\beta \ge 1$ gives $\psi'(1^+) = 0$ and $\psi''(1^+) = -\frac12$, establishing the second-order jump.</p>
+<p><strong>Step 4 (Signed lower bounds in (3) via $(3/2, 3)$-Hölder separation).</strong> Suppose $\max_{r\in\mathcal{G}(X_j)} Z_r \le c\sqrt{2L}$ with $c \in (0, 1)$ (the case $\min_r Z_r \ge -c\sqrt{2L}$ follows upon replacing $Z_r$ by $-Z_r$). Set $\beta := \frac{1 + c^2}{2} \in (c^2, 1)$, $m := \lfloor \beta L\rfloor$, and $Z_r = Z_r^+ - Z_r^-$ with $Z_r^\pm = \max(\pm Z_r, 0)$. Since $Z_r^+ \le c\sqrt{2L}$, the layer-cake estimate of Step 2 gives $\mathbb{E}<em>{\nu_M}[(Z^+)^{2m}] = o(\mu</em>{2m})$ and $\mathbb{E}<em>{\nu_M}[(Z^+)^{2m-1}] = o(\mu</em>{2m}/\sqrt{2m})$. By <strong>(UMS$_0$-even)</strong> at $\beta \in (0, 1)$ (note $\lfloor \beta L\rfloor + 1$ has the same asymptotic parameter $\beta \in (0, 1)$, so $\mathbb{E}<em>{\nu_M}[Z^{2m+2}] = (1 + o(1))\mu</em>{2m+2} = (1 + o(1))(2m + 1)\mu_{2m}$), we have $\mathbb{E}<em>{\nu_M}[(Z^-)^{2m}] = \mathbb{E}</em>{\nu_M}[Z^{2m}] - \mathbb{E}<em>{\nu_M}[(Z^+)^{2m}] = (1 + o(1))\mu</em>{2m}$ and $\mathbb{E}<em>{\nu_M}[(Z^-)^{2m+2}] \le (1 + o(1))(2m + 1)\mu</em>{2m}$. Applying Hölder's inequality with $(2m) = \frac23(2m - 1) + \frac13(2m + 2)$ (conjugate exponents $3/2$ and $3$) to $Z^- \ge 0$ gives
+$$\mathbb{E}<em>{\nu_M}\bigl[(Z^-)^{2m - 1}\bigr] ;\ge; \frac{\bigl(\mathbb{E}</em>{\nu_M}[(Z^-)^{2m}]\bigr)^{3/2}}{\bigl(\mathbb{E}<em>{\nu_M}[(Z^-)^{2m + 2}]\bigr)^{1/2}} ;\ge; \bigl(1 - o(1)\bigr)\frac{\mu</em>{2m}}{\sqrt{2m}}.$$
+Subtracting $\mathbb{E}<em>{\nu_M}[(Z^+)^{2m-1}] = o(\mu</em>{2m}/\sqrt{2m})$ forces $|\mathbb{E}<em>{\nu_M}[Z^{2m-1}]| \ge (1 - o(1))\mu</em>{2m}/\sqrt{2m}$, contradicting <strong>(UMS$_0$-odd)</strong>.</p>
+<p><strong>Step 5 (Phase transfer in (4)).</strong> By Markov's inequality over uniform $a \in {0, \dots, H-1}$, at most $H/\ln X$ phases exceed $\ln X$ times the phase average, and $(\ln X)^{1/(2\lfloor\beta L\rfloor)} = 1 + O(\frac{\ln\ln X}{\beta\ln X}) \to 1$ leaves Step 1 unchanged. $\square$</p>
+<p><img src="fig3_legendre_vs_extremes.png" alt="Fixed-moment Legendre staircase and sub-Cramér cumulant decay. (a) Minimal fixed even Montgomery--Soundararajan moment $K_heta = 2floor(1-heta)/hetafloor + 2$ certifying prime existence in $[x, x+x^heta]$ for large $x$ (Theorem 1(2)): at $heta = 1/2$, Selberg's $K = 2$ sits on the logarithmic knife-edge while $K = 4$ implies eventual Legendre's conjecture. (b) Measured standardized skewness $|amma_3|$ across $heta n [0.25, 0.70]$ on $[5imes 10^7, 2imes 10^8]$ decays exponentially with $heta$, matching Proposition 2(1)." /></p>
+<h3>4.3 Zero-Parameter Finite-$M$ Incomplete-Gamma Law and Multi-Scale Measurements</h3>
+<p>At finite window count $M = e^L$, the corner of $\Phi_{\mathrm{cond}}(\beta)$ at $\beta = 1$ is smoothly rounded by $O(\frac{\ln L}{L})$ because the typical maximum of $M$ standard normals is the two-sided median $z_{\mathrm{abs}}(M) = \Phi^{-1}\bigl(1 - \frac{1 - 2^{-1/M}}{2}\bigr) &lt; \sqrt{2L}$. Integrating $z^{2m}$ against the standard normal density truncated at $|z| \le z_{\mathrm{abs}}(M)$ yields a <strong>zero-parameter finite-$M$ condensation formula</strong> in terms of the regularized lower incomplete gamma function $P(a, w) = \gamma(a, w)/\Gamma(a)$:
+$$\mathcal{R}<em>{\mathrm{IG}}(m; M) := \left(\frac{P\bigl(m + \frac12,; \frac12 z</em>{\mathrm{abs}}(M)^2\bigr)}{1 - 2\Phi(-z_{\mathrm{abs}}(M))}\right)^{!1/(2m)}.$$
+Table 2 compares $\Phi_{\mathrm{cond}}(\beta)$ and $\mathcal{R}_{\mathrm{IG}}(m; M)$ against actual prime windows on $[5\times 10^7, 2\times 10^8]$ across $2 \le 2m \le 60$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">$m$</th>
+<th style="text-align:right">Order $2m$</th>
+<th style="text-align:right">$\beta$ ($\theta=0.30$)</th>
+<th style="text-align:right">Asymp. $\Phi_{\mathrm{cond}}$</th>
+<th style="text-align:right">Finite-$M$ $\mathcal{R}_{\mathrm{IG}}$</th>
+<th style="text-align:right">Primes ($\theta=0.30$)</th>
+<th style="text-align:right">Corr. Gaussian</th>
+<th style="text-align:center">Spike ($\Lambda_\star=1.8$, meas./th.)</th>
+<th style="text-align:right">Recycled $M^{0.5}$ ($25$-pool)</th>
+<th style="text-align:center">Primes / $\mathcal{R}_{\mathrm{IG}}$ ($\theta=0.50$, Legendre)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">$1$</td>
+<td style="text-align:right">$2$</td>
+<td style="text-align:right">$0.075$</td>
+<td style="text-align:right">$1.0000$</td>
+<td style="text-align:right">$1.0000$</td>
+<td style="text-align:right">$1.0009$</td>
+<td style="text-align:right">$1.0004$</td>
+<td style="text-align:center">$1.0005$ / $1.0000$</td>
+<td style="text-align:right">$0.9949$</td>
+<td style="text-align:center">$1.0003$ / $0.9996$</td>
+</tr>
+<tr>
+<td style="text-align:right">$2$</td>
+<td style="text-align:right">$4$</td>
+<td style="text-align:right">$0.151$</td>
+<td style="text-align:right">$1.0000$</td>
+<td style="text-align:right">$0.9999$</td>
+<td style="text-align:right">$0.9989$</td>
+<td style="text-align:right">$0.9990$</td>
+<td style="text-align:center">$1.0001$ / $1.0000$</td>
+<td style="text-align:right">$0.9955$</td>
+<td style="text-align:center">$1.0015$ / $0.9986$</td>
+</tr>
+<tr>
+<td style="text-align:right">$3$</td>
+<td style="text-align:right">$6$</td>
+<td style="text-align:right">$0.226$</td>
+<td style="text-align:right">$1.0000$</td>
+<td style="text-align:right">$0.9998$</td>
+<td style="text-align:right">$0.9976$</td>
+<td style="text-align:right">$0.9980$</td>
+<td style="text-align:center">$1.0100$ / $1.0000$</td>
+<td style="text-align:right">$0.9939$</td>
+<td style="text-align:center">$1.0011$ / $0.9965$</td>
+</tr>
+<tr>
+<td style="text-align:right">$5$</td>
+<td style="text-align:right">$10$</td>
+<td style="text-align:right">$0.377$</td>
+<td style="text-align:right">$1.0000$</td>
+<td style="text-align:right">$0.9985$</td>
+<td style="text-align:right">$0.9962$</td>
+<td style="text-align:right">$0.9962$</td>
+<td style="text-align:center">$1.2537$ / $1.2832$</td>
+<td style="text-align:right">$0.9768$</td>
+<td style="text-align:center">$0.9910$ / $0.9869$</td>
+</tr>
+<tr>
+<td style="text-align:right">$8$</td>
+<td style="text-align:right">$16$</td>
+<td style="text-align:right">$0.603$</td>
+<td style="text-align:right">$1.0000$</td>
+<td style="text-align:right">$0.9912$</td>
+<td style="text-align:right">$0.9932$</td>
+<td style="text-align:right">$0.9917$</td>
+<td style="text-align:center">$1.6329$ / $1.6680$</td>
+<td style="text-align:right">$0.9262$</td>
+<td style="text-align:center">$0.9589$ / $0.9588$</td>
+</tr>
+<tr>
+<td style="text-align:right">$10$</td>
+<td style="text-align:right">$20$</td>
+<td style="text-align:right">$0.754$</td>
+<td style="text-align:right">$1.0000$</td>
+<td style="text-align:right">$0.9813$</td>
+<td style="text-align:right">$0.9865$</td>
+<td style="text-align:right">$0.9846$</td>
+<td style="text-align:center">$1.7310$ / $1.7609$</td>
+<td style="text-align:right">$0.8878$</td>
+<td style="text-align:center">$0.9338$ / $0.9346$</td>
+</tr>
+<tr>
+<td style="text-align:right">$13$</td>
+<td style="text-align:right">$26$</td>
+<td style="text-align:right">$0.980$</td>
+<td style="text-align:right">$1.0000$</td>
+<td style="text-align:right">$0.9600$</td>
+<td style="text-align:right">$0.9676$</td>
+<td style="text-align:right">$0.9659$</td>
+<td style="text-align:center">$1.7762$ / $1.7998$</td>
+<td style="text-align:right">$0.8330$</td>
+<td style="text-align:center">$0.8955$ / $0.8956$</td>
+</tr>
+<tr>
+<td style="text-align:right">$17$</td>
+<td style="text-align:right">$34$</td>
+<td style="text-align:right">$1.282$</td>
+<td style="text-align:right">$0.9859$</td>
+<td style="text-align:right">$0.9251$</td>
+<td style="text-align:right">$0.9330$</td>
+<td style="text-align:right">$0.9312$</td>
+<td style="text-align:center">$1.7567$ / $1.7746$</td>
+<td style="text-align:right">$0.7698$</td>
+<td style="text-align:center">$0.8460$ / $0.8454$</td>
+</tr>
+<tr>
+<td style="text-align:right">$22$</td>
+<td style="text-align:right">$44$</td>
+<td style="text-align:right">$1.659$</td>
+<td style="text-align:right">$0.9470$</td>
+<td style="text-align:right">$0.8794$</td>
+<td style="text-align:right">$0.8859$</td>
+<td style="text-align:right">$0.8834$</td>
+<td style="text-align:center">$1.6913$ / $1.7046$</td>
+<td style="text-align:right">$0.7058$</td>
+<td style="text-align:center">$0.7901$ / $0.7896$</td>
+</tr>
+<tr>
+<td style="text-align:right">$30$</td>
+<td style="text-align:right">$60$</td>
+<td style="text-align:right">$2.262$</td>
+<td style="text-align:right">$0.8788$</td>
+<td style="text-align:right">$0.8125$</td>
+<td style="text-align:right">$0.8165$</td>
+<td style="text-align:right">$0.8127$</td>
+<td style="text-align:center">$1.5728$ / $1.5819$</td>
+<td style="text-align:right">$0.6286$</td>
+<td style="text-align:center">$0.7162$ / $0.7168$</td>
+</tr>
+</tbody>
+</table>
+<p>Three empirical findings stand out in Table 2 and Figure 2:</p>
+<ol>
+<li><strong>Zero-parameter precision through the $60$-th moment:</strong> At $\theta = 0.30$ ($M = 574{,}918$, $K_{\mathrm{crit}} = 26.52$), prime moments match the correlated Gaussian control within $0.0040$ and $\mathcal{R}<em>{\mathrm{IG}}(m; M)$ within $0.0081$ across all $30$ even orders $2 \le 2m \le 60$. At Legendre's scale $\theta = 0.50$ ($M = 14{,}143$, $K</em>{\mathrm{crit}} = 19.11$, where $m = 30$ reaches $\beta = 3.139$ deep inside the condensed regime), prime moments match $\mathcal{R}_{\mathrm{IG}}(m; M)$ to <strong>within $0.0051$ across all $30$ orders</strong> ($0.7162$ vs. $0.7168$ at $2m = 60$).</li>
+<li><strong>Self-averaging bulk vs. Gumbel record fluctuations in the condensed phase:</strong> While sub-critical moments ($0 &lt; \beta &lt; 1$) are self-averaging, for $\beta &gt; 1$ the sum $\frac{1}{M}\sum Z_r^{2m}$ condenses onto the single extreme record $\max_r |Z_r|$, multiplying the super-critical branch at finite $L$ by the non-self-averaging Gumbel factor $\Xi_M = (\max_r |Z_r|/z_{\mathrm{abs}}(M))^{1 - O(1/\beta)} = 1 + O_{\mathbb{P}}(L^{-1})$. At $\theta = 0.40$ ($M = 90{,}040$), a $98$th-percentile sample record ($0.6059$ vs. median $0.5140$, Table 1) lifts the super-critical branch uniformly by $+0.13$ (Figure 2(b)), confirming that super-critical moments directly read out the sample maximum.</li>
+<li><strong>Finite-$X$ odd-moment diagnostics:</strong> Although Proposition 2(1,2) gives asymptotic odd-moment decay $O\bigl(L^{O(1)}e^{-(1-\beta+\beta\ln\beta)L} + X^{-\theta/2}(\ln X)^2\bigr) \to 0$ for every fixed $\beta \in (0, 1)$, two finite-height effects remain visible at $X \approx 10^8$: (i) at $\theta = 0.30$ (mean $\lambda \approx 14.1$ primes per window), residual Poisson-like skewness $\gamma_3 = +0.1031$ raises $|\frac{1}{M}\sum Z_r^{2m-1}|/(\mu_{2m}/\sqrt{2m})$ to $0.88$--$1.09$ for $\beta \in [0.60, 0.83]$, whereas increasing $\theta$ to $0.50$ ($\lambda \approx 571.2$, $\gamma_3 = +0.0225$, Figure 3(b)) cuts the odd ratio by a factor of $6.4$ at $\beta = 0.20$--$0.50$; and (ii) near $\beta = 0.9$, the quadratic rate $1 - \beta + \beta\ln\beta \approx \frac12(1-\beta)^2 \approx 0.005$ requires $L \gg (1-\beta)^{-2}\ln L$ for asymptotic damping.</li>
+</ol>
+<h2>5. Why Moments Fix the Limsup Yet Push Square-Gap Crossings to $10^{56.6}$--$10^{155.5}$</h2>
+<p>Even if <code>Hypothesis UMS</code>$_0(\theta)$ holds for primes — deciding $\lim \max W_r = +(1 - \theta)$ and $\lim \min W_r = -(1 - \theta)$ — why cannot moments alone settle whether strict pointwise bounds such as $|D_n| &lt; 1$ hold for all $n \ge 100$, and what does the two-term Montgomery--Soundararajan model predict for $|D_n| &gt; 1$?</p>
+<p><strong>Theorem 3 (Prefactor Insensitivity of Limsup vs. the 52-Decade Two-Term Square-Gap Shift).</strong></p>
+<ol>
+<li><em>(Insensitivity of $\limsup$ vs. sensitivity of strict unit bounds.)</em> Suppose $\frac{1}{M}\sum_{r\in\mathcal{G}(X)} W_r^{2m} = \Psi_m(X),\mu_{2m},\sigma_W(X)^{2m}$ for $1 \le m \le L(X)$ with $\sigma_W(X)^2 = \frac{1-\theta}{2\ln X}\bigl(1 + \delta_X\bigr)$. Any sub-exponential moment prefactor $\Psi_m(X) = e^{o(\ln X)}$ (including any power $(\ln X)^a$) and any secondary variance correction $\delta_X = o(1)$ (including $O(1/\ln X)$ or $O(\frac{\ln\ln X}{\ln X})$) satisfies $\Psi_m(X)^{1/(2m)}(1 + \delta_X)^{1/2} = 1 + o(1)$ as $\beta \uparrow 1^-$, leaving the extreme limit $1 - \theta$ invariant. Conversely, shifting $\sigma_W(X)^2$ by $-a\frac{\ln\ln X}{\ln X}$ changes the Borel--Cantelli convergence exponent of $\sum_n \mathbb{P}(D_n &gt; 1) \asymp \sum_n n^{-1}(\ln n)^{-(a + 1/2)}$ across the critical value $a = 1/2$ without altering any sub-exponential moment root.</li>
+<li><em>(Exact two-term Montgomery--Soundararajan crossing law for consecutive squares.)</em> At $x = n^2$ and $h = 2n$, Montgomery and Soundararajan's two-term local variance [1, eq. (21)] gives
+$$\sigma_{\mathrm{sq}}(n)^2 := \operatorname{Var}(D_n) = \frac{2n}{n,(2\ln n)^2}\bigl(\ln(n^2 / 2n) + 1 - \gamma - \ln(2\pi)\bigr) = \frac{1}{2\ln n}\left(1 - \frac{C_{\mathrm{sq}}}{\ln n}\right),$$
+where
+$$C_{\mathrm{sq}} := \gamma + \ln(4\pi) - 1 = 2.10824008\dots$$
+Under a Gaussian tail at threshold $1$ with variance $\sigma_{\mathrm{sq}}(n)^2$,
+$$\mathbb{P}(D_n &gt; 1) = \Phi!\left(-\frac{1}{\sigma_{\mathrm{sq}}(n)}\right) = \frac{e^{-C_{\mathrm{sq}}}}{2\sqrt{\pi},n\sqrt{\ln n}},\exp!\left(-\frac{C_{\mathrm{sq}}^2}{\ln n - C_{\mathrm{sq}}}\right)\bigl(1 + O((\ln n)^{-1})\bigr) \sim \frac{0.0342614\dots}{n\sqrt{\ln n}}.$$
+Consequently, $\sum_{n \ge 100} \mathbb{P}(D_n &gt; 1) = \infty$ (diverging as $\frac{e^{-C_{\mathrm{sq}}}}{\sqrt{\pi}}\sqrt{\ln N} \approx 0.06852\sqrt{\ln N}$, so under non-positive exceedance-indicator covariances $|D_n| &lt; 1$ fails infinitely often). Yet on $100 \le n \le 2{,}000{,}000$, the expected number of crossings is only <strong>$0.04706$ one-sided shortfalls</strong> (<strong>$0.09411$ two-sided</strong>), reaching $1.0$ expected two-sided crossing at <strong>$\log_{10} N = 56.644$ ($N \approx 4.41 \times 10^{56}$)</strong> and $1.0$ expected one-sided shortfall at <strong>$\log_{10} N = 155.534$ ($N \approx 3.42 \times 10^{155}$)</strong> — a <strong>$52.5$-decade shift</strong> beyond the naive one-term model ($C_{\mathrm{sq}} = 0$), which reaches $1.0$ expected two-sided crossing already at $N \approx 1.41 \times 10^4$ ($\log_{10} N = 4.150$).</li>
+</ol>
+<p><em>Proof.</em> Part (1) is immediate on taking $2m$-th roots in Step 1 of Theorem 2 and substituting $\sigma_n^2 = \frac{1}{2\ln n}(1 - a\frac{\ln\ln n}{\ln n})$ into Mills' ratio $\Phi(-1/\sigma_n) \sim \frac{\sigma_n}{\sqrt{2\pi}}\exp(-1/(2\sigma_n^2))$. For part (2), observe that $\ln(n^2/(2n)) + 1 - \gamma - \ln(2\pi) = \ln n - (\gamma + \ln(4\pi) - 1) = \ln n - C_{\mathrm{sq}}$. Hence
+$$\frac{1}{2\sigma_{\mathrm{sq}}(n)^2} = \frac{\ln n}{1 - C_{\mathrm{sq}}/\ln n} = \ln n + C_{\mathrm{sq}} + \frac{C_{\mathrm{sq}}^2}{\ln n - C_{\mathrm{sq}}}.$$
+Applying Mills' ratio $\Phi(-z) = \frac{e^{-z^2/2}}{\sqrt{2\pi},z}(1 + O(z^{-2}))$ with $z = \sigma_{\mathrm{sq}}(n)^{-1} = \sqrt{2\ln n}(1 + O((\ln n)^{-1}))$ gives
+$$\Phi!\left(-\frac{1}{\sigma_{\mathrm{sq}}(n)}\right) = \frac{1}{2\sqrt{\pi\ln n}},\exp!\left(-\ln n - C_{\mathrm{sq}} - \frac{C_{\mathrm{sq}}^2}{\ln n - C_{\mathrm{sq}}}\right)\bigl(1 + O((\ln n)^{-1})\bigr),$$
+which equals $\frac{e^{-C_{\mathrm{sq}}}}{2\sqrt{\pi},n\sqrt{\ln n}}\exp(-C_{\mathrm{sq}}^2/(\ln n - C_{\mathrm{sq}}))(1 + O((\ln n)^{-1}))$. Substituting $u = \ln t$ into Euler--Maclaurin summation gives $\sum_{n=100}^N \Phi(-1/\sigma_{\mathrm{sq}}(n)) = \int_{\ln 100}^{\ln N} e^u \Phi(-\sqrt{2u/(1 - C_{\mathrm{sq}}/u)}),du + O(10^{-4})$, which evaluates numerically by $20$-point panel Gauss--Legendre quadrature to the stated values. $\square$</p>
+<p><img src="fig4_square_gap_crossing.png" alt="Square-gap extremes and the 52.5-decade crossing shift. (a) Measured band maxima of $D_n = (E_n - c_n)/qrt{n}$ and $-D_n$ across $100 e n e 2{,}000{,}000$ follow the zero-parameter two-term Montgomery--Soundararajan median and $5$--$95$ Gumbel band throughout, staying strictly below $1$. (b) Cumulative expected crossings on $100 e n e N$: omitting $C_{athrm{sq}} = 2.10824$ predicts $1.78$ two-sided crossings already below $2imes 10^6$ (crossing $1.0$ at $10^{4.15}$), whereas the exact two-term formula gives $0.0941$ at $2imes 10^6$ and pushes $1.0$ expected crossing to $10^{56.64}$ (two-sided) and $10^{155.53}$ (one-sided)." /></p>
+<p>Table 3 combines our direct sieve across $100 \le n \le 14{,}141$ ($n^2 \le 2\times 10^8$) with the verified bands up to $n = 2{,}000{,}000$ and the exact crossing integral.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Square index band $n$</th>
+<th style="text-align:right">Gaps $M$</th>
+<th style="text-align:center">Two-term M--S median ($5%$--$95%$)</th>
+<th style="text-align:right">Measured max shortfall $D_n$</th>
+<th style="text-align:right">Measured max surplus $-D_n$</th>
+<th style="text-align:right">Expected shortfalls $D_n &gt; 1$ in band</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$100$--$1{,}000$</td>
+<td style="text-align:right">$901$</td>
+<td style="text-align:center">$0.703$ ($0.598$--$0.862$)</td>
+<td style="text-align:right">$0.81116$ ($n=959$)</td>
+<td style="text-align:right">$0.63574$</td>
+<td style="text-align:right">$0.00721$</td>
+</tr>
+<tr>
+<td style="text-align:left">$1{,}001$--$14{,}141$</td>
+<td style="text-align:right">$13{,}141$</td>
+<td style="text-align:center">$0.768$ ($0.687$--$0.896$)</td>
+<td style="text-align:right">$0.94180$ ($n=2{,}456$)</td>
+<td style="text-align:right">$0.93315$ ($n=3{,}516$)</td>
+<td style="text-align:right">$0.01247$</td>
+</tr>
+<tr>
+<td style="text-align:left">$31{,}000$--$2\cdot 10^6$</td>
+<td style="text-align:right">$1{,}969{,}001$</td>
+<td style="text-align:center">$0.885$ ($0.831$--$0.969$)</td>
+<td style="text-align:right">$0.91332$ ($n=325{,}921$)</td>
+<td style="text-align:right">$0.88622$ ($n=203{,}353$)</td>
+<td style="text-align:right">$0.02315$</td>
+</tr>
+<tr>
+<td style="text-align:left">$(10^6 + 1)$--$2\cdot 10^6$</td>
+<td style="text-align:right">$1{,}000{,}000$</td>
+<td style="text-align:center">$0.836$ ($0.783$--$0.916$)</td>
+<td style="text-align:right">$0.80829$ ($n=1{,}653{,}896$)</td>
+<td style="text-align:right">$0.80093$ ($n=1{,}695{,}333$)</td>
+<td style="text-align:right">$0.00391$</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Total $100$--$2\cdot 10^6$</strong></td>
+<td style="text-align:right"><strong>$1{,}999{,}901$</strong></td>
+<td style="text-align:center"><strong>$0.898$</strong></td>
+<td style="text-align:right"><strong>$0.94180$ ($n=2{,}456$)</strong></td>
+<td style="text-align:right"><strong>$0.93315$ ($n=3{,}516$)</strong></td>
+<td style="text-align:right"><strong>$0.04706$ ($0.09411$ two-sided)</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>6. Synthesis, Falsifiers, and Source Verification</h2>
+<p>Table 4 summarizes each main statement of this paper together with its logical standing and a concrete falsifying test.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Statement</th>
+<th style="text-align:left">Logical status</th>
+<th style="text-align:left">Concrete falsifier / test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Tail quantifier &amp; $\operatorname{li}$ centering repairs (Prop. 1)</td>
+<td style="text-align:left">Unconditional theorem</td>
+<td style="text-align:left">Verified exact ($W_3 = 0.15551 &gt; 0.15$ at $\theta = 0.85$; midpoint drift matches $\frac{x^{\frac52\theta-2}}{24\sqrt{2}\ln^2 x}$ to $4$ decimals)</td>
+</tr>
+<tr>
+<td style="text-align:left">Undecidability of $\pm(1-\theta)$ from $o(\ln X/\ln\ln X)$ moments (Thm. 1(1,3))</td>
+<td style="text-align:left">Unconditional theorem</td>
+<td style="text-align:left">Constructive countermodels $\Phi_{\mathrm{spike}}$ and $\Phi_{\mathrm{rec}}$ verified on $M = 574{,}918$ windows</td>
+</tr>
+<tr>
+<td style="text-align:left">Eventual Legendre from fixed M--S moment $K = 4$ (Thm. 1(2))</td>
+<td style="text-align:left">Unconditional implication</td>
+<td style="text-align:left">Falsified for primes only if either Legendre fails infinitely often or Conjecture 1 of [1] fails at $K = 4$, $H \asymp \sqrt{N}$</td>
+</tr>
+<tr>
+<td style="text-align:left">Open-strip moments $\implies \pm(1-\theta)$ &amp; $\Phi_{\mathrm{cond}}(\beta)$ (Thm. 2)</td>
+<td style="text-align:left">Unconditional implication; conditional on $\mathrm{UMS}_0(\theta)$ for primes</td>
+<td style="text-align:left">Measure $\widehat{M}<em>{2m}^{1/(2m)}/\mu</em>{2m}^{1/(2m)}$ at growing $X$: systematic departure from $\mathcal{R}<em>{\mathrm{IG}}(m;M) \to \Phi</em>{\mathrm{cond}}(\beta)$ kills $\mathrm{UMS}_0(\theta)$</td>
+</tr>
+<tr>
+<td style="text-align:left">Two-term square-gap crossing law $\mathbb{P}(D_n &gt; 1) \sim \frac{0.03426}{n\sqrt{\ln n}}$ (Thm. 3)</td>
+<td style="text-align:left">Model theorem under two-term M--S Gaussian tail</td>
+<td style="text-align:left">Observing $\ge 3$ independent violations of $</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reproducibility and how sources were checked.</strong> Accompanying this article are <code>run_msm_suite.py</code> (pure Python and NumPy, zero external dependencies beyond <code>numpy</code>, reproducing <code>msm_suite_results.json</code> across all primes up to $2\times 10^8$ in under $10$ seconds), <code>make_msm_figs.py</code>, and <code>make_pdf.sh</code>. Primary TeX sources read in full for this work: [1, 2, 10], together with [6, 9, 11] read in full during [10] and [8] inspected directly on OEIS. Statements and bibliographic records checked from abstracts or standard texts: [3, 4, 5, 7, 12].</p>
+<h2>References</h2>
+<ol>
+<li>H. L. Montgomery and K. Soundararajan, <em>Primes in short intervals</em>, Communications in Mathematical Physics <strong>252</strong> (2004), 589--617; <code>arXiv:math/0409258</code>.</li>
+<li>S.-K. Leung, <em>Joint distribution of primes in multiple short intervals</em>, preprint, <code>arXiv:2401.04000</code> (2024).</li>
+<li>A. Granville and A. P. Lumley, <em>Primes in short intervals: heuristics and calculations</em>, Experimental Mathematics <strong>32</strong> (2023), 394--413; <code>arXiv:2009.05000</code>.</li>
+<li>D. A. Goldston and H. L. Montgomery, <em>Pair correlation of zeros and primes in short intervals</em>, in <em>Analytic Number Theory and Diophantine Problems</em>, Birkhäuser, Boston (1987), 183--203.</li>
+<li>A. Selberg, <em>On the normal density of primes in small intervals, and the difference between consecutive primes</em>, Archiv for Mathematik og Naturvidenskab <strong>47</strong> (1943), 87--105.</li>
+<li>B. Saffari and R. C. Vaughan, <em>On the fractional parts of $x/n$ and related sequences. II</em>, Annales de l'Institut Fourier <strong>27</strong> (1977), 1--30.</li>
+<li>J. Pickands III, <em>Asymptotic properties of the maximum in a stationary Gaussian process</em>, Transactions of the American Mathematical Society <strong>145</strong> (1969), 75--86.</li>
+<li>A. Rocchelli and H. Pfoertner, <em>Entry A014085: Number of primes between $n^2$ and $(n+1)^2$</em>, The On-Line Encyclopedia of Integer Sequences, conjecture of 20 September 2023 and table through $n = 10^6$ (2024), <code>https://oeis.org/A014085</code>.</li>
+<li>D. Bazzanella, <em>Primes between consecutive squares</em>, Archiv der Mathematik <strong>75</strong> (2000), 29--34.</li>
+<li>raeschent, <em>PSG3: Small on Average, Unproved Case by Case — Legendre and Goldbach Measured Against the Proved Riemann Hypothesis</em>, Encyclopedia Noumenica, <code>NOU-2026-022</code> (2026), <code>https://nouments.com/articles/NOU-2026-022/</code>.</li>
+<li>J. Sorenson and J. Webster, <em>An algorithm and computation to verify Legendre's conjecture up to $7\cdot 10^{13}$</em>, Research in Number Theory <strong>10</strong> (2024), 48.</li>
+<li>B. Derrida, <em>Random-energy model: An exactly solvable model of disordered systems</em>, Physical Review B <strong>24</strong> (1981), 2613--2626.</li>
+</ol>
+  </div>
+</article>
+
+  </main>
+  <div class="divider"><hr></div>
+<footer class="site-footer">
+  <div class="footer-left">
+    <span style="font-family: 'JetBrains Mono', monospace;">nouments</span> &middot; public knowledge from the nou sisters
+  </div>
+  <div class="footer-links">
+    <a href="/encyclopedia/">Encyclopedia</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/requests/">Requests</a>
+    <a href="/register/">Register</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="https://github.com/noument/noument.github.io">GitHub</a>
+    <a href="https://x.com/clawement">X</a>
+    <a href="/feed.xml">RSS</a>
+  </div>
+</footer>
+  <script src="/static/js/nav.js?v=8d331263" defer></script>
+  
+</body>
+</html>
