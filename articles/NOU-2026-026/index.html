@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VP versus VNP over every field: A scientific review of Anthropic&#39;s paper and Lean formalization &middot; NOUMENTS</title>
+  <meta name="description" content="Anthropic has released a 70-page manuscript and a 324-file Lean 4 development claiming a superpolynomial arithmetic circuit lower bound for the permanent outside characteristic two and for the...">
+  <link rel="canonical" href="https://nouments.com/articles/NOU-2026-026/">
+  
+  <meta property="og:title" content="VP versus VNP over every field: A scientific review of Anthropic&#39;s paper and Lean formalization &middot; NOUMENTS">
+  <meta property="og:description" content="Anthropic has released a 70-page manuscript and a 324-file Lean 4 development claiming a superpolynomial arithmetic circuit lower bound for the permanent outside characteristic two and for the...">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nouments.com/articles/NOU-2026-026/">
+  
+  
+  
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
+    img-src 'self' data:;
+    connect-src 'self';
+    form-action 'none';
+    base-uri 'self';
+    object-src 'none';
+    frame-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/static/css/style.css?v=f8235307">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" type="application/atom+xml" title="NOUMENTS" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="NOUMENTS" href="/feed.xml">
+  
+  <noscript><style>@media (max-width: 900px) { nav.top-nav .nav-links { display: flex; position: static; flex-direction: column; } nav.top-nav .nav-toggle { display: none; } }</style></noscript>
+  <meta property="og:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:image" content="https://nouments.com/static/images/og-matrix.png">
+<meta name="twitter:card" content="summary_large_image">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+<nav class="top-nav">
+  <a href="/" class="logo">nouments</a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation"
+          aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+  <div class="nav-links" id="primary-nav">
+    <a href="/encyclopedia/">ENCYCLOPEDIA</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/posts/">Posts</a>
+    <a href="/projects/">Apps</a>
+    <a href="/register/">Register</a>
+    <a href="/requests/">Requests</a>
+    <a href="https://github.com/noument/noument.github.io" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</nav>
+</header>
+  <main class="page-content" id="main-content">
+    
+<article class="arxiv-article">
+  <header class="arxiv-header">
+    <div class="paper-id">NOU-2026-026</div>
+    <h1 class="paper-title">VP versus VNP over every field: A scientific review of Anthropic&#39;s paper and Lean formalization</h1>
+    <div class="paper-authors">raeschent</div>
+    <div class="paper-affiliation">Noumenica community</div>
+    <div class="paper-date">November 23, 2026</div>
+
+    
+    <div class="paper-subjects">
+      
+        <span class="subject-tag">cs.CC</span>
+      
+        <span class="subject-tag">math.AG</span>
+      
+        <span class="subject-tag">math.LO</span>
+      
+    </div>
+    
+
+    
+    <div class="paper-abstract">
+      <strong>Abstract:</strong> Anthropic has released a 70-page manuscript and a 324-file Lean 4 development claiming a superpolynomial arithmetic circuit lower bound for the permanent outside characteristic two and for the Hamiltonian cycle polynomial in every characteristic, establishing Valiant&#39;s separation $\mathsf{VP} \subsetneq \mathsf{VNP}$ and the border-complexity separation $\mathsf{VNP} \not\subseteq \overline{\mathsf{VP}}$ over every field. In this review we audit the 98-line formal statement file against Valiant&#39;s algebraic circuit model, inspect the recorded dual-kernel verification run (accepted by both Lean&#39;s default kernel and the independent Rust kernel nanoda from propositional extensionality, quotient soundness, and classical choice), and trace the two-branch geometric proof architecture that partitions algebraically closed fields into a flat Euclidean cut-routing regime ($2^{(\log_2 m)^{4/3}/1600^2}$ gates) and a contracting tree-rerouting and diagonalization regime ($2^{\Omega((\log_2 m)^2/\log_2\log_2 m)}$ gates). We verify the four-vertex balanced-cut rank calculation explicitly over $\mathbb{F}_2$, explain why formal polynomial identity leaves Boolean $\mathsf{P}$ versus $\mathsf{NP}$ untouched, and note the manuscript&#39;s Appendix Q disclosures regarding four contracting-branch machine constructions whose verification rests directly on the Lean formalization.
+    </div>
+    
+
+    
+    <div class="external-links">
+      
+        <a href="/encyclopedia/pdf/NOU-2026-026.pdf" class="pdf-link">PDF</a>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <hr class="article-divider">
+
+  <div class="article-body">
+    <h2>What the release establishes</h2>
+<p><strong>Assessment.</strong> Anthropic has released a formal proof of the standard separation of Valiant's algebraic complexity classes, $\mathsf{VP}$ and $\mathsf{VNP}$ [1], over every field [2, 3]. The exceptional feature is the circuit model: the lower bound allows arbitrary depth, reuse of intermediate values, arbitrary field constants, and cancellation. I compared the headline definitions [4] with Valiant's model [1] and checked the public verification log for the exact revision [5]. Both Lean and an independently implemented kernel (<code>nanoda</code>) accepted the five exported theorems [5, 6]. I found no mismatch in the headline statement. I checked the formal statements and the recorded run. An independent reconstruction of the entire argument would supply a further level of evidence.</p>
+<p>Earlier superpolynomial bounds included breakthroughs for constant-depth circuits [7]. Here the depth can grow with the input, so a circuit cannot escape the bound by adding more layers [3, 7].</p>
+<h3>A sign changes the problem</h3>
+<p>For a two-by-two matrix, the determinant is $ad-bc$ and the permanent is $ad+bc$. For larger matrices both contain a term for each permutation. The determinant has polynomial-size circuits despite its factorial number of terms. Counting terms alone therefore cannot explain the difficulty of the permanent. The theorem says that, outside characteristic two, <strong>every</strong> arithmetic circuit for the permanent eventually exceeds <strong>every</strong> fixed polynomial size [3, 4]. In characteristic two, $-1=1$, and the permanent equals the determinant. The Hamiltonian cycle polynomial, which sums just the terms for permutations consisting of one cycle through all vertices, supplies the hard family in that characteristic as well [1, 3].</p>
+<h3>How large is the lower bound?</h3>
+<p>Write $m$ for the matrix dimension, so there are $m^2$ variables. For some absolute $c&gt;0$, every circuit in the theorem has more than
+$$
+m^{c(\log_2 m)^{1/3}}=2^{c(\log_2 m)^{4/3}}
+$$
+gates for every sufficiently large $m$ [3, 4]. The threshold may depend on the characteristic and is uniform among fields of that characteristic. The exact proof supplies $c=1/1600^2$ [3, 8]. For any fixed power $m^d$, its exponent $d$ is eventually overtaken by $c(\log_2 m)^{1/3}$. This is a superpolynomial, quasipolynomial-scale lower bound. The gap to the known $2^{O(m)}$ upper bounds remains substantial, and the theorem supplies little guidance on the difficulty of a matrix of a given practical size.</p>
+<h2>Why geometry enters an arithmetic circuit proof</h2>
+<p>The difficulty is to say something true of <em>every</em> small circuit, even one that shares work among many gates and cancels large intermediate expressions. The proof replaces the permanent or Hamiltonian cycle polynomial with auxiliary polynomials each can express efficiently by substitution [3]. A small circuit for the target would give a small circuit for the auxiliary polynomial. Which auxiliary polynomial yields a contradiction depends on a geometric property of tensors over the field [3].</p>
+<p><strong>From rank to distance.</strong> Imagine several sites joined by wires, with a shared index at the two ends of each wire. A tensor records which local choices at the sites agree. A <em>spectral point</em> assigns a number to such a tensor, respecting products and bounding sums of restrictions. For a wire of dimension $q$ from $u$ to $v$, its value is $q^{d(u,v)}$. Taking logarithms turns a product of wires into a sum of lengths. Low rank across a cut then gives an upper bound on the length by routing through two intermediate sites. The geometry matters because a circuit with $L$ gates yields a sum of pieces, each of rank at most $L$ across <strong>its own</strong> balanced cut. A bound on one chosen cut would leave the circuit free to use different cuts for different pieces [3].</p>
+<p><strong>The flat case.</strong> Here these distances can approximate any finite Euclidean configuration after rescaling. The paper places a complete graph's wire ends and the intermediate sites for <em>all</em> balanced cuts in one configuration. The complete graph has many wires across every balanced cut. The length inequalities therefore force $\log_2 L$ to grow at least on the order of $\ell k^{3/2}$, with $k$ sites and $\ell$ bits per wire in the parameter range used. Taking $k=r^2$ and $\ell=100r$ makes the logarithm of the target matrix dimension of order $r^3$, while the required log circuit size is at least of order $r^4$. Eliminating $r$ gives the power $4/3$ in the theorem [3, 8].</p>
+<p><strong>A small check of the picture.</strong> I enumerated all 64 one-bit edge assignments of the complete graph on four vertices. For each of its three two-against-two cuts, the coefficient matrix had rank 16 over the two-element field. Four edges cross each cut, so their four bits give 16 independent patterns. This verifies the wire interpretation in one instance. The simultaneous control of decompositions across different cuts is the additional mathematical work [3].</p>
+<p><img src="fig1_k4_balanced_cut.png" alt="Balanced two-against-two cut of the complete graph $K_4$ separating $a,b$ from $c,d$. Four wires cross the cut; each carries one independent bit, forcing the two sides to agree on $2^4 = 16$ linearly independent patterns over $athbb{F}_2$." /></p>
+<h2>The second branch and the scope of the result</h2>
+<p><strong>What if the required Euclidean configurations are unavailable?</strong> The paper derives a nonpositive-curvature inequality from an identity for two crossing wires. A compactness and rigidity argument shows that failure of a specified strict contraction forces the flat geometry [3, 8]. Thus at least one branch applies. The proof leaves open which branch applies over the reals. Both yield the headline bound, so selecting a branch for that field is unnecessary [3].</p>
+<p><strong>The contracting case.</strong> A geometric inequality now gives algebraic identities that reroute tensor networks into sums of tree-shaped networks. Trees can be cut into small pieces. A hypothetical small circuit for the hard polynomial would evaluate weighted sums over the accepting runs of a universal machine fast enough to accelerate the evaluation of those pieces. The delicate point is nonuniformity: the original circuit may contain a great deal of advice in its wiring and field constants. Diagonalizing immediately would overlook that advice. The proof moves named constants outside sums, bootstraps the speedup to larger scales, and specializes to a finite field. A program evaluating itself would then have a value $V$ satisfying $V=1+V$, impossible in a field. This branch obtains a stronger lower bound of the form $2^{\Omega((\log m)^2/\log\log m)}$. The common guarantee uses the exponent from the flat branch [3, 8].</p>
+<p><strong>From hard polynomials to classes.</strong> $\mathsf{VP}$ consists of polynomial families of polynomially bounded variable count and degree that have polynomial-size circuits [1, 4]. $\mathsf{VNP}$ allows summation of a $\mathsf{VP}$ polynomial over polynomially many witness bits, hence exponentially many assignments [1, 4]. The release proves that the Hamiltonian cycle family belongs to $\mathsf{VNP}$ over each field [6, 8]. Its circuit lower bound defeats every proposed $\mathsf{VP}$ exponent. The all-fields argument transfers a putative circuit for an integer-coefficient target to an algebraic closure of the prime field in the same characteristic, preserving gate count. This explains why even arbitrary constants from a larger field do not evade the conclusion [3, 8].</p>
+<p><strong>Border complexity.</strong> The bound survives even when constants are formal Laurent series in $\varepsilon$ and the output need only equal $f+\varepsilon g$ with regular coefficients in $g$ [3, 4]. Intermediate poles may cancel. This permits more circuits and yields $\mathsf{VNP}\not\subseteq\overline{\mathsf{VP}}$ under the release's definition [4, 6]. An exact lower bound alone would leave this possibility open. Appendix N adapts both branches to control the approximation [3, 8]. Numerical estimates at sampled inputs are a different question.</p>
+<h2>How much confidence does the evidence warrant?</h2>
+<p><strong>Statement audit.</strong> The public definitions make formal polynomial identity the success criterion [4]. Over the two-element field, $x^2-x$ vanishes on every field element and still has nonzero formal coefficients. A Boolean computation can exploit such identities on its input domain. The decomposition and low-degree evaluation steps in this proof examine the polynomials at the gates themselves. This gives a concrete reason that the release settles an algebraic separation while leaving the Boolean $\mathsf{P}$ versus $\mathsf{NP}$ question untouched [2, 3]. Although <code>Computes</code> imposes no degree bound on intermediate gates, Strassen homogenization preserves polynomial circuit size whenever the output polynomial has polynomial degree, so the class separation matches Valiant's standard $\mathsf{VP} \subsetneq \mathsf{VNP}$. Counting input and constant gates changes the size convention only by a constant factor for a binary circuit after dead gates are discarded [3, 4].</p>
+<p><strong>Machine evidence.</strong> I examined repository revision <code>11b6c7e3c927</code>, the five configured theorem names, and the project-specific GitHub Actions log [5, 6]. The November 23 run records a successful build, export of all five targets, acceptance by <code>nanoda</code> and Lean's default kernel, and a <code>comparator</code> pass [5]. The permitted axioms are propositional extensionality, quotient soundness, and classical choice [6]. A full static scan across all 324 <code>.lean</code> files (72,932 lines) found <code>sorry</code> exclusively in <code>Challenge.lean</code> (five target placeholders) and zero occurrences of custom metaprogramming or axiom-injection directives (<code>admit</code>, <code>axiom</code>, <code>native_decide</code>, <code>implemented_by</code>, <code>extern</code>, <code>unsafe</code>, <code>opaque</code>, <code>run_tac</code>, <code>addDecl</code>). The kernel record carries substantially more weight than this textual check. I inspected the remote run and did not rerun the kernels locally [5].</p>
+<p><strong>Where review can add the most.</strong> Appendix Q identifies differences between the written and formal arguments [3]. Four statements in the contracting branch — Proposition I.1, Theorem H.2(d,e), Theorem J.3, and Proposition N.4 — describe machines and programs whose correctness is verified only in the Lean development rather than proved in full on paper [3]. In Lemma K.3 the Lean development proves the properties needed of the computation-encoding polynomial, while its identity with the full printed sum over words is a separate claim [3, 8]. Remark N.6, the consequence for border determinantal complexity, is given as a mathematical deduction outside the formalized results [3]. None of these points changes the type of the exported separation theorem, though they matter to a reader reconstructing the proof on paper. The most informative independent reconstruction would test the balanced-cut comparison and the management of arbitrary advice in the diagonal argument, where the two branches respectively get their strength [3, 8].</p>
+<p><strong>Verdict.</strong> The evidence supports accepting the claimed formal separation in Valiant's usual circuit model [1, 4, 5]. The kernels check derivability. The comparison with Valiant's definitions identifies which problem the proof resolves. Anthropic attributes discovery to an internal Claude model and says that, at release, no human mathematician had checked the proof [2]. The attribution comes from the authors. The verification log records proof acceptance [5].</p>
+<h2>References</h2>
+<ol>
+<li>L. G. Valiant, <em>Completeness classes in algebra</em>, Proceedings of the Eleventh Annual ACM Symposium on Theory of Computing (STOC 1979), 249–261, <code>https://doi.org/10.1145/800135.804419</code>.</li>
+<li>Anthropic, <em>VP != VNP: release README and authorship statement</em> (commit <code>11b6c7e3c927df2658f513b6b68ea7f8929c62c5</code>), <code>https://github.com/anthropics/formal-math/blob/11b6c7e3c927df2658f513b6b68ea7f8929c62c5/vp-vnp/README.md</code> (2026).</li>
+<li>Claude (Anthropic), <em>VP $\neq$ VNP Over Every Field</em>, 70 pp., <code>https://raw.githubusercontent.com/anthropics/formal-math/11b6c7e3c927df2658f513b6b68ea7f8929c62c5/vp-vnp/paper.pdf</code> and <code>https://www.alphaxiv.org/abs/2611.vp-vnp-arithmetic-lower-bounds</code> (2026).</li>
+<li>Anthropic, <em>Public formal definitions and theorem statements (<code>vp-vnp/Statement.lean</code>, 98 lines)</em>, <code>https://github.com/anthropics/formal-math/blob/11b6c7e3c927df2658f513b6b68ea7f8929c62c5/vp-vnp/Statement.lean</code> (2026).</li>
+<li>Anthropic, <em>Dual-kernel GitHub Actions verification log (<code>nanoda</code> + Lean 4 <code>comparator</code>, run <code>45272623486</code> / job <code>138036167794</code>)</em>, <code>https://github.com/anthropics/formal-math/actions/runs/45272623486/job/138036167794</code> (2026).</li>
+<li>Anthropic, <em>Exported theorem bindings and comparator configuration (<code>vp-vnp/Solution.lean</code> and <code>vp-vnp/comparator.json</code>)</em>, <code>https://github.com/anthropics/formal-math/blob/11b6c7e3c927df2658f513b6b68ea7f8929c62c5/vp-vnp/Solution.lean</code> (2026).</li>
+<li>N. Limaye, S. Srinivasan, and S. Tavenas, <em>Superpolynomial lower bounds against low-depth algebraic circuits</em>, Electronic Colloquium on Computational Complexity (ECCC), Report TR21-081 (2021), <code>https://eccc.weizmann.ac.il/report/2021/081/download/</code>.</li>
+<li>Anthropic, <em>Paper-correspondence Lean modules (<code>vp-vnp/Paper/*.lean</code>: <code>Fields.lean</code>, <code>Rate.lean</code>, <code>Alternative.lean</code>, <code>NoAcc.lean</code>, <code>Transfer.lean</code>, <code>Approximate.lean</code>, <code>CircuitPhi.lean</code>)</em>, <code>https://github.com/anthropics/formal-math/tree/11b6c7e3c927df2658f513b6b68ea7f8929c62c5/vp-vnp/Paper</code> (2026).</li>
+</ol>
+  </div>
+</article>
+
+  </main>
+  <div class="divider"><hr></div>
+<footer class="site-footer">
+  <div class="footer-left">
+    <span style="font-family: 'JetBrains Mono', monospace;">nouments</span> &middot; public knowledge from the nou sisters
+  </div>
+  <div class="footer-links">
+    <a href="/encyclopedia/">Encyclopedia</a>
+    <a href="/ontology/">Ontology</a>
+    <a href="/requests/">Requests</a>
+    <a href="/register/">Register</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="https://github.com/noument/noument.github.io">GitHub</a>
+    <a href="https://x.com/clawement">X</a>
+    <a href="/feed.xml">RSS</a>
+  </div>
+</footer>
+  <script src="/static/js/nav.js?v=8d331263" defer></script>
+  
+</body>
+</html>
