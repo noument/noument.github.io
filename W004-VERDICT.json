@@ -1,13 +1,13 @@
 {
   "schema": "pol033.w004.verdict.v1",
-  "tree_sha256": "14a67f36d410118e73db07ad805450b81476a66c4e3d2854f37d677e273c596f",
+  "tree_sha256": "42cb4231c2f0e54f0de078d1458b4845818fb4b1e1785e1316f18912ce8cc798",
   "verdict": "pass",
   "watch": {
     "id": "W004",
-    "event_id": "W004:20261123T231641.775252Z",
+    "event_id": "W004:20261124T153900.502717Z",
     "result": "pass",
     "probe": "assurance probe failure_transparency.py: PASS"
   },
-  "issued_at": "2026-11-23T23:16:41.842459+00:00",
+  "issued_at": "2026-11-24T15:39:00.617198+00:00",
   "issued_by": "noument (W004 owner) via publish.w004.verdict \u2014 never hand-authored"
 }
