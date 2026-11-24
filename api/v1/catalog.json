@@ -11,6 +11,7 @@
    "label": "Mathematics",
    "url": "/encyclopedia/#mathematics",
    "papers": [
+    "NOU-2026-022",
     "NOU-2026-019",
     "NOU-2026-020",
     "NOU-2026-021",
@@ -43,6 +44,43 @@
   }
  ],
  "papers": [
+  {
+   "paper_id": "NOU-2026-022",
+   "title": "PSG3: Small on Average, Unproved Case by Case — Legendre and Goldbach Measured Against the Proved Riemann Hypothesis",
+   "authors": "raeschent",
+   "date": "2026-11-24",
+   "subject": "math.NT, math.HO",
+   "abstract": "The Riemann hypothesis and its generalization to Dirichlet $L$-functions were formalized in Lean in November 2026. In this third Prime Sums and Gaps paper (PSG3), with RPH4 and RPH5 as reference, we ask what that proof gives toward Legendre's conjecture and Goldbach's conjecture. Neither is proved here. All three share one skeleton, a count split into a main term minus a disturbance: RH fixes term sizes, whereas both conjectures need cancellation at every instance. Every non-negative weight in $(n^2,(n+1)^2)$ loses a factor $\\gg\\ln n$ under the triangle inequality (with B-spline constants $\\frac43n\\ln n$ and $\\frac{302}{315}n\\ln n$ under RH), and signed unbounded weights still fail below $\\frac12\\ln n$. Unconditionally, for every even $N\\ge4$, $R(N)$ is the normalized difference of even and odd character energies modulo $N$, each $\\sim\\frac12N\\ln N$, while a Rudin–Shapiro weight modulo $2^k$ has square-root non-principal character sums and zero overlap. Constructively, RH yields a prime in $(n^a,(n+1)^a)$ for all $a\\ge2.226$ and $n\\ge1$, and gives $\\ge cn$ even targets in $(2n^2,2n^2+4n]$ at least $cn/\\ln^2n$ Goldbach pairs across $\\ge cJ$ reflected square intervals $I_{n-j}+I_{n+j}$; at $s_n=2n(n+1)$ the single gap $(n^2,(n+1)^2)$ is prime-self-dual, non-empty of reflected prime pairs for every $368\\le n\\le25{,}000$. GRH yields Hardy-strip decay for Li and Liu's operator above $\\frac{5\\ln\\ln N}{\\ln N}$, with two-stage Hilbert–Schmidt and RKHS spectral tests to $N=2^{18}$. Tracing the 14-link main path on $G_m$, the $\\frac23$-to-$\\frac12$ mechanism and Lean particle–wave theorems, we compare all working concepts.",
+   "section": "works.mathematics",
+   "page_url": "/articles/NOU-2026-022/",
+   "pdf": {
+    "url": "/encyclopedia/pdf/NOU-2026-022.pdf",
+    "sha256": "392c4817951953926a30a49b3a66ede47e97ca92203cad8706c5cf919d9e895c",
+    "bytes": 576825
+   },
+   "figures": [
+    {
+     "url": "/articles/NOU-2026-022/fig1_legendre.png",
+     "sha256": "69770af70c543bc04e4a546b790612283a0c6899d59902e57d395944b6e6c137",
+     "bytes": 101762
+    },
+    {
+     "url": "/articles/NOU-2026-022/fig2_goldbach.png",
+     "sha256": "c0911a8f80b7ba0221263727242c7e27097d78666794ebded239f244e92cf07d",
+     "bytes": 112424
+    },
+    {
+     "url": "/articles/NOU-2026-022/fig3_average.png",
+     "sha256": "2d6306a4b748f214fae983cf70d756199e8153eb27c17802c42c59e3531eaead",
+     "bytes": 59215
+    },
+    {
+     "url": "/articles/NOU-2026-022/fig4_reflection.png",
+     "sha256": "cd0d8e818c53a4090329ab5556c5f45190ba518efee94b620c1039b07faec1eb",
+     "bytes": 38030
+    }
+   ]
+  },
   {
    "paper_id": "NOU-2026-019",
    "title": "When $+1$ Meets Multiplication: Why Two Tame Logical Definitions Collide to Create Controlled Irregularity in the Primes",
