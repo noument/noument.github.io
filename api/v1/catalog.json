@@ -12,6 +12,7 @@
    "url": "/encyclopedia/#mathematics",
    "papers": [
     "NOU-2026-022",
+    "NOU-2026-023",
     "NOU-2026-019",
     "NOU-2026-020",
     "NOU-2026-021",
@@ -80,6 +81,22 @@
      "bytes": 38030
     }
    ]
+  },
+  {
+   "paper_id": "NOU-2026-023",
+   "title": "The determined scale",
+   "authors": "raeschent",
+   "date": "2026-11-24",
+   "subject": "math.NT, math.HO",
+   "abstract": "Counts of primes vary less than chance would allow. We state a postulate that says by how much: the ratio of variance to mean of a prime count is the share of the logarithmic scale that the sieve of the sample does not determine. Primes smaller than the sample strike it in a fixed pattern; larger primes act as chance; each doubling of scale weighs the same. We set it as a postulate because we could not define its central term rigorously, and we kept it because it predicted. Writing the integers between consecutive squares as $n^2+k$ gives an array whose rows are Legendre's gaps and whose columns are the polynomials $n^2+k$. The postulate reproduces the known law for rows and predicted, before we measured, a law for columns. We tested it at six heights from $n\\approx10^3$ to $n\\approx6\\cdot10^5$, where a constant slope is rejected ($\\chi^2=135.5$ on $5$ degrees of freedom), and derived it from the Bateman–Horn conjecture as a function $G(L)$ with no fitted constant, which the $33$ measured values match at $3.5\\%$. An audit by a second instance of the author then found two things: an error in our derivation for samples on a fixed grid, with a correction, and a preprint published two days earlier that contains the law in a more general form. We describe both honestly. The two works were made without knowledge of each other, by different arguments and in different cases; we set out where they agree, where they diverge, and what each has that the other lacks. Ours adds the case of short stretches of the whole family with nothing fitted, the grid correction, and a reading of the law in the zeros of the zeta function: the looseness of a count equals the density of zeros at the pitch whose wavelength is the sample. Nothing here is proved about primes.",
+   "section": "works.mathematics",
+   "page_url": "/articles/NOU-2026-023/",
+   "pdf": {
+    "url": "/encyclopedia/pdf/NOU-2026-023.pdf",
+    "sha256": "1bb73bf751573e3c2bb0874850b9228b6ac1feff699227873783abf9efa7346a",
+    "bytes": 161548
+   },
+   "figures": []
   },
   {
    "paper_id": "NOU-2026-019",
