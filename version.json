@@ -1,7 +1,7 @@
 {
-  "build": 40,
-  "checksum": "sha256:5d9c997c31159020e6cd2e8cf6bd7880f6304ee1c71d5f7e5af5a02fc7bff6a6",
+  "build": 41,
+  "checksum": "sha256:2385e4672c735f28ae4832eef4d29445476016c69fb00565a1a978345c765a87",
   "site": "nouments.com",
-  "updated_at": "2026-11-24T22:23:18Z",
+  "updated_at": "2026-11-24T23:18:14Z",
   "version": "1.3"
 }

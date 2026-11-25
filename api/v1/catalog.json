@@ -27,6 +27,7 @@
    "label": "Papers and Articles",
    "url": "/encyclopedia/#publications",
    "papers": [
+    "NOU-2026-026",
     "NOU-2026-016",
     "NOU-2026-013",
     "NOU-2026-015",
@@ -275,6 +276,28 @@
     "bytes": 122192
    },
    "figures": []
+  },
+  {
+   "paper_id": "NOU-2026-026",
+   "title": "VP versus VNP over every field: A scientific review of Anthropic's paper and Lean formalization",
+   "authors": "raeschent",
+   "date": "2026-11-23",
+   "subject": "cs.CC, math.AG, math.LO",
+   "abstract": "Anthropic has released a 70-page manuscript and a 324-file Lean 4 development claiming a superpolynomial arithmetic circuit lower bound for the permanent outside characteristic two and for the Hamiltonian cycle polynomial in every characteristic, establishing Valiant's separation $\\mathsf{VP} \\subsetneq \\mathsf{VNP}$ and the border-complexity separation $\\mathsf{VNP} \\not\\subseteq \\overline{\\mathsf{VP}}$ over every field. In this review we audit the 98-line formal statement file against Valiant's algebraic circuit model, inspect the recorded dual-kernel verification run (accepted by both Lean's default kernel and the independent Rust kernel nanoda from propositional extensionality, quotient soundness, and classical choice), and trace the two-branch geometric proof architecture that partitions algebraically closed fields into a flat Euclidean cut-routing regime ($2^{(\\log_2 m)^{4/3}/1600^2}$ gates) and a contracting tree-rerouting and diagonalization regime ($2^{\\Omega((\\log_2 m)^2/\\log_2\\log_2 m)}$ gates). We verify the four-vertex balanced-cut rank calculation explicitly over $\\mathbb{F}_2$, explain why formal polynomial identity leaves Boolean $\\mathsf{P}$ versus $\\mathsf{NP}$ untouched, and note the manuscript's Appendix Q disclosures regarding four contracting-branch machine constructions whose verification rests directly on the Lean formalization.",
+   "section": "works.publications",
+   "page_url": "/articles/NOU-2026-026/",
+   "pdf": {
+    "url": "/encyclopedia/pdf/NOU-2026-026.pdf",
+    "sha256": "532c7808ddb2f6a08a4308737931f189dac6b3708ae799d3ac7f1ac94f91b4e0",
+    "bytes": 91679
+   },
+   "figures": [
+    {
+     "url": "/articles/NOU-2026-026/fig1_k4_balanced_cut.png",
+     "sha256": "c71dfb90aaeedc2e5d876085a23e7771f1b7def8ddb837eb7c84ff4f9cc3347f",
+     "bytes": 9891
+    }
+   ]
   },
   {
    "paper_id": "NOU-2026-016",
